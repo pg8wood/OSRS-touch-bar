@@ -10,6 +10,7 @@ import Cocoa
 
 class ViewController: NSViewController {
     
+    let osrsInterfaceIdentifiers: [NSTouchBarItem.Identifier] = [.combatOptionsLabelItem, .statsLabelItem, .questListLabelItem, .inventoryLabelItem, .equipmentLabelItem, .prayerLabelItem, .spellbookLabelItem, .clanChatLabelItem, .friendsListLabelItem, .ignoreListLabelItem, .optionsLabelItem, .emotesLabelItem, .musicPlayerLabelItem]
 }
 
  // MARK: - Touch Bar delegate
@@ -20,25 +21,21 @@ extension ViewController: NSTouchBarDelegate {
     @available(OSX 10.12.2, *)
     override func makeTouchBar() -> NSTouchBar? {
         let touchBar = NSTouchBar()
-        let touchBarIdentifier = NSTouchBar.CustomizationIdentifier(rawValue: "com.patrickgatewood.osrs-touch-bar")
-        let touchBarLabel1Identifer = NSTouchBarItem.Identifier(rawValue: "com.patrickgatewood.osrs-touch-bar-label1")
+        let touchBarIdentifier = NSTouchBar.CustomizationIdentifier.osrsBar
         
         touchBar.delegate = self
         touchBar.customizationIdentifier = touchBarIdentifier
-        touchBar.defaultItemIdentifiers = [touchBarLabel1Identifer, .fixedSpaceLarge, .otherItemsProxy]
-        touchBar.customizationAllowedItemIdentifiers = [touchBarLabel1Identifer]
+        touchBar.defaultItemIdentifiers = osrsInterfaceIdentifiers
+
+        touchBar.customizationAllowedItemIdentifiers = osrsInterfaceIdentifiers
         return touchBar
     }
     
     func touchBar(_ touchBar: NSTouchBar, makeItemForIdentifier identifier: NSTouchBarItem.Identifier) -> NSTouchBarItem? {
-        switch identifier {
-        case NSTouchBarItem.Identifier(rawValue: "com.patrickgatewood.osrs-touch-bar-label1"):
-            let customViewItem = NSCustomTouchBarItem(identifier: identifier)
-            customViewItem.view = NSTextField(labelWithString: "\u{1F30E} \u{1F4D3}")
-            return customViewItem
-        default:
-            return nil
-        }
+        let viewItem = NSCustomTouchBarItem(identifier: identifier)
+        viewItem.view = NSImageView(image: NSImage(named: NSImage.Name(rawValue: "combat-options"))!)
+
+        return viewItem
     }
 }
 
