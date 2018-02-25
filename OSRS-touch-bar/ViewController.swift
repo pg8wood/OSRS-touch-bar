@@ -10,6 +10,12 @@ import Cocoa
 
 class ViewController: NSViewController {
     
+    @IBOutlet var touchBarOutlet: NSTouchBar!
+    
+
+    @IBOutlet var combatOptionsButton: NSButton!
+    @IBOutlet var skillsButton: NSButton!
+    
     let osrsInterfaceIdentifiers: [NSTouchBarItem.Identifier] = [.combatOptionsLabelItem, .statsLabelItem, .questListLabelItem, .inventoryLabelItem, .equipmentLabelItem, .prayerLabelItem, .spellbookLabelItem, .clanChatLabelItem, .friendsListLabelItem, .ignoreListLabelItem, .optionsLabelItem, .emotesLabelItem, .musicPlayerLabelItem]
 }
 
@@ -20,22 +26,15 @@ extension ViewController: NSTouchBarDelegate {
     
     @available(OSX 10.12.2, *)
     override func makeTouchBar() -> NSTouchBar? {
-        let touchBar = NSTouchBar()
-        let touchBarIdentifier = NSTouchBar.CustomizationIdentifier.osrsBar
-        
-        touchBar.delegate = self
-        touchBar.customizationIdentifier = touchBarIdentifier
-        touchBar.defaultItemIdentifiers = osrsInterfaceIdentifiers
 
-        touchBar.customizationAllowedItemIdentifiers = osrsInterfaceIdentifiers
-        return touchBar
+        return touchBarOutlet
     }
     
-    func touchBar(_ touchBar: NSTouchBar, makeItemForIdentifier identifier: NSTouchBarItem.Identifier) -> NSTouchBarItem? {
-        let viewItem = NSCustomTouchBarItem(identifier: identifier)
-        viewItem.view = NSImageView(image: NSImage(named: NSImage.Name(rawValue: "combat-options"))!)
-
-        return viewItem
-    }
+//    func touchBar(_ touchBar: NSTouchBar, makeItemForIdentifier identifier: NSTouchBarItem.Identifier) -> NSTouchBarItem? {
+//        let viewItem = NSCustomTouchBarItem(identifier: identifier)
+//        viewItem.view = NSImageView(image: NSImage(named: NSImage.Name(rawValue: "combat-options"))!)
+//
+//        return viewItem
+//    }
 }
 
