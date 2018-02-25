@@ -11,8 +11,6 @@ import Cocoa
 class ViewController: NSViewController {
     
     @IBOutlet var touchBarOutlet: NSTouchBar!
-    
-
     @IBOutlet var combatOptionsButton: NSButton!
     @IBOutlet var skillsButton: NSButton!
     
@@ -26,15 +24,17 @@ extension ViewController: NSTouchBarDelegate {
     
     @available(OSX 10.12.2, *)
     override func makeTouchBar() -> NSTouchBar? {
-
+//        touchBarOutlet.item(forIdentifier: .combatOptionsLabelItem).view?.frame = NSRect(
+        
         return touchBarOutlet
     }
     
 //    func touchBar(_ touchBar: NSTouchBar, makeItemForIdentifier identifier: NSTouchBarItem.Identifier) -> NSTouchBarItem? {
 //        let viewItem = NSCustomTouchBarItem(identifier: identifier)
-//        viewItem.view = NSImageView(image: NSImage(named: NSImage.Name(rawValue: "combat-options"))!)
+////        viewItem.view = NSImageView(image: NSImage(named: NSImage.Name(rawValue: "combat-options"))!)
 //
-//        return viewItem
+//
+//        return nil
 //    }
 }
 
