@@ -13,6 +13,7 @@
 		B8988A662042704200CC8D7B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8988A642042704200CC8D7B /* Main.storyboard */; };
 		B8988A7320427BF400CC8D7B /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8988A7220427BF400CC8D7B /* WindowController.swift */; };
 		B8988A7520427F8C00CC8D7B /* TouchBarIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8988A7420427F8C00CC8D7B /* TouchBarIdentifiers.swift */; };
+		B8AD3F272044986D00A3D40D /* KeyCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AD3F262044986D00A3D40D /* KeyCodes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		B8988A682042704200CC8D7B /* OSRS_touch_bar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OSRS_touch_bar.entitlements; sourceTree = "<group>"; };
 		B8988A7220427BF400CC8D7B /* WindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
 		B8988A7420427F8C00CC8D7B /* TouchBarIdentifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchBarIdentifiers.swift; sourceTree = "<group>"; };
+		B8AD3F262044986D00A3D40D /* KeyCodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyCodes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 			children = (
 				B8988A5E2042704200CC8D7B /* AppDelegate.swift */,
 				B8988A602042704200CC8D7B /* ViewController.swift */,
+				B8AD3F262044986D00A3D40D /* KeyCodes.swift */,
 				B8988A7420427F8C00CC8D7B /* TouchBarIdentifiers.swift */,
 				B8988A622042704200CC8D7B /* Assets.xcassets */,
 				B8988A642042704200CC8D7B /* Main.storyboard */,
@@ -142,6 +145,7 @@
 			files = (
 				B8988A612042704200CC8D7B /* ViewController.swift in Sources */,
 				B8988A7320427BF400CC8D7B /* WindowController.swift in Sources */,
+				B8AD3F272044986D00A3D40D /* KeyCodes.swift in Sources */,
 				B8988A7520427F8C00CC8D7B /* TouchBarIdentifiers.swift in Sources */,
 				B8988A5F2042704200CC8D7B /* AppDelegate.swift in Sources */,
 			);
