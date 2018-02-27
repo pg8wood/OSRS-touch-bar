@@ -36,7 +36,6 @@ class ViewController: NSViewController {
         keyCodeDict = [combatOptionsButton: KeyCodes.F1KeyCode]
     }
 
-
     // Detects a Touch Bar button press and sends the corresponding function key press event
     @IBAction func buttonPressed(sender: NSButton) {
         guard let keyCode: UInt16 = keyCodeDict?[sender],
