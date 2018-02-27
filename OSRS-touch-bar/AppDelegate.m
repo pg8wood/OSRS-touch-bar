@@ -11,7 +11,7 @@
 #import "TouchBar.h"
 
 static const NSTouchBarItemIdentifier kBearIdentifier = @"io.a2.Bear";
-static const NSTouchBarItemIdentifier kPandaIdentifier = @"io.a2.Panda";
+static const NSTouchBarItemIdentifier controlStripIconIdentifier = @"OSRS_Logo";
 static const NSTouchBarItemIdentifier kGroupIdentifier = @"io.a2.Group";
 
 @interface AppDelegate () <NSTouchBarDelegate>
@@ -31,7 +31,7 @@ static const NSTouchBarItemIdentifier kGroupIdentifier = @"io.a2.Group";
 - (void)present:(id)sender
 {
     [NSTouchBar presentSystemModalFunctionBar:self.touchBar
-                     systemTrayItemIdentifier:kPandaIdentifier];
+                     systemTrayItemIdentifier:controlStripIconIdentifier];
 }
 
 - (NSTouchBarItem *)touchBar:(NSTouchBar *)touchBar
@@ -42,9 +42,9 @@ static const NSTouchBarItemIdentifier kGroupIdentifier = @"io.a2.Group";
             [[NSCustomTouchBarItem alloc] initWithIdentifier:kBearIdentifier];
         bear.view = [NSButton buttonWithTitle:@"\U0001F43B" target:self action:@selector(bear:)];
         return bear;
-    } else if ([identifier isEqualToString:kPandaIdentifier]) {
+    } else if ([identifier isEqualToString:controlStripIconIdentifier]) {
         NSCustomTouchBarItem *panda =
-            [[NSCustomTouchBarItem alloc] initWithIdentifier:kPandaIdentifier];
+            [[NSCustomTouchBarItem alloc] initWithIdentifier:controlStripIconIdentifier];
         panda.view =
             [NSButton buttonWithTitle:@"\U0001F43C" target:self action:@selector(present:)];
         return panda;
@@ -58,10 +58,10 @@ static const NSTouchBarItemIdentifier kGroupIdentifier = @"io.a2.Group";
     DFRSystemModalShowsCloseBoxWhenFrontMost(YES);
 
     NSCustomTouchBarItem *panda =
-        [[NSCustomTouchBarItem alloc] initWithIdentifier:kPandaIdentifier];
-    panda.view = [NSButton buttonWithTitle:@"\U0001F43C" target:self action:@selector(present:)];
+        [[NSCustomTouchBarItem alloc] initWithIdentifier:controlStripIconIdentifier];
+    panda.view = [NSButton buttonWithImage: [NSImage imageNamed:@"OSRS_Logo"] target:self action:@selector(present:)];
     [NSTouchBarItem addSystemTrayItem:panda];
-    DFRElementSetControlStripPresenceForIdentifier(kPandaIdentifier, YES);
+    DFRElementSetControlStripPresenceForIdentifier(controlStripIconIdentifier, YES);
     
     if (@available(macOS 10.12.1, *)) {
         [NSApplication sharedApplication].automaticCustomizeTouchBarMenuItemEnabled = YES;
