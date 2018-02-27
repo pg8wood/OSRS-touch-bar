@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="13771" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaDFRPlugin" version="13752"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13771"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+        <capability name="the Touch Bar" message="Use a version of macOS with Touch Bar support." minToolsVersion="8.1" minSystemVersion="10.12.2" requiredIntegratedClassName="NSTouchBar"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -15,6 +16,8 @@
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate">
             <connections>
+                <outlet property="groupTouchBar" destination="lQf-lp-g6Z" id="wo2-UY-ipo"/>
+                <outlet property="touchBar" destination="lQf-lp-g6Z" id="vtv-J0-sPQ"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
             </connections>
         </customObject>
@@ -691,5 +694,170 @@
             </view>
             <point key="canvasLocation" x="72" y="303"/>
         </window>
+        <touchBar id="lQf-lp-g6Z">
+            <touchBarItems>
+                <touchBarItem id="ghq-9N-mry">
+                    <viewController key="viewController" id="qo7-9a-oQE">
+                        <button key="view" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xEC-cN-WgV">
+                            <rect key="frame" x="0.0" y="0.0" width="72" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <buttonCell key="cell" type="push" bezelStyle="rounded" image="Combat_Options" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="fin-dw-0SN">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                        </button>
+                    </viewController>
+                    <size key="designTimeSize" width="72" height="30"/>
+                </touchBarItem>
+                <touchBarItem id="RGt-cr-DNX">
+                    <viewController key="viewController" id="tB6-zy-Dkd">
+                        <button key="view" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="sQM-sI-5F4">
+                            <rect key="frame" x="0.0" y="0.0" width="84" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <buttonCell key="cell" type="push" bezelStyle="rounded" image="Stats" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="znr-0p-4ky">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                        </button>
+                    </viewController>
+                    <size key="designTimeSize" width="84" height="41"/>
+                </touchBarItem>
+                <touchBarItem id="BMc-l2-X2k">
+                    <viewController key="viewController" id="V0V-c1-7gx">
+                        <button key="view" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fbJ-0J-ClX">
+                            <rect key="frame" x="0.0" y="0.0" width="84" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <buttonCell key="cell" type="push" bezelStyle="rounded" image="Quest" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ajr-od-YqQ">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                        </button>
+                    </viewController>
+                    <size key="designTimeSize" width="84" height="41"/>
+                </touchBarItem>
+                <touchBarItem id="CKt-Sd-RPZ">
+                    <viewController key="viewController" id="5wF-iJ-NO6">
+                        <button key="view" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="kqv-yD-cHg">
+                            <rect key="frame" x="0.0" y="0.0" width="84" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <buttonCell key="cell" type="push" bezelStyle="rounded" image="Worn_equipment" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Cme-56-LPH">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                        </button>
+                    </viewController>
+                    <size key="designTimeSize" width="84" height="41"/>
+                </touchBarItem>
+                <touchBarItem id="5gQ-bj-XNo">
+                    <viewController key="viewController" id="vSv-uT-Ftq">
+                        <button key="view" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ftJ-Pd-qP5">
+                            <rect key="frame" x="0.0" y="0.0" width="84" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <buttonCell key="cell" type="push" bezelStyle="rounded" image="Prayer_tab_icon" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="TlM-Th-484">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                        </button>
+                    </viewController>
+                    <size key="designTimeSize" width="84" height="41"/>
+                </touchBarItem>
+                <touchBarItem id="RZP-Yx-ZyW">
+                    <viewController key="viewController" id="8Rc-UK-P7l">
+                        <button key="view" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="u87-BL-tfh">
+                            <rect key="frame" x="0.0" y="0.0" width="84" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <buttonCell key="cell" type="push" bezelStyle="rounded" image="Spellbook" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="GkB-8w-1O4">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                        </button>
+                    </viewController>
+                    <size key="designTimeSize" width="84" height="41"/>
+                </touchBarItem>
+                <touchBarItem id="Jb8-pD-1oS">
+                    <viewController key="viewController" id="R50-hE-GHC">
+                        <button key="view" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="svG-cM-UBj">
+                            <rect key="frame" x="0.0" y="0.0" width="84" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <buttonCell key="cell" type="push" bezelStyle="rounded" image="Clan_Chat" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="iR4-el-sJd">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                        </button>
+                    </viewController>
+                    <size key="designTimeSize" width="84" height="41"/>
+                </touchBarItem>
+                <touchBarItem id="qY1-ER-JgP">
+                    <viewController key="viewController" id="U9b-Uo-Nb0">
+                        <button key="view" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pk4-O5-zXO">
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <buttonCell key="cell" type="push" bezelStyle="rounded" image="Friends_List" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="zVR-fN-Rmq">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                        </button>
+                    </viewController>
+                    <size key="designTimeSize" width="72" height="30"/>
+                </touchBarItem>
+                <touchBarItem id="ETE-li-IUv">
+                    <viewController key="viewController" id="QQ1-eY-pPX">
+                        <button key="view" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zly-ql-GnW">
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <buttonCell key="cell" type="push" bezelStyle="rounded" image="Ignore_List" imagePosition="overlaps" alignment="center" alternateImage="Ignore_List" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Lo7-LI-XOb">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                        </button>
+                    </viewController>
+                </touchBarItem>
+                <touchBarItem id="KkV-bQ-GyR">
+                    <viewController key="viewController" id="1i0-oK-Hs8">
+                        <button key="view" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vjJ-SH-E1s">
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <buttonCell key="cell" type="push" bezelStyle="rounded" image="Options" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="1Cq-rP-8PW">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                        </button>
+                    </viewController>
+                </touchBarItem>
+                <touchBarItem id="Xpp-1I-tOP">
+                    <viewController key="viewController" id="46E-kD-9m6">
+                        <button key="view" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PUw-An-CJL">
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <buttonCell key="cell" type="push" bezelStyle="rounded" image="Emote_button" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="W3h-yj-VLS">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                        </button>
+                    </viewController>
+                </touchBarItem>
+                <touchBarItem id="p2Q-6G-qvP">
+                    <viewController key="viewController" id="MJn-cj-dtn">
+                        <button key="view" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WuG-R2-ldl">
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <buttonCell key="cell" type="push" bezelStyle="rounded" image="Music" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Vzl-ju-QIB">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                        </button>
+                    </viewController>
+                </touchBarItem>
+            </touchBarItems>
+        </touchBar>
     </objects>
+    <resources>
+        <image name="Clan_Chat" width="22" height="26"/>
+        <image name="Combat_Options" width="19" height="19"/>
+        <image name="Emote_button" width="18" height="27"/>
+        <image name="Friends_List" width="22" height="22"/>
+        <image name="Ignore_List" width="22" height="22"/>
+        <image name="Music" width="21" height="25"/>
+        <image name="Options" width="23" height="23"/>
+        <image name="Prayer_tab_icon" width="25" height="29"/>
+        <image name="Quest" width="21" height="21"/>
+        <image name="Spellbook" width="24" height="23"/>
+        <image name="Stats" width="24" height="22"/>
+        <image name="Worn_equipment" width="26" height="31"/>
+    </resources>
 </document>

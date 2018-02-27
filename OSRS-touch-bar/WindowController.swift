@@ -17,5 +17,4 @@ class WindowController: NSWindowController {
         }
         return viewController.makeTouchBar()
     }
-    
 }

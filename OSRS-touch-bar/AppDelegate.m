@@ -1,9 +1,10 @@
 //
 //  AppDelegate.m
-//  TouchBarTest
 //
 //  Created by Alexsander Akers on 2/13/17.
+//  Modified by Patrick Gatewood on 2/27/18.
 //  Copyright © 2017 Alexsander Akers. All rights reserved.
+//  Copyright © 2018 Patrick Gatewood. All rights reserved.
 //
 
 #import "AppDelegate.h"
@@ -16,23 +17,12 @@ static const NSTouchBarItemIdentifier kGroupIdentifier = @"io.a2.Group";
 @interface AppDelegate () <NSTouchBarDelegate>
 
 @property (weak) IBOutlet NSWindow *window;
-@property (nonatomic) NSTouchBar *groupTouchBar;
+//@property (nonatomic) NSTouchBar *groupTouchBar;
+@property (weak) IBOutlet NSTouchBar *touchBar;
 
 @end
 
 @implementation AppDelegate
-
-- (NSTouchBar *)groupTouchBar
-{
-    if (!_groupTouchBar) {
-        NSTouchBar *groupTouchBar = [[NSTouchBar alloc] init];
-        groupTouchBar.defaultItemIdentifiers = @[ kBearIdentifier ];
-        groupTouchBar.delegate = self;
-        _groupTouchBar = groupTouchBar;
-    }
-
-    return _groupTouchBar;
-}
 
 - (void)bear:(id)sender
 {
@@ -40,7 +30,7 @@ static const NSTouchBarItemIdentifier kGroupIdentifier = @"io.a2.Group";
 
 - (void)present:(id)sender
 {
-    [NSTouchBar presentSystemModalFunctionBar:self.groupTouchBar
+    [NSTouchBar presentSystemModalFunctionBar:self.touchBar
                      systemTrayItemIdentifier:kPandaIdentifier];
 }
 
@@ -73,9 +63,9 @@ static const NSTouchBarItemIdentifier kGroupIdentifier = @"io.a2.Group";
     [NSTouchBarItem addSystemTrayItem:panda];
     DFRElementSetControlStripPresenceForIdentifier(kPandaIdentifier, YES);
     
-//    if (@available(macOS 10.12.1, *)) {
-//        [NSApplication sharedApplication].automaticCustomizeTouchBarMenuItemEnabled = YES;
-//    }
+    if (@available(macOS 10.12.1, *)) {
+        [NSApplication sharedApplication].automaticCustomizeTouchBarMenuItemEnabled = YES;
+    }
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification
