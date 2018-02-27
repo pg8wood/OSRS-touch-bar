@@ -33,7 +33,18 @@ class ViewController: NSViewController {
     
     // Map Touch Bar buttons to function buttons
     override func viewDidLoad() {
-        keyCodeDict = [combatOptionsButton: KeyCodes.F1KeyCode]
+        keyCodeDict = [combatOptionsButton: KeyCodes.F1KeyCode,
+                    skillsButton: KeyCodes.F2KeyCode,
+                    questButton: KeyCodes.F3KeyCode,
+                    equipmentButton: KeyCodes.F4KeyCode,
+                    prayerButton: KeyCodes.F5KeyCode,
+                    spellbookButton: KeyCodes.F6KeyCode,
+                    clanChatButton: KeyCodes.F7KeyCode,
+                    friendsListButton: KeyCodes.F8KeyCode,
+                    ignoreListButton: KeyCodes.F9KeyCode,
+                    optionsButton: KeyCodes.F10KeyCode,
+                    emoteButton: KeyCodes.F11KeyCode,
+                    musicButton: KeyCodes.F12KeyCode,]
     }
 
     // Detects a Touch Bar button press and sends the corresponding function key press event
@@ -43,11 +54,10 @@ class ViewController: NSViewController {
                 return
         }
         
+        // Sends a system-wide function key press
         let keycodeScriptSource = """
         tell application "System Events" to key code \(keyCode)
         """
-        
-        print(keycodeScriptSource)
         
         if let script = NSAppleScript(source: keycodeScriptSource) {
             script.executeAndReturnError(&scriptError)

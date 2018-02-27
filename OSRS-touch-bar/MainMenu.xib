@@ -721,6 +721,9 @@
                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
                                 <font key="font" metaFont="system"/>
                             </buttonCell>
+                            <connections>
+                                <action selector="buttonPressedWithSender:" target="xI7-Ve-Bkp" id="cIB-AZ-aM5"/>
+                            </connections>
                         </button>
                     </viewController>
                     <size key="designTimeSize" width="84" height="41"/>
@@ -734,6 +737,9 @@
                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
                                 <font key="font" metaFont="system"/>
                             </buttonCell>
+                            <connections>
+                                <action selector="buttonPressedWithSender:" target="xI7-Ve-Bkp" id="1TP-Kk-SP8"/>
+                            </connections>
                         </button>
                     </viewController>
                     <size key="designTimeSize" width="84" height="41"/>
@@ -747,6 +753,9 @@
                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
                                 <font key="font" metaFont="system"/>
                             </buttonCell>
+                            <connections>
+                                <action selector="buttonPressedWithSender:" target="xI7-Ve-Bkp" id="eUg-6G-sbJ"/>
+                            </connections>
                         </button>
                     </viewController>
                     <size key="designTimeSize" width="84" height="41"/>
@@ -760,6 +769,9 @@
                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
                                 <font key="font" metaFont="system"/>
                             </buttonCell>
+                            <connections>
+                                <action selector="buttonPressedWithSender:" target="xI7-Ve-Bkp" id="TJE-j2-5Im"/>
+                            </connections>
                         </button>
                     </viewController>
                     <size key="designTimeSize" width="84" height="41"/>
@@ -773,6 +785,9 @@
                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
                                 <font key="font" metaFont="system"/>
                             </buttonCell>
+                            <connections>
+                                <action selector="buttonPressedWithSender:" target="xI7-Ve-Bkp" id="PXa-BJ-X5v"/>
+                            </connections>
                         </button>
                     </viewController>
                     <size key="designTimeSize" width="84" height="41"/>
@@ -786,6 +801,9 @@
                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
                                 <font key="font" metaFont="system"/>
                             </buttonCell>
+                            <connections>
+                                <action selector="buttonPressedWithSender:" target="xI7-Ve-Bkp" id="5TY-rI-yft"/>
+                            </connections>
                         </button>
                     </viewController>
                     <size key="designTimeSize" width="84" height="41"/>
@@ -798,6 +816,9 @@
                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
                                 <font key="font" metaFont="system"/>
                             </buttonCell>
+                            <connections>
+                                <action selector="buttonPressedWithSender:" target="xI7-Ve-Bkp" id="6Ps-gg-cTe"/>
+                            </connections>
                         </button>
                     </viewController>
                     <size key="designTimeSize" width="72" height="30"/>
@@ -810,6 +831,9 @@
                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
                                 <font key="font" metaFont="system"/>
                             </buttonCell>
+                            <connections>
+                                <action selector="buttonPressedWithSender:" target="xI7-Ve-Bkp" id="a2G-c9-ZMC"/>
+                            </connections>
                         </button>
                     </viewController>
                 </touchBarItem>
@@ -821,6 +845,9 @@
                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
                                 <font key="font" metaFont="system"/>
                             </buttonCell>
+                            <connections>
+                                <action selector="buttonPressedWithSender:" target="xI7-Ve-Bkp" id="1HD-ib-CaK"/>
+                            </connections>
                         </button>
                     </viewController>
                 </touchBarItem>
@@ -832,6 +859,9 @@
                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
                                 <font key="font" metaFont="system"/>
                             </buttonCell>
+                            <connections>
+                                <action selector="buttonPressedWithSender:" target="xI7-Ve-Bkp" id="ZJc-bj-GYV"/>
+                            </connections>
                         </button>
                     </viewController>
                 </touchBarItem>
@@ -843,6 +873,9 @@
                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
                                 <font key="font" metaFont="system"/>
                             </buttonCell>
+                            <connections>
+                                <action selector="buttonPressedWithSender:" target="xI7-Ve-Bkp" id="5Ti-he-Duz"/>
+                            </connections>
                         </button>
                     </viewController>
                 </touchBarItem>
@@ -851,7 +884,18 @@
         </touchBar>
         <viewController id="xI7-Ve-Bkp" customClass="ViewController" customModule="OSRS_touch_bar" customModuleProvider="target">
             <connections>
+                <outlet property="clanChatButton" destination="svG-cM-UBj" id="DVH-hx-kbe"/>
                 <outlet property="combatOptionsButton" destination="xEC-cN-WgV" id="IbI-0x-VNo"/>
+                <outlet property="emoteButton" destination="PUw-An-CJL" id="jWy-5I-6Us"/>
+                <outlet property="equipmentButton" destination="kqv-yD-cHg" id="xIu-kV-ZH2"/>
+                <outlet property="friendsListButton" destination="pk4-O5-zXO" id="acU-au-hlf"/>
+                <outlet property="ignoreListButton" destination="zly-ql-GnW" id="cbK-lb-3kK"/>
+                <outlet property="musicButton" destination="WuG-R2-ldl" id="tyb-Dw-92l"/>
+                <outlet property="optionsButton" destination="vjJ-SH-E1s" id="YjQ-y5-Tw3"/>
+                <outlet property="prayerButton" destination="ftJ-Pd-qP5" id="WMm-ya-c4L"/>
+                <outlet property="questButton" destination="fbJ-0J-ClX" id="ZXH-om-48v"/>
+                <outlet property="skillsButton" destination="sQM-sI-5F4" id="q6L-IB-Vtn"/>
+                <outlet property="spellbookButton" destination="u87-BL-tfh" id="xpN-5T-w7f"/>
                 <outlet property="view" destination="EiT-Mj-1SZ" id="NvE-Xy-Odz"/>
             </connections>
         </viewController>
