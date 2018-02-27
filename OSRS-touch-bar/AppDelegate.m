@@ -10,23 +10,16 @@
 #import "AppDelegate.h"
 #import "TouchBar.h"
 
-static const NSTouchBarItemIdentifier kBearIdentifier = @"io.a2.Bear";
-static const NSTouchBarItemIdentifier controlStripIconIdentifier = @"OSRS_Logo";
-static const NSTouchBarItemIdentifier kGroupIdentifier = @"io.a2.Group";
+static const NSTouchBarItemIdentifier controlStripIconIdentifier = @"osrs-logo";
 
 @interface AppDelegate () <NSTouchBarDelegate>
 
 @property (weak) IBOutlet NSWindow *window;
-//@property (nonatomic) NSTouchBar *groupTouchBar;
 @property (weak) IBOutlet NSTouchBar *touchBar;
 
 @end
 
 @implementation AppDelegate
-
-- (void)bear:(id)sender
-{
-}
 
 - (void)present:(id)sender
 {
@@ -34,43 +27,20 @@ static const NSTouchBarItemIdentifier kGroupIdentifier = @"io.a2.Group";
                      systemTrayItemIdentifier:controlStripIconIdentifier];
 }
 
-- (NSTouchBarItem *)touchBar:(NSTouchBar *)touchBar
-       makeItemForIdentifier:(NSTouchBarItemIdentifier)identifier
-{
-    if ([identifier isEqualToString:kBearIdentifier]) {
-        NSCustomTouchBarItem *bear =
-            [[NSCustomTouchBarItem alloc] initWithIdentifier:kBearIdentifier];
-        bear.view = [NSButton buttonWithTitle:@"\U0001F43B" target:self action:@selector(bear:)];
-        return bear;
-    } else if ([identifier isEqualToString:controlStripIconIdentifier]) {
-        NSCustomTouchBarItem *panda =
-            [[NSCustomTouchBarItem alloc] initWithIdentifier:controlStripIconIdentifier];
-        panda.view =
-            [NSButton buttonWithTitle:@"\U0001F43C" target:self action:@selector(present:)];
-        return panda;
-    } else {
-        return nil;
-    }
-}
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     DFRSystemModalShowsCloseBoxWhenFrontMost(YES);
 
-    NSCustomTouchBarItem *panda =
+    NSCustomTouchBarItem *controlStripTBItem = // Touch Bar, not TeleBlock
         [[NSCustomTouchBarItem alloc] initWithIdentifier:controlStripIconIdentifier];
-    panda.view = [NSButton buttonWithImage: [NSImage imageNamed:@"OSRS_Logo"] target:self action:@selector(present:)];
-    [NSTouchBarItem addSystemTrayItem:panda];
+    controlStripTBItem.view = [NSButton buttonWithImage: [NSImage imageNamed:@"OSRS_Logo"] target:self action:@selector(present:)];
+    [NSTouchBarItem addSystemTrayItem:controlStripTBItem];
     DFRElementSetControlStripPresenceForIdentifier(controlStripIconIdentifier, YES);
     
     if (@available(macOS 10.12.1, *)) {
         [NSApplication sharedApplication].automaticCustomizeTouchBarMenuItemEnabled = YES;
     }
-}
-
-- (void)applicationWillTerminate:(NSNotification *)aNotification
-{
-    // Insert code here to tear down your application
 }
 
 @end

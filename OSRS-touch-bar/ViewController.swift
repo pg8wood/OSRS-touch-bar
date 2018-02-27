@@ -32,9 +32,9 @@ class ViewController: NSViewController {
     // MARK: - View life cycle
     
     // Map Touch Bar buttons to function buttons
-    override func viewDidLoad() {
-        keyCodeDict = [combatOptionsButton: KeyCodes.F1KeyCode]
-    }
+    //override func viewDidLoad() {
+      //  keyCodeDict = [combatOptionsButton: KeyCodes.F1KeyCode]
+    //}
 
     // Detects a Touch Bar button press and sends the corresponding function key press event
     @IBAction func buttonPressed(sender: NSButton) {

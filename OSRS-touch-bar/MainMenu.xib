@@ -844,7 +844,13 @@
                     </viewController>
                 </touchBarItem>
             </touchBarItems>
+            <point key="canvasLocation" x="132" y="16"/>
         </touchBar>
+        <viewController id="xI7-Ve-Bkp" customClass="ViewController" customModule="OSRS_touch_bar" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="EiT-Mj-1SZ" id="NvE-Xy-Odz"/>
+            </connections>
+        </viewController>
     </objects>
     <resources>
         <image name="Clan_Chat" width="22" height="26"/>
