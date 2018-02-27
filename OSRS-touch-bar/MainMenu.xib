@@ -705,6 +705,9 @@
                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
                                 <font key="font" metaFont="system"/>
                             </buttonCell>
+                            <connections>
+                                <action selector="buttonPressedWithSender:" target="xI7-Ve-Bkp" id="f5d-x9-XXK"/>
+                            </connections>
                         </button>
                     </viewController>
                     <size key="designTimeSize" width="72" height="30"/>
@@ -848,6 +851,7 @@
         </touchBar>
         <viewController id="xI7-Ve-Bkp" customClass="ViewController" customModule="OSRS_touch_bar" customModuleProvider="target">
             <connections>
+                <outlet property="combatOptionsButton" destination="xEC-cN-WgV" id="IbI-0x-VNo"/>
                 <outlet property="view" destination="EiT-Mj-1SZ" id="NvE-Xy-Odz"/>
             </connections>
         </viewController>
