@@ -45,6 +45,32 @@ class ViewController: NSViewController {
                     optionsButton: KeyCodes.F10KeyCode,
                     emoteButton: KeyCodes.F11KeyCode,
                     musicButton: KeyCodes.F12KeyCode,]
+        
+           var scriptError: NSDictionary?
+        // jhg
+        let keycodeScriptSource = """
+        tell application "System Preferences"
+            activate\n
+            reveal anchor "keyboardTab" of pane id "com.apple.preference.keyboard"\n\
+        end tell\n\
+        tell application "System Events" to tell process "System Preferences"\n\
+            tell pop up button 2 of tab group 1 of window 1\n\
+                click\n\
+                click menu item "App Controls" of menu 1\n\
+            end tell\n\
+        end tell\n\
+        quit application "System Preferences"
+        """
+        
+        if let script = NSAppleScript(source: keycodeScriptSource) {
+            script.executeAndReturnError(&scriptError)
+        }
+        
+        if scriptError != nil {
+            let alert = NSAlert()
+            alert.informativeText = "\(String(describing: scriptError!.allValues))"
+            alert.runModal()
+        }
     }
 
     // Detects a Touch Bar button press and sends the corresponding function key press event
