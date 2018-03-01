@@ -26,35 +26,74 @@ class ViewController: NSViewController {
     
     let osrsInterfaceIdentifiers: [NSTouchBarItem.Identifier] = [.combatOptionsLabelItem, .statsLabelItem, .questListLabelItem, .inventoryLabelItem, .equipmentLabelItem, .prayerLabelItem, .spellbookLabelItem, .clanChatLabelItem, .friendsListLabelItem, .ignoreListLabelItem, .optionsLabelItem, .emotesLabelItem, .musicPlayerLabelItem]
     
-    
     var keyCodeDict: [NSButton: UInt16]?
+
     
     // MARK: - View life cycle
     
     // Map Touch Bar buttons to function buttons
     override func viewDidLoad() {
-        keyCodeDict = [combatOptionsButton: KeyCodes.F1KeyCode]
+        keyCodeDict = [combatOptionsButton: KeyCodes.F1KeyCode,
+                    skillsButton: KeyCodes.F2KeyCode,
+                    questButton: KeyCodes.F3KeyCode,
+                    equipmentButton: KeyCodes.F4KeyCode,
+                    prayerButton: KeyCodes.F5KeyCode,
+                    spellbookButton: KeyCodes.F6KeyCode,
+                    clanChatButton: KeyCodes.F7KeyCode,
+                    friendsListButton: KeyCodes.F8KeyCode,
+                    ignoreListButton: KeyCodes.F9KeyCode,
+                    optionsButton: KeyCodes.F10KeyCode,
+                    emoteButton: KeyCodes.F11KeyCode,
+                    musicButton: KeyCodes.F12KeyCode,]
+        
+           var scriptError: NSDictionary?
+        // jhg
+        let keycodeScriptSource = """
+        tell application "System Preferences"
+            activate\n
+            reveal anchor "keyboardTab" of pane id "com.apple.preference.keyboard"\n\
+        end tell\n\
+        tell application "System Events" to tell process "System Preferences"\n\
+            tell pop up button 2 of tab group 1 of window 1\n\
+                click\n\
+                click menu item "App Controls" of menu 1\n\
+            end tell\n\
+        end tell\n\
+        quit application "System Preferences"
+        """
+        
+        if let script = NSAppleScript(source: keycodeScriptSource) {
+            script.executeAndReturnError(&scriptError)
+        }
+        
+        if scriptError != nil {
+            let alert = NSAlert()
+            alert.informativeText = "\(String(describing: scriptError!.allValues))"
+            alert.runModal()
+        }
     }
-
 
     // Detects a Touch Bar button press and sends the corresponding function key press event
     @IBAction func buttonPressed(sender: NSButton) {
-        guard let keyCode: UInt16 = keyCodeDict?[sender],
-            let keyDownEvent: CGEvent = CGEvent(keyboardEventSource: nil, virtualKey: keyCode, keyDown: true),
-            let keyUpEvent: CGEvent = CGEvent(keyboardEventSource: nil, virtualKey: keyCode, keyDown: false)
-            else {
+        var scriptError: NSDictionary?
+        guard let keyCode: UInt16 = keyCodeDict?[sender] else {
                 return
         }
         
-        // Indicate that these are keyboard events
-        keyDownEvent.flags = CGEventFlags.maskCommand
-        keyUpEvent.flags = CGEventFlags.maskCommand
+        // Sends a system-wide function key press
+        let keycodeScriptSource = """
+        tell application "System Events" to key code \(keyCode)
+        """
         
-        // Post both events
-        keyDownEvent.post(tap: CGEventTapLocation.cghidEventTap)
-        keyUpEvent.post(tap: CGEventTapLocation.cghidEventTap)
+        if let script = NSAppleScript(source: keycodeScriptSource) {
+            script.executeAndReturnError(&scriptError)
+        }
         
-        NSAlert().runModal()
+        if scriptError != nil {
+            let alert = NSAlert()
+            alert.informativeText = "\(String(describing: scriptError!.allValues))"
+            alert.runModal()
+        }
     }
 }
 
