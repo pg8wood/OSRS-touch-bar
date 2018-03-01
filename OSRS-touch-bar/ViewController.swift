@@ -46,8 +46,8 @@ class ViewController: NSViewController {
                     emoteButton: KeyCodes.F11KeyCode,
                     musicButton: KeyCodes.F12KeyCode,]
         
-           var scriptError: NSDictionary?
-        // jhg
+        
+        // TODO run this script when the user taps the button, not on load
         let keycodeScriptSource = """
         tell application "System Preferences"
             activate\n
@@ -62,38 +62,17 @@ class ViewController: NSViewController {
         quit application "System Preferences"
         """
         
-        if let script = NSAppleScript(source: keycodeScriptSource) {
-            script.executeAndReturnError(&scriptError)
-        }
-        
-        if scriptError != nil {
-            let alert = NSAlert()
-            alert.informativeText = "\(String(describing: scriptError!.allValues))"
-            alert.runModal()
-        }
+        ScriptExecutor.runScriptShowingErrors(sourceString: keycodeScriptSource)
     }
 
     // Detects a Touch Bar button press and sends the corresponding function key press event
     @IBAction func buttonPressed(sender: NSButton) {
-        var scriptError: NSDictionary?
         guard let keyCode: UInt16 = keyCodeDict?[sender] else {
                 return
         }
         
         // Sends a system-wide function key press
-        let keycodeScriptSource = """
-        tell application "System Events" to key code \(keyCode)
-        """
-        
-        if let script = NSAppleScript(source: keycodeScriptSource) {
-            script.executeAndReturnError(&scriptError)
-        }
-        
-        if scriptError != nil {
-            let alert = NSAlert()
-            alert.informativeText = "\(String(describing: scriptError!.allValues))"
-            alert.runModal()
-        }
+        ScriptExecutor.runScriptShowingErrors(sourceString: "tell application \"System Events\" to key code \(keyCode)")
     }
 }
 
@@ -106,6 +85,5 @@ extension ViewController: NSTouchBarDelegate {
     override func makeTouchBar() -> NSTouchBar? {
         return touchBarOutlet
     }
-    
 }
 
