@@ -691,6 +691,22 @@
             <view key="contentView" wantsLayer="YES" id="EiT-Mj-1SZ">
                 <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="MNs-UW-2xI">
+                        <rect key="frame" x="18" y="171" width="444" height="17"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" id="AOS-F2-uBN">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="MNs-UW-2xI" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="172" id="BdF-Ue-aTJ"/>
+                    <constraint firstAttribute="bottom" secondItem="MNs-UW-2xI" secondAttribute="bottom" constant="171" id="D51-4H-D2I"/>
+                    <constraint firstAttribute="trailing" secondItem="MNs-UW-2xI" secondAttribute="trailing" constant="20" id="Dmv-ho-bS2"/>
+                    <constraint firstItem="MNs-UW-2xI" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="20" id="Xoc-di-dyY"/>
+                </constraints>
             </view>
             <point key="canvasLocation" x="72" y="303"/>
         </window>
@@ -936,6 +952,7 @@
                 <outlet property="emoteButton" destination="PUw-An-CJL" id="jWy-5I-6Us"/>
                 <outlet property="equipmentButton" destination="kqv-yD-cHg" id="xIu-kV-ZH2"/>
                 <outlet property="friendsListButton" destination="pk4-O5-zXO" id="acU-au-hlf"/>
+                <outlet property="hintLabel" destination="MNs-UW-2xI" id="8cR-Bu-JDf"/>
                 <outlet property="ignoreListButton" destination="zly-ql-GnW" id="cbK-lb-3kK"/>
                 <outlet property="inventoryButton" destination="O4o-Ba-eOx" id="k9i-ab-5GV"/>
                 <outlet property="musicButton" destination="WuG-R2-ldl" id="tyb-Dw-92l"/>
