@@ -8,12 +8,13 @@
 
 import Cocoa
 
-class ViewController: NSViewController {
+class ViewController: NSViewController, NSTouchBarDelegate {
     
     @IBOutlet var touchBarOutlet: NSTouchBar!
     @IBOutlet var combatOptionsButton: NSButton!
     @IBOutlet var skillsButton: NSButton!
     @IBOutlet var questButton: NSButton!
+    @IBOutlet var inventoryButton: NSButton!
     @IBOutlet var equipmentButton: NSButton!
     @IBOutlet var prayerButton: NSButton!
     @IBOutlet var spellbookButton: NSButton!
@@ -37,6 +38,7 @@ class ViewController: NSViewController {
                     skillsButton: KeyCodes.F2KeyCode,
                     questButton: KeyCodes.F3KeyCode,
                     equipmentButton: KeyCodes.F4KeyCode,
+                    inventoryButton: KeyCodes.ESCKeyCode,
                     prayerButton: KeyCodes.F5KeyCode,
                     spellbookButton: KeyCodes.F6KeyCode,
                     clanChatButton: KeyCodes.F7KeyCode,
@@ -44,11 +46,11 @@ class ViewController: NSViewController {
                     ignoreListButton: KeyCodes.F9KeyCode,
                     optionsButton: KeyCodes.F10KeyCode,
                     emoteButton: KeyCodes.F11KeyCode,
-                    musicButton: KeyCodes.F12KeyCode,]
+                    musicButton: KeyCodes.F12KeyCode]
         
         
         // TODO run this script when the user taps the button, not on load
-        let keycodeScriptSource = """
+        let disableControlStripScript = """
         tell application "System Preferences"
             activate\n
             reveal anchor "keyboardTab" of pane id "com.apple.preference.keyboard"\n\
@@ -62,7 +64,8 @@ class ViewController: NSViewController {
         quit application "System Preferences"
         """
         
-        ScriptExecutor.runScriptShowingErrors(sourceString: keycodeScriptSource)
+        
+//        ScriptExecutor.runScriptShowingErrors(sourceString: disableControlStripScript)
     }
 
     // Detects a Touch Bar button press and sends the corresponding function key press event
@@ -74,16 +77,14 @@ class ViewController: NSViewController {
         // Sends a system-wide function key press
         ScriptExecutor.runScriptShowingErrors(sourceString: "tell application \"System Events\" to key code \(keyCode)")
     }
-}
-
- // MARK: - Touch Bar delegate
-
-@available(OSX 10.12.1, *)
-extension ViewController: NSTouchBarDelegate {
     
+     // MARK: - Touch Bar delegate
     @available(OSX 10.12.2, *)
     override func makeTouchBar() -> NSTouchBar? {
         return touchBarOutlet
     }
 }
+
+
+
 
