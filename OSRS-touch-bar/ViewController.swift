@@ -24,7 +24,6 @@ class ViewController: NSViewController, NSTouchBarDelegate {
     @IBOutlet var optionsButton: NSButton!
     @IBOutlet var emoteButton: NSButton!
     @IBOutlet var musicButton: NSButton!
-    @IBOutlet weak var hintLabel: NSTextField!
     
     let osrsInterfaceIdentifiers: [NSTouchBarItem.Identifier] = [.combatOptionsLabelItem, .statsLabelItem, .questListLabelItem, .inventoryLabelItem, .equipmentLabelItem, .prayerLabelItem, .spellbookLabelItem, .clanChatLabelItem, .friendsListLabelItem, .ignoreListLabelItem, .optionsLabelItem, .emotesLabelItem, .musicPlayerLabelItem]
     
@@ -48,27 +47,7 @@ class ViewController: NSViewController, NSTouchBarDelegate {
                     emoteButton: KeyCodes.F11KeyCode,
                     musicButton: KeyCodes.F12KeyCode]
         
-        // Set up the Control Strip
-        let setupControlStripScript = """
-        tell application "System Preferences"
-            activate\n
-            reveal anchor "keyboardTab" of pane id "com.apple.preference.keyboard"\n\
-        end tell\n\
-        delay 0.5
-        tell application "System Events" to tell process "System Preferences"\n\
-            tell pop up button 2 of tab group 1 of window 1\n\
-                click\n\
-                click menu item "App Controls with Control Strip" of menu 1\n\
-            end tell\n\
-        end tell
-        tell application "OSRS-touch-bar" to activate
-        """
-        
-        ScriptExecutor.runScriptShowingErrors(sourceString: setupControlStripScript)
-        
-        // TODO make this look good and actually make sense. I wish we could just listen for when the big touch bar button is pressed :(
-        // MAYBE you can add something in the present() method in AppDelegate????
-        hintLabel.stringValue = "Press the OSRS button and any other button to enable the touch bar"
+        TouchBarScriptRunner.enableControlStrip()
     }
     
     /*  Displays the Control Strip settings so the user can go back to their previous settings.
