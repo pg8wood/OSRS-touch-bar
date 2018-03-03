@@ -1,14 +1,13 @@
 //
 //  AppDelegate.m
 //
-//  Created by Alexsander Akers on 2/13/17.
-//  Modified by Patrick Gatewood on 2/27/18.
-//  Copyright © 2017 Alexsander Akers. All rights reserved.
+//  Created by Patrick Gatewood on 2/27/18.
 //  Copyright © 2018 Patrick Gatewood. All rights reserved.
 //
 
 #import "AppDelegate.h"
 #import "TouchBar.h"
+#import <OSRS_touch_bar-Swift.h>
 
 static const NSTouchBarItemIdentifier controlStripIconIdentifier = @"osrs-logo";
 
@@ -21,15 +20,18 @@ static const NSTouchBarItemIdentifier controlStripIconIdentifier = @"osrs-logo";
 
 @implementation AppDelegate
 
-- (void)present:(id)sender
-{
+- (void)present:(id)sender {
     [NSTouchBar presentSystemModalFunctionBar:self.touchBar
                      systemTrayItemIdentifier:controlStripIconIdentifier];
+    [TouchBarScriptRunner expandTouchBar];
+}
+
+- (void)expandTouchBar {
+   
 }
 
 
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification
-{
+- (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     DFRSystemModalShowsCloseBoxWhenFrontMost(YES);
 
     NSCustomTouchBarItem *controlStripTBItem = // Touch Bar, not TeleBlock

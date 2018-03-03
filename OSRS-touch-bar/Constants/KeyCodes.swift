@@ -8,6 +8,7 @@
 
 class KeyCodes {
     // CGKeyCode in CoreGraphics is a typealias for UInt16
+    static let ESCKeyCode: UInt16 = 53
     static let F1KeyCode: UInt16 = 122
     static let F2KeyCode: UInt16 = 120
     static let F3KeyCode: UInt16 = 99

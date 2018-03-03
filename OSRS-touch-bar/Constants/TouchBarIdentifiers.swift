@@ -23,7 +23,3 @@ extension NSTouchBarItem.Identifier {
     static let emotesLabelItem = NSTouchBarItem.Identifier("com.patrickgatewood.emotes")
     static let musicPlayerLabelItem = NSTouchBarItem.Identifier("com.patrickgatewood.music-player")
 }
-
-extension NSTouchBar.CustomizationIdentifier {
-    static let osrsBar = NSTouchBar.CustomizationIdentifier(rawValue: "com.patrickgatewood.osrs-touch-bar")
-}
