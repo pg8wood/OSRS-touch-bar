@@ -8,11 +8,11 @@
 
 import Cocoa
 
-class ScriptExecutor {
+@objc class ScriptExecutor: NSObject {
     
     // Executes an AppleScript from a source string and displays any errors in
     // an NSAlert.
-    static func runScriptShowingErrors(sourceString: String) {
+    @objc public static func runScriptShowingErrors(sourceString: String) {
         var scriptError: NSDictionary?
         
         if let script = NSAppleScript(source: sourceString) {

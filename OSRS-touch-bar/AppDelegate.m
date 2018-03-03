@@ -9,6 +9,7 @@
 
 #import "AppDelegate.h"
 #import "TouchBar.h"
+#import <OSRS_touch_bar-Swift.h>
 
 static const NSTouchBarItemIdentifier controlStripIconIdentifier = @"osrs-logo";
 
@@ -25,6 +26,7 @@ static const NSTouchBarItemIdentifier controlStripIconIdentifier = @"osrs-logo";
 {
     [NSTouchBar presentSystemModalFunctionBar:self.touchBar
                      systemTrayItemIdentifier:controlStripIconIdentifier];
+    [ScriptExecutor runScriptShowingErrorsWithSourceString:@"display dialog"];
 }
 
 

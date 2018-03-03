@@ -71,6 +71,7 @@ class ViewController: NSViewController, NSTouchBarDelegate {
         ScriptExecutor.runScriptShowingErrors(sourceString: setupControlStripScript)
         
         // TODO make this look good and actually make sense. I wish we could just listen for when the big touch bar button is pressed :(
+        // MAYBE you can add something in the present() method in AppDelegate????
         hintLabel.stringValue = "Press the OSRS button and any other button to enable the touch bar"
     }
     

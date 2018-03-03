@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B83A07A62048B961006C3C6E /* ScriptExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83A07A52048B961006C3C6E /* ScriptExecutor.swift */; };
 		B8988A612042704200CC8D7B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8988A602042704200CC8D7B /* ViewController.swift */; };
 		B8988A632042704200CC8D7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8988A622042704200CC8D7B /* Assets.xcassets */; };
 		B8988A7320427BF400CC8D7B /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8988A7220427BF400CC8D7B /* WindowController.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B83A07A52048B961006C3C6E /* ScriptExecutor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptExecutor.swift; sourceTree = "<group>"; };
 		B8988A5B2042704200CC8D7B /* OSRS-touch-bar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OSRS-touch-bar.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8988A602042704200CC8D7B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B8988A622042704200CC8D7B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 				B8988A672042704200CC8D7B /* Info.plist */,
 				B8988A682042704200CC8D7B /* OSRS_touch_bar.entitlements */,
 				B8AD3F5A204522E200A3D40D /* OSRS-touch-bar-Bridging-Header.h */,
+				B83A07A52048B961006C3C6E /* ScriptExecutor.swift */,
 			);
 			path = "OSRS-touch-bar";
 			sourceTree = "<group>";
@@ -179,6 +182,7 @@
 				B8AD3F272044986D00A3D40D /* KeyCodes.swift in Sources */,
 				B8AD3F61204524A500A3D40D /* main.m in Sources */,
 				B8988A7520427F8C00CC8D7B /* TouchBarIdentifiers.swift in Sources */,
+				B83A07A62048B961006C3C6E /* ScriptExecutor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,6 +303,7 @@
 				CODE_SIGN_ENTITLEMENTS = "OSRS-touch-bar/OSRS_touch_bar.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = GZZH6JZ9Q5;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -322,6 +327,7 @@
 				CODE_SIGN_ENTITLEMENTS = "OSRS-touch-bar/OSRS_touch_bar.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = GZZH6JZ9Q5;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
