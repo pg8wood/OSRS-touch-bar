@@ -3,6 +3,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaDFRPlugin" version="13752"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13771"/>
+        <capability name="box content view" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
         <capability name="the Touch Bar" message="Use a version of macOS with Touch Bar support." minToolsVersion="8.1" minSystemVersion="10.12.2" requiredIntegratedClassName="NSTouchBar"/>
     </dependencies>
@@ -744,7 +745,7 @@
                 <touchBarItem id="ghq-9N-mry">
                     <viewController key="viewController" id="qo7-9a-oQE">
                         <button key="view" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xEC-cN-WgV">
-                            <rect key="frame" x="0.0" y="0.0" width="80" height="41"/>
+                            <rect key="frame" x="0.0" y="0.0" width="68" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="68" id="H3F-E4-UnW"/>
                             </constraints>
@@ -762,7 +763,7 @@
                 <touchBarItem id="RGt-cr-DNX">
                     <viewController key="viewController" id="tB6-zy-Dkd">
                         <button key="view" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="sQM-sI-5F4">
-                            <rect key="frame" x="0.0" y="0.0" width="80" height="41"/>
+                            <rect key="frame" x="0.0" y="0.0" width="68" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="68" id="esJ-Y7-TJR"/>
                             </constraints>
@@ -780,7 +781,7 @@
                 <touchBarItem id="BMc-l2-X2k">
                     <viewController key="viewController" id="V0V-c1-7gx">
                         <button key="view" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fbJ-0J-ClX">
-                            <rect key="frame" x="0.0" y="0.0" width="80" height="41"/>
+                            <rect key="frame" x="0.0" y="0.0" width="68" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="68" id="Exc-ru-ZXv"/>
                             </constraints>
@@ -798,7 +799,7 @@
                 <touchBarItem id="Oms-1i-f2B">
                     <viewController key="viewController" id="rQ8-Gz-Epe">
                         <button key="view" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="O4o-Ba-eOx">
-                            <rect key="frame" x="0.0" y="0.0" width="80" height="41"/>
+                            <rect key="frame" x="0.0" y="0.0" width="68" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="68" id="1sq-5J-UCr"/>
                             </constraints>
@@ -816,7 +817,7 @@
                 <touchBarItem id="CKt-Sd-RPZ">
                     <viewController key="viewController" id="5wF-iJ-NO6">
                         <button key="view" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="kqv-yD-cHg">
-                            <rect key="frame" x="0.0" y="0.0" width="80" height="41"/>
+                            <rect key="frame" x="0.0" y="0.0" width="68" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="68" id="gSI-sP-BoV"/>
                             </constraints>
@@ -834,7 +835,7 @@
                 <touchBarItem id="5gQ-bj-XNo">
                     <viewController key="viewController" id="vSv-uT-Ftq">
                         <button key="view" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ftJ-Pd-qP5">
-                            <rect key="frame" x="0.0" y="0.0" width="80" height="41"/>
+                            <rect key="frame" x="0.0" y="0.0" width="68" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="68" id="UO4-Dc-bZf"/>
                             </constraints>
@@ -852,7 +853,7 @@
                 <touchBarItem id="RZP-Yx-ZyW">
                     <viewController key="viewController" id="8Rc-UK-P7l">
                         <button key="view" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="u87-BL-tfh">
-                            <rect key="frame" x="0.0" y="0.0" width="80" height="41"/>
+                            <rect key="frame" x="0.0" y="0.0" width="68" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="68" id="Cej-x2-VuH"/>
                             </constraints>
@@ -870,7 +871,7 @@
                 <touchBarItem id="Jb8-pD-1oS">
                     <viewController key="viewController" id="R50-hE-GHC">
                         <button key="view" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="svG-cM-UBj">
-                            <rect key="frame" x="0.0" y="0.0" width="80" height="41"/>
+                            <rect key="frame" x="0.0" y="0.0" width="68" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="68" id="xOW-c4-1UJ"/>
                             </constraints>
@@ -888,7 +889,7 @@
                 <touchBarItem id="qY1-ER-JgP">
                     <viewController key="viewController" id="U9b-Uo-Nb0">
                         <button key="view" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="pk4-O5-zXO">
-                            <rect key="frame" x="0.0" y="0.0" width="80" height="41"/>
+                            <rect key="frame" x="0.0" y="0.0" width="68" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="68" id="yVd-3Z-JRr"/>
                             </constraints>
@@ -906,7 +907,6 @@
                 <touchBarItem id="ETE-li-IUv">
                     <viewController key="viewController" id="QQ1-eY-pPX">
                         <button key="view" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zly-ql-GnW">
-                            <rect key="frame" x="0.0" y="0.0" width="0.0" height="41"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="68" id="ePK-0X-hH7"/>
                             </constraints>
@@ -924,7 +924,6 @@
                 <touchBarItem id="KkV-bQ-GyR">
                     <viewController key="viewController" id="1i0-oK-Hs8">
                         <button key="view" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vjJ-SH-E1s">
-                            <rect key="frame" x="0.0" y="0.0" width="0.0" height="41"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="68" id="mHs-Ku-QHg"/>
                             </constraints>
@@ -942,7 +941,6 @@
                 <touchBarItem id="Xpp-1I-tOP">
                     <viewController key="viewController" id="46E-kD-9m6">
                         <button key="view" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PUw-An-CJL">
-                            <rect key="frame" x="0.0" y="0.0" width="0.0" height="41"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="68" id="P0D-oy-rId"/>
                             </constraints>
@@ -960,7 +958,6 @@
                 <touchBarItem id="p2Q-6G-qvP">
                     <viewController key="viewController" id="MJn-cj-dtn">
                         <button key="view" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WuG-R2-ldl">
-                            <rect key="frame" x="0.0" y="0.0" width="0.0" height="41"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="68" id="kg2-2u-vKy"/>
                             </constraints>
@@ -991,6 +988,8 @@
                 <outlet property="optionsButton" destination="vjJ-SH-E1s" id="YjQ-y5-Tw3"/>
                 <outlet property="prayerButton" destination="ftJ-Pd-qP5" id="WMm-ya-c4L"/>
                 <outlet property="questButton" destination="fbJ-0J-ClX" id="ZXH-om-48v"/>
+                <outlet property="quitButton" destination="kmO-Gc-eFx" id="90L-Nl-CiE"/>
+                <outlet property="reloadButton" destination="9TL-xu-fib" id="NXb-ok-mUD"/>
                 <outlet property="settingsButton" destination="Q1X-jN-C5j" id="aAi-3f-fyl"/>
                 <outlet property="skillsButton" destination="sQM-sI-5F4" id="q6L-IB-Vtn"/>
                 <outlet property="spellbookButton" destination="u87-BL-tfh" id="xpN-5T-w7f"/>
@@ -1001,6 +1000,15 @@
             <rect key="frame" x="0.0" y="0.0" width="480" height="180"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
+                <box fixedFrame="YES" boxType="custom" translatesAutoresizingMaskIntoConstraints="NO" id="ZkG-1D-GZe">
+                    <rect key="frame" x="0.0" y="0.0" width="480" height="180"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <view key="contentView" ambiguous="YES" id="Chf-hW-TG2">
+                        <rect key="frame" x="1" y="1" width="478" height="178"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    </view>
+                    <color key="fillColor" red="0.28627450980392155" green="0.25156989693641663" blue="0.21959343552589417" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                </box>
                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q1X-jN-C5j">
                     <rect key="frame" x="134" y="124" width="213" height="48"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>

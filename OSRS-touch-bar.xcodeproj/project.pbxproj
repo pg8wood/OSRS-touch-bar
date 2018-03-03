@@ -82,6 +82,7 @@
 				B8AD3F5D2045234500A3D40D /* AppDelegate.h */,
 				B8AD3F5B204522E300A3D40D /* AppDelegate.m */,
 				B8AD3F62204525AD00A3D40D /* MainMenu.xib */,
+				B8988A602042704200CC8D7B /* MainViewController.swift */,
 				B8988A7220427BF400CC8D7B /* WindowController.swift */,
 			);
 			path = Main;
@@ -118,7 +119,6 @@
 			children = (
 				B83A07AC204B2B0D006C3C6E /* Main */,
 				B83A07AD204B2BAA006C3C6E /* Constants */,
-				B8988A602042704200CC8D7B /* MainViewController.swift */,
 				B8AD3F592045223200A3D40D /* TouchBar.h */,
 				B83A07AA204B28DB006C3C6E /* Scripting */,
 				B83A07A9204B279E006C3C6E /* Supporting Files */,

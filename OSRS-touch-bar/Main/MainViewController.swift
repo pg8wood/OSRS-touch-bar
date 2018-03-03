@@ -10,6 +10,7 @@ import Cocoa
 
 class ViewController: NSViewController, NSTouchBarDelegate {
     
+    // Touch Bar View
     @IBOutlet var touchBarOutlet: NSTouchBar!
     @IBOutlet var combatOptionsButton: NSButton!
     @IBOutlet var skillsButton: NSButton!
@@ -24,8 +25,14 @@ class ViewController: NSViewController, NSTouchBarDelegate {
     @IBOutlet var optionsButton: NSButton!
     @IBOutlet var emoteButton: NSButton!
     @IBOutlet var musicButton: NSButton!
+    
+    // Main View
     @IBOutlet weak var hintLabel: NSTextField!
+    
+    // App View
     @IBOutlet weak var settingsButton: NSButton!
+    @IBOutlet weak var reloadButton: NSButton!
+    @IBOutlet weak var quitButton: NSButton!
     
     let osrsInterfaceIdentifiers: [NSTouchBarItem.Identifier] =
         [.combatOptionsLabelItem, .statsLabelItem, .questListLabelItem,
@@ -60,11 +67,16 @@ class ViewController: NSViewController, NSTouchBarDelegate {
         TouchBarScriptRunner.enableControlStrip()
         setupButtons()
     }
-    
+        
+    // Adds attributes to the buttons in the App View
     func setupButtons() {
-        if let mutableAttributedTitle = settingsButton.attributedTitle.mutableCopy() as? NSMutableAttributedString {
-            mutableAttributedTitle.addAttribute(.foregroundColor, value: NSColor.white, range: NSRange(location: 0, length: mutableAttributedTitle.length))
-            settingsButton.attributedTitle = mutableAttributedTitle
+        let appButtons = [settingsButton, reloadButton, quitButton]
+        
+        for button in appButtons {
+            if let mutableAttributedTitle = button?.attributedTitle.mutableCopy() as? NSMutableAttributedString {
+                mutableAttributedTitle.addAttribute(.foregroundColor, value: NSColor.white, range: NSRange(location: 0, length: mutableAttributedTitle.length))
+                button?.attributedTitle = mutableAttributedTitle
+            }
         }
     }
 
