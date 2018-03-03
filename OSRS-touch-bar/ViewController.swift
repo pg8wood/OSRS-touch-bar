@@ -30,9 +30,6 @@ class ViewController: NSViewController, NSTouchBarDelegate {
     
     var keyCodeDict: [NSButton: UInt16]?
     
-    var touchBarIsExpanded = false
-
-    
     // MARK: - View life cycle
     
     // Map Touch Bar buttons to function buttons
@@ -66,7 +63,6 @@ class ViewController: NSViewController, NSTouchBarDelegate {
         end tell
         tell application "OSRS-touch-bar" to activate
         """
-        touchBarIsExpanded = false
         
         ScriptExecutor.runScriptShowingErrors(sourceString: setupControlStripScript)
         
@@ -91,7 +87,6 @@ class ViewController: NSViewController, NSTouchBarDelegate {
             end tell\n\
         end tell
         """
-        touchBarIsExpanded = false
         
         ScriptExecutor.runScriptShowingErrors(sourceString: disableControlStripScript)
     }
@@ -102,33 +97,11 @@ class ViewController: NSViewController, NSTouchBarDelegate {
                 return
         }
         
-        if !touchBarIsExpanded {
-            expandTouchBar()
-            touchBarIsExpanded = true
-        }
-        
         // Sends a system-wide function key press
         ScriptExecutor.runScriptShowingErrors(sourceString: "tell application \"System Events\" to key code \(keyCode)")
     }
     
-    func expandTouchBar() {
-        let disableControlStripScript = """
-        tell application "System Preferences"
-            activate\n
-            reveal anchor "keyboardTab" of pane id "com.apple.preference.keyboard"\n\
-        end tell\n\
-        delay 0.5
-        tell application "System Events" to tell process "System Preferences"\n\
-            tell pop up button 2 of tab group 1 of window 1\n\
-                click\n\
-                click menu item "App Controls" of menu 1\n\
-            end tell\n\
-        end tell\n\
-        quit application "System Preferences"
-        """
-        
-        ScriptExecutor.runScriptShowingErrors(sourceString: disableControlStripScript)
-    }
+   
     
      // MARK: - Touch Bar delegate
     @available(OSX 10.12.2, *)

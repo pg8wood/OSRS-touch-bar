@@ -22,16 +22,18 @@ static const NSTouchBarItemIdentifier controlStripIconIdentifier = @"osrs-logo";
 
 @implementation AppDelegate
 
-- (void)present:(id)sender
-{
+- (void)present:(id)sender {
     [NSTouchBar presentSystemModalFunctionBar:self.touchBar
                      systemTrayItemIdentifier:controlStripIconIdentifier];
-    [ScriptExecutor runScriptShowingErrorsWithSourceString:@"display dialog"];
+    [TouchBarScriptRunner expandTouchBar];
+}
+
+- (void)expandTouchBar {
+   
 }
 
 
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification
-{
+- (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     DFRSystemModalShowsCloseBoxWhenFrontMost(YES);
 
     NSCustomTouchBarItem *controlStripTBItem = // Touch Bar, not TeleBlock
