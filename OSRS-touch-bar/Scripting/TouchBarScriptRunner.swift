@@ -2,6 +2,8 @@
 //  TouchBarScriptRunner.swift
 //  OSRS-touch-bar
 //
+//  Runs various AppleScripts that modify Touch Bar settings in System Preferences
+//
 //  Created by Patrick Gatewood on 3/3/18.
 //  Copyright © 2018 Patrick Gatewood. All rights reserved.
 //
@@ -48,5 +50,26 @@ import Foundation
         """
         
         ScriptExecutor.runScriptShowingErrors(sourceString: setupControlStripScript)
+    }
+    
+    /*  Displays the Control Strip settings so the user can go back to their
+     previous settings. Unfortunately, it seems that AppleScript has no way to
+     get the currently-selected menu item, meaning the script can't
+     automatically revert to the user's previous settings. */
+    static func showTouchBarSettings() {
+        let disableControlStripScript = """
+        tell application "System Preferences"
+            activate\n
+            reveal anchor "keyboardTab" of pane id "com.apple.preference.keyboard"\n\
+        end tell\n\
+        delay 0.5
+        tell application "System Events" to tell process "System Preferences"\n\
+            tell pop up button 2 of tab group 1 of window 1\n\
+                click\n\
+            end tell\n\
+        end tell
+        """
+        
+        ScriptExecutor.runScriptShowingErrors(sourceString: disableControlStripScript)
     }
 }

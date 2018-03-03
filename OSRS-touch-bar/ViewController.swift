@@ -25,11 +25,19 @@ class ViewController: NSViewController, NSTouchBarDelegate {
     @IBOutlet var emoteButton: NSButton!
     @IBOutlet var musicButton: NSButton!
     
-    let osrsInterfaceIdentifiers: [NSTouchBarItem.Identifier] = [.combatOptionsLabelItem, .statsLabelItem, .questListLabelItem, .inventoryLabelItem, .equipmentLabelItem, .prayerLabelItem, .spellbookLabelItem, .clanChatLabelItem, .friendsListLabelItem, .ignoreListLabelItem, .optionsLabelItem, .emotesLabelItem, .musicPlayerLabelItem]
+    let osrsInterfaceIdentifiers: [NSTouchBarItem.Identifier] =
+        [.combatOptionsLabelItem, .statsLabelItem, .questListLabelItem,
+        .inventoryLabelItem, .equipmentLabelItem, .prayerLabelItem,
+        .spellbookLabelItem, .clanChatLabelItem, .friendsListLabelItem,
+        .ignoreListLabelItem, .optionsLabelItem, .emotesLabelItem, 
+        .musicPlayerLabelItem]
     
+    // Mapping of Touch Bar buttons to their respective KeyCodes
     var keyCodeDict: [NSButton: UInt16]?
     
+    // -----------------------
     // MARK: - View life cycle
+    // -----------------------
     
     // Map Touch Bar buttons to function buttons
     override func viewDidLoad() {
@@ -50,24 +58,8 @@ class ViewController: NSViewController, NSTouchBarDelegate {
         TouchBarScriptRunner.enableControlStrip()
     }
     
-    /*  Displays the Control Strip settings so the user can go back to their previous settings.
-        Unfortunately, it seems that AppleScript has no way to get the currently-selected menu
-        item, meaning the script can't automatically revert to the user's previous settings. */
     override func viewWillDisappear() {
-        let disableControlStripScript = """
-        tell application "System Preferences"
-            activate\n
-            reveal anchor "keyboardTab" of pane id "com.apple.preference.keyboard"\n\
-        end tell\n\
-        delay 0.5
-        tell application "System Events" to tell process "System Preferences"\n\
-            tell pop up button 2 of tab group 1 of window 1\n\
-                click\n\
-            end tell\n\
-        end tell
-        """
-        
-        ScriptExecutor.runScriptShowingErrors(sourceString: disableControlStripScript)
+        TouchBarScriptRunner.showTouchBarSettings()
     }
 
     // Detects a Touch Bar button press and sends the corresponding function key press event
@@ -80,15 +72,12 @@ class ViewController: NSViewController, NSTouchBarDelegate {
         ScriptExecutor.runScriptShowingErrors(sourceString: "tell application \"System Events\" to key code \(keyCode)")
     }
     
-   
+    // ---------------------------
+    // MARK: - Touch Bar delegate
+    // ---------------------------
     
-     // MARK: - Touch Bar delegate
     @available(OSX 10.12.2, *)
     override func makeTouchBar() -> NSTouchBar? {
         return touchBarOutlet
     }
 }
-
-
-
-
