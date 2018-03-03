@@ -57,6 +57,7 @@
 		B83A07A9204B279E006C3C6E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B83A07AB204B29DF006C3C6E /* OSRS-touch-bar-Bridging-Header.h */,
 				B8988A682042704200CC8D7B /* OSRS_touch_bar.entitlements */,
 				B8988A622042704200CC8D7B /* Assets.xcassets */,
 				B8988A672042704200CC8D7B /* Info.plist */,
@@ -118,7 +119,6 @@
 				B83A07AD204B2BAA006C3C6E /* Constants */,
 				B8988A602042704200CC8D7B /* MainViewController.swift */,
 				B8AD3F592045223200A3D40D /* TouchBar.h */,
-				B83A07AB204B29DF006C3C6E /* OSRS-touch-bar-Bridging-Header.h */,
 				B83A07AA204B28DB006C3C6E /* Scripting */,
 				B83A07A9204B279E006C3C6E /* Supporting Files */,
 				B83A07AE204B4374006C3C6E /* AppViewController.swift */,
@@ -345,7 +345,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.patrickgatewood.OSRS-touch-bar";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "OSRS-touch-bar/OSRS-touch-bar-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "OSRS-touch-bar/Supporting Files/OSRS-touch-bar-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 			};
@@ -369,7 +369,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.patrickgatewood.OSRS-touch-bar";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "OSRS-touch-bar/OSRS-touch-bar-Bridging-Header.h";
+				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "OSRS-touch-bar/Supporting Files/OSRS-touch-bar-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
