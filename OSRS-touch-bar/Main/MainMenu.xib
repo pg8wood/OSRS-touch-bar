@@ -688,7 +688,7 @@
         <window title="OSRS Touch Bar" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="480" height="180"/>
+            <rect key="contentRect" x="335" y="390" width="482" height="181"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
             <view key="contentView" wantsLayer="YES" id="EiT-Mj-1SZ">
                 <rect key="frame" x="0.0" y="0.0" width="482" height="181"/>
@@ -744,7 +744,7 @@
                 <touchBarItem id="ghq-9N-mry">
                     <viewController key="viewController" id="qo7-9a-oQE">
                         <button key="view" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xEC-cN-WgV">
-                            <rect key="frame" x="0.0" y="0.0" width="68" height="30"/>
+                            <rect key="frame" x="0.0" y="0.0" width="80" height="41"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="68" id="H3F-E4-UnW"/>
                             </constraints>
@@ -762,7 +762,7 @@
                 <touchBarItem id="RGt-cr-DNX">
                     <viewController key="viewController" id="tB6-zy-Dkd">
                         <button key="view" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="sQM-sI-5F4">
-                            <rect key="frame" x="0.0" y="0.0" width="68" height="30"/>
+                            <rect key="frame" x="0.0" y="0.0" width="80" height="41"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="68" id="esJ-Y7-TJR"/>
                             </constraints>
@@ -780,7 +780,7 @@
                 <touchBarItem id="BMc-l2-X2k">
                     <viewController key="viewController" id="V0V-c1-7gx">
                         <button key="view" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fbJ-0J-ClX">
-                            <rect key="frame" x="0.0" y="0.0" width="68" height="30"/>
+                            <rect key="frame" x="0.0" y="0.0" width="80" height="41"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="68" id="Exc-ru-ZXv"/>
                             </constraints>
@@ -798,7 +798,7 @@
                 <touchBarItem id="Oms-1i-f2B">
                     <viewController key="viewController" id="rQ8-Gz-Epe">
                         <button key="view" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="O4o-Ba-eOx">
-                            <rect key="frame" x="0.0" y="0.0" width="68" height="30"/>
+                            <rect key="frame" x="0.0" y="0.0" width="80" height="41"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="68" id="1sq-5J-UCr"/>
                             </constraints>
@@ -816,7 +816,7 @@
                 <touchBarItem id="CKt-Sd-RPZ">
                     <viewController key="viewController" id="5wF-iJ-NO6">
                         <button key="view" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="kqv-yD-cHg">
-                            <rect key="frame" x="0.0" y="0.0" width="68" height="30"/>
+                            <rect key="frame" x="0.0" y="0.0" width="80" height="41"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="68" id="gSI-sP-BoV"/>
                             </constraints>
@@ -834,7 +834,7 @@
                 <touchBarItem id="5gQ-bj-XNo">
                     <viewController key="viewController" id="vSv-uT-Ftq">
                         <button key="view" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ftJ-Pd-qP5">
-                            <rect key="frame" x="0.0" y="0.0" width="68" height="30"/>
+                            <rect key="frame" x="0.0" y="0.0" width="80" height="41"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="68" id="UO4-Dc-bZf"/>
                             </constraints>
@@ -852,7 +852,7 @@
                 <touchBarItem id="RZP-Yx-ZyW">
                     <viewController key="viewController" id="8Rc-UK-P7l">
                         <button key="view" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="u87-BL-tfh">
-                            <rect key="frame" x="0.0" y="0.0" width="68" height="30"/>
+                            <rect key="frame" x="0.0" y="0.0" width="80" height="41"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="68" id="Cej-x2-VuH"/>
                             </constraints>
@@ -870,7 +870,7 @@
                 <touchBarItem id="Jb8-pD-1oS">
                     <viewController key="viewController" id="R50-hE-GHC">
                         <button key="view" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="svG-cM-UBj">
-                            <rect key="frame" x="0.0" y="0.0" width="68" height="30"/>
+                            <rect key="frame" x="0.0" y="0.0" width="80" height="41"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="68" id="xOW-c4-1UJ"/>
                             </constraints>
@@ -888,7 +888,7 @@
                 <touchBarItem id="qY1-ER-JgP">
                     <viewController key="viewController" id="U9b-Uo-Nb0">
                         <button key="view" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="pk4-O5-zXO">
-                            <rect key="frame" x="0.0" y="0.0" width="68" height="30"/>
+                            <rect key="frame" x="0.0" y="0.0" width="80" height="41"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="68" id="yVd-3Z-JRr"/>
                             </constraints>
@@ -906,6 +906,7 @@
                 <touchBarItem id="ETE-li-IUv">
                     <viewController key="viewController" id="QQ1-eY-pPX">
                         <button key="view" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zly-ql-GnW">
+                            <rect key="frame" x="0.0" y="0.0" width="0.0" height="41"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="68" id="ePK-0X-hH7"/>
                             </constraints>
@@ -923,6 +924,7 @@
                 <touchBarItem id="KkV-bQ-GyR">
                     <viewController key="viewController" id="1i0-oK-Hs8">
                         <button key="view" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vjJ-SH-E1s">
+                            <rect key="frame" x="0.0" y="0.0" width="0.0" height="41"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="68" id="mHs-Ku-QHg"/>
                             </constraints>
@@ -940,6 +942,7 @@
                 <touchBarItem id="Xpp-1I-tOP">
                     <viewController key="viewController" id="46E-kD-9m6">
                         <button key="view" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PUw-An-CJL">
+                            <rect key="frame" x="0.0" y="0.0" width="0.0" height="41"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="68" id="P0D-oy-rId"/>
                             </constraints>
@@ -957,6 +960,7 @@
                 <touchBarItem id="p2Q-6G-qvP">
                     <viewController key="viewController" id="MJn-cj-dtn">
                         <button key="view" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WuG-R2-ldl">
+                            <rect key="frame" x="0.0" y="0.0" width="0.0" height="41"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="68" id="kg2-2u-vKy"/>
                             </constraints>
@@ -987,6 +991,7 @@
                 <outlet property="optionsButton" destination="vjJ-SH-E1s" id="YjQ-y5-Tw3"/>
                 <outlet property="prayerButton" destination="ftJ-Pd-qP5" id="WMm-ya-c4L"/>
                 <outlet property="questButton" destination="fbJ-0J-ClX" id="ZXH-om-48v"/>
+                <outlet property="settingsButton" destination="Q1X-jN-C5j" id="aAi-3f-fyl"/>
                 <outlet property="skillsButton" destination="sQM-sI-5F4" id="q6L-IB-Vtn"/>
                 <outlet property="spellbookButton" destination="u87-BL-tfh" id="xpN-5T-w7f"/>
                 <outlet property="view" destination="EiT-Mj-1SZ" id="NvE-Xy-Odz"/>
@@ -995,10 +1000,37 @@
         <customView id="W4I-hD-U8K">
             <rect key="frame" x="0.0" y="0.0" width="480" height="180"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q1X-jN-C5j">
+                    <rect key="frame" x="134" y="124" width="213" height="48"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="square" title="Show Control Strip Settings" bezelStyle="shadowlessSquare" image="Button_Background" imagePosition="overlaps" alignment="center" imageScaling="axesIndependently" inset="2" id="qLS-W3-8Ja">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" size="20" name="Runescape-Chat-Font"/>
+                    </buttonCell>
+                </button>
+                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9TL-xu-fib">
+                    <rect key="frame" x="133" y="66" width="213" height="48"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="square" title="Reload OSRS Touch Bar" bezelStyle="shadowlessSquare" image="Button_Background" imagePosition="overlaps" alignment="center" imageScaling="axesIndependently" inset="2" id="Q6C-nb-FCQ">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" size="20" name="Runescape-Chat-Font"/>
+                    </buttonCell>
+                </button>
+                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kmO-Gc-eFx">
+                    <rect key="frame" x="133" y="8" width="213" height="48"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="square" title="Quit" bezelStyle="shadowlessSquare" image="Button_Background" imagePosition="overlaps" alignment="center" imageScaling="axesIndependently" inset="2" id="THW-kg-Wyq">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" size="20" name="Runescape-Chat-Font"/>
+                    </buttonCell>
+                </button>
+            </subviews>
             <point key="canvasLocation" x="65" y="486"/>
         </customView>
     </objects>
     <resources>
+        <image name="Button_Background" width="68" height="20"/>
         <image name="Clan_Chat" width="22" height="26"/>
         <image name="Combat_Options" width="19" height="19"/>
         <image name="Emote_button" width="18" height="27"/>

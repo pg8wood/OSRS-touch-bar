@@ -25,6 +25,7 @@ class ViewController: NSViewController, NSTouchBarDelegate {
     @IBOutlet var emoteButton: NSButton!
     @IBOutlet var musicButton: NSButton!
     @IBOutlet weak var hintLabel: NSTextField!
+    @IBOutlet weak var settingsButton: NSButton!
     
     let osrsInterfaceIdentifiers: [NSTouchBarItem.Identifier] =
         [.combatOptionsLabelItem, .statsLabelItem, .questListLabelItem,
@@ -57,6 +58,14 @@ class ViewController: NSViewController, NSTouchBarDelegate {
                     musicButton: KeyCodes.F12KeyCode]
         
         TouchBarScriptRunner.enableControlStrip()
+        setupButtons()
+    }
+    
+    func setupButtons() {
+        if let mutableAttributedTitle = settingsButton.attributedTitle.mutableCopy() as? NSMutableAttributedString {
+            mutableAttributedTitle.addAttribute(.foregroundColor, value: NSColor.white, range: NSRange(location: 0, length: mutableAttributedTitle.length))
+            settingsButton.attributedTitle = mutableAttributedTitle
+        }
     }
 
     // Detects a Touch Bar button press and sends the corresponding function key press event

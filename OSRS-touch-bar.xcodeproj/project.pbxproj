@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		B83A07A62048B961006C3C6E /* ScriptExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83A07A52048B961006C3C6E /* ScriptExecutor.swift */; };
 		B83A07A8204B231A006C3C6E /* TouchBarScriptRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83A07A7204B231A006C3C6E /* TouchBarScriptRunner.swift */; };
-		B83A07B0204B4374006C3C6E /* AppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83A07AE204B4374006C3C6E /* AppViewController.swift */; };
+		B83A07B3204B5055006C3C6E /* runescape_chat_font.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B83A07B2204B5055006C3C6E /* runescape_chat_font.ttf */; };
 		B8988A612042704200CC8D7B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8988A602042704200CC8D7B /* MainViewController.swift */; };
 		B8988A632042704200CC8D7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8988A622042704200CC8D7B /* Assets.xcassets */; };
 		B8988A7320427BF400CC8D7B /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8988A7220427BF400CC8D7B /* WindowController.swift */; };
@@ -25,7 +25,7 @@
 		B83A07A52048B961006C3C6E /* ScriptExecutor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptExecutor.swift; sourceTree = "<group>"; };
 		B83A07A7204B231A006C3C6E /* TouchBarScriptRunner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchBarScriptRunner.swift; sourceTree = "<group>"; };
 		B83A07AB204B29DF006C3C6E /* OSRS-touch-bar-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OSRS-touch-bar-Bridging-Header.h"; sourceTree = "<group>"; };
-		B83A07AE204B4374006C3C6E /* AppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewController.swift; sourceTree = "<group>"; };
+		B83A07B2204B5055006C3C6E /* runescape_chat_font.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = runescape_chat_font.ttf; sourceTree = "<group>"; };
 		B8988A5B2042704200CC8D7B /* OSRS-touch-bar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OSRS-touch-bar.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8988A602042704200CC8D7B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		B8988A622042704200CC8D7B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -57,6 +57,7 @@
 		B83A07A9204B279E006C3C6E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B83A07B2204B5055006C3C6E /* runescape_chat_font.ttf */,
 				B83A07AB204B29DF006C3C6E /* OSRS-touch-bar-Bridging-Header.h */,
 				B8988A682042704200CC8D7B /* OSRS_touch_bar.entitlements */,
 				B8988A622042704200CC8D7B /* Assets.xcassets */,
@@ -121,7 +122,6 @@
 				B8AD3F592045223200A3D40D /* TouchBar.h */,
 				B83A07AA204B28DB006C3C6E /* Scripting */,
 				B83A07A9204B279E006C3C6E /* Supporting Files */,
-				B83A07AE204B4374006C3C6E /* AppViewController.swift */,
 			);
 			path = "OSRS-touch-bar";
 			sourceTree = "<group>";
@@ -195,6 +195,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8988A632042704200CC8D7B /* Assets.xcassets in Resources */,
+				B83A07B3204B5055006C3C6E /* runescape_chat_font.ttf in Resources */,
 				B8AD3F63204525AD00A3D40D /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -212,7 +213,6 @@
 				B8AD3F272044986D00A3D40D /* KeyCodes.swift in Sources */,
 				B83A07A8204B231A006C3C6E /* TouchBarScriptRunner.swift in Sources */,
 				B8AD3F61204524A500A3D40D /* main.m in Sources */,
-				B83A07B0204B4374006C3C6E /* AppViewController.swift in Sources */,
 				B8988A7520427F8C00CC8D7B /* TouchBarIdentifiers.swift in Sources */,
 				B83A07A62048B961006C3C6E /* ScriptExecutor.swift in Sources */,
 			);
