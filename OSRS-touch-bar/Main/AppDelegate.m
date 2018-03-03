@@ -15,6 +15,7 @@ static const NSTouchBarItemIdentifier controlStripIconIdentifier = @"osrs-logo";
 
 @property (weak) IBOutlet NSWindow *window;
 @property (weak) IBOutlet NSTouchBar *touchBar;
+@property (weak) IBOutlet NSView *appView;
 
 @end
 
@@ -24,12 +25,8 @@ static const NSTouchBarItemIdentifier controlStripIconIdentifier = @"osrs-logo";
     [NSTouchBar presentSystemModalFunctionBar:self.touchBar
                      systemTrayItemIdentifier:controlStripIconIdentifier];
     [TouchBarScriptRunner expandTouchBar];
+    [_window setContentView:[self appView]];
 }
-
-- (void)expandTouchBar {
-   
-}
-
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     DFRSystemModalShowsCloseBoxWhenFrontMost(YES);
@@ -43,6 +40,14 @@ static const NSTouchBarItemIdentifier controlStripIconIdentifier = @"osrs-logo";
     if (@available(macOS 10.12.1, *)) {
         [NSApplication sharedApplication].automaticCustomizeTouchBarMenuItemEnabled = YES;
     }
+}
+
+- (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)theApplication {
+    return YES;
+}
+
+- (void)applicationWillTerminate:(NSNotification *)notification {
+    [TouchBarScriptRunner showTouchBarSettings];
 }
 
 @end

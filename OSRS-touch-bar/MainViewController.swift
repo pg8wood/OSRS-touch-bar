@@ -24,6 +24,7 @@ class ViewController: NSViewController, NSTouchBarDelegate {
     @IBOutlet var optionsButton: NSButton!
     @IBOutlet var emoteButton: NSButton!
     @IBOutlet var musicButton: NSButton!
+    @IBOutlet weak var hintLabel: NSTextField!
     
     let osrsInterfaceIdentifiers: [NSTouchBarItem.Identifier] =
         [.combatOptionsLabelItem, .statsLabelItem, .questListLabelItem,
@@ -56,10 +57,6 @@ class ViewController: NSViewController, NSTouchBarDelegate {
                     musicButton: KeyCodes.F12KeyCode]
         
         TouchBarScriptRunner.enableControlStrip()
-    }
-    
-    override func viewWillDisappear() {
-        TouchBarScriptRunner.showTouchBarSettings()
     }
 
     // Detects a Touch Bar button press and sends the corresponding function key press event

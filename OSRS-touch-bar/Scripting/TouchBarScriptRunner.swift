@@ -56,7 +56,7 @@ import Foundation
      previous settings. Unfortunately, it seems that AppleScript has no way to
      get the currently-selected menu item, meaning the script can't
      automatically revert to the user's previous settings. */
-    static func showTouchBarSettings() {
+    @objc static func showTouchBarSettings() {
         let disableControlStripScript = """
         tell application "System Preferences"
             activate\n

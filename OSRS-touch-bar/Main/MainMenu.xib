@@ -16,6 +16,7 @@
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate">
             <connections>
+                <outlet property="appView" destination="W4I-hD-U8K" id="9gE-WH-5iP"/>
                 <outlet property="groupTouchBar" destination="lQf-lp-g6Z" id="wo2-UY-ipo"/>
                 <outlet property="touchBar" destination="lQf-lp-g6Z" id="vtv-J0-sPQ"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
@@ -24,11 +25,11 @@
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
         <menu title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
             <items>
-                <menuItem title="TouchBarTest" id="1Xt-HY-uBw">
+                <menuItem title="TouchBarTest" id="1Xt-HY-uBw" userLabel="OSRS Touch Bar">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <menu key="submenu" title="TouchBarTest" systemMenu="apple" id="uQy-DD-JDr">
                         <items>
-                            <menuItem title="About TouchBarTest" id="5kV-Vb-QxS">
+                            <menuItem title="About TouchBarTest" id="5kV-Vb-QxS" userLabel="About OSRS Touch Bar">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="orderFrontStandardAboutPanel:" target="-1" id="Exp-CZ-Vem"/>
@@ -42,7 +43,7 @@
                                 <menu key="submenu" title="Services" systemMenu="services" id="hz9-B4-Xy5"/>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="4je-JR-u6R"/>
-                            <menuItem title="Hide TouchBarTest" keyEquivalent="h" id="Olw-nP-bQN">
+                            <menuItem title="Hide TouchBarTest" keyEquivalent="h" id="Olw-nP-bQN" userLabel="Hide OSRS Touch Bar">
                                 <connections>
                                     <action selector="hide:" target="-1" id="PnN-Uc-m68"/>
                                 </connections>
@@ -60,7 +61,7 @@
                                 </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="kCx-OE-vgT"/>
-                            <menuItem title="Quit TouchBarTest" keyEquivalent="q" id="4sb-4s-VLi">
+                            <menuItem title="Quit TouchBarTest" keyEquivalent="q" id="4sb-4s-VLi" userLabel="Quit OSRS Touch Bar">
                                 <connections>
                                     <action selector="terminate:" target="-1" id="Te7-pn-YzF"/>
                                 </connections>
@@ -682,23 +683,67 @@
                     </menu>
                 </menuItem>
             </items>
+            <point key="canvasLocation" x="83" y="-26"/>
         </menu>
-        <window title="TouchBarTest" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
+        <window title="OSRS Touch Bar" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="480" height="360"/>
+            <rect key="contentRect" x="335" y="390" width="480" height="180"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
             <view key="contentView" wantsLayer="YES" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
+                <rect key="frame" x="0.0" y="0.0" width="482" height="181"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="x6R-3G-Z34">
+                        <rect key="frame" x="117" y="73" width="48" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="48" id="LI6-AH-8tU"/>
+                        </constraints>
+                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="OSRS_Logo" id="iMX-y7-Jcj"/>
+                    </imageView>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="WRW-7S-ERn">
+                        <rect key="frame" x="18" y="80" width="93" height="36"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="89" id="9eF-mo-Jjy"/>
+                        </constraints>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Tap the" id="LFU-Km-4xh">
+                            <font key="font" metaFont="system" size="28"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="IYB-9U-5al">
+                        <rect key="frame" x="171" y="81" width="294" height="34"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="290" id="nAk-tt-nHg"/>
+                        </constraints>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="button on the Touch Bar" id="GKy-bI-G6O">
+                            <font key="font" metaFont="system" size="28"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="IYB-9U-5al" secondAttribute="bottom" constant="81" id="8bp-3w-QmG"/>
+                    <constraint firstItem="IYB-9U-5al" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="66" id="FzH-f4-gNN"/>
+                    <constraint firstAttribute="bottom" secondItem="WRW-7S-ERn" secondAttribute="bottom" constant="80" id="SzQ-lP-ucK"/>
+                    <constraint firstItem="WRW-7S-ERn" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="20" id="WEH-ZC-mBb"/>
+                    <constraint firstItem="x6R-3G-Z34" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="58" id="bqD-iI-hIW"/>
+                    <constraint firstItem="WRW-7S-ERn" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="65" id="f9m-0s-vDe"/>
+                    <constraint firstItem="x6R-3G-Z34" firstAttribute="leading" secondItem="WRW-7S-ERn" secondAttribute="trailing" constant="8" id="pOs-B0-ogw"/>
+                    <constraint firstAttribute="trailing" secondItem="IYB-9U-5al" secondAttribute="trailing" constant="19" id="qkE-z2-Zxg"/>
+                    <constraint firstAttribute="bottom" secondItem="x6R-3G-Z34" secondAttribute="bottom" constant="73" id="rcZ-Ck-rzZ"/>
+                    <constraint firstItem="IYB-9U-5al" firstAttribute="leading" secondItem="x6R-3G-Z34" secondAttribute="trailing" constant="8" id="tEi-hb-uZC"/>
+                </constraints>
             </view>
-            <point key="canvasLocation" x="72" y="303"/>
+            <point key="canvasLocation" x="73" y="212.5"/>
         </window>
         <touchBar id="lQf-lp-g6Z">
             <touchBarItems>
                 <touchBarItem id="ghq-9N-mry">
                     <viewController key="viewController" id="qo7-9a-oQE">
-                        <button key="view" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xEC-cN-WgV">
+                        <button key="view" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xEC-cN-WgV">
                             <rect key="frame" x="0.0" y="0.0" width="68" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="68" id="H3F-E4-UnW"/>
@@ -716,7 +761,7 @@
                 </touchBarItem>
                 <touchBarItem id="RGt-cr-DNX">
                     <viewController key="viewController" id="tB6-zy-Dkd">
-                        <button key="view" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sQM-sI-5F4">
+                        <button key="view" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="sQM-sI-5F4">
                             <rect key="frame" x="0.0" y="0.0" width="68" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="68" id="esJ-Y7-TJR"/>
@@ -734,7 +779,7 @@
                 </touchBarItem>
                 <touchBarItem id="BMc-l2-X2k">
                     <viewController key="viewController" id="V0V-c1-7gx">
-                        <button key="view" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fbJ-0J-ClX">
+                        <button key="view" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fbJ-0J-ClX">
                             <rect key="frame" x="0.0" y="0.0" width="68" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="68" id="Exc-ru-ZXv"/>
@@ -752,7 +797,7 @@
                 </touchBarItem>
                 <touchBarItem id="Oms-1i-f2B">
                     <viewController key="viewController" id="rQ8-Gz-Epe">
-                        <button key="view" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O4o-Ba-eOx">
+                        <button key="view" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="O4o-Ba-eOx">
                             <rect key="frame" x="0.0" y="0.0" width="68" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="68" id="1sq-5J-UCr"/>
@@ -770,7 +815,7 @@
                 </touchBarItem>
                 <touchBarItem id="CKt-Sd-RPZ">
                     <viewController key="viewController" id="5wF-iJ-NO6">
-                        <button key="view" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kqv-yD-cHg">
+                        <button key="view" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="kqv-yD-cHg">
                             <rect key="frame" x="0.0" y="0.0" width="68" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="68" id="gSI-sP-BoV"/>
@@ -788,7 +833,7 @@
                 </touchBarItem>
                 <touchBarItem id="5gQ-bj-XNo">
                     <viewController key="viewController" id="vSv-uT-Ftq">
-                        <button key="view" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ftJ-Pd-qP5">
+                        <button key="view" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ftJ-Pd-qP5">
                             <rect key="frame" x="0.0" y="0.0" width="68" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="68" id="UO4-Dc-bZf"/>
@@ -806,7 +851,7 @@
                 </touchBarItem>
                 <touchBarItem id="RZP-Yx-ZyW">
                     <viewController key="viewController" id="8Rc-UK-P7l">
-                        <button key="view" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u87-BL-tfh">
+                        <button key="view" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="u87-BL-tfh">
                             <rect key="frame" x="0.0" y="0.0" width="68" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="68" id="Cej-x2-VuH"/>
@@ -824,7 +869,7 @@
                 </touchBarItem>
                 <touchBarItem id="Jb8-pD-1oS">
                     <viewController key="viewController" id="R50-hE-GHC">
-                        <button key="view" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="svG-cM-UBj">
+                        <button key="view" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="svG-cM-UBj">
                             <rect key="frame" x="0.0" y="0.0" width="68" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="68" id="xOW-c4-1UJ"/>
@@ -842,7 +887,7 @@
                 </touchBarItem>
                 <touchBarItem id="qY1-ER-JgP">
                     <viewController key="viewController" id="U9b-Uo-Nb0">
-                        <button key="view" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pk4-O5-zXO">
+                        <button key="view" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="pk4-O5-zXO">
                             <rect key="frame" x="0.0" y="0.0" width="68" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="68" id="yVd-3Z-JRr"/>
@@ -947,6 +992,11 @@
                 <outlet property="view" destination="EiT-Mj-1SZ" id="NvE-Xy-Odz"/>
             </connections>
         </viewController>
+        <customView id="W4I-hD-U8K">
+            <rect key="frame" x="0.0" y="0.0" width="480" height="180"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <point key="canvasLocation" x="65" y="486"/>
+        </customView>
     </objects>
     <resources>
         <image name="Clan_Chat" width="22" height="26"/>
@@ -956,6 +1006,7 @@
         <image name="Ignore_List" width="22" height="22"/>
         <image name="Inventory" width="25" height="27"/>
         <image name="Music" width="21" height="25"/>
+        <image name="OSRS_Logo" width="191" height="191"/>
         <image name="Options" width="23" height="23"/>
         <image name="Prayer_tab_icon" width="25" height="29"/>
         <image name="Quest" width="21" height="21"/>
