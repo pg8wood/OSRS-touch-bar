@@ -997,19 +997,23 @@
             </connections>
         </viewController>
         <customView id="W4I-hD-U8K">
-            <rect key="frame" x="0.0" y="0.0" width="480" height="180"/>
+            <rect key="frame" x="0.0" y="0.0" width="372" height="181"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <box ambiguous="YES" boxType="custom" translatesAutoresizingMaskIntoConstraints="NO" id="ZkG-1D-GZe">
-                    <rect key="frame" x="0.0" y="0.0" width="480" height="180"/>
-                    <view key="contentView" id="Chf-hW-TG2">
-                        <rect key="frame" x="1" y="1" width="478" height="178"/>
+                <box boxType="custom" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="Ihi-YK-GMM">
+                    <rect key="frame" x="0.0" y="0.0" width="372" height="181"/>
+                    <view key="contentView" id="QG2-wx-o1r">
+                        <rect key="frame" x="1" y="1" width="370" height="179"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     </view>
-                    <color key="fillColor" red="0.28627450980392155" green="0.25156989693641663" blue="0.21959343552589417" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="372" id="ZSQ-QI-l9v"/>
+                        <constraint firstAttribute="height" constant="181" id="ab0-Ld-aGy"/>
+                    </constraints>
+                    <color key="fillColor" red="0.24185565114021301" green="0.20867905020713806" blue="0.16076445579528809" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                 </box>
                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q1X-jN-C5j">
-                    <rect key="frame" x="134" y="124" width="213" height="48"/>
+                    <rect key="frame" x="79" y="125" width="213" height="48"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="square" title="Show Control Strip Settings" bezelStyle="shadowlessSquare" image="Button_Background" imagePosition="overlaps" alignment="center" imageScaling="axesIndependently" inset="2" id="qLS-W3-8Ja">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -1017,7 +1021,7 @@
                     </buttonCell>
                 </button>
                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9TL-xu-fib">
-                    <rect key="frame" x="133" y="66" width="213" height="48"/>
+                    <rect key="frame" x="79" y="67" width="213" height="48"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="square" title="Reload OSRS Touch Bar" bezelStyle="shadowlessSquare" image="Button_Background" imagePosition="overlaps" alignment="center" imageScaling="axesIndependently" inset="2" id="Q6C-nb-FCQ">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -1025,7 +1029,7 @@
                     </buttonCell>
                 </button>
                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kmO-Gc-eFx">
-                    <rect key="frame" x="133" y="8" width="213" height="48"/>
+                    <rect key="frame" x="79" y="9" width="213" height="48"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="square" title="Quit" bezelStyle="shadowlessSquare" image="Button_Background" imagePosition="overlaps" alignment="center" imageScaling="axesIndependently" inset="2" id="THW-kg-Wyq">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -1034,10 +1038,12 @@
                 </button>
             </subviews>
             <constraints>
-                <constraint firstItem="ZkG-1D-GZe" firstAttribute="width" secondItem="W4I-hD-U8K" secondAttribute="width" id="40m-ca-fbJ"/>
-                <constraint firstItem="ZkG-1D-GZe" firstAttribute="height" secondItem="W4I-hD-U8K" secondAttribute="height" id="827-CU-uwV"/>
+                <constraint firstAttribute="trailing" secondItem="Ihi-YK-GMM" secondAttribute="trailing" id="Bvo-DV-3if"/>
+                <constraint firstItem="Ihi-YK-GMM" firstAttribute="leading" secondItem="W4I-hD-U8K" secondAttribute="leading" id="gtY-Wa-DWx"/>
+                <constraint firstAttribute="bottom" secondItem="Ihi-YK-GMM" secondAttribute="bottom" id="jYZ-IA-TIn"/>
+                <constraint firstItem="Ihi-YK-GMM" firstAttribute="top" secondItem="W4I-hD-U8K" secondAttribute="top" id="rrs-Qh-IyQ"/>
             </constraints>
-            <point key="canvasLocation" x="65" y="486"/>
+            <point key="canvasLocation" x="46.5" y="486"/>
         </customView>
     </objects>
     <resources>

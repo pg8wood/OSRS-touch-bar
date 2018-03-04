@@ -71,11 +71,12 @@ class ViewController: NSViewController, NSTouchBarDelegate {
     // Adds attributes to the buttons in the App View
     func setupButtons() {
         let appButtons = [settingsButton, reloadButton, quitButton]
-        let buttonBackgroundColor: NSColor = NSColor.init(red: 62, green: 53, blue: 41, alpha: 100)
+        let buttonFontColor: NSColor = NSColor(red: 255.0/255.0, green: 152.0/255.0, blue: 0, alpha: 1)
+//            NSColor.init(red: 255, green: 152, blue: 0, alpha: 1.0)
         
         for button in appButtons {
             if let mutableAttributedTitle = button?.attributedTitle.mutableCopy() as? NSMutableAttributedString {
-                mutableAttributedTitle.addAttribute(.foregroundColor, value: buttonBackgroundColor, range: NSRange(location: 0, length: mutableAttributedTitle.length))
+                mutableAttributedTitle.addAttribute(.foregroundColor, value: buttonFontColor, range: NSRange(location: 0, length: mutableAttributedTitle.length))
                 button?.attributedTitle = mutableAttributedTitle
             }
         }
