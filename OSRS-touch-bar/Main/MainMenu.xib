@@ -17,7 +17,6 @@
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate">
             <connections>
-                <outlet property="groupTouchBar" destination="lQf-lp-g6Z" id="wo2-UY-ipo"/>
                 <outlet property="touchBar" destination="lQf-lp-g6Z" id="vtv-J0-sPQ"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
             </connections>
@@ -29,7 +28,7 @@
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <menu key="submenu" title="TouchBarTest" systemMenu="apple" id="uQy-DD-JDr">
                         <items>
-                            <menuItem title="About TouchBarTest" id="5kV-Vb-QxS" userLabel="About OSRS Touch Bar">
+                            <menuItem title="About OSRS Touch Bar" id="5kV-Vb-QxS" userLabel="About OSRS Touch Bar">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="orderFrontStandardAboutPanel:" target="-1" id="Exp-CZ-Vem"/>
@@ -43,7 +42,7 @@
                                 <menu key="submenu" title="Services" systemMenu="services" id="hz9-B4-Xy5"/>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="4je-JR-u6R"/>
-                            <menuItem title="Hide TouchBarTest" keyEquivalent="h" id="Olw-nP-bQN" userLabel="Hide OSRS Touch Bar">
+                            <menuItem title="Hide OSRS Touch Bar" keyEquivalent="h" id="Olw-nP-bQN" userLabel="Hide OSRS Touch Bar">
                                 <connections>
                                     <action selector="hide:" target="-1" id="PnN-Uc-m68"/>
                                 </connections>
@@ -61,7 +60,7 @@
                                 </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="kCx-OE-vgT"/>
-                            <menuItem title="Quit TouchBarTest" keyEquivalent="q" id="4sb-4s-VLi" userLabel="Quit OSRS Touch Bar">
+                            <menuItem title="Quit OSRS Touch Bar" keyEquivalent="q" id="4sb-4s-VLi" userLabel="Quit OSRS Touch Bar">
                                 <connections>
                                     <action selector="terminate:" target="-1" id="Te7-pn-YzF"/>
                                 </connections>
@@ -683,7 +682,7 @@
                     </menu>
                 </menuItem>
             </items>
-            <point key="canvasLocation" x="83" y="-26"/>
+            <point key="canvasLocation" x="83" y="-116"/>
         </menu>
         <window title="OSRS Touch Bar" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
@@ -766,7 +765,7 @@
                     <constraint firstAttribute="bottom" secondItem="Ihi-YK-GMM" secondAttribute="bottom" id="hCU-0V-JNy"/>
                 </constraints>
             </view>
-            <point key="canvasLocation" x="61" y="180"/>
+            <point key="canvasLocation" x="65" y="72"/>
         </window>
         <touchBar id="lQf-lp-g6Z">
             <touchBarItems>
@@ -1001,7 +1000,7 @@
                     <size key="designTimeSize" width="68" height="30"/>
                 </touchBarItem>
             </touchBarItems>
-            <point key="canvasLocation" x="131.5" y="16"/>
+            <point key="canvasLocation" x="104" y="281"/>
         </touchBar>
         <viewController id="xI7-Ve-Bkp" customClass="ViewController" customModule="OSRS_touch_bar" customModuleProvider="target">
             <connections>

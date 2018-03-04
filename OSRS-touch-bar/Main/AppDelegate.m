@@ -11,7 +11,7 @@
 
 static const NSTouchBarItemIdentifier controlStripIconIdentifier = @"osrs-logo";
 
-@interface AppDelegate () <NSTouchBarDelegate>
+@interface AppDelegate ()
 
 @property (weak) IBOutlet NSWindow *window;
 @property (weak) IBOutlet NSTouchBar *touchBar;
@@ -39,10 +39,6 @@ static const NSTouchBarItemIdentifier controlStripIconIdentifier = @"osrs-logo";
     DFRElementSetControlStripPresenceForIdentifier(controlStripIconIdentifier, YES);
     
     [self present:(controlStripTBItem.view)];
-    
-    if (@available(macOS 10.12.1, *)) {
-        [NSApplication sharedApplication].automaticCustomizeTouchBarMenuItemEnabled = YES;
-    }
 }
 
 - (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)theApplication {

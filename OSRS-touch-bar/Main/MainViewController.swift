@@ -94,8 +94,6 @@ class ViewController: NSViewController, NSTouchBarDelegate {
         TouchBarScriptRunner.showTouchBarSettings()
         exit(0)
     }
-    
-    // TODO: quit button clicked
 
     // Detects a Touch Bar button press and sends the corresponding function key press event
     @IBAction func buttonPressed(sender: NSButton) {
