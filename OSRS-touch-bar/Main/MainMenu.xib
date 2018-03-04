@@ -1000,10 +1000,9 @@
             <rect key="frame" x="0.0" y="0.0" width="480" height="180"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <box fixedFrame="YES" boxType="custom" translatesAutoresizingMaskIntoConstraints="NO" id="ZkG-1D-GZe">
+                <box ambiguous="YES" boxType="custom" translatesAutoresizingMaskIntoConstraints="NO" id="ZkG-1D-GZe">
                     <rect key="frame" x="0.0" y="0.0" width="480" height="180"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <view key="contentView" ambiguous="YES" id="Chf-hW-TG2">
+                    <view key="contentView" id="Chf-hW-TG2">
                         <rect key="frame" x="1" y="1" width="478" height="178"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     </view>
@@ -1034,6 +1033,10 @@
                     </buttonCell>
                 </button>
             </subviews>
+            <constraints>
+                <constraint firstItem="ZkG-1D-GZe" firstAttribute="width" secondItem="W4I-hD-U8K" secondAttribute="width" id="40m-ca-fbJ"/>
+                <constraint firstItem="ZkG-1D-GZe" firstAttribute="height" secondItem="W4I-hD-U8K" secondAttribute="height" id="827-CU-uwV"/>
+            </constraints>
             <point key="canvasLocation" x="65" y="486"/>
         </customView>
     </objects>

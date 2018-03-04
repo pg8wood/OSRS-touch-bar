@@ -45,8 +45,9 @@ import Foundation
                 click\n\
                 click menu item "App Controls with Control Strip" of menu 1\n\
             end tell\n\
-        end tell
-        tell application "OSRS-touch-bar" to activate
+        end tell\n\
+        tell application "OSRS-touch-bar" to activate\n\
+        quit application "System Preferences"
         """
         
         ScriptExecutor.runScriptShowingErrors(sourceString: setupControlStripScript)
