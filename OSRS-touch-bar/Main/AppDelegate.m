@@ -15,7 +15,6 @@ static const NSTouchBarItemIdentifier controlStripIconIdentifier = @"osrs-logo";
 
 @property (weak) IBOutlet NSWindow *window;
 @property (weak) IBOutlet NSTouchBar *touchBar;
-@property (weak) IBOutlet NSView *appView;
 
 @end
 

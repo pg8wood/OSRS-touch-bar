@@ -10,4 +10,6 @@
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
+- (void)present:(id)sender;
+
 @end

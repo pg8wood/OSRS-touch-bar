@@ -64,7 +64,6 @@ class ViewController: NSViewController, NSTouchBarDelegate {
                     emoteButton: KeyCodes.F11KeyCode,
                     musicButton: KeyCodes.F12KeyCode]
         
-//        TouchBarScriptRunner.enableControlStrip()
         setupMenuButtons()
     }
    
@@ -87,7 +86,8 @@ class ViewController: NSViewController, NSTouchBarDelegate {
     }
     
     @IBAction func reloadButtonClicked(_ sender: NSButton) {
-        TouchBarScriptRunner.restartApp()
+        let appDelegate = NSApplication.shared.delegate! as! AppDelegate
+        appDelegate.present(self);
     }
     
     @IBAction func quitButtonClicked(_ sender: Any) {
