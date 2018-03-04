@@ -65,14 +65,14 @@ class ViewController: NSViewController, NSTouchBarDelegate {
                     musicButton: KeyCodes.F12KeyCode]
         
         TouchBarScriptRunner.enableControlStrip()
-        setupButtons()
+        setupMenuButtons()
     }
-        
+   
+    
     // Adds attributes to the buttons in the App View
-    func setupButtons() {
+    func setupMenuButtons() {
         let appButtons = [settingsButton, reloadButton, quitButton]
         let buttonFontColor: NSColor = NSColor(red: 255.0/255.0, green: 152.0/255.0, blue: 0, alpha: 1)
-//            NSColor.init(red: 255, green: 152, blue: 0, alpha: 1.0)
         
         for button in appButtons {
             if let mutableAttributedTitle = button?.attributedTitle.mutableCopy() as? NSMutableAttributedString {
@@ -81,6 +81,16 @@ class ViewController: NSViewController, NSTouchBarDelegate {
             }
         }
     }
+    
+    @IBAction func settingsButtonClicked(_ sender: NSButton) {
+        TouchBarScriptRunner.showTouchBarSettings()
+    }
+    
+    @IBAction func reloadButtonClicked(_ sender: NSButton) {
+        TouchBarScriptRunner.restartApp()
+    }
+    
+    // TODO: quit button clicked
 
     // Detects a Touch Bar button press and sends the corresponding function key press event
     @IBAction func buttonPressed(sender: NSButton) {

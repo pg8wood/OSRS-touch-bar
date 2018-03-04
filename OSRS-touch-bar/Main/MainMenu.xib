@@ -1017,23 +1017,29 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="square" title="Show Control Strip Settings" bezelStyle="shadowlessSquare" image="Button_Background" imagePosition="overlaps" alignment="center" imageScaling="axesIndependently" inset="2" id="qLS-W3-8Ja">
                         <behavior key="behavior" lightByContents="YES"/>
-                        <font key="font" size="20" name="Runescape-Chat-Font"/>
+                        <font key="font" size="19" name="Runescape-Chat-Font"/>
                     </buttonCell>
+                    <connections>
+                        <action selector="settingsButtonClicked:" target="xI7-Ve-Bkp" id="Ry6-wl-Vwg"/>
+                    </connections>
                 </button>
                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9TL-xu-fib">
                     <rect key="frame" x="79" y="67" width="213" height="48"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="square" title="Reload OSRS Touch Bar" bezelStyle="shadowlessSquare" image="Button_Background" imagePosition="overlaps" alignment="center" imageScaling="axesIndependently" inset="2" id="Q6C-nb-FCQ">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" size="20" name="Runescape-Chat-Font"/>
+                        <font key="font" size="19" name="Runescape-Chat-Font"/>
                     </buttonCell>
+                    <connections>
+                        <action selector="reloadButtonClicked:" target="xI7-Ve-Bkp" id="g09-uG-nFa"/>
+                    </connections>
                 </button>
                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kmO-Gc-eFx">
                     <rect key="frame" x="79" y="9" width="213" height="48"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="square" title="Quit" bezelStyle="shadowlessSquare" image="Button_Background" imagePosition="overlaps" alignment="center" imageScaling="axesIndependently" inset="2" id="THW-kg-Wyq">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" size="20" name="Runescape-Chat-Font"/>
+                        <font key="font" size="19" name="Runescape-Chat-Font"/>
                     </buttonCell>
                 </button>
             </subviews>
@@ -1047,7 +1053,7 @@
         </customView>
     </objects>
     <resources>
-        <image name="Button_Background" width="68" height="20"/>
+        <image name="Button_Background" width="150" height="40"/>
         <image name="Clan_Chat" width="22" height="26"/>
         <image name="Combat_Options" width="19" height="19"/>
         <image name="Emote_button" width="18" height="27"/>

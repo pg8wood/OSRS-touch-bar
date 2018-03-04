@@ -73,4 +73,18 @@ import Foundation
         
         ScriptExecutor.runScriptShowingErrors(sourceString: disableControlStripScript)
     }
+    
+    static func restartApp() {
+        let restartScript = """
+        set appName to "OSRS-touch-bar"\n
+        tell application appName to quit\n
+        repeat\n
+            tell application "System Events"\n
+                if appName is not in (name of application processes) then exit repeat\n
+            end tell\n
+            do shell script "sleep 0.5"\n
+        end repeat\n
+        tell application appName to launch
+        """
+    }
 }
