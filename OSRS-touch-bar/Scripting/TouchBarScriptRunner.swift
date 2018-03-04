@@ -45,8 +45,9 @@ import Foundation
                 click\n\
                 click menu item "App Controls with Control Strip" of menu 1\n\
             end tell\n\
-        end tell
-        tell application "OSRS-touch-bar" to activate
+        end tell\n\
+        tell application "OSRS-touch-bar" to activate\n\
+        quit application "System Preferences"
         """
         
         ScriptExecutor.runScriptShowingErrors(sourceString: setupControlStripScript)
@@ -56,7 +57,7 @@ import Foundation
      previous settings. Unfortunately, it seems that AppleScript has no way to
      get the currently-selected menu item, meaning the script can't
      automatically revert to the user's previous settings. */
-    static func showTouchBarSettings() {
+    @objc static func showTouchBarSettings() {
         let disableControlStripScript = """
         tell application "System Preferences"
             activate\n

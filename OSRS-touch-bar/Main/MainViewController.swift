@@ -8,9 +8,9 @@
 
 import Cocoa
 
-class ViewController: NSViewController, NSTouchBarDelegate {
+class ViewController: NSViewController {
     
-    @IBOutlet var touchBarOutlet: NSTouchBar!
+    // Touch Bar View
     @IBOutlet var combatOptionsButton: NSButton!
     @IBOutlet var skillsButton: NSButton!
     @IBOutlet var questButton: NSButton!
@@ -24,6 +24,11 @@ class ViewController: NSViewController, NSTouchBarDelegate {
     @IBOutlet var optionsButton: NSButton!
     @IBOutlet var emoteButton: NSButton!
     @IBOutlet var musicButton: NSButton!
+    
+    // App View
+    @IBOutlet weak var settingsButton: NSButton!
+    @IBOutlet weak var reloadButton: NSButton!
+    @IBOutlet weak var quitButton: NSButton!
     
     let osrsInterfaceIdentifiers: [NSTouchBarItem.Identifier] =
         [.combatOptionsLabelItem, .statsLabelItem, .questListLabelItem,
@@ -55,11 +60,34 @@ class ViewController: NSViewController, NSTouchBarDelegate {
                     emoteButton: KeyCodes.F11KeyCode,
                     musicButton: KeyCodes.F12KeyCode]
         
-        TouchBarScriptRunner.enableControlStrip()
+        setupMenuButtons()
     }
     
-    override func viewWillDisappear() {
+    // Adds attributes to the buttons in the App View
+    func setupMenuButtons() {
+        let appButtons = [settingsButton, reloadButton, quitButton]
+        let buttonFontColor: NSColor = NSColor(red: 255.0/255.0, green: 152.0/255.0, blue: 0, alpha: 1)
+        
+        for button in appButtons {
+            if let mutableAttributedTitle = button?.attributedTitle.mutableCopy() as? NSMutableAttributedString {
+                mutableAttributedTitle.addAttribute(.foregroundColor, value: buttonFontColor, range: NSRange(location: 0, length: mutableAttributedTitle.length))
+                button?.attributedTitle = mutableAttributedTitle
+            }
+        }
+    }
+    
+    @IBAction func settingsButtonClicked(_ sender: NSButton) {
         TouchBarScriptRunner.showTouchBarSettings()
+    }
+    
+    @IBAction func reloadButtonClicked(_ sender: NSButton) {
+        let appDelegate = NSApplication.shared.delegate! as! AppDelegate
+        appDelegate.present(self);
+    }
+    
+    @IBAction func quitButtonClicked(_ sender: Any) {
+        TouchBarScriptRunner.showTouchBarSettings()
+        exit(0)
     }
 
     // Detects a Touch Bar button press and sends the corresponding function key press event
@@ -70,14 +98,5 @@ class ViewController: NSViewController, NSTouchBarDelegate {
         
         // Sends a system-wide function key press
         ScriptExecutor.runScriptShowingErrors(sourceString: "tell application \"System Events\" to key code \(keyCode)")
-    }
-    
-    // ---------------------------
-    // MARK: - Touch Bar delegate
-    // ---------------------------
-    
-    @available(OSX 10.12.2, *)
-    override func makeTouchBar() -> NSTouchBar? {
-        return touchBarOutlet
     }
 }
