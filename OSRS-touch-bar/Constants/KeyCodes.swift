@@ -21,4 +21,6 @@ class KeyCodes {
     static let F10KeyCode: UInt16 = 109
     static let F11KeyCode: UInt16 = 103
     static let F12KeyCode: UInt16 = 111
+    static let LeftArrowKeyCode: UInt16 = 123
+    static let RightArrowKeyCode: UInt16 = 124
 }

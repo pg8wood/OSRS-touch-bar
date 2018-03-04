@@ -96,7 +96,14 @@ class ViewController: NSViewController {
                 return
         }
         
-        // Sends a system-wide function key press
-        ScriptExecutor.runScriptShowingErrors(sourceString: "tell application \"System Events\" to key code \(keyCode)")
+        /*  Sends a system-wide function key press and negates arrow keypresses to
+            prevent the camera getting stuck in a pan */
+        ScriptExecutor.runScriptShowingErrors(sourceString: """
+            tell application \"System Events\"
+                key code \(keyCode)\n\
+                key up (key code \(KeyCodes.LeftArrowKeyCode))\n\
+                key up (key code \(KeyCodes.RightArrowKeyCode))
+            end tell
+            """)
     }
 }
