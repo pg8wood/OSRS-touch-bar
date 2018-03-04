@@ -86,5 +86,7 @@ import Foundation
         end repeat\n
         tell application appName to launch
         """
+        
+         ScriptExecutor.runScriptShowingErrors(sourceString: restartScript)
     }
 }

@@ -17,7 +17,6 @@
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate">
             <connections>
-                <outlet property="appView" destination="W4I-hD-U8K" id="9gE-WH-5iP"/>
                 <outlet property="groupTouchBar" destination="lQf-lp-g6Z" id="wo2-UY-ipo"/>
                 <outlet property="touchBar" destination="lQf-lp-g6Z" id="vtv-J0-sPQ"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
@@ -689,56 +688,85 @@
         <window title="OSRS Touch Bar" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="482" height="181"/>
+            <rect key="contentRect" x="335" y="390" width="340" height="202"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
             <view key="contentView" wantsLayer="YES" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="482" height="181"/>
+                <rect key="frame" x="0.0" y="0.0" width="340" height="202"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="x6R-3G-Z34">
-                        <rect key="frame" x="117" y="73" width="48" height="50"/>
+                    <box boxType="custom" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="Ihi-YK-GMM">
+                        <rect key="frame" x="0.0" y="0.0" width="340" height="202"/>
+                        <view key="contentView" id="QG2-wx-o1r">
+                            <rect key="frame" x="1" y="1" width="338" height="200"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <button translatesAutoresizingMaskIntoConstraints="NO" id="Q1X-jN-C5j">
+                                    <rect key="frame" x="63" y="134" width="213" height="48"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="48" id="PAv-UR-qU8"/>
+                                        <constraint firstAttribute="width" constant="213" id="V0G-yg-JVH"/>
+                                    </constraints>
+                                    <buttonCell key="cell" type="square" title="Show Control Strip Settings" bezelStyle="shadowlessSquare" image="Button_Background" imagePosition="overlaps" alignment="center" imageScaling="axesIndependently" inset="2" id="qLS-W3-8Ja">
+                                        <behavior key="behavior" lightByContents="YES"/>
+                                        <font key="font" size="19" name="Runescape-Chat-Font"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="settingsButtonClicked:" target="xI7-Ve-Bkp" id="Ry6-wl-Vwg"/>
+                                    </connections>
+                                </button>
+                                <button translatesAutoresizingMaskIntoConstraints="NO" id="9TL-xu-fib">
+                                    <rect key="frame" x="63" y="76" width="213" height="48"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="213" id="97Q-Y5-kj9"/>
+                                        <constraint firstAttribute="height" constant="48" id="XAK-yg-nt6"/>
+                                    </constraints>
+                                    <buttonCell key="cell" type="square" title="Reload OSRS Touch Bar" bezelStyle="shadowlessSquare" image="Button_Background" imagePosition="overlaps" alignment="center" imageScaling="axesIndependently" inset="2" id="Q6C-nb-FCQ">
+                                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" size="19" name="Runescape-Chat-Font"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="reloadButtonClicked:" target="xI7-Ve-Bkp" id="g09-uG-nFa"/>
+                                    </connections>
+                                </button>
+                                <button translatesAutoresizingMaskIntoConstraints="NO" id="kmO-Gc-eFx">
+                                    <rect key="frame" x="63" y="18" width="213" height="48"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="213" id="bb9-4h-4bQ"/>
+                                        <constraint firstAttribute="height" constant="48" id="d4k-uZ-53T"/>
+                                    </constraints>
+                                    <buttonCell key="cell" type="square" title="Quit" bezelStyle="shadowlessSquare" image="Button_Background" imagePosition="overlaps" alignment="center" imageScaling="axesIndependently" inset="2" id="THW-kg-Wyq">
+                                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" size="19" name="Runescape-Chat-Font"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="quitButtonClicked:" target="xI7-Ve-Bkp" id="IO7-uk-I9i"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="9TL-xu-fib" firstAttribute="top" secondItem="Q1X-jN-C5j" secondAttribute="bottom" constant="10" id="57R-az-DcZ"/>
+                                <constraint firstItem="9TL-xu-fib" firstAttribute="centerX" secondItem="QG2-wx-o1r" secondAttribute="centerX" id="D8L-qg-6Wf"/>
+                                <constraint firstItem="kmO-Gc-eFx" firstAttribute="top" secondItem="9TL-xu-fib" secondAttribute="bottom" constant="10" id="IUR-qb-Zdh"/>
+                                <constraint firstItem="Q1X-jN-C5j" firstAttribute="top" secondItem="QG2-wx-o1r" secondAttribute="top" constant="18" id="Sts-NR-QOi"/>
+                                <constraint firstAttribute="bottom" secondItem="kmO-Gc-eFx" secondAttribute="bottom" constant="18" id="aLc-yk-P1j"/>
+                                <constraint firstItem="kmO-Gc-eFx" firstAttribute="centerX" secondItem="QG2-wx-o1r" secondAttribute="centerX" id="asc-SX-oCm"/>
+                                <constraint firstItem="Q1X-jN-C5j" firstAttribute="centerX" secondItem="QG2-wx-o1r" secondAttribute="centerX" id="jXk-JK-DIL"/>
+                            </constraints>
+                        </view>
                         <constraints>
-                            <constraint firstAttribute="width" constant="48" id="LI6-AH-8tU"/>
+                            <constraint firstAttribute="width" constant="340" id="axc-W2-g2J"/>
                         </constraints>
-                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="OSRS_Logo" id="iMX-y7-Jcj"/>
-                    </imageView>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="WRW-7S-ERn">
-                        <rect key="frame" x="18" y="80" width="93" height="36"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="89" id="9eF-mo-Jjy"/>
-                        </constraints>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Tap the" id="LFU-Km-4xh">
-                            <font key="font" metaFont="system" size="28"/>
-                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="IYB-9U-5al">
-                        <rect key="frame" x="171" y="81" width="294" height="34"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="290" id="nAk-tt-nHg"/>
-                        </constraints>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="button on the Touch Bar" id="GKy-bI-G6O">
-                            <font key="font" metaFont="system" size="28"/>
-                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
+                        <color key="fillColor" red="0.24185565114021301" green="0.20867905020713806" blue="0.16076445579528809" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </box>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="IYB-9U-5al" secondAttribute="bottom" constant="81" id="8bp-3w-QmG"/>
-                    <constraint firstItem="IYB-9U-5al" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="66" id="FzH-f4-gNN"/>
-                    <constraint firstAttribute="bottom" secondItem="WRW-7S-ERn" secondAttribute="bottom" constant="80" id="SzQ-lP-ucK"/>
-                    <constraint firstItem="WRW-7S-ERn" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="20" id="WEH-ZC-mBb"/>
-                    <constraint firstItem="x6R-3G-Z34" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="58" id="bqD-iI-hIW"/>
-                    <constraint firstItem="WRW-7S-ERn" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="65" id="f9m-0s-vDe"/>
-                    <constraint firstItem="x6R-3G-Z34" firstAttribute="leading" secondItem="WRW-7S-ERn" secondAttribute="trailing" constant="8" id="pOs-B0-ogw"/>
-                    <constraint firstAttribute="trailing" secondItem="IYB-9U-5al" secondAttribute="trailing" constant="19" id="qkE-z2-Zxg"/>
-                    <constraint firstAttribute="bottom" secondItem="x6R-3G-Z34" secondAttribute="bottom" constant="73" id="rcZ-Ck-rzZ"/>
-                    <constraint firstItem="IYB-9U-5al" firstAttribute="leading" secondItem="x6R-3G-Z34" secondAttribute="trailing" constant="8" id="tEi-hb-uZC"/>
+                    <constraint firstAttribute="trailing" secondItem="Ihi-YK-GMM" secondAttribute="trailing" id="Bf6-52-ynw"/>
+                    <constraint firstItem="Ihi-YK-GMM" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" id="Uob-Hn-L8z"/>
+                    <constraint firstItem="Ihi-YK-GMM" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" id="VCS-nM-O86"/>
+                    <constraint firstAttribute="bottom" secondItem="Ihi-YK-GMM" secondAttribute="bottom" id="hCU-0V-JNy"/>
                 </constraints>
             </view>
-            <point key="canvasLocation" x="73" y="212.5"/>
+            <point key="canvasLocation" x="61" y="180"/>
         </window>
         <touchBar id="lQf-lp-g6Z">
             <touchBarItems>
@@ -996,61 +1024,6 @@
                 <outlet property="view" destination="EiT-Mj-1SZ" id="NvE-Xy-Odz"/>
             </connections>
         </viewController>
-        <customView id="W4I-hD-U8K">
-            <rect key="frame" x="0.0" y="0.0" width="372" height="181"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-            <subviews>
-                <box boxType="custom" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="Ihi-YK-GMM">
-                    <rect key="frame" x="0.0" y="0.0" width="372" height="181"/>
-                    <view key="contentView" id="QG2-wx-o1r">
-                        <rect key="frame" x="1" y="1" width="370" height="179"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                    </view>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="372" id="ZSQ-QI-l9v"/>
-                        <constraint firstAttribute="height" constant="181" id="ab0-Ld-aGy"/>
-                    </constraints>
-                    <color key="fillColor" red="0.24185565114021301" green="0.20867905020713806" blue="0.16076445579528809" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                </box>
-                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q1X-jN-C5j">
-                    <rect key="frame" x="79" y="125" width="213" height="48"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <buttonCell key="cell" type="square" title="Show Control Strip Settings" bezelStyle="shadowlessSquare" image="Button_Background" imagePosition="overlaps" alignment="center" imageScaling="axesIndependently" inset="2" id="qLS-W3-8Ja">
-                        <behavior key="behavior" lightByContents="YES"/>
-                        <font key="font" size="19" name="Runescape-Chat-Font"/>
-                    </buttonCell>
-                    <connections>
-                        <action selector="settingsButtonClicked:" target="xI7-Ve-Bkp" id="Ry6-wl-Vwg"/>
-                    </connections>
-                </button>
-                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9TL-xu-fib">
-                    <rect key="frame" x="79" y="67" width="213" height="48"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <buttonCell key="cell" type="square" title="Reload OSRS Touch Bar" bezelStyle="shadowlessSquare" image="Button_Background" imagePosition="overlaps" alignment="center" imageScaling="axesIndependently" inset="2" id="Q6C-nb-FCQ">
-                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" size="19" name="Runescape-Chat-Font"/>
-                    </buttonCell>
-                    <connections>
-                        <action selector="reloadButtonClicked:" target="xI7-Ve-Bkp" id="g09-uG-nFa"/>
-                    </connections>
-                </button>
-                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kmO-Gc-eFx">
-                    <rect key="frame" x="79" y="9" width="213" height="48"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <buttonCell key="cell" type="square" title="Quit" bezelStyle="shadowlessSquare" image="Button_Background" imagePosition="overlaps" alignment="center" imageScaling="axesIndependently" inset="2" id="THW-kg-Wyq">
-                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" size="19" name="Runescape-Chat-Font"/>
-                    </buttonCell>
-                </button>
-            </subviews>
-            <constraints>
-                <constraint firstAttribute="trailing" secondItem="Ihi-YK-GMM" secondAttribute="trailing" id="Bvo-DV-3if"/>
-                <constraint firstItem="Ihi-YK-GMM" firstAttribute="leading" secondItem="W4I-hD-U8K" secondAttribute="leading" id="gtY-Wa-DWx"/>
-                <constraint firstAttribute="bottom" secondItem="Ihi-YK-GMM" secondAttribute="bottom" id="jYZ-IA-TIn"/>
-                <constraint firstItem="Ihi-YK-GMM" firstAttribute="top" secondItem="W4I-hD-U8K" secondAttribute="top" id="rrs-Qh-IyQ"/>
-            </constraints>
-            <point key="canvasLocation" x="46.5" y="486"/>
-        </customView>
     </objects>
     <resources>
         <image name="Button_Background" width="150" height="40"/>
@@ -1061,7 +1034,6 @@
         <image name="Ignore_List" width="22" height="22"/>
         <image name="Inventory" width="25" height="27"/>
         <image name="Music" width="21" height="25"/>
-        <image name="OSRS_Logo" width="191" height="191"/>
         <image name="Options" width="23" height="23"/>
         <image name="Prayer_tab_icon" width="25" height="29"/>
         <image name="Quest" width="21" height="21"/>
