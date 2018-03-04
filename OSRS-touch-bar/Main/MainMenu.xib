@@ -1016,7 +1016,7 @@
                     <rect key="frame" x="79" y="125" width="213" height="48"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="square" title="Show Control Strip Settings" bezelStyle="shadowlessSquare" image="Button_Background" imagePosition="overlaps" alignment="center" imageScaling="axesIndependently" inset="2" id="qLS-W3-8Ja">
-                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <behavior key="behavior" lightByContents="YES"/>
                         <font key="font" size="20" name="Runescape-Chat-Font"/>
                     </buttonCell>
                 </button>
@@ -1024,7 +1024,7 @@
                     <rect key="frame" x="79" y="67" width="213" height="48"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="square" title="Reload OSRS Touch Bar" bezelStyle="shadowlessSquare" image="Button_Background" imagePosition="overlaps" alignment="center" imageScaling="axesIndependently" inset="2" id="Q6C-nb-FCQ">
-                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" size="20" name="Runescape-Chat-Font"/>
                     </buttonCell>
                 </button>
@@ -1032,7 +1032,7 @@
                     <rect key="frame" x="79" y="9" width="213" height="48"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="square" title="Quit" bezelStyle="shadowlessSquare" image="Button_Background" imagePosition="overlaps" alignment="center" imageScaling="axesIndependently" inset="2" id="THW-kg-Wyq">
-                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" size="20" name="Runescape-Chat-Font"/>
                     </buttonCell>
                 </button>
