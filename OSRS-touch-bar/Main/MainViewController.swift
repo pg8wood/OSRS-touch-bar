@@ -8,10 +8,9 @@
 
 import Cocoa
 
-class ViewController: NSViewController, NSTouchBarDelegate {
+class ViewController: NSViewController {
     
     // Touch Bar View
-    @IBOutlet var touchBarOutlet: NSTouchBar!
     @IBOutlet var combatOptionsButton: NSButton!
     @IBOutlet var skillsButton: NSButton!
     @IBOutlet var questButton: NSButton!
@@ -25,9 +24,6 @@ class ViewController: NSViewController, NSTouchBarDelegate {
     @IBOutlet var optionsButton: NSButton!
     @IBOutlet var emoteButton: NSButton!
     @IBOutlet var musicButton: NSButton!
-    
-    // Main View
-    @IBOutlet weak var hintLabel: NSTextField!
     
     // App View
     @IBOutlet weak var settingsButton: NSButton!
@@ -66,7 +62,6 @@ class ViewController: NSViewController, NSTouchBarDelegate {
         
         setupMenuButtons()
     }
-   
     
     // Adds attributes to the buttons in the App View
     func setupMenuButtons() {
@@ -103,14 +98,5 @@ class ViewController: NSViewController, NSTouchBarDelegate {
         
         // Sends a system-wide function key press
         ScriptExecutor.runScriptShowingErrors(sourceString: "tell application \"System Events\" to key code \(keyCode)")
-    }
-    
-    // ---------------------------
-    // MARK: - Touch Bar delegate
-    // ---------------------------
-    
-    @available(OSX 10.12.2, *)
-    override func makeTouchBar() -> NSTouchBar? {
-        return touchBarOutlet
     }
 }
