@@ -21,5 +21,7 @@ It should be noted that this application, like other "global" Touch Bar apps ([B
 
 In order to use OSRS-touch-bar in conjunction with the RuneScape client, a private API is necessary to circumvent Apple's restrictions on hiding the Control Strip. As such, OSRS-touch-bar links against a private Apple framework `DFRFoundation.framework`. 
 
-__tl;dr__ Apple probably wouldn't put this app on the Mac App Store, but plenty of other applications use this framework.
+__tl;dr__ Apple probably wouldn't put this app on the Mac App Store solely because it hides the Control Strip. 
+
+Happy 'Scaping! 
 
