@@ -98,7 +98,7 @@ class ViewController: NSViewController {
         
         /*  Sends a system-wide function key press and negates arrow keypresses to
             prevent the camera getting stuck in a pan */
-        ScriptExecutor.runScriptShowingErrors(sourceString: """
+        ScriptExecutor.runAppleScriptShowingErrors(sourceString: """
             tell application \"System Events\"
                 key code \(keyCode)\n\
                 key up (key code \(KeyCodes.LeftArrowKeyCode))\n\

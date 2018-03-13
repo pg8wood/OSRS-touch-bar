@@ -12,7 +12,7 @@ import Cocoa
     
     // Executes an AppleScript from a source string and displays any errors in
     // an NSAlert.
-    @objc static func runScriptShowingErrors(sourceString: String) {
+    @objc static func runAppleScriptShowingErrors(sourceString: String) {
         var scriptError: NSDictionary?
         
         if let script = NSAppleScript(source: sourceString) {

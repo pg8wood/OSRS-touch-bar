@@ -18,6 +18,9 @@
 		B8AD3F5C204522E300A3D40D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B8AD3F5B204522E300A3D40D /* AppDelegate.m */; };
 		B8AD3F61204524A500A3D40D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B8AD3F60204524A500A3D40D /* main.m */; };
 		B8AD3F63204525AD00A3D40D /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8AD3F62204525AD00A3D40D /* MainMenu.xib */; };
+		B8BE878B20578181000AB194 /* hideControlStrip.sh in Resources */ = {isa = PBXBuildFile; fileRef = B8BE878820578180000AB194 /* hideControlStrip.sh */; };
+		B8BE878C20578181000AB194 /* recordControlStripPrefs.sh in Resources */ = {isa = PBXBuildFile; fileRef = B8BE878920578180000AB194 /* recordControlStripPrefs.sh */; };
+		B8BE878D20578181000AB194 /* replaceControlStripPrefs.py in Resources */ = {isa = PBXBuildFile; fileRef = B8BE878A20578181000AB194 /* replaceControlStripPrefs.py */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +41,9 @@
 		B8AD3F5D2045234500A3D40D /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B8AD3F60204524A500A3D40D /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B8AD3F62204525AD00A3D40D /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
+		B8BE878820578180000AB194 /* hideControlStrip.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = hideControlStrip.sh; sourceTree = "<group>"; };
+		B8BE878920578180000AB194 /* recordControlStripPrefs.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = recordControlStripPrefs.sh; sourceTree = "<group>"; };
+		B8BE878A20578181000AB194 /* replaceControlStripPrefs.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = replaceControlStripPrefs.py; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +73,9 @@
 		B83A07AA204B28DB006C3C6E /* Scripting */ = {
 			isa = PBXGroup;
 			children = (
+				B8BE878820578180000AB194 /* hideControlStrip.sh */,
+				B8BE878920578180000AB194 /* recordControlStripPrefs.sh */,
+				B8BE878A20578181000AB194 /* replaceControlStripPrefs.py */,
 				B83A07A7204B231A006C3C6E /* TouchBarScriptRunner.swift */,
 				B83A07A52048B961006C3C6E /* ScriptExecutor.swift */,
 			);
@@ -191,7 +200,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8BE878C20578181000AB194 /* recordControlStripPrefs.sh in Resources */,
 				B8988A632042704200CC8D7B /* Assets.xcassets in Resources */,
+				B8BE878B20578181000AB194 /* hideControlStrip.sh in Resources */,
+				B8BE878D20578181000AB194 /* replaceControlStripPrefs.py in Resources */,
 				B83A07B3204B5055006C3C6E /* runescape_chat_font.ttf in Resources */,
 				B8AD3F63204525AD00A3D40D /* MainMenu.xib in Resources */,
 			);

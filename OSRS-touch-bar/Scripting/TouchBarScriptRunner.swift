@@ -29,7 +29,7 @@ import Foundation
         quit application "System Preferences"
         """
         
-        ScriptExecutor.runScriptShowingErrors(sourceString: disableControlStripScript)
+        ScriptExecutor.runAppleScriptShowingErrors(sourceString: disableControlStripScript)
     }
     
     // Enables the Control Strip in System Preferences
@@ -50,7 +50,7 @@ import Foundation
         quit application "System Preferences"
         """
         
-        ScriptExecutor.runScriptShowingErrors(sourceString: setupControlStripScript)
+        ScriptExecutor.runAppleScriptShowingErrors(sourceString: setupControlStripScript)
     }
     
     /*  Displays the Control Strip settings so the user can go back to their
@@ -71,6 +71,21 @@ import Foundation
         end tell
         """
         
-        ScriptExecutor.runScriptShowingErrors(sourceString: disableControlStripScript)
+        ScriptExecutor.runAppleScriptShowingErrors(sourceString: disableControlStripScript)
+    }
+    
+    /* Launches a shell script and discards the result */
+    static func shell(_ args: String...) {
+        let task = Process()
+        task.launchPath = "/usr/bin/env/"
+        task.arguments = args
+        task.launch()
+    }
+    
+    @objc static func hideControlStrip() {
+        if let scriptPath = Bundle.main.path(forResource: "hideControlStrip", ofType: "sh") {
+            print(scriptPath)
+            shell(scriptPath)
+        }
     }
 }
