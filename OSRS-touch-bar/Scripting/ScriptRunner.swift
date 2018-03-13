@@ -12,7 +12,11 @@ import Foundation
 
 @objc class ScriptRunner: NSObject {
     
-    /* Launches a shell script and discards the result */
+    /**
+     Executes a shell process and discards the result
+     
+     - parameter args: Argument(s) to pass to the process
+    */
     static func shell(_ args: String...) {
         let task = Process()
         task.launchPath = "/usr/bin/env/"
@@ -21,7 +25,9 @@ import Foundation
         task.waitUntilExit()
     }
 
-    /* Records the user's Control Strip preferences and hides the Control Strip */
+    /**
+     Records the user's Control Strip preferences and hides the Control Strip
+    */
     @objc static func hideControlStrip() {
         if let recordScriptPath = Bundle.main.path(forResource: "recordControlStripPrefs", ofType: "sh") {
             shell(recordScriptPath)
@@ -32,15 +38,20 @@ import Foundation
         }
     }
     
-    /* Restores the Control Strip */
+    /**
+     Restores the Control Strip
+    */
     @objc static func restoreControlStrip() {
         if let scriptPath = Bundle.main.path(forResource: "restoreControlStrip", ofType: "py") {
             shell(scriptPath)
         }
     }
     
-    // Executes an AppleScript from a source string and displays any errors in
-    // an NSAlert.
+    /**
+     Executes an AppleScript from a source string and displays any errors inan NSAlert.
+     
+     - parameter sourceString: The AppleScript to execute
+    */
     @objc static func runAppleScriptShowingErrors(sourceString: String) {
         var scriptError: NSDictionary?
         
