@@ -68,8 +68,8 @@ class ViewController: NSViewController {
         let appButtons = [settingsButton, reloadButton, quitButton]
         let buttonFontColor: NSColor = NSColor(red: 255.0/255.0, green: 152.0/255.0, blue: 0, alpha: 1)
         
+        // Add styling to all buttons
         for button in appButtons {
-            
             if let mutableAttributedTitle = button?.attributedTitle.mutableCopy() as? NSMutableAttributedString {
                 mutableAttributedTitle.addAttribute(.foregroundColor, value: buttonFontColor, range: NSRange(location: 0, length: mutableAttributedTitle.length))
                 button?.attributedTitle = mutableAttributedTitle
@@ -79,18 +79,16 @@ class ViewController: NSViewController {
     
     @IBAction func controlStripButtonClicked(_ sender: NSButton) {
         if (sender.state == .on) {
-            print("clicked while on")
             sender.image = #imageLiteral(resourceName: "Radio_On")
             if let mutableAttributedTitle: NSMutableAttributedString = sender.attributedTitle.mutableCopy() as? NSMutableAttributedString {
-                mutableAttributedTitle.mutableString.setString("Control Strip (on)")
+                mutableAttributedTitle.mutableString.setString("  Control Strip (on)")
                 sender.attributedTitle = mutableAttributedTitle
             }
             TouchBarScriptRunner.restoreControlStrip()
         } else {
             sender.image = #imageLiteral(resourceName: "Radio_Off")
-            print("clicked while off")
             if let mutableAttributedTitle: NSMutableAttributedString = sender.attributedTitle.mutableCopy() as? NSMutableAttributedString {
-                mutableAttributedTitle.mutableString.setString("Control Strip (off)")
+                mutableAttributedTitle.mutableString.setString("  Control Strip (off)")
                 sender.attributedTitle = mutableAttributedTitle
             }
             TouchBarScriptRunner.hideControlStrip()
