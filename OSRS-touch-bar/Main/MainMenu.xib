@@ -86,7 +86,7 @@
                             <rect key="frame" x="1" y="1" width="338" height="200"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <button ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fWL-bo-4Mu">
+                                <button translatesAutoresizingMaskIntoConstraints="NO" id="fWL-bo-4Mu">
                                     <rect key="frame" x="63" y="132" width="213" height="48"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="48" id="Auh-1L-Fbx"/>
@@ -97,7 +97,7 @@
                                         <font key="font" size="19" name="Runescape-Chat-Font"/>
                                     </buttonCell>
                                 </button>
-                                <button toolTip="Toggles the Touch Bar's Control Strip." translatesAutoresizingMaskIntoConstraints="NO" id="Q1X-jN-C5j" userLabel="Control Strip Button">
+                                <button toolTip="Toggles the Control Strip." translatesAutoresizingMaskIntoConstraints="NO" id="Q1X-jN-C5j" userLabel="Control Strip Button">
                                     <rect key="frame" x="93" y="134" width="153" height="48"/>
                                     <buttonCell key="cell" type="bevel" title="  Control Strip (off)" bezelStyle="regularSquare" image="Radio_Off" imagePosition="left" alignment="left" inset="2" id="qLS-W3-8Ja">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
@@ -121,7 +121,7 @@
                                         <action selector="reloadButtonClicked:" target="xI7-Ve-Bkp" id="380-TC-t8Q"/>
                                     </connections>
                                 </button>
-                                <button toolTip="Quits OSRS Touch Bar and restores your old Control Strip settings" translatesAutoresizingMaskIntoConstraints="NO" id="kmO-Gc-eFx">
+                                <button toolTip="Quits OSRS Touch Bar and restores your Control Strip settings" translatesAutoresizingMaskIntoConstraints="NO" id="kmO-Gc-eFx">
                                     <rect key="frame" x="63" y="18" width="213" height="48"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="213" id="bb9-4h-4bQ"/>
@@ -138,9 +138,11 @@
                             </subviews>
                             <constraints>
                                 <constraint firstItem="9TL-xu-fib" firstAttribute="top" secondItem="Q1X-jN-C5j" secondAttribute="bottom" constant="10" id="57R-az-DcZ"/>
+                                <constraint firstItem="fWL-bo-4Mu" firstAttribute="top" secondItem="QG2-wx-o1r" secondAttribute="top" constant="20" id="AMx-eg-8ec"/>
                                 <constraint firstItem="9TL-xu-fib" firstAttribute="centerX" secondItem="QG2-wx-o1r" secondAttribute="centerX" id="D8L-qg-6Wf"/>
                                 <constraint firstItem="kmO-Gc-eFx" firstAttribute="top" secondItem="9TL-xu-fib" secondAttribute="bottom" constant="10" id="IUR-qb-Zdh"/>
                                 <constraint firstItem="Q1X-jN-C5j" firstAttribute="top" secondItem="QG2-wx-o1r" secondAttribute="top" constant="18" id="Sts-NR-QOi"/>
+                                <constraint firstItem="fWL-bo-4Mu" firstAttribute="centerX" secondItem="QG2-wx-o1r" secondAttribute="centerX" id="V2J-mX-qh8"/>
                                 <constraint firstAttribute="bottom" secondItem="kmO-Gc-eFx" secondAttribute="bottom" constant="18" id="aLc-yk-P1j"/>
                                 <constraint firstItem="kmO-Gc-eFx" firstAttribute="centerX" secondItem="QG2-wx-o1r" secondAttribute="centerX" id="asc-SX-oCm"/>
                                 <constraint firstItem="Q1X-jN-C5j" firstAttribute="centerX" secondItem="QG2-wx-o1r" secondAttribute="centerX" id="gOk-Ex-VeO"/>
