@@ -28,7 +28,7 @@ static const NSTouchBarItemIdentifier controlStripIconIdentifier = @"osrs-logo";
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-     DFRSystemModalShowsCloseBoxWhenFrontMost(NO);
+     DFRSystemModalShowsCloseBoxWhenFrontMost(YES);
     [TouchBarScriptRunner hideControlStrip];
    
     // Create the Control Strip icon
@@ -46,7 +46,7 @@ static const NSTouchBarItemIdentifier controlStripIconIdentifier = @"osrs-logo";
 }
 
 - (void)applicationWillTerminate:(NSNotification *)notification {
-    [TouchBarScriptRunner showTouchBarSettings];
+    [TouchBarScriptRunner restoreControlStrip];
 }
 
 @end

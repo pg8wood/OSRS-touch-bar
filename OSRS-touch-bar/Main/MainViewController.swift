@@ -69,6 +69,7 @@ class ViewController: NSViewController {
         let buttonFontColor: NSColor = NSColor(red: 255.0/255.0, green: 152.0/255.0, blue: 0, alpha: 1)
         
         for button in appButtons {
+            
             if let mutableAttributedTitle = button?.attributedTitle.mutableCopy() as? NSMutableAttributedString {
                 mutableAttributedTitle.addAttribute(.foregroundColor, value: buttonFontColor, range: NSRange(location: 0, length: mutableAttributedTitle.length))
                 button?.attributedTitle = mutableAttributedTitle
@@ -76,16 +77,18 @@ class ViewController: NSViewController {
         }
     }
     
-    @IBAction func settingsButtonClicked(_ sender: NSButton) {
-        TouchBarScriptRunner.showTouchBarSettings()
+    @IBAction func showControlStripButtonClicked(_ sender: NSButton) {
+        TouchBarScriptRunner.restoreControlStrip()
     }
     
+    // Reload the global Touch Bar
     @IBAction func reloadButtonClicked(_ sender: NSButton) {
-       TouchBarScriptRunner.restoreControlStrip()
+        let appDelegate = NSApplication.shared.delegate as? AppDelegate
+        appDelegate?.present(self)
     }
     
     @IBAction func quitButtonClicked(_ sender: Any) {
-        TouchBarScriptRunner.showTouchBarSettings()
+        TouchBarScriptRunner.restoreControlStrip()
         exit(0)
     }
 
