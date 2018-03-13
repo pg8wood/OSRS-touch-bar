@@ -28,8 +28,8 @@ static const NSTouchBarItemIdentifier controlStripIconIdentifier = @"osrs-logo";
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-    [TouchBarScriptRunner hideControlStrip];
-    DFRSystemModalShowsCloseBoxWhenFrontMost(YES);
+    [ScriptRunner hideControlStrip];
+    DFRSystemModalShowsCloseBoxWhenFrontMost(NO);
     DFRElementSetControlStripPresenceForIdentifier(controlStripIconIdentifier, YES);
     [self present:(self)];
 }
@@ -39,7 +39,7 @@ static const NSTouchBarItemIdentifier controlStripIconIdentifier = @"osrs-logo";
 }
 
 - (void)applicationWillTerminate:(NSNotification *)notification {
-    [TouchBarScriptRunner restoreControlStrip];
+    [ScriptRunner restoreControlStrip];
 }
 
 /*  Show the app icon in the Control Strip if the user closes the global

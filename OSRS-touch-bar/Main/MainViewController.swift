@@ -84,14 +84,14 @@ class ViewController: NSViewController {
                 mutableAttributedTitle.mutableString.setString("  Control Strip (on)")
                 sender.attributedTitle = mutableAttributedTitle
             }
-            TouchBarScriptRunner.restoreControlStrip()
+            ScriptRunner.restoreControlStrip()
         } else {
             sender.image = #imageLiteral(resourceName: "Radio_Off")
             if let mutableAttributedTitle: NSMutableAttributedString = sender.attributedTitle.mutableCopy() as? NSMutableAttributedString {
                 mutableAttributedTitle.mutableString.setString("  Control Strip (off)")
                 sender.attributedTitle = mutableAttributedTitle
             }
-            TouchBarScriptRunner.hideControlStrip()
+            ScriptRunner.hideControlStrip()
         }
     }
     
@@ -102,7 +102,7 @@ class ViewController: NSViewController {
     }
     
     @IBAction func quitButtonClicked(_ sender: Any) {
-        TouchBarScriptRunner.restoreControlStrip()
+        ScriptRunner.restoreControlStrip()
         exit(0)
     }
 
@@ -114,7 +114,7 @@ class ViewController: NSViewController {
         
         /*  Sends a system-wide function key press and negates arrow keypresses to
             prevent the camera getting stuck in a pan */
-        ScriptExecutor.runAppleScriptShowingErrors(sourceString: """
+        ScriptRunner.runAppleScriptShowingErrors(sourceString: """
             tell application \"System Events\"
                 key code \(keyCode)\n\
                 key up (key code \(KeyCodes.LeftArrowKeyCode))\n\
