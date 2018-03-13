@@ -28,11 +28,9 @@ static const NSTouchBarItemIdentifier controlStripIconIdentifier = @"osrs-logo";
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-     DFRSystemModalShowsCloseBoxWhenFrontMost(YES);
     [TouchBarScriptRunner hideControlStrip];
-   
+    DFRSystemModalShowsCloseBoxWhenFrontMost(YES);
     DFRElementSetControlStripPresenceForIdentifier(controlStripIconIdentifier, YES);
-    
     [self present:(self)];
 }
 
@@ -45,7 +43,7 @@ static const NSTouchBarItemIdentifier controlStripIconIdentifier = @"osrs-logo";
 }
 
 /*  Show the app icon in the Control Strip if the user closes the global
-    Touch Bar. Tapping it will re-open the global Touch Bar and the app. */
+    Touch Bar. Tapping it will re-open the global Touch Bar and the o*/
 - (void)applicationWillResignActive:(NSNotification *)notification {
     NSCustomTouchBarItem *controlStripTBItem = // Touch Bar, not TeleBlock
     [[NSCustomTouchBarItem alloc] initWithIdentifier:controlStripIconIdentifier];

@@ -97,7 +97,7 @@
                                         <font key="font" size="19" name="Runescape-Chat-Font"/>
                                     </buttonCell>
                                 </button>
-                                <button translatesAutoresizingMaskIntoConstraints="NO" id="Q1X-jN-C5j" userLabel="Control Strip Button">
+                                <button toolTip="Toggles the Touch Bar's Control Strip." translatesAutoresizingMaskIntoConstraints="NO" id="Q1X-jN-C5j" userLabel="Control Strip Button">
                                     <rect key="frame" x="93" y="134" width="153" height="48"/>
                                     <buttonCell key="cell" type="bevel" title="  Control Strip (off)" bezelStyle="regularSquare" image="Radio_Off" imagePosition="left" alignment="left" inset="2" id="qLS-W3-8Ja">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
@@ -107,7 +107,7 @@
                                         <action selector="controlStripButtonClicked:" target="xI7-Ve-Bkp" id="SCz-Xn-BnT"/>
                                     </connections>
                                 </button>
-                                <button translatesAutoresizingMaskIntoConstraints="NO" id="9TL-xu-fib">
+                                <button toolTip="Shows the OSRS Touch Bar even when other apps are running." translatesAutoresizingMaskIntoConstraints="NO" id="9TL-xu-fib">
                                     <rect key="frame" x="63" y="76" width="213" height="48"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="213" id="97Q-Y5-kj9"/>
@@ -121,7 +121,7 @@
                                         <action selector="reloadButtonClicked:" target="xI7-Ve-Bkp" id="380-TC-t8Q"/>
                                     </connections>
                                 </button>
-                                <button translatesAutoresizingMaskIntoConstraints="NO" id="kmO-Gc-eFx">
+                                <button toolTip="Quits OSRS Touch Bar and restores your old Control Strip settings" translatesAutoresizingMaskIntoConstraints="NO" id="kmO-Gc-eFx">
                                     <rect key="frame" x="63" y="18" width="213" height="48"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="213" id="bb9-4h-4bQ"/>
