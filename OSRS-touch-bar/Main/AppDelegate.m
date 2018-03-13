@@ -28,14 +28,14 @@ static const NSTouchBarItemIdentifier controlStripIconIdentifier = @"osrs-logo";
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+     DFRSystemModalShowsCloseBoxWhenFrontMost(NO);
     [TouchBarScriptRunner hideControlStrip];
-    DFRSystemModalShowsCloseBoxWhenFrontMost(YES);
-
+   
     // Create the Control Strip icon
     NSCustomTouchBarItem *controlStripTBItem = // Touch Bar, not TeleBlock
         [[NSCustomTouchBarItem alloc] initWithIdentifier:controlStripIconIdentifier];
     controlStripTBItem.view = [NSButton buttonWithImage: [NSImage imageNamed:@"OSRS_Logo"] target:self action:@selector(present:)];
-    [NSTouchBarItem addSystemTrayItem:controlStripTBItem];
+
     DFRElementSetControlStripPresenceForIdentifier(controlStripIconIdentifier, YES);
     
     [self present:(controlStripTBItem.view)];

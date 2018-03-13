@@ -81,8 +81,7 @@ class ViewController: NSViewController {
     }
     
     @IBAction func reloadButtonClicked(_ sender: NSButton) {
-        let appDelegate = NSApplication.shared.delegate! as! AppDelegate
-        appDelegate.present(self);
+       TouchBarScriptRunner.restoreControlStrip()
     }
     
     @IBAction func quitButtonClicked(_ sender: Any) {

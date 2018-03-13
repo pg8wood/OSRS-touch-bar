@@ -80,12 +80,23 @@ import Foundation
         task.launchPath = "/usr/bin/env/"
         task.arguments = args
         task.launch()
+        task.waitUntilExit()
+    }
+
+    /* Records the user's Control Strip preferences and hides the Control Strip */
+    @objc static func hideControlStrip() {
+        if let recordScriptPath = Bundle.main.path(forResource: "recordControlStripPrefs", ofType: "sh") {
+            shell(recordScriptPath)
+    
+            if let hideScriptPath = Bundle.main.path(forResource: "hideControlStrip", ofType: "sh") {
+                shell(hideScriptPath)
+            }
+        }
     }
     
-    /* Hides the Control Strip */
-    @objc static func hideControlStrip() {
-        if let scriptPath = Bundle.main.path(forResource: "hideControlStrip", ofType: "sh") {
-            print(scriptPath)
+    /* Restores the Control Strip */
+    @objc static func restoreControlStrip() {
+        if let scriptPath = Bundle.main.path(forResource: "restoreControlStrip", ofType: "py") {
             shell(scriptPath)
         }
     }
