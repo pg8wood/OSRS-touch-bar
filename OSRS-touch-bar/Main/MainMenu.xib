@@ -721,7 +721,7 @@
                                         <font key="font" size="19" name="Runescape-Chat-Font"/>
                                     </buttonCell>
                                     <connections>
-                                        <action selector="showControlStripButtonClicked:" target="xI7-Ve-Bkp" id="g09-uG-nFa"/>
+                                        <action selector="reloadButtonClicked:" target="xI7-Ve-Bkp" id="380-TC-t8Q"/>
                                     </connections>
                                 </button>
                                 <button translatesAutoresizingMaskIntoConstraints="NO" id="kmO-Gc-eFx">
@@ -735,10 +735,10 @@
                                         <font key="font" size="19" name="Runescape-Chat-Font"/>
                                     </buttonCell>
                                     <connections>
-                                        <action selector="showControlStripButtonClicked:" target="xI7-Ve-Bkp" id="IO7-uk-I9i"/>
+                                        <action selector="quitButtonClicked:" target="xI7-Ve-Bkp" id="MCa-Mc-eHY"/>
                                     </connections>
                                 </button>
-                                <button misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q1X-jN-C5j">
+                                <button misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q1X-jN-C5j" userLabel="Control Strip Button">
                                     <rect key="frame" x="76" y="132" width="190" height="48"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="48" id="PAv-UR-qU8"/>
@@ -749,7 +749,7 @@
                                         <font key="font" size="19" name="Runescape-Chat-Font"/>
                                     </buttonCell>
                                     <connections>
-                                        <action selector="showControlStripButtonClicked:" target="xI7-Ve-Bkp" id="Ry6-wl-Vwg"/>
+                                        <action selector="controlStripButtonClicked:" target="xI7-Ve-Bkp" id="SCz-Xn-BnT"/>
                                     </connections>
                                 </button>
                             </subviews>
@@ -792,7 +792,7 @@
                                 <font key="font" metaFont="system"/>
                             </buttonCell>
                             <connections>
-                                <action selector="showControlStripButtonClicked:" target="xI7-Ve-Bkp" id="f5d-x9-XXK"/>
+                                <action selector="buttonPressedWithSender:" target="xI7-Ve-Bkp" id="2vh-eO-0ZF"/>
                             </connections>
                         </button>
                     </viewController>
@@ -810,7 +810,7 @@
                                 <font key="font" metaFont="system"/>
                             </buttonCell>
                             <connections>
-                                <action selector="showControlStripButtonClicked:" target="xI7-Ve-Bkp" id="cIB-AZ-aM5"/>
+                                <action selector="buttonPressedWithSender:" target="xI7-Ve-Bkp" id="Lwc-XE-gRT"/>
                             </connections>
                         </button>
                     </viewController>
@@ -822,13 +822,14 @@
                             <rect key="frame" x="0.0" y="0.0" width="60" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="66" id="Exc-ru-ZXv"/>
+                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="F1q-7k-SSY"/>
                             </constraints>
                             <buttonCell key="cell" type="push" bezelStyle="rounded" image="Quest" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ajr-od-YqQ">
                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                 <font key="font" metaFont="system"/>
                             </buttonCell>
                             <connections>
-                                <action selector="showControlStripButtonClicked:" target="xI7-Ve-Bkp" id="1TP-Kk-SP8"/>
+                                <action selector="buttonPressedWithSender:" target="xI7-Ve-Bkp" id="jSK-hh-P8t"/>
                             </connections>
                         </button>
                     </viewController>
@@ -846,7 +847,7 @@
                                 <font key="font" metaFont="system"/>
                             </buttonCell>
                             <connections>
-                                <action selector="showControlStripButtonClicked:" target="xI7-Ve-Bkp" id="vDM-hU-pVy"/>
+                                <action selector="buttonPressedWithSender:" target="xI7-Ve-Bkp" id="3St-KQ-7V7"/>
                             </connections>
                         </button>
                     </viewController>
@@ -864,7 +865,7 @@
                                 <font key="font" metaFont="system"/>
                             </buttonCell>
                             <connections>
-                                <action selector="showControlStripButtonClicked:" target="xI7-Ve-Bkp" id="eUg-6G-sbJ"/>
+                                <action selector="buttonPressedWithSender:" target="xI7-Ve-Bkp" id="d4M-RW-zVw"/>
                             </connections>
                         </button>
                     </viewController>
@@ -882,7 +883,7 @@
                                 <font key="font" metaFont="system"/>
                             </buttonCell>
                             <connections>
-                                <action selector="showControlStripButtonClicked:" target="xI7-Ve-Bkp" id="TJE-j2-5Im"/>
+                                <action selector="buttonPressedWithSender:" target="xI7-Ve-Bkp" id="tYj-Sv-ncB"/>
                             </connections>
                         </button>
                     </viewController>
@@ -900,7 +901,7 @@
                                 <font key="font" metaFont="system"/>
                             </buttonCell>
                             <connections>
-                                <action selector="showControlStripButtonClicked:" target="xI7-Ve-Bkp" id="PXa-BJ-X5v"/>
+                                <action selector="buttonPressedWithSender:" target="xI7-Ve-Bkp" id="V8o-Y2-Uc4"/>
                             </connections>
                         </button>
                     </viewController>
@@ -918,7 +919,7 @@
                                 <font key="font" metaFont="system"/>
                             </buttonCell>
                             <connections>
-                                <action selector="showControlStripButtonClicked:" target="xI7-Ve-Bkp" id="5TY-rI-yft"/>
+                                <action selector="buttonPressedWithSender:" target="xI7-Ve-Bkp" id="f1Y-gF-Mg7"/>
                             </connections>
                         </button>
                     </viewController>
@@ -936,7 +937,7 @@
                                 <font key="font" metaFont="system"/>
                             </buttonCell>
                             <connections>
-                                <action selector="showControlStripButtonClicked:" target="xI7-Ve-Bkp" id="6Ps-gg-cTe"/>
+                                <action selector="buttonPressedWithSender:" target="xI7-Ve-Bkp" id="8Xx-gl-U7m"/>
                             </connections>
                         </button>
                     </viewController>
@@ -954,7 +955,7 @@
                                 <font key="font" metaFont="system"/>
                             </buttonCell>
                             <connections>
-                                <action selector="showControlStripButtonClicked:" target="xI7-Ve-Bkp" id="a2G-c9-ZMC"/>
+                                <action selector="buttonPressedWithSender:" target="xI7-Ve-Bkp" id="o7E-Aw-fzU"/>
                             </connections>
                         </button>
                     </viewController>
@@ -971,7 +972,7 @@
                                 <font key="font" metaFont="system"/>
                             </buttonCell>
                             <connections>
-                                <action selector="showControlStripButtonClicked:" target="xI7-Ve-Bkp" id="1HD-ib-CaK"/>
+                                <action selector="buttonPressedWithSender:" target="xI7-Ve-Bkp" id="ybk-pk-bMb"/>
                             </connections>
                         </button>
                     </viewController>
@@ -989,7 +990,7 @@
                                 <font key="font" metaFont="system"/>
                             </buttonCell>
                             <connections>
-                                <action selector="showControlStripButtonClicked:" target="xI7-Ve-Bkp" id="ZJc-bj-GYV"/>
+                                <action selector="buttonPressedWithSender:" target="xI7-Ve-Bkp" id="qn3-Oj-r2w"/>
                             </connections>
                         </button>
                     </viewController>
@@ -997,21 +998,19 @@
                 </touchBarItem>
                 <touchBarItem id="p2Q-6G-qvP">
                     <viewController key="viewController" id="MJn-cj-dtn">
-                        <button key="view" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WuG-R2-ldl">
+                        <button key="view" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0BZ-sa-k10">
                             <constraints>
-                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="8Cl-ze-kOV"/>
-                                <constraint firstAttribute="width" constant="66" id="kg2-2u-vKy"/>
+                                <constraint firstAttribute="width" constant="66" id="6Er-RA-snu"/>
                             </constraints>
-                            <buttonCell key="cell" type="push" bezelStyle="rounded" image="Music" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Vzl-ju-QIB">
+                            <buttonCell key="cell" type="push" bezelStyle="rounded" image="Music" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="WYa-gr-RhW">
                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                 <font key="font" metaFont="system"/>
                             </buttonCell>
                             <connections>
-                                <action selector="showControlStripButtonClicked:" target="xI7-Ve-Bkp" id="5Ti-he-Duz"/>
+                                <action selector="buttonPressedWithSender:" target="xI7-Ve-Bkp" id="kwS-oH-OKD"/>
                             </connections>
                         </button>
                     </viewController>
-                    <size key="designTimeSize" width="68" height="30"/>
                 </touchBarItem>
             </touchBarItems>
             <point key="canvasLocation" x="104" y="281"/>
@@ -1025,7 +1024,7 @@
                 <outlet property="friendsListButton" destination="pk4-O5-zXO" id="acU-au-hlf"/>
                 <outlet property="ignoreListButton" destination="zly-ql-GnW" id="cbK-lb-3kK"/>
                 <outlet property="inventoryButton" destination="O4o-Ba-eOx" id="k9i-ab-5GV"/>
-                <outlet property="musicButton" destination="WuG-R2-ldl" id="tyb-Dw-92l"/>
+                <outlet property="musicButton" destination="0BZ-sa-k10" id="VYd-c3-gxN"/>
                 <outlet property="optionsButton" destination="vjJ-SH-E1s" id="YjQ-y5-Tw3"/>
                 <outlet property="prayerButton" destination="ftJ-Pd-qP5" id="WMm-ya-c4L"/>
                 <outlet property="questButton" destination="fbJ-0J-ClX" id="ZXH-om-48v"/>

@@ -77,8 +77,7 @@ class ViewController: NSViewController {
         }
     }
     
-    
-    @IBAction func showControlStripButtonClicked(_ sender: NSButton) {
+    @IBAction func controlStripButtonClicked(_ sender: NSButton) {
         if (sender.state == .on) {
             print("clicked while on")
             sender.image = #imageLiteral(resourceName: "Radio_On")
