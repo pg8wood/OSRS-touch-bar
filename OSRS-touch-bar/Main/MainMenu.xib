@@ -771,10 +771,10 @@
             <touchBarItems>
                 <touchBarItem id="ghq-9N-mry">
                     <viewController key="viewController" id="qo7-9a-oQE">
-                        <button key="view" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xEC-cN-WgV">
-                            <rect key="frame" x="0.0" y="0.0" width="68" height="30"/>
+                        <button key="view" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xEC-cN-WgV">
+                            <rect key="frame" x="0.0" y="0.0" width="60" height="30"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="68" id="H3F-E4-UnW"/>
+                                <constraint firstAttribute="width" constant="66" id="H3F-E4-UnW"/>
                             </constraints>
                             <buttonCell key="cell" type="push" bezelStyle="rounded" image="Combat_Options" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="fin-dw-0SN">
                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -785,14 +785,14 @@
                             </connections>
                         </button>
                     </viewController>
-                    <size key="designTimeSize" width="68" height="30"/>
+                    <size key="designTimeSize" width="60" height="30"/>
                 </touchBarItem>
                 <touchBarItem id="RGt-cr-DNX">
                     <viewController key="viewController" id="tB6-zy-Dkd">
-                        <button key="view" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="sQM-sI-5F4">
-                            <rect key="frame" x="0.0" y="0.0" width="68" height="30"/>
+                        <button key="view" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sQM-sI-5F4">
+                            <rect key="frame" x="0.0" y="0.0" width="60" height="30"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="68" id="esJ-Y7-TJR"/>
+                                <constraint firstAttribute="width" constant="66" id="esJ-Y7-TJR"/>
                             </constraints>
                             <buttonCell key="cell" type="push" bezelStyle="rounded" image="Stats" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="znr-0p-4ky">
                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -803,14 +803,14 @@
                             </connections>
                         </button>
                     </viewController>
-                    <size key="designTimeSize" width="68" height="30"/>
+                    <size key="designTimeSize" width="60" height="30"/>
                 </touchBarItem>
                 <touchBarItem id="BMc-l2-X2k">
                     <viewController key="viewController" id="V0V-c1-7gx">
-                        <button key="view" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fbJ-0J-ClX">
-                            <rect key="frame" x="0.0" y="0.0" width="68" height="30"/>
+                        <button key="view" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fbJ-0J-ClX">
+                            <rect key="frame" x="0.0" y="0.0" width="60" height="30"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="68" id="Exc-ru-ZXv"/>
+                                <constraint firstAttribute="width" constant="66" id="Exc-ru-ZXv"/>
                             </constraints>
                             <buttonCell key="cell" type="push" bezelStyle="rounded" image="Quest" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ajr-od-YqQ">
                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -821,14 +821,14 @@
                             </connections>
                         </button>
                     </viewController>
-                    <size key="designTimeSize" width="68" height="30"/>
+                    <size key="designTimeSize" width="60" height="30"/>
                 </touchBarItem>
                 <touchBarItem id="Oms-1i-f2B">
                     <viewController key="viewController" id="rQ8-Gz-Epe">
-                        <button key="view" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="O4o-Ba-eOx">
-                            <rect key="frame" x="0.0" y="0.0" width="68" height="30"/>
+                        <button key="view" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O4o-Ba-eOx">
+                            <rect key="frame" x="0.0" y="0.0" width="60" height="30"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="68" id="1sq-5J-UCr"/>
+                                <constraint firstAttribute="width" constant="66" id="1sq-5J-UCr"/>
                             </constraints>
                             <buttonCell key="cell" type="push" bezelStyle="rounded" image="Inventory" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="3m6-1J-lI8">
                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -839,14 +839,14 @@
                             </connections>
                         </button>
                     </viewController>
-                    <size key="designTimeSize" width="68" height="30"/>
+                    <size key="designTimeSize" width="60" height="30"/>
                 </touchBarItem>
                 <touchBarItem id="CKt-Sd-RPZ">
                     <viewController key="viewController" id="5wF-iJ-NO6">
-                        <button key="view" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="kqv-yD-cHg">
-                            <rect key="frame" x="0.0" y="0.0" width="68" height="30"/>
+                        <button key="view" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kqv-yD-cHg">
+                            <rect key="frame" x="0.0" y="0.0" width="60" height="30"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="68" id="gSI-sP-BoV"/>
+                                <constraint firstAttribute="width" constant="66" id="gSI-sP-BoV"/>
                             </constraints>
                             <buttonCell key="cell" type="push" bezelStyle="rounded" image="Worn_equipment" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Cme-56-LPH">
                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -857,14 +857,14 @@
                             </connections>
                         </button>
                     </viewController>
-                    <size key="designTimeSize" width="68" height="30"/>
+                    <size key="designTimeSize" width="60" height="30"/>
                 </touchBarItem>
                 <touchBarItem id="5gQ-bj-XNo">
                     <viewController key="viewController" id="vSv-uT-Ftq">
-                        <button key="view" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ftJ-Pd-qP5">
-                            <rect key="frame" x="0.0" y="0.0" width="68" height="30"/>
+                        <button key="view" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ftJ-Pd-qP5">
+                            <rect key="frame" x="0.0" y="0.0" width="60" height="30"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="68" id="UO4-Dc-bZf"/>
+                                <constraint firstAttribute="width" constant="66" id="UO4-Dc-bZf"/>
                             </constraints>
                             <buttonCell key="cell" type="push" bezelStyle="rounded" image="Prayer_tab_icon" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="TlM-Th-484">
                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -875,14 +875,14 @@
                             </connections>
                         </button>
                     </viewController>
-                    <size key="designTimeSize" width="68" height="30"/>
+                    <size key="designTimeSize" width="60" height="30"/>
                 </touchBarItem>
                 <touchBarItem id="RZP-Yx-ZyW">
                     <viewController key="viewController" id="8Rc-UK-P7l">
-                        <button key="view" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="u87-BL-tfh">
-                            <rect key="frame" x="0.0" y="0.0" width="68" height="30"/>
+                        <button key="view" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u87-BL-tfh">
+                            <rect key="frame" x="0.0" y="0.0" width="60" height="30"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="68" id="Cej-x2-VuH"/>
+                                <constraint firstAttribute="width" constant="66" id="Cej-x2-VuH"/>
                             </constraints>
                             <buttonCell key="cell" type="push" bezelStyle="rounded" image="Spellbook" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="GkB-8w-1O4">
                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -893,14 +893,14 @@
                             </connections>
                         </button>
                     </viewController>
-                    <size key="designTimeSize" width="68" height="30"/>
+                    <size key="designTimeSize" width="60" height="30"/>
                 </touchBarItem>
                 <touchBarItem id="Jb8-pD-1oS">
                     <viewController key="viewController" id="R50-hE-GHC">
-                        <button key="view" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="svG-cM-UBj">
-                            <rect key="frame" x="0.0" y="0.0" width="68" height="30"/>
+                        <button key="view" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="svG-cM-UBj">
+                            <rect key="frame" x="0.0" y="0.0" width="60" height="30"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="68" id="xOW-c4-1UJ"/>
+                                <constraint firstAttribute="width" constant="66" id="xOW-c4-1UJ"/>
                             </constraints>
                             <buttonCell key="cell" type="push" bezelStyle="rounded" image="Clan_Chat" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="iR4-el-sJd">
                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -911,14 +911,14 @@
                             </connections>
                         </button>
                     </viewController>
-                    <size key="designTimeSize" width="68" height="30"/>
+                    <size key="designTimeSize" width="60" height="30"/>
                 </touchBarItem>
                 <touchBarItem id="qY1-ER-JgP">
                     <viewController key="viewController" id="U9b-Uo-Nb0">
-                        <button key="view" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="pk4-O5-zXO">
-                            <rect key="frame" x="0.0" y="0.0" width="68" height="30"/>
+                        <button key="view" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pk4-O5-zXO">
+                            <rect key="frame" x="0.0" y="0.0" width="60" height="30"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="68" id="yVd-3Z-JRr"/>
+                                <constraint firstAttribute="width" constant="66" id="yVd-3Z-JRr"/>
                             </constraints>
                             <buttonCell key="cell" type="push" bezelStyle="rounded" image="Friends_List" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="zVR-fN-Rmq">
                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -929,13 +929,14 @@
                             </connections>
                         </button>
                     </viewController>
-                    <size key="designTimeSize" width="68" height="30"/>
+                    <size key="designTimeSize" width="60" height="30"/>
                 </touchBarItem>
                 <touchBarItem id="ETE-li-IUv">
                     <viewController key="viewController" id="QQ1-eY-pPX">
                         <button key="view" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zly-ql-GnW">
+                            <rect key="frame" x="0.0" y="0.0" width="67" height="30"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="68" id="ePK-0X-hH7"/>
+                                <constraint firstAttribute="width" constant="66" id="ePK-0X-hH7"/>
                             </constraints>
                             <buttonCell key="cell" type="push" bezelStyle="rounded" image="Ignore_List" imagePosition="overlaps" alignment="center" alternateImage="Ignore_List" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Lo7-LI-XOb">
                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -946,13 +947,13 @@
                             </connections>
                         </button>
                     </viewController>
-                    <size key="designTimeSize" width="68" height="30"/>
+                    <size key="designTimeSize" width="67" height="30"/>
                 </touchBarItem>
                 <touchBarItem id="KkV-bQ-GyR">
                     <viewController key="viewController" id="1i0-oK-Hs8">
                         <button key="view" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vjJ-SH-E1s">
                             <constraints>
-                                <constraint firstAttribute="width" constant="68" id="mHs-Ku-QHg"/>
+                                <constraint firstAttribute="width" constant="66" id="mHs-Ku-QHg"/>
                             </constraints>
                             <buttonCell key="cell" type="push" bezelStyle="rounded" image="Options" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="1Cq-rP-8PW">
                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -969,7 +970,8 @@
                     <viewController key="viewController" id="46E-kD-9m6">
                         <button key="view" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PUw-An-CJL">
                             <constraints>
-                                <constraint firstAttribute="width" constant="68" id="P0D-oy-rId"/>
+                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="Jpw-UN-AQ3"/>
+                                <constraint firstAttribute="width" constant="66" id="P0D-oy-rId"/>
                             </constraints>
                             <buttonCell key="cell" type="push" bezelStyle="rounded" image="Emote_button" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="W3h-yj-VLS">
                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -986,7 +988,8 @@
                     <viewController key="viewController" id="MJn-cj-dtn">
                         <button key="view" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WuG-R2-ldl">
                             <constraints>
-                                <constraint firstAttribute="width" constant="68" id="kg2-2u-vKy"/>
+                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="8Cl-ze-kOV"/>
+                                <constraint firstAttribute="width" constant="66" id="kg2-2u-vKy"/>
                             </constraints>
                             <buttonCell key="cell" type="push" bezelStyle="rounded" image="Music" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Vzl-ju-QIB">
                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>

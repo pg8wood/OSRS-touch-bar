@@ -24,7 +24,6 @@ static const NSTouchBarItemIdentifier controlStripIconIdentifier = @"osrs-logo";
 - (void)present:(id)sender {
     [NSTouchBar presentSystemModalFunctionBar:self.touchBar
                      systemTrayItemIdentifier:controlStripIconIdentifier];
-    [TouchBarScriptRunner expandTouchBar];
     [NSApp activateIgnoringOtherApps:YES]; // Make sure the user sees the next screen
 }
 

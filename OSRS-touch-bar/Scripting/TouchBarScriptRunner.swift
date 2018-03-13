@@ -82,6 +82,7 @@ import Foundation
         task.launch()
     }
     
+    /* Hides the Control Strip */
     @objc static func hideControlStrip() {
         if let scriptPath = Bundle.main.path(forResource: "hideControlStrip", ofType: "sh") {
             print(scriptPath)
