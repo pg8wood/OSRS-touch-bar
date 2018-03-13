@@ -12,6 +12,9 @@ import Foundation
 
 @objc class ScriptRunner: NSObject {
     
+    // File that keeps track of the user's Control Strip preferences
+    static let controlStripPrefsFilename: String = "MiniCustomizedPreferences.txt"
+    
     /**
      Executes a shell process and discards the result
      
@@ -42,6 +45,10 @@ import Foundation
      Restores the Control Strip
     */
     @objc static func restoreControlStrip() {
+        /*
+         Python's file I/O is much simpler here and still obeys Apple's
+         app sandboxing requirements
+         */
         if let scriptPath = Bundle.main.path(forResource: "restoreControlStrip", ofType: "py") {
             shell(scriptPath)
         }
