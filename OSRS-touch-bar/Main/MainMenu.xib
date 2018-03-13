@@ -699,19 +699,16 @@
                             <rect key="frame" x="1" y="1" width="338" height="200"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <button translatesAutoresizingMaskIntoConstraints="NO" id="Q1X-jN-C5j">
-                                    <rect key="frame" x="63" y="134" width="213" height="48"/>
+                                <button ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fWL-bo-4Mu">
+                                    <rect key="frame" x="63" y="132" width="213" height="48"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="48" id="PAv-UR-qU8"/>
-                                        <constraint firstAttribute="width" constant="213" id="V0G-yg-JVH"/>
+                                        <constraint firstAttribute="height" constant="48" id="Auh-1L-Fbx"/>
+                                        <constraint firstAttribute="width" constant="213" id="Ll5-4N-EuV"/>
                                     </constraints>
-                                    <buttonCell key="cell" type="bevel" title="Control Strip (off)" bezelStyle="regularSquare" image="Radio_Off" imagePosition="left" alignment="left" inset="2" id="qLS-W3-8Ja">
-                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="Button_Background" imagePosition="overlaps" alignment="center" imageScaling="axesIndependently" inset="2" id="uTz-q5-3mT">
+                                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" size="19" name="Runescape-Chat-Font"/>
                                     </buttonCell>
-                                    <connections>
-                                        <action selector="showControlStripButtonClicked:" target="xI7-Ve-Bkp" id="Ry6-wl-Vwg"/>
-                                    </connections>
                                 </button>
                                 <button translatesAutoresizingMaskIntoConstraints="NO" id="9TL-xu-fib">
                                     <rect key="frame" x="63" y="76" width="213" height="48"/>
@@ -739,6 +736,20 @@
                                     </buttonCell>
                                     <connections>
                                         <action selector="showControlStripButtonClicked:" target="xI7-Ve-Bkp" id="IO7-uk-I9i"/>
+                                    </connections>
+                                </button>
+                                <button misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q1X-jN-C5j">
+                                    <rect key="frame" x="76" y="132" width="190" height="48"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="48" id="PAv-UR-qU8"/>
+                                        <constraint firstAttribute="width" constant="213" id="V0G-yg-JVH"/>
+                                    </constraints>
+                                    <buttonCell key="cell" type="bevel" title="Control Strip (off)" bezelStyle="regularSquare" image="Radio_Off" imagePosition="left" alignment="left" inset="2" id="qLS-W3-8Ja">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                        <font key="font" size="19" name="Runescape-Chat-Font"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="showControlStripButtonClicked:" target="xI7-Ve-Bkp" id="Ry6-wl-Vwg"/>
                                     </connections>
                                 </button>
                             </subviews>

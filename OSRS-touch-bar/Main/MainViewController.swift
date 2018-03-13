@@ -77,8 +77,25 @@ class ViewController: NSViewController {
         }
     }
     
+    
     @IBAction func showControlStripButtonClicked(_ sender: NSButton) {
-        TouchBarScriptRunner.restoreControlStrip()
+        if (sender.state == .on) {
+            print("clicked while on")
+            sender.image = #imageLiteral(resourceName: "Radio_On")
+            if let mutableAttributedTitle: NSMutableAttributedString = sender.attributedTitle.mutableCopy() as? NSMutableAttributedString {
+                mutableAttributedTitle.mutableString.setString("Control Strip (on)")
+                sender.attributedTitle = mutableAttributedTitle
+            }
+            TouchBarScriptRunner.restoreControlStrip()
+        } else {
+            sender.image = #imageLiteral(resourceName: "Radio_Off")
+            print("clicked while off")
+            if let mutableAttributedTitle: NSMutableAttributedString = sender.attributedTitle.mutableCopy() as? NSMutableAttributedString {
+                mutableAttributedTitle.mutableString.setString("Control Strip (off)")
+                sender.attributedTitle = mutableAttributedTitle
+            }
+            TouchBarScriptRunner.hideControlStrip()
+        }
     }
     
     // Reload the global Touch Bar
