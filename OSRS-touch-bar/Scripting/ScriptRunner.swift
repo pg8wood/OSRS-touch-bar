@@ -16,7 +16,7 @@ import Foundation
     static var controlStripPreferences: String? = nil
     
     /**
-     Runs a subprocess and returns its output 
+     Runs a subprocess and returns its output
      
      - parameter launchPath: The executable to run
      - parameter args: Argument(s) to pass to the executable
@@ -24,7 +24,7 @@ import Foundation
      - returns: An optional String with contents of the process' standard output
     */
     @discardableResult
-    static func shell(_ launchPath: String, _ args: String...) -> String? {
+    static func shell(_ launchPath: String, _ args: [String]) -> String? {
         let process = Process()
         process.launchPath = launchPath
         process.arguments = args
@@ -39,7 +39,6 @@ import Foundation
         
         if let output = String(data: pipe.fileHandleForReading.readDataToEndOfFile(),  encoding: String.Encoding.utf8) {
             return output
-         
         }
         return nil
     }
@@ -49,10 +48,15 @@ import Foundation
     */
     @objc static func hideControlStrip() {
         if let recordScriptPath = Bundle.main.path(forResource: "recordControlStripPrefs", ofType: "sh") {
-            controlStripPreferences = shell(recordScriptPath)
+            // Record the Control Strip preferences only on first call
+            if controlStripPreferences == nil {
+                controlStripPreferences = shell(recordScriptPath, [])
+            }
             print(controlStripPreferences!)
+            
+            // Hide the Control Strip
             if let hideScriptPath = Bundle.main.path(forResource: "hideControlStrip", ofType: "sh") {
-                shell(hideScriptPath)
+                shell(hideScriptPath, [])
             }
         }
     }
@@ -65,8 +69,19 @@ import Foundation
          Python's file I/O is much simpler here, and Apple recommends using
          the `defaults` utility for System Preferences rather than NSUserDefaults.
          */
-        if let scriptPath = Bundle.main.path(forResource: "restoreControlStrip", ofType: "py") {
-            shell(scriptPath)
+//        if let scriptPath = Bundle.main.path(forResource: "restoreControlStrip", ofType: "py") {
+//            shell(scriptPath)
+//        }
+        
+        if  let controlStripPrefs = controlStripPreferences,
+            let scriptPath = Bundle.main.path(forResource: "restoreControlStrip", ofType: "py") {
+            // String format required for writing to defaults
+            let prefsString: String = "' \(controlStripPrefs.replacingOccurrences(of: "\n", with: " ").replacingOccurrences(of: "\"", with: "")) '"
+            print(prefsString)
+//            print("/usr/bin/defaults", "write", "~/Library/Preferences/com.apple.controlstrip", "MiniCustomized", prefsString)
+//            print(shell("/usr/bin/defaults", ["write", "~/Library/Preferences/com.apple.controlstrip", "MiniCustomized", prefsString]))
+//            print(shell("/usr/bin/killall", ["ControlStrip"]))
+            shell(scriptPath, [prefsString])
         }
         
     }
