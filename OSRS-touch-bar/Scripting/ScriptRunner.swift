@@ -12,20 +12,35 @@ import Foundation
 
 @objc class ScriptRunner: NSObject {
     
-    // File that keeps track of the user's Control Strip preferences
-    static let controlStripPrefsFilename: String = "MiniCustomizedPreferences.txt"
+    // Records the user's Control Strip preferences
+    static var controlStripPreferences: String? = nil
     
     /**
-     Executes a shell process and discards the result
+     Runs a subprocess and returns its output
      
-     - parameter args: Argument(s) to pass to the process
+     - parameter launchPath: The executable to run
+     - parameter args: Arguments to pass to the executable
+     
+     - returns: An optional String with contents of the process' standard output
     */
-    static func shell(_ args: String...) {
-        let task = Process()
-        task.launchPath = "/usr/bin/env/"
-        task.arguments = args
-        task.launch()
-        task.waitUntilExit()
+    @discardableResult
+    static func shell(_ launchPath: String, _ args: [String]) -> String? {
+        let process = Process()
+        process.launchPath = launchPath
+        process.arguments = args
+        
+        // Capture the process' output
+        let pipe = Pipe()
+        process.standardOutput = pipe
+        
+        // Run the process
+        process.launch()
+        process.waitUntilExit()
+        
+        if let output = String(data: pipe.fileHandleForReading.readDataToEndOfFile(),  encoding: String.Encoding.utf8) {
+            return output
+        }
+        return nil
     }
 
     /**
@@ -33,24 +48,40 @@ import Foundation
     */
     @objc static func hideControlStrip() {
         if let recordScriptPath = Bundle.main.path(forResource: "recordControlStripPrefs", ofType: "sh") {
-            shell(recordScriptPath)
-    
+            // Record the Control Strip preferences only on first call
+            if controlStripPreferences == nil {
+                controlStripPreferences = shell(recordScriptPath, [])
+            }
+            
+            // Hide the Control Strip
             if let hideScriptPath = Bundle.main.path(forResource: "hideControlStrip", ofType: "sh") {
-                shell(hideScriptPath)
+                shell(hideScriptPath, [])
             }
         }
     }
     
     /**
-     Restores the Control Strip
+     Restores the Control Strip. Uses a small Python script since Swift's Process
+     class is barred from managing user defaults, but at the same time Apple recommends
+     using the `defaults` utility for System Preferences rather than the NSUserDefaults
+     class ¯\_(ツ)_/¯
     */
     @objc static func restoreControlStrip() {
-        /*
-         Python's file I/O is much simpler here and still obeys Apple's
-         app sandboxing requirements
-         */
-        if let scriptPath = Bundle.main.path(forResource: "restoreControlStrip", ofType: "py") {
-            shell(scriptPath)
+        if  let controlStripPrefs = controlStripPreferences,
+            let scriptPath = Bundle.main.path(forResource: "restoreControlStrip", ofType: "py") {
+            
+            /*
+             `defaults read` prints the defaults with double quotes, but `defaults write`
+             doesn't accept double quotes. So, strip them off and create a nice one line
+             String that `defaults write` will accept
+             */
+            let strippedPrefsString = controlStripPrefs.replacingOccurrences(of: "\n", with: " ").replacingOccurrences(of: "\"", with: "")
+            
+            // `defaults write` also requires the defaults to be single quoted
+            let finalPrefsString: String = "' \(strippedPrefsString) '"
+            
+            // Run the script
+            shell(scriptPath, [finalPrefsString])
         }
     }
     
