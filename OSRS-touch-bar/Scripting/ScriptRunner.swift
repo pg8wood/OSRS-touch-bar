@@ -19,7 +19,7 @@ import Foundation
      Runs a subprocess and returns its output
      
      - parameter launchPath: The executable to run
-     - parameter args: Argument(s) to pass to the executable
+     - parameter args: Arguments to pass to the executable
      
      - returns: An optional String with contents of the process' standard output
     */
@@ -52,7 +52,6 @@ import Foundation
             if controlStripPreferences == nil {
                 controlStripPreferences = shell(recordScriptPath, [])
             }
-            print(controlStripPreferences!)
             
             // Hide the Control Strip
             if let hideScriptPath = Bundle.main.path(forResource: "hideControlStrip", ofType: "sh") {
@@ -62,28 +61,28 @@ import Foundation
     }
     
     /**
-     Restores the Control Strip
+     Restores the Control Strip. Uses a small Python script since Swift's Process
+     class is barred from managing user defaults, but at the same time Apple recommends
+     using the `defaults` utility for System Preferences rather than the NSUserDefaults
+     class ¯\_(ツ)_/¯
     */
     @objc static func restoreControlStrip() {
-        /*
-         Python's file I/O is much simpler here, and Apple recommends using
-         the `defaults` utility for System Preferences rather than NSUserDefaults.
-         */
-//        if let scriptPath = Bundle.main.path(forResource: "restoreControlStrip", ofType: "py") {
-//            shell(scriptPath)
-//        }
-        
         if  let controlStripPrefs = controlStripPreferences,
             let scriptPath = Bundle.main.path(forResource: "restoreControlStrip", ofType: "py") {
-            // String format required for writing to defaults
-            let prefsString: String = "' \(controlStripPrefs.replacingOccurrences(of: "\n", with: " ").replacingOccurrences(of: "\"", with: "")) '"
-            print(prefsString)
-//            print("/usr/bin/defaults", "write", "~/Library/Preferences/com.apple.controlstrip", "MiniCustomized", prefsString)
-//            print(shell("/usr/bin/defaults", ["write", "~/Library/Preferences/com.apple.controlstrip", "MiniCustomized", prefsString]))
-//            print(shell("/usr/bin/killall", ["ControlStrip"]))
-            shell(scriptPath, [prefsString])
+            
+            /*
+             `defaults read` prints the defaults with double quotes, but `defaults write`
+             doesn't accept double quotes. So, strip them off and create a nice one line
+             String that `defaults write` will accept
+             */
+            let strippedPrefsString = controlStripPrefs.replacingOccurrences(of: "\n", with: " ").replacingOccurrences(of: "\"", with: "")
+            
+            // `defaults write` also requires the defaults to be single quoted
+            let finalPrefsString: String = "' \(strippedPrefsString) '"
+            
+            // Run the script
+            shell(scriptPath, [finalPrefsString])
         }
-        
     }
     
     /**
