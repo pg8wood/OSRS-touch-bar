@@ -2,7 +2,7 @@
 # Reloads the user's original Control Strip settings
 import sys, os
 
-filename = "MiniCustomizedPreferences.txt"
+filename = "/tmp/MiniCustomizedPreferences.txt"
 
 with open(filename, 'r') as constrolStripDefaultsFile:
     # Read the preferences file

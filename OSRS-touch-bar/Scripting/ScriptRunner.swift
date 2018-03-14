@@ -20,12 +20,21 @@ import Foundation
      
      - parameter args: Argument(s) to pass to the process
     */
-    static func shell(_ args: String...) {
-        let task = Process()
-        task.launchPath = "/usr/bin/env/"
-        task.arguments = args
-        task.launch()
-        task.waitUntilExit()
+    @discardableResult
+    static func shell(_ args: String...) -> String? {
+        let process = Process()
+        process.launchPath = "/usr/bin/env/"
+        process.arguments = args
+        let pipe = Pipe()
+        process.standardOutput = pipe
+        process.launch()
+        process.waitUntilExit()
+        
+        if let output = String(data: pipe.fileHandleForReading.readDataToEndOfFile(),  encoding: String.Encoding.utf8) {
+            return output
+        }
+        
+        return nil
     }
 
     /**
