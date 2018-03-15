@@ -99,9 +99,9 @@
                                         <font key="font" size="19" name="Runescape-Chat-Font"/>
                                     </buttonCell>
                                 </button>
-                                <button toolTip="Toggles the Control Strip." translatesAutoresizingMaskIntoConstraints="NO" id="Q1X-jN-C5j" userLabel="Control Strip Button">
-                                    <rect key="frame" x="93" y="134" width="153" height="48"/>
-                                    <buttonCell key="cell" type="bevel" title="  Control Strip (off)" bezelStyle="regularSquare" image="Radio_Off" imagePosition="left" alignment="left" inset="2" id="qLS-W3-8Ja">
+                                <button toolTip="Toggles the Control Strip." imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q1X-jN-C5j" userLabel="Control Strip Button">
+                                    <rect key="frame" x="63" y="134" width="213" height="48"/>
+                                    <buttonCell key="cell" type="bevel" title="  Control Strip (off)" bezelStyle="regularSquare" image="Radio_Off" imagePosition="left" alignment="center" inset="2" id="qLS-W3-8Ja">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
                                         <font key="font" size="19" name="Runescape-Chat-Font"/>
                                     </buttonCell>
@@ -142,13 +142,16 @@
                                 <constraint firstItem="9TL-xu-fib" firstAttribute="top" secondItem="Q1X-jN-C5j" secondAttribute="bottom" constant="10" id="57R-az-DcZ"/>
                                 <constraint firstItem="fWL-bo-4Mu" firstAttribute="top" secondItem="QG2-wx-o1r" secondAttribute="top" constant="20" id="AMx-eg-8ec"/>
                                 <constraint firstItem="9TL-xu-fib" firstAttribute="centerX" secondItem="QG2-wx-o1r" secondAttribute="centerX" id="D8L-qg-6Wf"/>
+                                <constraint firstItem="fWL-bo-4Mu" firstAttribute="centerX" secondItem="QG2-wx-o1r" secondAttribute="centerX" id="F1q-6k-XyS"/>
                                 <constraint firstItem="kmO-Gc-eFx" firstAttribute="top" secondItem="9TL-xu-fib" secondAttribute="bottom" constant="10" id="IUR-qb-Zdh"/>
                                 <constraint firstItem="Q1X-jN-C5j" firstAttribute="top" secondItem="QG2-wx-o1r" secondAttribute="top" constant="18" id="Sts-NR-QOi"/>
                                 <constraint firstItem="fWL-bo-4Mu" firstAttribute="centerX" secondItem="QG2-wx-o1r" secondAttribute="centerX" id="V2J-mX-qh8"/>
                                 <constraint firstAttribute="bottom" secondItem="kmO-Gc-eFx" secondAttribute="bottom" constant="18" id="aLc-yk-P1j"/>
                                 <constraint firstItem="kmO-Gc-eFx" firstAttribute="centerX" secondItem="QG2-wx-o1r" secondAttribute="centerX" id="asc-SX-oCm"/>
                                 <constraint firstItem="Q1X-jN-C5j" firstAttribute="centerX" secondItem="QG2-wx-o1r" secondAttribute="centerX" id="gOk-Ex-VeO"/>
+                                <constraint firstItem="Q1X-jN-C5j" firstAttribute="width" secondItem="fWL-bo-4Mu" secondAttribute="width" id="iJO-X3-7D5"/>
                                 <constraint firstItem="Q1X-jN-C5j" firstAttribute="centerX" secondItem="QG2-wx-o1r" secondAttribute="centerX" id="jXk-JK-DIL"/>
+                                <constraint firstItem="Q1X-jN-C5j" firstAttribute="height" secondItem="fWL-bo-4Mu" secondAttribute="height" id="ypE-5s-owv"/>
                             </constraints>
                         </view>
                         <constraints>
