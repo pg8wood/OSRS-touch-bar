@@ -138,8 +138,6 @@ class ViewController: NSViewController {
         ScriptRunner.runAppleScriptShowingErrors(sourceString: """
             tell application \"System Events\"
                 key code \(keyCode)\n\
-                key up (key code \(KeyCodes.LeftArrowKeyCode))\n\
-                key up (key code \(KeyCodes.RightArrowKeyCode))
             end tell
             """)
     }
