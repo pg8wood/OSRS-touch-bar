@@ -3,6 +3,10 @@ OSRS-touch-bar displays [Old School RuneScape](http://oldschool.runescape.com) i
 
 ![Touch bar screenshot](./touchBarScreenshot.png)
 
+# Download
+
+[Download the latest release here.](https://github.com/pg8wood/OSRS-touch-bar/releases/download/1.0/OSRS-touch-bar-1.0.dmg)
+
 # Usage
 
 On launch, your Touch Bar will display the interface shown above until you quit OSRS-touch-bar (even if you switch apps). 
