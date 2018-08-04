@@ -66,12 +66,17 @@ class ViewController: NSViewController {
         let appButtons = [settingsButton, reloadButton, quitButton]
         let buttonFontColor: NSColor = NSColor(red: 255.0/255.0, green: 152.0/255.0, blue: 0, alpha: 1)
         
-        // Style the app buttons
-        for button in appButtons {
-            if let mutableAttributedTitle = button?.attributedTitle.mutableCopy() as? NSMutableAttributedString {
-                mutableAttributedTitle.addAttribute(.foregroundColor, value: buttonFontColor, range: NSRange(location: 0, length: mutableAttributedTitle.length))
-                button?.attributedTitle = mutableAttributedTitle
+        // Style each button
+        for menuButton in appButtons {
+            guard let button = menuButton,
+                let buttonTitle = button.attributedTitle.mutableCopy() as? NSMutableAttributedString else {
+                    continue
             }
+            
+            buttonTitle.addAttribute(.foregroundColor, value: buttonFontColor, range: NSRange(location: 0, length: buttonTitle.length))
+            button.attributedTitle = buttonTitle
+            
+            button.font = NSFont(name: "Runescape-Chat-Font", size: 19)
         }
     }
     
