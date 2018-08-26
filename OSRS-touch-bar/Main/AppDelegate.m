@@ -24,8 +24,14 @@ static const NSTouchBarItemIdentifier controlStripIconIdentifier = @"osrs-logo";
  Displays the "fullscreen" Touch Bar interface
  */
 - (void)present:(id)sender {
-    [NSTouchBar presentSystemModalFunctionBar:self.touchBar
-                     systemTrayItemIdentifier:controlStripIconIdentifier];
+    if (@available(macOS 10.14, *)) {
+        [NSTouchBar presentSystemModalTouchBar:self.touchBar
+                      systemTrayItemIdentifier:controlStripIconIdentifier];
+    } else {
+        [NSTouchBar presentSystemModalFunctionBar:self.touchBar
+                         systemTrayItemIdentifier:controlStripIconIdentifier];
+    }
+
     [NSApp activateIgnoringOtherApps:YES]; // Make sure the user sees the next screen
 }
 
@@ -47,6 +53,7 @@ static const NSTouchBarItemIdentifier controlStripIconIdentifier = @"osrs-logo";
     NSCustomTouchBarItem *controlStripTBItem = // Touch Bar, not TeleBlock
     [[NSCustomTouchBarItem alloc] initWithIdentifier:controlStripIconIdentifier];
     controlStripTBItem.view = [NSButton buttonWithImage: [NSImage imageNamed:@"OSRS_Logo"] target:self action:@selector(present:)];
+    
      [NSTouchBarItem addSystemTrayItem:controlStripTBItem];
 }
 
