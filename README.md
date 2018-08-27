@@ -24,9 +24,6 @@ Quitting the app will restore your original Control Strip settings.
 
 Note: if you have your Touch Bar configured to show only the "Expanded Control Strip" or "F1, F2, etc. Keys", OSRS Touch Bar cannot display the RuneScape UI in the Touch Bar! This can be toggled in __System Preferences &rarr; Keyboard__. 
 
-## Known Issues
-Breaks on macOS Mojave. 
-
 ## API Note
 It should be noted that, like other "global" Touch Bar apps ([BetterTouchTool](https://www.boastr.net/), [Touch Bär](https://github.com/a2/touch-baer), etc), OSRS-touch-bar goes against Apple's current Touch Bar guidelines.
 
