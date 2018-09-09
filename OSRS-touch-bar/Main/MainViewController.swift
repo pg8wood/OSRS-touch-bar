@@ -124,8 +124,13 @@ class ViewController: NSViewController {
      - parameter sender: The NSButton clicked
     */
     @IBAction func quitButtonClicked(_ sender: NSButton) {
-        ScriptRunner.restoreControlStrip()
-        exit(0)
+        NSAnimationContext.runAnimationGroup{ _ in
+            NSAnimationContext.current.duration = 2.0
+            
+            let imageView = combatOptionsButton.animator().subviews[1] // probably bad
+            imageView.setFrameOrigin(NSPoint(x: imageView.frame.origin.x - 10, y: imageView.frame.origin.y))
+            
+        }
     }
 
     /**
