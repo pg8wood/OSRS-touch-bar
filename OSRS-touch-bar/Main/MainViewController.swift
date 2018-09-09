@@ -31,7 +31,7 @@ class ViewController: NSViewController {
     @IBOutlet weak var quitButton: NSButton!
 
     // Mapping of Touch Bar buttons to their respective KeyCodes
-    var keyCodeDict: [NSButton: UInt16]?
+    var keyCodeDict: [NSButton: UInt16]!
     
     // -----------------------
     // MARK: - View life cycle
@@ -124,12 +124,20 @@ class ViewController: NSViewController {
      - parameter sender: The NSButton clicked
     */
     @IBAction func quitButtonClicked(_ sender: NSButton) {
-        NSAnimationContext.runAnimationGroup{ _ in
-            NSAnimationContext.current.duration = 2.0
+        for button in keyCodeDict.keys {
+            let imageView = button.animator().subviews[1] // probably bad
+            let translationLength = CGFloat(10)
             
-            let imageView = combatOptionsButton.animator().subviews[1] // probably bad
-            imageView.setFrameOrigin(NSPoint(x: imageView.frame.origin.x - 10, y: imageView.frame.origin.y))
+            let animation = CAKeyframeAnimation()
+            animation.beginTime = CACurrentMediaTime() + CFTimeInterval.random(in: 0...0.15)
+            animation.keyPath = "position.x"
+            animation.values = Bool.random() ? [0, 3, -3, 3, 0] : [0, -3, 3, -3, 0]
+            animation.keyTimes = [0, (1 / 4.0), (2 / 4.0), (3 / 4.0), 1] as [NSNumber]
+            animation.duration = 1.0
+            animation.isAdditive = true
+            animation.repeatCount = Float.infinity
             
+            imageView.layer?.add(animation, forKey: "shake")
         }
     }
 
