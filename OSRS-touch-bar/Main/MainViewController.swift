@@ -126,13 +126,11 @@ class ViewController: NSViewController {
     @IBAction func quitButtonClicked(_ sender: NSButton) {
         for button in keyCodeDict.keys {
             let imageView = button.animator().subviews[1] // probably bad
-            let translationLength = CGFloat(10)
-            
             let animation = CAKeyframeAnimation()
             animation.beginTime = CACurrentMediaTime() + CFTimeInterval.random(in: 0...0.15)
             animation.keyPath = "position.x"
-            animation.values = Bool.random() ? [0, 3, -3, 3, 0] : [0, -3, 3, -3, 0]
-            animation.keyTimes = [0, (1 / 4.0), (2 / 4.0), (3 / 4.0), 1] as [NSNumber]
+            animation.values = Bool.random() ? [0, 3, 0, -3, 0] : [0, -3, 0, 3, 0]
+            animation.calculationMode = "paced"
             animation.duration = 1.0
             animation.isAdditive = true
             animation.repeatCount = Float.infinity
