@@ -129,9 +129,9 @@ class ViewController: NSViewController {
             let animation = CAKeyframeAnimation()
             animation.beginTime = CACurrentMediaTime() + CFTimeInterval.random(in: 0...0.15)
             animation.keyPath = "position.x"
-            animation.values = Bool.random() ? [0, 3, 0, -3, 0] : [0, -3, 0, 3, 0]
+            animation.values = Bool.random() ? [0, 1, 0, -1, 0] : [0, -1, 0, 1, 0]
             animation.calculationMode = "paced"
-            animation.duration = 1.0
+            animation.duration = 0.5
             animation.isAdditive = true
             animation.repeatCount = Float.infinity
             
