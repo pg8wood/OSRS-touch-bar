@@ -26,5 +26,15 @@ class TouchBarGestureRecognizer: NSGestureRecognizer {
     
     override func touchesMoved(with event: NSEvent) {
         print("touches moved")
+        let animation = CAKeyframeAnimation()
+        animation.keyPath = "position.x"
+        animation.values = [event.allTouches().first?.location(in: view).x as Any]
+        animation.duration = 0.1
+        
+        view?.superview?.layer?.add(animation, forKey: "move")
+    }
+    
+    override func touchesEnded(with event: NSEvent) {
+//        view?.superview?.layer?.position = (event.allTouches().first?.location(in: view?.superview))!
     }
 }
