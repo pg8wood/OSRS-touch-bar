@@ -57,6 +57,14 @@ class ViewController: NSViewController {
                     musicButton: KeyCodes.F12KeyCode]
         
         setupMenuButtons()
+       
+       
+        combatOptionsButton.addGestureRecognizer(TouchBarGestureRecognizer())
+        questButton.addGestureRecognizer(TouchBarGestureRecognizer())
+    }
+    
+    func test() {
+        print("test")
     }
     
     /**
@@ -78,6 +86,10 @@ class ViewController: NSViewController {
             
             button.font = NSFont(name: "Runescape-Chat-Font", size: 19)
         }
+    }
+    
+    func touchesMoved() {
+        
     }
     
     // ----------------------
@@ -127,6 +139,7 @@ class ViewController: NSViewController {
         for button in keyCodeDict.keys {
             let imageView = button.animator().subviews[1] // probably bad
             let animation = CAKeyframeAnimation()
+            
             animation.beginTime = CACurrentMediaTime() + CFTimeInterval.random(in: 0...0.15)
             animation.keyPath = "position.x"
             animation.values = Bool.random() ? [0, 1, 0, -1, 0] : [0, -1, 0, 1, 0]
