@@ -15,7 +15,7 @@ class ViewController: NSViewController {
     // App View
     @IBOutlet weak var settingsButton: NSButton!
     @IBOutlet weak var reloadButton: NSButton!
-    @IBOutlet weak var quitButton: NSButton!
+    @IBOutlet weak var customizeButton: NSButton!
     
     // Mapping of Touch Bar buttons to their respective KeyCodes
     var keyCodeDict: [NSButton: UInt16]!
@@ -39,6 +39,10 @@ class ViewController: NSViewController {
         DFRSystemModalShowsCloseBoxWhenFrontMost(false)
         DFRElementSetControlStripPresenceForIdentifier(self.controlStripIconIdentifier, true)
         
+        presentModalTouchBar()
+    }
+    
+    func presentModalTouchBar() {
         if #available(macOS 10.14, *) {
             NSTouchBar.presentSystemModalTouchBar(self.touchBar, systemTrayItemIdentifier: self.controlStripIconIdentifier)
         } else {
@@ -50,7 +54,7 @@ class ViewController: NSViewController {
      Adds attributes to the buttons in the App View
      */
     func setupMenuButtons() {
-        let appButtons = [settingsButton, reloadButton, quitButton]
+        let appButtons = [settingsButton, reloadButton, customizeButton]
         let buttonFontColor: NSColor = NSColor(red: 255.0/255.0, green: 152.0/255.0, blue: 0, alpha: 1)
         
         // Style each button
@@ -101,8 +105,7 @@ class ViewController: NSViewController {
      - parameter sender: The NSButton clicked
      */
     @IBAction func reloadButtonClicked(_ sender: NSButton) {
-        let appDelegate = NSApplication.shared.delegate as? AppDelegate
-        appDelegate?.present(self)
+        presentModalTouchBar()
     }
     
     /**

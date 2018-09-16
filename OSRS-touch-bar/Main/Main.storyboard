@@ -6,6 +6,53 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Application-->
+        <scene sceneID="gs8-ij-Mjv">
+            <objects>
+                <application id="tOs-3v-egS" sceneMemberID="viewController">
+                    <menu key="mainMenu" title="Main Menu" systemMenu="main" id="mt7-N4-gzS">
+                        <items>
+                            <menuItem title="OSRS Touch Bar" id="qhT-We-cer" userLabel="OSRS Touch Bar">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="OSRS Touch Bar" systemMenu="apple" id="j9U-MR-qXw">
+                                    <items>
+                                        <menuItem title="About OSRS Touch Bar" id="q3Q-nt-xhp">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="5NH-V0-fqq"/>
+                                        <menuItem title="Hide TouchBar" keyEquivalent="h" id="mze-f2-3cp"/>
+                                        <menuItem title="Hide Others" keyEquivalent="h" id="txO-1a-y5G">
+                                            <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
+                                        </menuItem>
+                                        <menuItem title="Show All" id="ssI-SS-ryw">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="3WY-su-zEb"/>
+                                        <menuItem title="Quit TouchBar" keyEquivalent="q" id="CLD-Kb-dNv"/>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                            <menuItem title="View" id="qSo-Qh-lDY">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="View" id="Syu-Tf-t4J">
+                                    <items>
+                                        <menuItem title="Customize Touch Bar…" id="YmY-Du-nqe">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                        </items>
+                    </menu>
+                    <connections>
+                        <outlet property="delegate" destination="Rce-oF-fS0" id="dRu-Gx-u1F"/>
+                    </connections>
+                </application>
+                <customObject id="bNz-Mj-BfT" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <customObject id="Rce-oF-fS0" customClass="AppDelegate" customModule="TouchBar" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="-697" y="-71"/>
+        </scene>
         <!--Window Controller-->
         <scene sceneID="HDE-HK-cef">
             <objects>
@@ -82,7 +129,7 @@
                                                 <constraint firstAttribute="height" constant="48" id="0Sm-Vh-cLj"/>
                                                 <constraint firstAttribute="width" constant="213" id="kDn-l2-y60"/>
                                             </constraints>
-                                            <buttonCell key="cell" type="square" title="Quit" bezelStyle="shadowlessSquare" image="Button_Background" imagePosition="overlaps" alignment="center" imageScaling="axesIndependently" inset="2" id="HCm-bm-drS">
+                                            <buttonCell key="cell" type="square" title="Customize..." bezelStyle="shadowlessSquare" image="Button_Background" imagePosition="overlaps" alignment="center" imageScaling="axesIndependently" inset="2" id="HCm-bm-drS">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" size="19" name="Runescape-Chat-Font"/>
                                             </buttonCell>
@@ -121,7 +168,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="quitButton" destination="LtG-yu-DIR" id="o87-oi-ePo"/>
+                        <outlet property="customizeButton" destination="LtG-yu-DIR" id="o87-oi-ePo"/>
                         <outlet property="reloadButton" destination="xJf-RF-xPg" id="FFO-hl-4wO"/>
                         <outlet property="settingsButton" destination="QB8-Gl-Ce7" id="W7g-0O-I1N"/>
                     </connections>
