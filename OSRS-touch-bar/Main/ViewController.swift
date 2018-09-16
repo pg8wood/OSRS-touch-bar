@@ -67,14 +67,15 @@ class ViewController: NSViewController {
         let osrsTouchBar = NSTouchBar()
         osrsTouchBar.delegate = self
         osrsTouchBar.customizationIdentifier = NSTouchBar.CustomizationIdentifier(rawValue: "test")
-        osrsTouchBar.defaultItemIdentifiers = [.combatOptionsLabelItem]
-        osrsTouchBar.customizationAllowedItemIdentifiers = [.combatOptionsLabelItem]
-        osrsTouchBar.principalItemIdentifier = .combatOptionsLabelItem
+        osrsTouchBar.defaultItemIdentifiers = TouchBarItemConstants.TouchBarIdentifier.allCases.map({
+            NSTouchBarItem.Identifier(rawValue: $0.rawValue)
+        })
+        osrsTouchBar.customizationAllowedItemIdentifiers = osrsTouchBar.defaultItemIdentifiers
+        osrsTouchBar.principalItemIdentifier = osrsTouchBar.defaultItemIdentifiers.first
         return osrsTouchBar
     }
     
    
-    
     override func viewDidAppear() {
     }
     

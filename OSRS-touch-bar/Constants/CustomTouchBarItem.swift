@@ -8,15 +8,12 @@
 
 import AppKit
 
-let touchBarItemDict: Dictionary<NSTouchBarItem.Identifier,(imageName: String, KeyCode: UInt16)> = [NSTouchBarItem.Identifier.combatOptionsLabelItem:("Combat_Options", KeyCodes.F1KeyCode)]
-
-
 class CustomTouchBarItem: NSCustomTouchBarItem {
     
     let keyCode: UInt16!
     
     override init(identifier: NSTouchBarItem.Identifier) {
-        let touchBarItemData = touchBarItemDict[identifier]!
+        let touchBarItemData = TouchBarItemConstants.touchBarItemDict[identifier.rawValue]!
         
         keyCode = touchBarItemData.KeyCode
         super.init(identifier: identifier)

@@ -14,7 +14,6 @@
 		B893D676213246D9000A9FB0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B893D675213246D8000A9FB0 /* AppDelegate.m */; };
 		B8988A612042704200CC8D7B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8988A602042704200CC8D7B /* ViewController.swift */; };
 		B8988A632042704200CC8D7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8988A622042704200CC8D7B /* Assets.xcassets */; };
-		B8988A7520427F8C00CC8D7B /* TouchBarIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8988A7420427F8C00CC8D7B /* TouchBarIdentifiers.swift */; };
 		B8AD3F272044986D00A3D40D /* KeyCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AD3F262044986D00A3D40D /* KeyCodes.swift */; };
 		B8AD3F582045220500A3D40D /* DFRFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8AD3F572045220500A3D40D /* DFRFoundation.framework */; };
 		B8AD3F61204524A500A3D40D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B8AD3F60204524A500A3D40D /* main.m */; };
@@ -23,6 +22,7 @@
 		B8BE878D20578181000AB194 /* restoreControlStrip.py in Resources */ = {isa = PBXBuildFile; fileRef = B8BE878A20578181000AB194 /* restoreControlStrip.py */; };
 		B8D0ACBD214ED0180098E255 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D0ACBC214ED0180098E255 /* WindowController.swift */; };
 		B8D0ACC3214EE19D0098E255 /* CustomTouchBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D0ACC2214EE19D0098E255 /* CustomTouchBarItem.swift */; };
+		B8D0ACC5214EE8E70098E255 /* TouchBarItemConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D0ACC4214EE8E70098E255 /* TouchBarItemConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,7 +38,6 @@
 		B8988A622042704200CC8D7B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B8988A672042704200CC8D7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B8988A682042704200CC8D7B /* OSRS_touch_bar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OSRS_touch_bar.entitlements; sourceTree = "<group>"; };
-		B8988A7420427F8C00CC8D7B /* TouchBarIdentifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchBarIdentifiers.swift; sourceTree = "<group>"; };
 		B8AD3F262044986D00A3D40D /* KeyCodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyCodes.swift; sourceTree = "<group>"; };
 		B8AD3F572045220500A3D40D /* DFRFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DFRFoundation.framework; path = ../../../../../../../System/Library/PrivateFrameworks/DFRFoundation.framework; sourceTree = "<group>"; };
 		B8AD3F592045223200A3D40D /* TouchBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TouchBar.h; sourceTree = "<group>"; };
@@ -48,6 +47,7 @@
 		B8BE878A20578181000AB194 /* restoreControlStrip.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = restoreControlStrip.py; sourceTree = "<group>"; };
 		B8D0ACBC214ED0180098E255 /* WindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
 		B8D0ACC2214EE19D0098E255 /* CustomTouchBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTouchBarItem.swift; sourceTree = "<group>"; };
+		B8D0ACC4214EE8E70098E255 /* TouchBarItemConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchBarItemConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,8 +103,8 @@
 			isa = PBXGroup;
 			children = (
 				B8AD3F262044986D00A3D40D /* KeyCodes.swift */,
-				B8988A7420427F8C00CC8D7B /* TouchBarIdentifiers.swift */,
 				B8D0ACC2214EE19D0098E255 /* CustomTouchBarItem.swift */,
+				B8D0ACC4214EE8E70098E255 /* TouchBarItemConstants.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -230,7 +230,7 @@
 				B829000B214C6139007C160A /* TouchBarGestureRecognizer.swift in Sources */,
 				B8AD3F61204524A500A3D40D /* main.m in Sources */,
 				B8D0ACC3214EE19D0098E255 /* CustomTouchBarItem.swift in Sources */,
-				B8988A7520427F8C00CC8D7B /* TouchBarIdentifiers.swift in Sources */,
+				B8D0ACC5214EE8E70098E255 /* TouchBarItemConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
