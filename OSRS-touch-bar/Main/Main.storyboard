@@ -58,6 +58,9 @@
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
                                                 <font key="font" size="19" name="Runescape-Chat-Font"/>
                                             </buttonCell>
+                                            <connections>
+                                                <action selector="controlStripButtonClicked:" target="gSf-af-Mjv" id="cwH-Ib-ka0"/>
+                                            </connections>
                                         </button>
                                         <button toolTip="Shows the OSRS Touch Bar even when other apps are running." translatesAutoresizingMaskIntoConstraints="NO" id="xJf-RF-xPg">
                                             <rect key="frame" x="63" y="76" width="213" height="48"/>
@@ -69,6 +72,9 @@
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" size="19" name="Runescape-Chat-Font"/>
                                             </buttonCell>
+                                            <connections>
+                                                <action selector="reloadButtonClicked:" target="gSf-af-Mjv" id="Fa6-g2-qes"/>
+                                            </connections>
                                         </button>
                                         <button toolTip="Quits OSRS Touch Bar and restores your Control Strip settings" translatesAutoresizingMaskIntoConstraints="NO" id="LtG-yu-DIR">
                                             <rect key="frame" x="63" y="18" width="213" height="48"/>

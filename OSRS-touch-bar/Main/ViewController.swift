@@ -9,23 +9,6 @@
 import Cocoa
 
 class ViewController: NSViewController {
-//    @IBOutlet weak var combatOptions: NSTouchBarItem!
-//    @IBOutlet weak var skills: NSTouchBarItem!
-//    @IBOutlet weak var quests: NSTouchBarItem!
-//
-//    // Touch Bar View
-//    @IBOutlet var combatOptionsButton: NSButton!
-//    @IBOutlet var skillsButton: NSButton!
-//    @IBOutlet var questButton: NSButton!
-//    @IBOutlet var equipmentButton: NSButton!
-//    @IBOutlet var prayerButton: NSButton!
-//    @IBOutlet var spellbookButton: NSButton!
-//    @IBOutlet var clanChatButton: NSButton!
-//    @IBOutlet var friendsListButton: NSButton!
-//    @IBOutlet var ignoreListButton: NSButton!
-//    @IBOutlet var optionsButton: NSButton!
-//    @IBOutlet var emoteButton: NSButton!
-//    @IBOutlet var musicButton: NSButton!
     
     // App View
     @IBOutlet weak var settingsButton: NSButton!
@@ -39,50 +22,12 @@ class ViewController: NSViewController {
     // MARK: - View life cycle
     // -----------------------
     
-    /**
-     Maps Touch Bar buttons to their KeyCodes
-     and sets up the app menu buttons
-     */
     override func viewDidLoad() {
-//        keyCodeDict = [combatOptionsButton: KeyCodes.F1KeyCode,
-//                    skillsButton: KeyCodes.F2KeyCode,
-//                    questButton: KeyCodes.F3KeyCode,
-//                    equipmentButton: KeyCodes.F4KeyCode,
-//                    prayerButton: KeyCodes.F5KeyCode,
-//                    spellbookButton: KeyCodes.F6KeyCode,
-//                    clanChatButton: KeyCodes.F7KeyCode,
-//                    friendsListButton: KeyCodes.F8KeyCode,
-//                    ignoreListButton: KeyCodes.F9KeyCode,
-//                    optionsButton: KeyCodes.F10KeyCode,
-//                    emoteButton: KeyCodes.F11KeyCode,
-//                    musicButton: KeyCodes.F12KeyCode]
-        
         setupMenuButtons()
         
-
         NSApplication.shared.isAutomaticCustomizeTouchBarMenuItemEnabled = true
     }
-    
-    override func makeTouchBar() -> NSTouchBar? {
-        let osrsTouchBar = NSTouchBar()
-        osrsTouchBar.delegate = self
-        osrsTouchBar.customizationIdentifier = NSTouchBar.CustomizationIdentifier(rawValue: "test")
-        osrsTouchBar.defaultItemIdentifiers = TouchBarItemConstants.TouchBarIdentifier.allCases.map({
-            NSTouchBarItem.Identifier(rawValue: $0.rawValue)
-        })
-        osrsTouchBar.customizationAllowedItemIdentifiers = osrsTouchBar.defaultItemIdentifiers
-        osrsTouchBar.principalItemIdentifier = osrsTouchBar.defaultItemIdentifiers.first
-        return osrsTouchBar
-    }
-    
-   
-    override func viewDidAppear() {
-    }
-    
-//    @IBAction func toggleTouchBarCustomizationPalette(_ sender: Any?) {
-//        print("clicked")
-//    }
-    
+
     /**
      Adds attributes to the buttons in the App View
     */
@@ -104,8 +49,21 @@ class ViewController: NSViewController {
         }
     }
     
-    func touchesMoved() {
+    override func makeTouchBar() -> NSTouchBar? {
+        let osrsTouchBar = NSTouchBar()
         
+        osrsTouchBar.delegate = self
+        osrsTouchBar.customizationIdentifier = NSTouchBar.CustomizationIdentifier(rawValue: "test")
+        
+        osrsTouchBar.defaultItemIdentifiers = TouchBarItemConstants.TouchBarIdentifier.allCases.filter{
+            $0 != .inventoryLabelItem // most people use ESC for inventory
+            }.map({
+                NSTouchBarItem.Identifier(rawValue: $0.rawValue)
+            })
+        osrsTouchBar.customizationAllowedItemIdentifiers = osrsTouchBar.defaultItemIdentifiers
+        osrsTouchBar.principalItemIdentifier = osrsTouchBar.defaultItemIdentifiers.first
+        
+        return osrsTouchBar
     }
     
     // ----------------------
