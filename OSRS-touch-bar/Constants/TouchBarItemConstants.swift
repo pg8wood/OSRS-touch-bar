@@ -26,7 +26,7 @@ public class TouchBarItemConstants {
         case musicPlayerLabelItem = "com.patrickgatewood.music-player"
     }
     
-    public static let touchBarItemDict: Dictionary<String, (name: String, KeyCode: UInt16)> = [
+    public static let touchBarItemDict: Dictionary<String, (name: String, keyCode: UInt16)> = [
         TouchBarIdentifier.combatOptionsLabelItem.rawValue: ("Combat Options", KeyCodes.F1KeyCode),
         TouchBarIdentifier.statsLabelItem.rawValue: ("Stats", KeyCodes.F2KeyCode),
         TouchBarIdentifier.questListLabelItem.rawValue: ("Quests", KeyCodes.F3KeyCode),

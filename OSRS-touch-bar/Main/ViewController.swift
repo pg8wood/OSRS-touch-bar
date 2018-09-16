@@ -158,7 +158,11 @@ extension ViewController: NSTouchBarDelegate {
     }
     
     func touchBar(_ touchBar: NSTouchBar, makeItemForIdentifier identifier: NSTouchBarItem.Identifier) -> NSTouchBarItem? {
-        return CustomTouchBarItem(identifier: identifier)
+        guard let touchBarItemData = TouchBarItemConstants.touchBarItemDict[identifier.rawValue] else {
+            return nil
+        }
+        
+        return CustomTouchBarItem(identifier: identifier, name: touchBarItemData.name, keyCode: touchBarItemData.keyCode)
     }
     
 }

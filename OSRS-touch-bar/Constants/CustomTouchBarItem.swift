@@ -10,20 +10,22 @@ import AppKit
 
 class CustomTouchBarItem: NSCustomTouchBarItem {
     
+    let name: String! // MUST match both interface name AND interface image name!
     let keyCode: UInt16!
     
-    override init(identifier: NSTouchBarItem.Identifier) {
-        let touchBarItemData = TouchBarItemConstants.touchBarItemDict[identifier.rawValue]!
-        
-        keyCode = touchBarItemData.KeyCode
+    init(identifier: NSTouchBarItem.Identifier, name: String, keyCode: UInt16) {
+        self.name = name
+        self.keyCode = keyCode
         
         super.init(identifier: identifier)
         
-        view = NSButton(image: NSImage(named: NSImage.Name(rawValue: touchBarItemData.name))!, target: self, action: #selector(buttonPressed(sender:)))
+        view = NSButton(image: NSImage(named: NSImage.Name(rawValue: name))!, target: self, action: #selector(buttonPressed(sender:)))
+        customizationLabel = name
     }
     
     required init?(coder: NSCoder) {
-        self.keyCode = 0
+        self.name = coder.decodeObject(forKey: "name") as? String
+        self.keyCode = coder.decodeObject(forKey: "keyCode") as? UInt16
         super.init(coder: coder)
     }
     
