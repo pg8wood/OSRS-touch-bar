@@ -106,7 +106,7 @@
                                                 <font key="font" size="19" name="Runescape-Chat-Font"/>
                                             </buttonCell>
                                             <connections>
-                                                <action selector="controlStripButtonClicked:" target="gSf-af-Mjv" id="cwH-Ib-ka0"/>
+                                                <action selector="controlStripButtonClicked:" target="gSf-af-Mjv" id="nRN-Xd-jcY"/>
                                             </connections>
                                         </button>
                                         <button toolTip="Shows the OSRS Touch Bar even when other apps are running." translatesAutoresizingMaskIntoConstraints="NO" id="xJf-RF-xPg">
@@ -120,7 +120,7 @@
                                                 <font key="font" size="19" name="Runescape-Chat-Font"/>
                                             </buttonCell>
                                             <connections>
-                                                <action selector="reloadButtonClicked:" target="gSf-af-Mjv" id="Fa6-g2-qes"/>
+                                                <action selector="reloadButtonClicked:" target="gSf-af-Mjv" id="Dbx-gW-oGL"/>
                                             </connections>
                                         </button>
                                         <button toolTip="Quits OSRS Touch Bar and restores your Control Strip settings" translatesAutoresizingMaskIntoConstraints="NO" id="LtG-yu-DIR">
@@ -134,7 +134,7 @@
                                                 <font key="font" size="19" name="Runescape-Chat-Font"/>
                                             </buttonCell>
                                             <connections>
-                                                <action selector="quitButtonClicked:" target="gSf-af-Mjv" id="dmy-Ar-cmc"/>
+                                                <action selector="customizeButtonClicked:" target="gSf-af-Mjv" id="dmy-Ar-cmc"/>
                                             </connections>
                                         </button>
                                     </subviews>

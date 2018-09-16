@@ -109,32 +109,12 @@ class ViewController: NSViewController {
     }
     
     /**
-     Restores the user's Control Strip preferences and quits the app
+     Shows the Touch Bar customization view
      
      - parameter sender: The NSButton clicked
      */
-    @IBAction func quitButtonClicked(_ sender: NSButton) {
-        //        for button in keyCodeDict.keys {
-        //            let imageView = button.animator().subviews[1] // probably bad
-        //            let animation = CAKeyframeAnimation()
-        //
-        //            animation.beginTime = CACurrentMediaTime() + CFTimeInterval.random(in: 0...0.15)
-        //            animation.keyPath = "position.x"
-        //            animation.values = Bool.random() ? [0, 1, 0, -1, 0] : [0, -1, 0, 1, 0]
-        //            animation.calculationMode = "paced"
-        //            animation.duration = 0.5
-        //            animation.isAdditive = true
-        //            animation.repeatCount = Float.infinity
-        //
-        //            imageView.layer?.add(animation, forKey: "shake")
-        //        }
-        
-        //        osrsTouchBar.customizationIdentifier = NSTouchBar.CustomizationIdentifier(rawValue: "test")
+    @IBAction func customizeButtonClicked(_ sender: NSButton) {
         NSApplication.shared.toggleTouchBarCustomizationPalette(self)
-        
-        // TODO the other app is capable of this
-        
-        
     }
 }
 
@@ -164,5 +144,4 @@ extension ViewController: NSTouchBarDelegate {
         
         return CustomTouchBarItem(identifier: identifier, name: touchBarItemData.name, keyCode: touchBarItemData.keyCode)
     }
-    
 }
