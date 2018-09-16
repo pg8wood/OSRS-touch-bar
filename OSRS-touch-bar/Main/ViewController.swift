@@ -10,11 +10,13 @@ import Cocoa
 
 class ViewController: NSViewController {
     
+    let controlStripIconIdentifier = NSTouchBarItem.Identifier(rawValue: "com.patrickgatewood.osrs-logo")
+    
     // App View
     @IBOutlet weak var settingsButton: NSButton!
     @IBOutlet weak var reloadButton: NSButton!
     @IBOutlet weak var quitButton: NSButton!
-
+    
     // Mapping of Touch Bar buttons to their respective KeyCodes
     var keyCodeDict: [NSButton: UInt16]!
     
@@ -27,10 +29,26 @@ class ViewController: NSViewController {
         
         NSApplication.shared.isAutomaticCustomizeTouchBarMenuItemEnabled = true
     }
-
+    
+    /**
+     Hide the Control Strip and set up the global Touch Bar
+     */
+    override func viewDidAppear() {
+        ScriptRunner.hideControlStrip()
+        
+        DFRSystemModalShowsCloseBoxWhenFrontMost(false)
+        DFRElementSetControlStripPresenceForIdentifier(self.controlStripIconIdentifier, true)
+        
+        if #available(macOS 10.14, *) {
+            NSTouchBar.presentSystemModalTouchBar(self.touchBar, systemTrayItemIdentifier: self.controlStripIconIdentifier)
+        } else {
+            NSTouchBar.presentSystemModalFunctionBar(self.touchBar, systemTrayItemIdentifier: self.controlStripIconIdentifier)
+        }
+    }
+    
     /**
      Adds attributes to the buttons in the App View
-    */
+     */
     func setupMenuButtons() {
         let appButtons = [settingsButton, reloadButton, quitButton]
         let buttonFontColor: NSColor = NSColor(red: 255.0/255.0, green: 152.0/255.0, blue: 0, alpha: 1)
@@ -49,23 +67,6 @@ class ViewController: NSViewController {
         }
     }
     
-    override func makeTouchBar() -> NSTouchBar? {
-        let osrsTouchBar = NSTouchBar()
-        
-        osrsTouchBar.delegate = self
-        osrsTouchBar.customizationIdentifier = NSTouchBar.CustomizationIdentifier(rawValue: "test")
-        
-        osrsTouchBar.defaultItemIdentifiers = TouchBarItemConstants.TouchBarIdentifier.allCases.filter{
-            $0 != .inventoryLabelItem // most people use ESC for inventory
-            }.map({
-                NSTouchBarItem.Identifier(rawValue: $0.rawValue)
-            })
-        osrsTouchBar.customizationAllowedItemIdentifiers = osrsTouchBar.defaultItemIdentifiers
-        osrsTouchBar.principalItemIdentifier = osrsTouchBar.defaultItemIdentifiers.first
-        
-        return osrsTouchBar
-    }
-    
     // ----------------------
     // MARK: - Action methods
     // ----------------------
@@ -75,7 +76,7 @@ class ViewController: NSViewController {
      button's state
      
      - parameter sender: The NSButton clicked
-    */
+     */
     @IBAction func controlStripButtonClicked(_ sender: NSButton) {
         if (sender.state == .on) {
             sender.image = #imageLiteral(resourceName: "Radio_On")
@@ -98,7 +99,7 @@ class ViewController: NSViewController {
      Reloads the global Touch Bar
      
      - parameter sender: The NSButton clicked
-    */
+     */
     @IBAction func reloadButtonClicked(_ sender: NSButton) {
         let appDelegate = NSApplication.shared.delegate as? AppDelegate
         appDelegate?.present(self)
@@ -108,35 +109,53 @@ class ViewController: NSViewController {
      Restores the user's Control Strip preferences and quits the app
      
      - parameter sender: The NSButton clicked
-    */
+     */
     @IBAction func quitButtonClicked(_ sender: NSButton) {
-//        for button in keyCodeDict.keys {
-//            let imageView = button.animator().subviews[1] // probably bad
-//            let animation = CAKeyframeAnimation()
-//
-//            animation.beginTime = CACurrentMediaTime() + CFTimeInterval.random(in: 0...0.15)
-//            animation.keyPath = "position.x"
-//            animation.values = Bool.random() ? [0, 1, 0, -1, 0] : [0, -1, 0, 1, 0]
-//            animation.calculationMode = "paced"
-//            animation.duration = 0.5
-//            animation.isAdditive = true
-//            animation.repeatCount = Float.infinity
-//
-//            imageView.layer?.add(animation, forKey: "shake")
-//        }
+        //        for button in keyCodeDict.keys {
+        //            let imageView = button.animator().subviews[1] // probably bad
+        //            let animation = CAKeyframeAnimation()
+        //
+        //            animation.beginTime = CACurrentMediaTime() + CFTimeInterval.random(in: 0...0.15)
+        //            animation.keyPath = "position.x"
+        //            animation.values = Bool.random() ? [0, 1, 0, -1, 0] : [0, -1, 0, 1, 0]
+        //            animation.calculationMode = "paced"
+        //            animation.duration = 0.5
+        //            animation.isAdditive = true
+        //            animation.repeatCount = Float.infinity
+        //
+        //            imageView.layer?.add(animation, forKey: "shake")
+        //        }
         
-//        osrsTouchBar.customizationIdentifier = NSTouchBar.CustomizationIdentifier(rawValue: "test")
+        //        osrsTouchBar.customizationIdentifier = NSTouchBar.CustomizationIdentifier(rawValue: "test")
         NSApplication.shared.toggleTouchBarCustomizationPalette(self)
         
         // TODO the other app is capable of this
-
+        
         
     }
 }
 
 extension ViewController: NSTouchBarDelegate {
     
+    override func makeTouchBar() -> NSTouchBar? {
+        let osrsTouchBar = NSTouchBar()
+        
+        osrsTouchBar.delegate = self
+        osrsTouchBar.customizationIdentifier = NSTouchBar.CustomizationIdentifier(rawValue: "test")
+        
+        osrsTouchBar.defaultItemIdentifiers = TouchBarItemConstants.TouchBarIdentifier.allCases.filter{
+            $0 != .inventoryLabelItem // most people use ESC for inventory
+            }.map({
+                NSTouchBarItem.Identifier(rawValue: $0.rawValue)
+            })
+        osrsTouchBar.customizationAllowedItemIdentifiers = osrsTouchBar.defaultItemIdentifiers
+        osrsTouchBar.principalItemIdentifier = osrsTouchBar.defaultItemIdentifiers.first
+        
+        return osrsTouchBar
+    }
+    
     func touchBar(_ touchBar: NSTouchBar, makeItemForIdentifier identifier: NSTouchBarItem.Identifier) -> NSTouchBarItem? {
         return CustomTouchBarItem(identifier: identifier)
     }
+    
 }

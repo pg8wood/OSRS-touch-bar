@@ -9,8 +9,6 @@
 #import "TouchBar.h"
 #import <OSRS_touch_bar-Swift.h>
 
-static const NSTouchBarItemIdentifier controlStripIconIdentifier = @"osrs-logo";
-
 @interface AppDelegate ()
 
 
@@ -21,30 +19,6 @@ static const NSTouchBarItemIdentifier controlStripIconIdentifier = @"osrs-logo";
 
 @implementation AppDelegate
 
-/**
- Displays the "fullscreen" Touch Bar interface
- */
-- (void)present:(id)sender {
-    if (@available(macOS 10.14, *)) {
-        [NSTouchBar presentSystemModalTouchBar:self.touchBar
-                      systemTrayItemIdentifier:controlStripIconIdentifier];
-    } else {
-        [NSTouchBar presentSystemModalFunctionBar:self.touchBar
-                         systemTrayItemIdentifier:controlStripIconIdentifier];
-    }
-
-    [NSApp activateIgnoringOtherApps:YES]; // Make sure the user sees the next screen
-}
-
-/**
- Hide the Control Strip and set up the global Touch Bar
- */
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-    [ScriptRunner hideControlStrip];
-    DFRSystemModalShowsCloseBoxWhenFrontMost(NO);
-    DFRElementSetControlStripPresenceForIdentifier(controlStripIconIdentifier, YES);
-    [self present:(self)];
-}
 
 /**
  Show the app icon in the Control Strip if the user closes the global
