@@ -8,30 +8,32 @@
 
 /* Begin PBXBuildFile section */
 		B829000B214C6139007C160A /* TouchBarGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B829000A214C6139007C160A /* TouchBarGestureRecognizer.swift */; };
+		B829002D214EC957007C160A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B829002C214EC957007C160A /* Main.storyboard */; };
 		B83A07A8204B231A006C3C6E /* ScriptRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83A07A7204B231A006C3C6E /* ScriptRunner.swift */; };
 		B83A07B3204B5055006C3C6E /* runescape_chat_font.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B83A07B2204B5055006C3C6E /* runescape_chat_font.ttf */; };
 		B893D676213246D9000A9FB0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B893D675213246D8000A9FB0 /* AppDelegate.m */; };
-		B8988A612042704200CC8D7B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8988A602042704200CC8D7B /* MainViewController.swift */; };
+		B8988A612042704200CC8D7B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8988A602042704200CC8D7B /* ViewController.swift */; };
 		B8988A632042704200CC8D7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8988A622042704200CC8D7B /* Assets.xcassets */; };
 		B8988A7520427F8C00CC8D7B /* TouchBarIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8988A7420427F8C00CC8D7B /* TouchBarIdentifiers.swift */; };
 		B8AD3F272044986D00A3D40D /* KeyCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AD3F262044986D00A3D40D /* KeyCodes.swift */; };
 		B8AD3F582045220500A3D40D /* DFRFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8AD3F572045220500A3D40D /* DFRFoundation.framework */; };
 		B8AD3F61204524A500A3D40D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B8AD3F60204524A500A3D40D /* main.m */; };
-		B8AD3F63204525AD00A3D40D /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8AD3F62204525AD00A3D40D /* MainMenu.xib */; };
 		B8BE878B20578181000AB194 /* hideControlStrip.sh in Resources */ = {isa = PBXBuildFile; fileRef = B8BE878820578180000AB194 /* hideControlStrip.sh */; };
 		B8BE878C20578181000AB194 /* recordControlStripPrefs.sh in Resources */ = {isa = PBXBuildFile; fileRef = B8BE878920578180000AB194 /* recordControlStripPrefs.sh */; };
 		B8BE878D20578181000AB194 /* restoreControlStrip.py in Resources */ = {isa = PBXBuildFile; fileRef = B8BE878A20578181000AB194 /* restoreControlStrip.py */; };
+		B8D0ACBD214ED0180098E255 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D0ACBC214ED0180098E255 /* WindowController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B829000A214C6139007C160A /* TouchBarGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchBarGestureRecognizer.swift; sourceTree = "<group>"; };
+		B829002C214EC957007C160A /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		B83A07A7204B231A006C3C6E /* ScriptRunner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptRunner.swift; sourceTree = "<group>"; };
 		B83A07AB204B29DF006C3C6E /* OSRS-touch-bar-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OSRS-touch-bar-Bridging-Header.h"; sourceTree = "<group>"; };
 		B83A07B2204B5055006C3C6E /* runescape_chat_font.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = runescape_chat_font.ttf; sourceTree = "<group>"; };
 		B893D6742132144E000A9FB0 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B893D675213246D8000A9FB0 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		B8988A5B2042704200CC8D7B /* OSRS-touch-bar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OSRS-touch-bar.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B8988A602042704200CC8D7B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		B8988A602042704200CC8D7B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B8988A622042704200CC8D7B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B8988A672042704200CC8D7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B8988A682042704200CC8D7B /* OSRS_touch_bar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OSRS_touch_bar.entitlements; sourceTree = "<group>"; };
@@ -40,10 +42,10 @@
 		B8AD3F572045220500A3D40D /* DFRFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DFRFoundation.framework; path = ../../../../../../../System/Library/PrivateFrameworks/DFRFoundation.framework; sourceTree = "<group>"; };
 		B8AD3F592045223200A3D40D /* TouchBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TouchBar.h; sourceTree = "<group>"; };
 		B8AD3F60204524A500A3D40D /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		B8AD3F62204525AD00A3D40D /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
 		B8BE878820578180000AB194 /* hideControlStrip.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = hideControlStrip.sh; sourceTree = "<group>"; };
 		B8BE878920578180000AB194 /* recordControlStripPrefs.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = recordControlStripPrefs.sh; sourceTree = "<group>"; };
 		B8BE878A20578181000AB194 /* restoreControlStrip.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = restoreControlStrip.py; sourceTree = "<group>"; };
+		B8D0ACBC214ED0180098E255 /* WindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,8 +89,9 @@
 				B893D675213246D8000A9FB0 /* AppDelegate.m */,
 				B893D6742132144E000A9FB0 /* AppDelegate.h */,
 				B8AD3F60204524A500A3D40D /* main.m */,
-				B8AD3F62204525AD00A3D40D /* MainMenu.xib */,
-				B8988A602042704200CC8D7B /* MainViewController.swift */,
+				B8988A602042704200CC8D7B /* ViewController.swift */,
+				B829002C214EC957007C160A /* Main.storyboard */,
+				B8D0ACBC214ED0180098E255 /* WindowController.swift */,
 				B829000A214C6139007C160A /* TouchBarGestureRecognizer.swift */,
 			);
 			path = Main;
@@ -200,12 +203,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B829002D214EC957007C160A /* Main.storyboard in Resources */,
 				B8BE878C20578181000AB194 /* recordControlStripPrefs.sh in Resources */,
 				B8988A632042704200CC8D7B /* Assets.xcassets in Resources */,
 				B8BE878B20578181000AB194 /* hideControlStrip.sh in Resources */,
 				B8BE878D20578181000AB194 /* restoreControlStrip.py in Resources */,
 				B83A07B3204B5055006C3C6E /* runescape_chat_font.ttf in Resources */,
-				B8AD3F63204525AD00A3D40D /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,10 +219,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B8988A612042704200CC8D7B /* MainViewController.swift in Sources */,
+				B8988A612042704200CC8D7B /* ViewController.swift in Sources */,
 				B8AD3F272044986D00A3D40D /* KeyCodes.swift in Sources */,
 				B893D676213246D9000A9FB0 /* AppDelegate.m in Sources */,
 				B83A07A8204B231A006C3C6E /* ScriptRunner.swift in Sources */,
+				B8D0ACBD214ED0180098E255 /* WindowController.swift in Sources */,
 				B829000B214C6139007C160A /* TouchBarGestureRecognizer.swift in Sources */,
 				B8AD3F61204524A500A3D40D /* main.m in Sources */,
 				B8988A7520427F8C00CC8D7B /* TouchBarIdentifiers.swift in Sources */,

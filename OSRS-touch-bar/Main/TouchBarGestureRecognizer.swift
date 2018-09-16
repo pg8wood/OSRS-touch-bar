@@ -22,6 +22,7 @@ class TouchBarGestureRecognizer: NSGestureRecognizer {
     
     override func touchesBegan(with event: NSEvent) {
         print("touches began")
+
     }
     
     override func touchesMoved(with event: NSEvent) {
