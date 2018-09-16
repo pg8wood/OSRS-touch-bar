@@ -26,19 +26,19 @@ public class TouchBarItemConstants {
         case musicPlayerLabelItem = "com.patrickgatewood.music-player"
     }
     
-    public static let touchBarItemDict: Dictionary<String, (imageName: String, KeyCode: UInt16)> = [
-        TouchBarIdentifier.combatOptionsLabelItem.rawValue: ("Combat_Options", KeyCodes.F1KeyCode),
+    public static let touchBarItemDict: Dictionary<String, (name: String, KeyCode: UInt16)> = [
+        TouchBarIdentifier.combatOptionsLabelItem.rawValue: ("Combat Options", KeyCodes.F1KeyCode),
         TouchBarIdentifier.statsLabelItem.rawValue: ("Stats", KeyCodes.F2KeyCode),
-        TouchBarIdentifier.questListLabelItem.rawValue: ("Quest", KeyCodes.F3KeyCode),
+        TouchBarIdentifier.questListLabelItem.rawValue: ("Quests", KeyCodes.F3KeyCode),
         TouchBarIdentifier.inventoryLabelItem.rawValue: ("Inventory", KeyCodes.ESCKeyCode),
-        TouchBarIdentifier.equipmentLabelItem.rawValue: ("Worn_equipment", KeyCodes.F4KeyCode),
-        TouchBarIdentifier.prayerLabelItem.rawValue: ("Prayer_tab_icon", KeyCodes.F5KeyCode),
+        TouchBarIdentifier.equipmentLabelItem.rawValue: ("Worn Equipment", KeyCodes.F4KeyCode),
+        TouchBarIdentifier.prayerLabelItem.rawValue: ("Prayer", KeyCodes.F5KeyCode),
         TouchBarIdentifier.spellbookLabelItem.rawValue: ("Spellbook", KeyCodes.F6KeyCode),
-        TouchBarIdentifier.clanChatLabelItem.rawValue: ("Clan_Chat", KeyCodes.F7KeyCode),
-        TouchBarIdentifier.friendsListLabelItem.rawValue: ("Friends_List", KeyCodes.F8KeyCode),
-        TouchBarIdentifier.ignoreListLabelItem.rawValue: ("Ignore_List", KeyCodes.F8KeyCode),
+        TouchBarIdentifier.clanChatLabelItem.rawValue: ("Clan Chat", KeyCodes.F7KeyCode),
+        TouchBarIdentifier.friendsListLabelItem.rawValue: ("Friends List", KeyCodes.F8KeyCode),
+        TouchBarIdentifier.ignoreListLabelItem.rawValue: ("Ignore List", KeyCodes.F8KeyCode),
         TouchBarIdentifier.optionsLabelItem.rawValue: ("Options", KeyCodes.F9KeyCode),
-        TouchBarIdentifier.emotesLabelItem.rawValue: ("Emote_button", KeyCodes.F10KeyCode),
+        TouchBarIdentifier.emotesLabelItem.rawValue: ("Emotes", KeyCodes.F10KeyCode),
         TouchBarIdentifier.musicPlayerLabelItem.rawValue: ("Music", KeyCodes.F11KeyCode)
     ]
 }

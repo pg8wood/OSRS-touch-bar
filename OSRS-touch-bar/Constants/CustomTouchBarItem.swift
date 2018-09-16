@@ -16,9 +16,10 @@ class CustomTouchBarItem: NSCustomTouchBarItem {
         let touchBarItemData = TouchBarItemConstants.touchBarItemDict[identifier.rawValue]!
         
         keyCode = touchBarItemData.KeyCode
+        
         super.init(identifier: identifier)
-
-        view = NSButton(image: NSImage(named: NSImage.Name(rawValue: touchBarItemData.imageName))!, target: self, action: #selector(buttonPressed(sender:)))
+        
+        view = NSButton(image: NSImage(named: NSImage.Name(rawValue: touchBarItemData.name))!, target: self, action: #selector(buttonPressed(sender:)))
     }
     
     required init?(coder: NSCoder) {
