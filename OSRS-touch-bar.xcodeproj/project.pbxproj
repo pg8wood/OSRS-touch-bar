@@ -22,6 +22,7 @@
 		B8BE878C20578181000AB194 /* recordControlStripPrefs.sh in Resources */ = {isa = PBXBuildFile; fileRef = B8BE878920578180000AB194 /* recordControlStripPrefs.sh */; };
 		B8BE878D20578181000AB194 /* restoreControlStrip.py in Resources */ = {isa = PBXBuildFile; fileRef = B8BE878A20578181000AB194 /* restoreControlStrip.py */; };
 		B8D0ACBD214ED0180098E255 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D0ACBC214ED0180098E255 /* WindowController.swift */; };
+		B8D0ACC3214EE19D0098E255 /* CustomTouchBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D0ACC2214EE19D0098E255 /* CustomTouchBarItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		B8BE878920578180000AB194 /* recordControlStripPrefs.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = recordControlStripPrefs.sh; sourceTree = "<group>"; };
 		B8BE878A20578181000AB194 /* restoreControlStrip.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = restoreControlStrip.py; sourceTree = "<group>"; };
 		B8D0ACBC214ED0180098E255 /* WindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
+		B8D0ACC2214EE19D0098E255 /* CustomTouchBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTouchBarItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 			children = (
 				B8AD3F262044986D00A3D40D /* KeyCodes.swift */,
 				B8988A7420427F8C00CC8D7B /* TouchBarIdentifiers.swift */,
+				B8D0ACC2214EE19D0098E255 /* CustomTouchBarItem.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -226,6 +229,7 @@
 				B8D0ACBD214ED0180098E255 /* WindowController.swift in Sources */,
 				B829000B214C6139007C160A /* TouchBarGestureRecognizer.swift in Sources */,
 				B8AD3F61204524A500A3D40D /* main.m in Sources */,
+				B8D0ACC3214EE19D0098E255 /* CustomTouchBarItem.swift in Sources */,
 				B8988A7520427F8C00CC8D7B /* TouchBarIdentifiers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

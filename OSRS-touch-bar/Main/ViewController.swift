@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class ViewController: NSViewController, NSTouchBarDelegate {    
+class ViewController: NSViewController {
 //    @IBOutlet weak var combatOptions: NSTouchBarItem!
 //    @IBOutlet weak var skills: NSTouchBarItem!
 //    @IBOutlet weak var quests: NSTouchBarItem!
@@ -61,10 +61,6 @@ class ViewController: NSViewController, NSTouchBarDelegate {
         
 
         NSApplication.shared.isAutomaticCustomizeTouchBarMenuItemEnabled = true
-
-//
-//        combatOptionsButton.addGestureRecognizer(TouchBarGestureRecognizer())
-//        questButton.addGestureRecognizer(TouchBarGestureRecognizer())
     }
     
     override func makeTouchBar() -> NSTouchBar? {
@@ -77,17 +73,7 @@ class ViewController: NSViewController, NSTouchBarDelegate {
         return osrsTouchBar
     }
     
-    func touchBar(_ touchBar: NSTouchBar, makeItemForIdentifier identifier: NSTouchBarItem.Identifier) -> NSTouchBarItem? {
-        switch identifier {
-        case .combatOptionsLabelItem:
-            let customItem = NSCustomTouchBarItem(identifier: identifier)
-            customItem.view = NSImageView(image: NSImage(named: NSImage.Name(rawValue: "Combat_Options"))!)
-            return customItem
-        default:
-            print("wat r dis")
-            return NSTouchBarItem(identifier: identifier)
-        }
-    }
+   
     
     override func viewDidAppear() {
     }
@@ -187,23 +173,11 @@ class ViewController: NSViewController, NSTouchBarDelegate {
 
         
     }
+}
 
-    /**
-     Detects a Touch Bar button press and sends the corresponding function key press event
-     
-     - parameter sender: The NSButton clicked
-    */
-    @IBAction func buttonPressed(sender: NSButton) {
-        guard let keyCode: UInt16 = keyCodeDict?[sender] else {
-                return
-        }
-        
-        /*  Sends a system-wide function key press and negates arrow keypresses to
-            prevent the camera getting stuck in a pan */
-        ScriptRunner.runAppleScriptShowingErrors(sourceString: """
-            tell application \"System Events\"
-                key code \(keyCode)\n\
-            end tell
-            """)
+extension ViewController: NSTouchBarDelegate {
+    
+    func touchBar(_ touchBar: NSTouchBar, makeItemForIdentifier identifier: NSTouchBarItem.Identifier) -> NSTouchBarItem? {
+        return CustomTouchBarItem(identifier: identifier)
     }
 }

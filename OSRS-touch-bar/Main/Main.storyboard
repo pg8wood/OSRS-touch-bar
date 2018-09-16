@@ -80,6 +80,9 @@
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" size="19" name="Runescape-Chat-Font"/>
                                             </buttonCell>
+                                            <connections>
+                                                <action selector="quitButtonClicked:" target="gSf-af-Mjv" id="dmy-Ar-cmc"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>

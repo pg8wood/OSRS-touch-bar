@@ -2,4 +2,54 @@
 <Bucket
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OSRS-touch-bar/Constants/TouchBarIdentifiers.swift"
+            timestampString = "558818827.302422"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "NSTouchBarItem.Identifier"
+            landmarkType = "21">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "globalinit_33_EAC71185CB336AE23F9B0BAB4E001815_func0"
+                  moduleName = "OSRS-touch-bar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/PatrickGatewood/Google_Drive/Macbook_Pro/Documents/OSRS-touch-bar/OSRS-touch-bar/OSRS-touch-bar/Constants/TouchBarIdentifiers.swift"
+                  timestampString = "558818828.535091"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "27">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(extension in OSRS_touch_bar):__C.NSTouchBarItemIdentifier.combatOptionsLabelItem.unsafeMutableAddressor : __C.NSTouchBarItemIdentifier"
+                  moduleName = "OSRS-touch-bar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/PatrickGatewood/Google_Drive/Macbook_Pro/Documents/OSRS-touch-bar/OSRS-touch-bar/OSRS-touch-bar/Constants/TouchBarIdentifiers.swift"
+                  timestampString = "558818828.539637"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "4">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
