@@ -43,4 +43,16 @@ class CustomTouchBarItem: NSCustomTouchBarItem {
             end tell
             """)
     }
+    
+    func updateButtonSize(numItems: Int) {
+        let approximateTouchBarSize = 900
+        
+        if let view = view as? NSButton {
+            for constraint in view.constraints {
+                view.removeConstraint(constraint)
+            }
+            
+            view.widthAnchor.constraint(equalToConstant: CGFloat(approximateTouchBarSize / numItems)).isActive = true
+        }
+    }
 }

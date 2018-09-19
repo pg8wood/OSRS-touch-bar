@@ -36,10 +36,10 @@ class ViewController: NSViewController {
     override func viewDidAppear() {
         ScriptRunner.hideControlStrip()
         
-        DFRSystemModalShowsCloseBoxWhenFrontMost(false)
-        DFRElementSetControlStripPresenceForIdentifier(self.controlStripIconIdentifier, true)
-
-        presentModalTouchBar(self.touchBar)
+//        DFRSystemModalShowsCloseBoxWhenFrontMost(false)
+//        DFRElementSetControlStripPresenceForIdentifier(self.controlStripIconIdentifier, true)
+//
+//        presentModalTouchBar(self.touchBar)
     }
     
     func presentModalTouchBar(_ touchBar: NSTouchBar?) {
@@ -125,7 +125,23 @@ class ViewController: NSViewController {
         /* Need to re-present the system-wide modal touchbar due to some limitation in the undocumented
          DFRFoundationFramework. I believe it copies a Touch Bar under the hood or something, since
          changes to the "local" touch bar aren't reflected until presentSystemModalTouchBar() is called again. */
-        presentModalTouchBar(makeTouchBar())
+        
+        // When you don't want to reset the button sizes, just call the below line and delete everything else
+        // presentModalTouchBar(makeTouchBar())
+        
+        
+        // TODO: Size buttons on load. Get buttons the right size (slightly off now [see default set[). See if you can allow 13 buttons on the screen. See if you can override esc key with not-an-x. Consider allowing an easier resizing scheme: i.e. a view with a slider. 
+        
+        touchBar = makeTouchBar()
+        guard let identifiers = touchBar?.itemIdentifiers else {
+            return
+        }
+
+        _ = identifiers.compactMap({touchBar?.item(forIdentifier: $0) as? CustomTouchBarItem}).map{ item in
+            item.updateButtonSize(numItems: identifiers.count)
+        }
+        
+        presentModalTouchBar(touchBar)
     }
 }
 
@@ -142,10 +158,11 @@ extension ViewController: NSTouchBarDelegate {
             }.map({
                 NSTouchBarItem.Identifier(rawValue: $0.rawValue)
             })
-        touchBar.customizationAllowedItemIdentifiers =
-            TouchBarConstants.TouchBarIdentifier.allCases.map({NSTouchBarItem.Identifier(rawValue: $0.rawValue)})
-        touchBar.principalItemIdentifier = touchBar.defaultItemIdentifiers.first
         
+        touchBar.customizationAllowedItemIdentifiers = TouchBarConstants.TouchBarIdentifier.allCases.map({
+            NSTouchBarItem.Identifier(rawValue: $0.rawValue)
+        })
+        touchBar.principalItemIdentifier = touchBar.defaultItemIdentifiers.first
         return touchBar
     }
     
