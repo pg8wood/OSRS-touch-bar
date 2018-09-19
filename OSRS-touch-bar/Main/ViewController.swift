@@ -106,9 +106,6 @@ class ViewController: NSViewController {
      */
     @IBAction func reloadButtonClicked(_ sender: NSButton) {
         presentModalTouchBar(touchBar)
-        
-        print(UserDefaults.standard.osrsTouchBarConfig)
-        print("current items: \(UserDefaults.standard.osrsTouchBarCurrentItems)")
     }
     
     /**
@@ -122,19 +119,20 @@ class ViewController: NSViewController {
     }
     
     /**
-     Observe change to UserDefaults
+     Called when an observed KeyPath's value is changed
      */
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-       
+        /* Need to re-present the system-wide modal touchbar due to some limitation in the undocumented
+         DFRFoundationFramework. I believe it copies a Touch Bar under the hood or something, since
+         changes to the "local" touch bar aren't reflected until presentSystemModalTouchBar() is called again. */
+        presentModalTouchBar(makeTouchBar())
     }
-
 }
 
 extension ViewController: NSTouchBarDelegate {
     
     override func makeTouchBar() -> NSTouchBar? {
         let touchBar = NSTouchBar()
-        print("making touch bar")
         
         touchBar.delegate = self
         touchBar.customizationIdentifier = NSTouchBar.CustomizationIdentifier(rawValue: TouchBarConstants.touchBarCustomizationIdentifierExtension)
@@ -146,11 +144,6 @@ extension ViewController: NSTouchBarDelegate {
             })
         touchBar.customizationAllowedItemIdentifiers = touchBar.defaultItemIdentifiers
         touchBar.principalItemIdentifier = touchBar.defaultItemIdentifiers.first
-        
-//        touchBar.observe(\NSTouchBar) { (touchBar, change) in
-//            print("Detected Touch Bar change!!!"
-//            )
-//        }
         
         return touchBar
     }
