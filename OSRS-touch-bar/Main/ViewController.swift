@@ -54,20 +54,19 @@ class ViewController: NSViewController {
      Adds attributes to the buttons in the App View
      */
     func setupMenuButtons() {
-        let appButtons = [settingsButton, reloadButton, customizeButton]
+        let appButtons: [NSButton] = [settingsButton, reloadButton, customizeButton]
+        let buttonFont = NSFont(name: "Runescape-Chat-Font", size: 19)
         let buttonFontColor: NSColor = NSColor(red: 255.0/255.0, green: 152.0/255.0, blue: 0, alpha: 1)
         
         // Style each button
-        for menuButton in appButtons {
-            guard let button = menuButton,
-                let buttonTitle = button.attributedTitle.mutableCopy() as? NSMutableAttributedString else {
+        for button in appButtons {
+            guard let buttonTitle = button.attributedTitle.mutableCopy() as? NSMutableAttributedString else {
                     continue
             }
             
             buttonTitle.addAttribute(.foregroundColor, value: buttonFontColor, range: NSRange(location: 0, length: buttonTitle.length))
             button.attributedTitle = buttonTitle
-            
-            button.font = NSFont(name: "Runescape-Chat-Font", size: 19)
+            button.font = buttonFont
         }
     }
     
@@ -114,7 +113,8 @@ class ViewController: NSViewController {
      - parameter sender: The NSButton clicked
      */
     @IBAction func customizeButtonClicked(_ sender: NSButton) {
-        // Note that any changes here are represented in UserDefaults. The NSTouchBar object is NOT changed.
+        /* Note that any changes made by the user in this view are represented in UserDefaults.
+         The NSTouchBar object is NOT changed. */
         NSApplication.shared.toggleTouchBarCustomizationPalette(touchBar)
     }
     
@@ -142,7 +142,8 @@ extension ViewController: NSTouchBarDelegate {
             }.map({
                 NSTouchBarItem.Identifier(rawValue: $0.rawValue)
             })
-        touchBar.customizationAllowedItemIdentifiers = touchBar.defaultItemIdentifiers
+        touchBar.customizationAllowedItemIdentifiers =
+            TouchBarConstants.TouchBarIdentifier.allCases.map({NSTouchBarItem.Identifier(rawValue: $0.rawValue)})
         touchBar.principalItemIdentifier = touchBar.defaultItemIdentifiers.first
         
         return touchBar
