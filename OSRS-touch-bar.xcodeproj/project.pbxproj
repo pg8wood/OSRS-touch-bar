@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B829002D214EC957007C160A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B829002C214EC957007C160A /* Main.storyboard */; };
+		B82C5FDD2151F11E004A8002 /* UserDefaultsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82C5FDC2151F11E004A8002 /* UserDefaultsExtension.swift */; };
 		B83A07A8204B231A006C3C6E /* ScriptRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83A07A7204B231A006C3C6E /* ScriptRunner.swift */; };
 		B83A07B3204B5055006C3C6E /* runescape_chat_font.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B83A07B2204B5055006C3C6E /* runescape_chat_font.ttf */; };
 		B8988A612042704200CC8D7B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8988A602042704200CC8D7B /* ViewController.swift */; };
@@ -25,6 +26,7 @@
 
 /* Begin PBXFileReference section */
 		B829002C214EC957007C160A /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		B82C5FDC2151F11E004A8002 /* UserDefaultsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtension.swift; sourceTree = "<group>"; };
 		B83A07A7204B231A006C3C6E /* ScriptRunner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptRunner.swift; sourceTree = "<group>"; };
 		B83A07AB204B29DF006C3C6E /* OSRS-touch-bar-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OSRS-touch-bar-Bridging-Header.h"; sourceTree = "<group>"; };
 		B83A07B2204B5055006C3C6E /* runescape_chat_font.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = runescape_chat_font.ttf; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 				B829002C214EC957007C160A /* Main.storyboard */,
 				B8D0ACBC214ED0180098E255 /* WindowController.swift */,
 				B8988A602042704200CC8D7B /* ViewController.swift */,
+				B82C5FDC2151F11E004A8002 /* UserDefaultsExtension.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 			files = (
 				B8D0ACC9214EFCB50098E255 /* AppDelegate.swift in Sources */,
 				B8988A612042704200CC8D7B /* ViewController.swift in Sources */,
+				B82C5FDD2151F11E004A8002 /* UserDefaultsExtension.swift in Sources */,
 				B8AD3F272044986D00A3D40D /* KeyCodes.swift in Sources */,
 				B83A07A8204B231A006C3C6E /* ScriptRunner.swift in Sources */,
 				B8D0ACBD214ED0180098E255 /* WindowController.swift in Sources */,

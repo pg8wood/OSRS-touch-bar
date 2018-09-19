@@ -10,15 +10,13 @@ import Cocoa
 
 class ViewController: NSViewController {
     
-    let controlStripIconIdentifier = NSTouchBarItem.Identifier(rawValue: "com.patrickgatewood.osrs-logo")
-    
-    // App View
     @IBOutlet weak var settingsButton: NSButton!
     @IBOutlet weak var reloadButton: NSButton!
     @IBOutlet weak var customizeButton: NSButton!
     
-    // Mapping of Touch Bar buttons to their respective KeyCodes
-    var keyCodeDict: [NSButton: UInt16]!
+    let controlStripIconIdentifier = NSTouchBarItem.Identifier(rawValue: "com.patrickgatewood.osrs-logo")
+    
+    var userDefaultsObserver: NSKeyValueObservation?
     
     // -----------------------
     // MARK: - View life cycle
@@ -27,12 +25,7 @@ class ViewController: NSViewController {
     override func viewDidLoad() {
         setupMenuButtons()
         
-        let userDefaultsTouchBarIdentifier = "NSTouchBarConfig: \(TouchBarConstants.touchBarCustomizationIdentifier)"
-        
-        print(UserDefaults.standard.dictionaryRepresentation())
-        print(UserDefaults.standard.value(forKey: userDefaultsTouchBarIdentifier))
-        
-//        UserDefaults.standard.value(forKey: <#T##String#>)
+        UserDefaults.standard.addObserver(self, forKeyPath: TouchBarConstants.userDefaultsTouchBarIdentifier, options: NSKeyValueObservingOptions.new, context: nil)
         
         NSApplication.shared.isAutomaticCustomizeTouchBarMenuItemEnabled = true
     }
@@ -113,6 +106,9 @@ class ViewController: NSViewController {
      */
     @IBAction func reloadButtonClicked(_ sender: NSButton) {
         presentModalTouchBar(touchBar)
+        
+        print(UserDefaults.standard.osrsTouchBarConfig)
+        print("current items: \(UserDefaults.standard.osrsTouchBarCurrentItems)")
     }
     
     /**
@@ -124,6 +120,14 @@ class ViewController: NSViewController {
         // Note that any changes here are represented in UserDefaults. The NSTouchBar object is NOT changed.
         NSApplication.shared.toggleTouchBarCustomizationPalette(touchBar)
     }
+    
+    /**
+     Observe change to UserDefaults
+     */
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+       
+    }
+
 }
 
 extension ViewController: NSTouchBarDelegate {
@@ -133,7 +137,7 @@ extension ViewController: NSTouchBarDelegate {
         print("making touch bar")
         
         touchBar.delegate = self
-        touchBar.customizationIdentifier = NSTouchBar.CustomizationIdentifier(rawValue: TouchBarConstants.touchBarCustomizationIdentifier)
+        touchBar.customizationIdentifier = NSTouchBar.CustomizationIdentifier(rawValue: TouchBarConstants.touchBarCustomizationIdentifierExtension)
         
         touchBar.defaultItemIdentifiers = TouchBarConstants.TouchBarIdentifier.allCases.filter{
             $0 != .inventoryLabelItem // most people use ESC for inventory

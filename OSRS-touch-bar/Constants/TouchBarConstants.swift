@@ -10,7 +10,8 @@ import Foundation
 
 public class TouchBarConstants {
     
-    public static let touchBarCustomizationIdentifier = "OSRS Touch Bar"
+    public static let touchBarCustomizationIdentifierExtension = "OSRS Touch Bar"
+    public static let userDefaultsTouchBarIdentifier = "NSTouchBarConfig: \(touchBarCustomizationIdentifierExtension)"
 
     public enum TouchBarIdentifier: String, CaseIterable {
         case combatOptionsLabelItem = "com.patrickgatewood.combat-options"
