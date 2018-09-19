@@ -19,7 +19,7 @@
 		B8BE878D20578181000AB194 /* restoreControlStrip.py in Resources */ = {isa = PBXBuildFile; fileRef = B8BE878A20578181000AB194 /* restoreControlStrip.py */; };
 		B8D0ACBD214ED0180098E255 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D0ACBC214ED0180098E255 /* WindowController.swift */; };
 		B8D0ACC3214EE19D0098E255 /* CustomTouchBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D0ACC2214EE19D0098E255 /* CustomTouchBarItem.swift */; };
-		B8D0ACC5214EE8E70098E255 /* TouchBarItemConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D0ACC4214EE8E70098E255 /* TouchBarItemConstants.swift */; };
+		B8D0ACC5214EE8E70098E255 /* TouchBarConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D0ACC4214EE8E70098E255 /* TouchBarConstants.swift */; };
 		B8D0ACC9214EFCB50098E255 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D0ACC8214EFCB50098E255 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
@@ -41,7 +41,7 @@
 		B8BE878A20578181000AB194 /* restoreControlStrip.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = restoreControlStrip.py; sourceTree = "<group>"; };
 		B8D0ACBC214ED0180098E255 /* WindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
 		B8D0ACC2214EE19D0098E255 /* CustomTouchBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTouchBarItem.swift; sourceTree = "<group>"; };
-		B8D0ACC4214EE8E70098E255 /* TouchBarItemConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchBarItemConstants.swift; sourceTree = "<group>"; };
+		B8D0ACC4214EE8E70098E255 /* TouchBarConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchBarConstants.swift; sourceTree = "<group>"; };
 		B8D0ACC8214EFCB50098E255 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -96,7 +96,7 @@
 			children = (
 				B8AD3F262044986D00A3D40D /* KeyCodes.swift */,
 				B8D0ACC2214EE19D0098E255 /* CustomTouchBarItem.swift */,
-				B8D0ACC4214EE8E70098E255 /* TouchBarItemConstants.swift */,
+				B8D0ACC4214EE8E70098E255 /* TouchBarConstants.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -220,7 +220,7 @@
 				B83A07A8204B231A006C3C6E /* ScriptRunner.swift in Sources */,
 				B8D0ACBD214ED0180098E255 /* WindowController.swift in Sources */,
 				B8D0ACC3214EE19D0098E255 /* CustomTouchBarItem.swift in Sources */,
-				B8D0ACC5214EE8E70098E255 /* TouchBarItemConstants.swift in Sources */,
+				B8D0ACC5214EE8E70098E255 /* TouchBarConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

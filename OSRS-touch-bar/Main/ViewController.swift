@@ -27,6 +27,13 @@ class ViewController: NSViewController {
     override func viewDidLoad() {
         setupMenuButtons()
         
+        let userDefaultsTouchBarIdentifier = "NSTouchBarConfig: \(TouchBarConstants.touchBarCustomizationIdentifier)"
+        
+        print(UserDefaults.standard.dictionaryRepresentation())
+        print(UserDefaults.standard.value(forKey: userDefaultsTouchBarIdentifier))
+        
+//        UserDefaults.standard.value(forKey: <#T##String#>)
+        
         NSApplication.shared.isAutomaticCustomizeTouchBarMenuItemEnabled = true
     }
     
@@ -38,15 +45,15 @@ class ViewController: NSViewController {
         
         DFRSystemModalShowsCloseBoxWhenFrontMost(false)
         DFRElementSetControlStripPresenceForIdentifier(self.controlStripIconIdentifier, true)
-        
-        presentModalTouchBar()
+
+        presentModalTouchBar(self.touchBar)
     }
     
-    func presentModalTouchBar() {
+    func presentModalTouchBar(_ touchBar: NSTouchBar?) {
         if #available(macOS 10.14, *) {
-            NSTouchBar.presentSystemModalTouchBar(self.touchBar, systemTrayItemIdentifier: self.controlStripIconIdentifier)
+            NSTouchBar.presentSystemModalTouchBar(touchBar, systemTrayItemIdentifier: self.controlStripIconIdentifier)
         } else {
-            NSTouchBar.presentSystemModalFunctionBar(self.touchBar, systemTrayItemIdentifier: self.controlStripIconIdentifier)
+            NSTouchBar.presentSystemModalFunctionBar(touchBar, systemTrayItemIdentifier: self.controlStripIconIdentifier)
         }
     }
     
@@ -105,7 +112,7 @@ class ViewController: NSViewController {
      - parameter sender: The NSButton clicked
      */
     @IBAction func reloadButtonClicked(_ sender: NSButton) {
-        presentModalTouchBar()
+        presentModalTouchBar(touchBar)
     }
     
     /**
@@ -114,31 +121,38 @@ class ViewController: NSViewController {
      - parameter sender: The NSButton clicked
      */
     @IBAction func customizeButtonClicked(_ sender: NSButton) {
-        NSApplication.shared.toggleTouchBarCustomizationPalette(self)
+        // Note that any changes here are represented in UserDefaults. The NSTouchBar object is NOT changed.
+        NSApplication.shared.toggleTouchBarCustomizationPalette(touchBar)
     }
 }
 
 extension ViewController: NSTouchBarDelegate {
     
     override func makeTouchBar() -> NSTouchBar? {
-        let osrsTouchBar = NSTouchBar()
+        let touchBar = NSTouchBar()
+        print("making touch bar")
         
-        osrsTouchBar.delegate = self
-        osrsTouchBar.customizationIdentifier = NSTouchBar.CustomizationIdentifier(rawValue: "test")
+        touchBar.delegate = self
+        touchBar.customizationIdentifier = NSTouchBar.CustomizationIdentifier(rawValue: TouchBarConstants.touchBarCustomizationIdentifier)
         
-        osrsTouchBar.defaultItemIdentifiers = TouchBarItemConstants.TouchBarIdentifier.allCases.filter{
+        touchBar.defaultItemIdentifiers = TouchBarConstants.TouchBarIdentifier.allCases.filter{
             $0 != .inventoryLabelItem // most people use ESC for inventory
             }.map({
                 NSTouchBarItem.Identifier(rawValue: $0.rawValue)
             })
-        osrsTouchBar.customizationAllowedItemIdentifiers = osrsTouchBar.defaultItemIdentifiers
-        osrsTouchBar.principalItemIdentifier = osrsTouchBar.defaultItemIdentifiers.first
+        touchBar.customizationAllowedItemIdentifiers = touchBar.defaultItemIdentifiers
+        touchBar.principalItemIdentifier = touchBar.defaultItemIdentifiers.first
         
-        return osrsTouchBar
+//        touchBar.observe(\NSTouchBar) { (touchBar, change) in
+//            print("Detected Touch Bar change!!!"
+//            )
+//        }
+        
+        return touchBar
     }
     
     func touchBar(_ touchBar: NSTouchBar, makeItemForIdentifier identifier: NSTouchBarItem.Identifier) -> NSTouchBarItem? {
-        guard let touchBarItemData = TouchBarItemConstants.touchBarItemDict[identifier.rawValue] else {
+        guard let touchBarItemData = TouchBarConstants.touchBarItemDict[identifier.rawValue] else {
             return nil
         }
         
