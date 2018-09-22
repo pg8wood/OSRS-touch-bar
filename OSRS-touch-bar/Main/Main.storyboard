@@ -49,7 +49,7 @@
                     </connections>
                 </application>
                 <customObject id="bNz-Mj-BfT" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-                <customObject id="Rce-oF-fS0" customClass="AppDelegate" customModule="TouchBar" customModuleProvider="target"/>
+                <customObject id="Rce-oF-fS0" customClass="AppDelegate" customModule="OSRS_touch_bar" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="-697" y="-71"/>
         </scene>
@@ -109,49 +109,63 @@
                                                 <action selector="controlStripButtonClicked:" target="gSf-af-Mjv" id="nRN-Xd-jcY"/>
                                             </connections>
                                         </button>
-                                        <button toolTip="Shows the OSRS Touch Bar even when other apps are running." translatesAutoresizingMaskIntoConstraints="NO" id="xJf-RF-xPg">
+                                        <button toolTip="Shows the OSRS Touch Bar even when other apps are running." translatesAutoresizingMaskIntoConstraints="NO" id="xJf-RF-xPg" userLabel="Customize Button">
                                             <rect key="frame" x="63" y="76" width="213" height="48"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="213" id="KI4-0G-dPv"/>
                                                 <constraint firstAttribute="height" constant="48" id="mzY-fK-sDT"/>
                                             </constraints>
-                                            <buttonCell key="cell" type="square" title="Reload OSRS Touch Bar" bezelStyle="shadowlessSquare" image="Button_Background" imagePosition="overlaps" alignment="center" imageScaling="axesIndependently" inset="2" id="Ses-B5-f5u">
+                                            <buttonCell key="cell" type="square" title="Customize Touch Bar..." bezelStyle="shadowlessSquare" image="Button_Background" imagePosition="overlaps" alignment="center" imageScaling="axesIndependently" inset="2" id="Ses-B5-f5u">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" size="19" name="Runescape-Chat-Font"/>
                                             </buttonCell>
                                             <connections>
-                                                <action selector="reloadButtonClicked:" target="gSf-af-Mjv" id="Dbx-gW-oGL"/>
+                                                <action selector="customizeButtonClicked:" target="gSf-af-Mjv" id="9xP-uG-r2N"/>
                                             </connections>
                                         </button>
-                                        <button toolTip="Quits OSRS Touch Bar and restores your Control Strip settings" translatesAutoresizingMaskIntoConstraints="NO" id="LtG-yu-DIR">
-                                            <rect key="frame" x="63" y="18" width="213" height="48"/>
+                                        <button translatesAutoresizingMaskIntoConstraints="NO" id="PTh-Bj-smc">
+                                            <rect key="frame" x="63" y="20" width="213" height="48"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="48" id="0Sm-Vh-cLj"/>
-                                                <constraint firstAttribute="width" constant="213" id="kDn-l2-y60"/>
+                                                <constraint firstAttribute="width" constant="213" id="The-WH-92X"/>
+                                                <constraint firstAttribute="height" constant="48" id="aBm-sa-ES8"/>
                                             </constraints>
-                                            <buttonCell key="cell" type="square" title="Customize..." bezelStyle="shadowlessSquare" image="Button_Background" imagePosition="overlaps" alignment="center" imageScaling="axesIndependently" inset="2" id="HCm-bm-drS">
+                                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="Button_Background" imagePosition="overlaps" alignment="center" imageScaling="axesIndependently" inset="2" id="Adc-c2-GOD">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" size="19" name="Runescape-Chat-Font"/>
                                             </buttonCell>
+                                        </button>
+                                        <button toolTip="Toggles the Control Strip." imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8EZ-zB-28G" userLabel="Fit Button">
+                                            <rect key="frame" x="63" y="22" width="213" height="48"/>
+                                            <buttonCell key="cell" type="bevel" title="  Fit Buttons to Touch Bar" bezelStyle="regularSquare" image="Radio_Off" imagePosition="left" alignment="center" inset="2" id="LBX-mv-fk5">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                                <font key="font" size="19" name="Runescape-Chat-Font"/>
+                                            </buttonCell>
                                             <connections>
-                                                <action selector="customizeButtonClicked:" target="gSf-af-Mjv" id="dmy-Ar-cmc"/>
+                                                <action selector="fitButtonClicked:" target="gSf-af-Mjv" id="SVO-q3-lZI"/>
                                             </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="QB8-Gl-Ce7" firstAttribute="width" secondItem="Mhc-C5-4l2" secondAttribute="width" id="35l-pf-a8K"/>
+                                        <constraint firstAttribute="bottom" secondItem="8EZ-zB-28G" secondAttribute="bottom" constant="22" id="8PT-wd-Qpa"/>
+                                        <constraint firstItem="8EZ-zB-28G" firstAttribute="height" secondItem="PTh-Bj-smc" secondAttribute="height" id="9SM-1T-rPw"/>
+                                        <constraint firstItem="8EZ-zB-28G" firstAttribute="leading" secondItem="S8V-1t-yKu" secondAttribute="leading" constant="63" id="EVo-yp-5c7"/>
+                                        <constraint firstAttribute="bottom" secondItem="PTh-Bj-smc" secondAttribute="bottom" constant="20" id="Eu4-73-oW2"/>
                                         <constraint firstItem="xJf-RF-xPg" firstAttribute="centerX" secondItem="S8V-1t-yKu" secondAttribute="centerX" id="F4j-bR-MVR"/>
                                         <constraint firstItem="QB8-Gl-Ce7" firstAttribute="centerX" secondItem="S8V-1t-yKu" secondAttribute="centerX" id="KT0-7G-cwz"/>
+                                        <constraint firstItem="PTh-Bj-smc" firstAttribute="leading" secondItem="S8V-1t-yKu" secondAttribute="leading" constant="63" id="Qbj-ws-E0p"/>
                                         <constraint firstItem="QB8-Gl-Ce7" firstAttribute="height" secondItem="Mhc-C5-4l2" secondAttribute="height" id="So9-bX-myS"/>
                                         <constraint firstItem="QB8-Gl-Ce7" firstAttribute="top" secondItem="S8V-1t-yKu" secondAttribute="top" constant="18" id="TPl-88-YIy"/>
-                                        <constraint firstItem="LtG-yu-DIR" firstAttribute="top" secondItem="xJf-RF-xPg" secondAttribute="bottom" constant="10" id="daD-6W-5VG"/>
                                         <constraint firstItem="QB8-Gl-Ce7" firstAttribute="centerX" secondItem="S8V-1t-yKu" secondAttribute="centerX" id="e5d-AU-htW"/>
-                                        <constraint firstAttribute="bottom" secondItem="LtG-yu-DIR" secondAttribute="bottom" constant="18" id="h8F-cl-UPf"/>
+                                        <constraint firstItem="8EZ-zB-28G" firstAttribute="width" secondItem="PTh-Bj-smc" secondAttribute="width" id="eW0-51-9GG"/>
+                                        <constraint firstItem="PTh-Bj-smc" firstAttribute="top" secondItem="xJf-RF-xPg" secondAttribute="bottom" constant="8" id="eeR-Ri-b69"/>
                                         <constraint firstItem="Mhc-C5-4l2" firstAttribute="centerX" secondItem="S8V-1t-yKu" secondAttribute="centerX" id="pfG-jM-8MI"/>
                                         <constraint firstItem="xJf-RF-xPg" firstAttribute="top" secondItem="QB8-Gl-Ce7" secondAttribute="bottom" constant="10" id="re5-FD-7Go"/>
                                         <constraint firstItem="Mhc-C5-4l2" firstAttribute="top" secondItem="S8V-1t-yKu" secondAttribute="top" constant="20" id="sYb-cd-7MA"/>
-                                        <constraint firstItem="LtG-yu-DIR" firstAttribute="centerX" secondItem="S8V-1t-yKu" secondAttribute="centerX" id="tez-0L-tNy"/>
                                         <constraint firstItem="Mhc-C5-4l2" firstAttribute="centerX" secondItem="S8V-1t-yKu" secondAttribute="centerX" id="vy6-gp-RLM"/>
+                                        <constraint firstAttribute="trailing" secondItem="8EZ-zB-28G" secondAttribute="trailing" constant="62" id="yYW-D2-1XX"/>
+                                        <constraint firstItem="8EZ-zB-28G" firstAttribute="top" secondItem="xJf-RF-xPg" secondAttribute="bottom" constant="6" id="z7Q-HI-Oat"/>
+                                        <constraint firstAttribute="trailing" secondItem="PTh-Bj-smc" secondAttribute="trailing" constant="62" id="zUc-bI-CyT"/>
                                     </constraints>
                                 </view>
                                 <constraints>
@@ -168,9 +182,9 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="customizeButton" destination="LtG-yu-DIR" id="o87-oi-ePo"/>
-                        <outlet property="reloadButton" destination="xJf-RF-xPg" id="FFO-hl-4wO"/>
-                        <outlet property="settingsButton" destination="QB8-Gl-Ce7" id="W7g-0O-I1N"/>
+                        <outlet property="controlStripButton" destination="QB8-Gl-Ce7" id="W7g-0O-I1N"/>
+                        <outlet property="customizeButton" destination="xJf-RF-xPg" id="4pr-Ql-ZJp"/>
+                        <outlet property="fitButton" destination="8EZ-zB-28G" id="ZQY-J1-qpY"/>
                     </connections>
                 </viewController>
                 <customObject id="gMa-oN-qNz" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

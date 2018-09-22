@@ -10,13 +10,14 @@ import Cocoa
 
 class ViewController: NSViewController {
     
-    @IBOutlet weak var settingsButton: NSButton!
-    @IBOutlet weak var reloadButton: NSButton!
+    @IBOutlet weak var controlStripButton: NSButton!
     @IBOutlet weak var customizeButton: NSButton!
+    @IBOutlet weak var fitButton: NSButton!
     
     let controlStripIconIdentifier = NSTouchBarItem.Identifier(rawValue: "com.patrickgatewood.osrs-logo")
     
     var userDefaultsObserver: NSKeyValueObservation?
+    var fitButtonsToTouchBar = false
     
     // -----------------------
     // MARK: - View life cycle
@@ -36,13 +37,17 @@ class ViewController: NSViewController {
     override func viewDidAppear() {
         ScriptRunner.hideControlStrip()
         
-//        DFRSystemModalShowsCloseBoxWhenFrontMost(false)
-//        DFRElementSetControlStripPresenceForIdentifier(self.controlStripIconIdentifier, true)
-//
-//        presentModalTouchBar(self.touchBar)
+        DFRSystemModalShowsCloseBoxWhenFrontMost(false)
+        DFRElementSetControlStripPresenceForIdentifier(self.controlStripIconIdentifier, true)
+
+        presentModalTouchBar(self.touchBar)
+        
+        if fitButtonsToTouchBar {
+            fitButtonsToTouchBarScreenSize()
+        }
     }
     
-    func presentModalTouchBar(_ touchBar: NSTouchBar?) {
+    private func presentModalTouchBar(_ touchBar: NSTouchBar?) {
         if #available(macOS 10.14, *) {
             NSTouchBar.presentSystemModalTouchBar(touchBar, systemTrayItemIdentifier: self.controlStripIconIdentifier)
         } else {
@@ -50,11 +55,21 @@ class ViewController: NSViewController {
         }
     }
     
+    private func fitButtonsToTouchBarScreenSize() {
+        guard let identifiers = touchBar?.itemIdentifiers else {
+            return
+        }
+        
+        identifiers.compactMap({touchBar?.item(forIdentifier: $0) as? CustomTouchBarItem}).forEach{ item in
+            item.updateButtonSize(numItems: identifiers.count)
+        }
+    }
+    
     /**
      Adds attributes to the buttons in the App View
      */
-    func setupMenuButtons() {
-        let appButtons: [NSButton] = [settingsButton, reloadButton, customizeButton]
+    private func setupMenuButtons() {
+        let appButtons: [NSButton] = [controlStripButton, fitButton, customizeButton]
         let buttonFont = NSFont(name: "Runescape-Chat-Font", size: 19)
         let buttonFontColor: NSColor = NSColor(red: 255.0/255.0, green: 152.0/255.0, blue: 0, alpha: 1)
         
@@ -99,15 +114,6 @@ class ViewController: NSViewController {
     }
     
     /**
-     Reloads the global Touch Bar
-     
-     - parameter sender: The NSButton clicked
-     */
-    @IBAction func reloadButtonClicked(_ sender: NSButton) {
-        presentModalTouchBar(touchBar)
-    }
-    
-    /**
      Shows the Touch Bar customization view
      
      - parameter sender: The NSButton clicked
@@ -116,6 +122,23 @@ class ViewController: NSViewController {
         /* Note that any changes made by the user in this view are represented in UserDefaults.
          The NSTouchBar object is NOT changed. */
         NSApplication.shared.toggleTouchBarCustomizationPalette(touchBar)
+    }
+    
+    /**
+     Toggles whether the Touch Bar buttons fill the screen size
+     
+     - parameter sender: The NSButton clicked
+     */
+    @IBAction func fitButtonClicked(_ sender: NSButton) {
+        fitButtonsToTouchBar = !fitButtonsToTouchBar
+        
+        if fitButtonsToTouchBar {
+            fitButtonsToTouchBarScreenSize()
+        }
+        
+        presentModalTouchBar(fitButtonsToTouchBar ? touchBar : makeTouchBar())
+        
+        sender.image = fitButtonsToTouchBar ? #imageLiteral(resourceName: "Radio_On") : #imageLiteral(resourceName: "Radio_Off")
     }
     
     /**
@@ -130,19 +153,18 @@ class ViewController: NSViewController {
         // presentModalTouchBar(makeTouchBar())
         
         
-        // TODO: Size buttons on load. Get buttons the right size (slightly off now [see default set[). See if you can allow 13 buttons on the screen. See if you can override esc key with not-an-x. Consider allowing an easier resizing scheme: i.e. a view with a slider. 
+        // TODO: Size buttons on load. Get buttons the right size (slightly off now [see default set]). See if you can allow 13 buttons on the screen. See if you can override esc key with not-an-x. Consider allowing an easier resizing scheme: i.e. a view with a slider.
         
         touchBar = makeTouchBar()
-        guard let identifiers = touchBar?.itemIdentifiers else {
-            return
-        }
-
-        _ = identifiers.compactMap({touchBar?.item(forIdentifier: $0) as? CustomTouchBarItem}).map{ item in
-            item.updateButtonSize(numItems: identifiers.count)
+       
+        if fitButtonsToTouchBar {
+            fitButtonsToTouchBarScreenSize()
         }
         
         presentModalTouchBar(touchBar)
     }
+    
+    
 }
 
 extension ViewController: NSTouchBarDelegate {
