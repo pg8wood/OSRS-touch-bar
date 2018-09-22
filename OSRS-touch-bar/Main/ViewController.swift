@@ -17,7 +17,8 @@ class ViewController: NSViewController {
     let controlStripIconIdentifier = NSTouchBarItem.Identifier(rawValue: "com.patrickgatewood.osrs-logo")
     
     var userDefaultsObserver: NSKeyValueObservation?
-    var fitButtonsToTouchBar = false
+    
+     // TODO:  Get buttons the right size (slightly off now [see default set]). See if you can allow 13 buttons on the screen. See if you can override esc key with not-an-x. Consider allowing an easier resizing scheme: i.e. a view with a slider.
     
     // -----------------------
     // MARK: - View life cycle
@@ -28,6 +29,20 @@ class ViewController: NSViewController {
         
         UserDefaults.standard.addObserver(self, forKeyPath: TouchBarConstants.userDefaultsTouchBarIdentifier, options: NSKeyValueObservingOptions.new, context: nil)
         
+        if Persistence.controlStripEnabled {
+            controlStripButton.state = .on
+            controlStripButton.image = #imageLiteral(resourceName: "Radio_On")
+            setNSButtonTitle(button: controlStripButton, to: "  Control Strip (on)")
+        } else {
+            ScriptRunner.hideControlStrip()
+        }
+        
+        if Persistence.buttonsFillControlStrip {
+            fitButton.image = #imageLiteral(resourceName: "Radio_On")
+            fitButtonsToTouchBarScreenSize()
+
+        }
+
         NSApplication.shared.isAutomaticCustomizeTouchBarMenuItemEnabled = true
     }
     
@@ -35,16 +50,14 @@ class ViewController: NSViewController {
      Hide the Control Strip and set up the global Touch Bar
      */
     override func viewDidAppear() {
-        ScriptRunner.hideControlStrip()
-        
         DFRSystemModalShowsCloseBoxWhenFrontMost(false)
         DFRElementSetControlStripPresenceForIdentifier(self.controlStripIconIdentifier, true)
 
         presentModalTouchBar(self.touchBar)
-        
-        if fitButtonsToTouchBar {
-            fitButtonsToTouchBarScreenSize()
-        }
+    }
+    
+    override func viewWillDisappear() {
+        Persistence.persistSettings()
     }
     
     private func presentModalTouchBar(_ touchBar: NSTouchBar?) {
@@ -97,19 +110,27 @@ class ViewController: NSViewController {
      */
     @IBAction func controlStripButtonClicked(_ sender: NSButton) {
         if (sender.state == .on) {
+            Persistence.controlStripEnabled = true
             sender.image = #imageLiteral(resourceName: "Radio_On")
-            if let mutableAttributedTitle: NSMutableAttributedString = sender.attributedTitle.mutableCopy() as? NSMutableAttributedString {
-                mutableAttributedTitle.mutableString.setString("  Control Strip (on)")
-                sender.attributedTitle = mutableAttributedTitle
-            }
+            setNSButtonTitle(button: sender, to: "  Control Strip (on)")
+
             ScriptRunner.restoreControlStrip()
         } else {
+            Persistence.controlStripEnabled = false
             sender.image = #imageLiteral(resourceName: "Radio_Off")
-            if let mutableAttributedTitle: NSMutableAttributedString = sender.attributedTitle.mutableCopy() as? NSMutableAttributedString {
-                mutableAttributedTitle.mutableString.setString("  Control Strip (off)")
-                sender.attributedTitle = mutableAttributedTitle
-            }
+            setNSButtonTitle(button: sender, to: "  Control Strip (off)")
+            
             ScriptRunner.hideControlStrip()
+        }
+    }
+    
+    /**
+     Updates a button's text, preserving the text styles
+     */
+    func setNSButtonTitle(button: NSButton, to title: String) {
+        if let mutableAttributedTitle: NSMutableAttributedString = button.attributedTitle.mutableCopy() as? NSMutableAttributedString {
+            mutableAttributedTitle.mutableString.setString(title)
+            button.attributedTitle = mutableAttributedTitle
         }
     }
     
@@ -130,15 +151,16 @@ class ViewController: NSViewController {
      - parameter sender: The NSButton clicked
      */
     @IBAction func fitButtonClicked(_ sender: NSButton) {
-        fitButtonsToTouchBar = !fitButtonsToTouchBar
+        Persistence.buttonsFillControlStrip = !Persistence.buttonsFillControlStrip
         
-        if fitButtonsToTouchBar {
+        if Persistence.buttonsFillControlStrip {
             fitButtonsToTouchBarScreenSize()
+            presentModalTouchBar(touchBar)
+            sender.image = #imageLiteral(resourceName: "Radio_On")
+        } else {
+            presentModalTouchBar(makeTouchBar())
+            sender.image = #imageLiteral(resourceName: "Radio_Off")
         }
-        
-        presentModalTouchBar(fitButtonsToTouchBar ? touchBar : makeTouchBar())
-        
-        sender.image = fitButtonsToTouchBar ? #imageLiteral(resourceName: "Radio_On") : #imageLiteral(resourceName: "Radio_Off")
     }
     
     /**
@@ -148,23 +170,14 @@ class ViewController: NSViewController {
         /* Need to re-present the system-wide modal touchbar due to some limitation in the undocumented
          DFRFoundationFramework. I believe it copies a Touch Bar under the hood or something, since
          changes to the "local" touch bar aren't reflected until presentSystemModalTouchBar() is called again. */
-        
-        // When you don't want to reset the button sizes, just call the below line and delete everything else
-        // presentModalTouchBar(makeTouchBar())
-        
-        
-        // TODO: Size buttons on load. Get buttons the right size (slightly off now [see default set]). See if you can allow 13 buttons on the screen. See if you can override esc key with not-an-x. Consider allowing an easier resizing scheme: i.e. a view with a slider.
-        
         touchBar = makeTouchBar()
        
-        if fitButtonsToTouchBar {
+        if Persistence.buttonsFillControlStrip {
             fitButtonsToTouchBarScreenSize()
         }
         
         presentModalTouchBar(touchBar)
     }
-    
-    
 }
 
 extension ViewController: NSTouchBarDelegate {

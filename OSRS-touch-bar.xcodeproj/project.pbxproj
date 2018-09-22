@@ -11,6 +11,7 @@
 		B82C5FDD2151F11E004A8002 /* UserDefaultsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82C5FDC2151F11E004A8002 /* UserDefaultsExtension.swift */; };
 		B83A07A8204B231A006C3C6E /* ScriptRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83A07A7204B231A006C3C6E /* ScriptRunner.swift */; };
 		B83A07B3204B5055006C3C6E /* runescape_chat_font.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B83A07B2204B5055006C3C6E /* runescape_chat_font.ttf */; };
+		B8668C852156D0E200DEBBF2 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8668C842156D0E200DEBBF2 /* Persistence.swift */; };
 		B8988A612042704200CC8D7B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8988A602042704200CC8D7B /* ViewController.swift */; };
 		B8988A632042704200CC8D7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8988A622042704200CC8D7B /* Assets.xcassets */; };
 		B8AD3F272044986D00A3D40D /* KeyCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AD3F262044986D00A3D40D /* KeyCodes.swift */; };
@@ -30,6 +31,7 @@
 		B83A07A7204B231A006C3C6E /* ScriptRunner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptRunner.swift; sourceTree = "<group>"; };
 		B83A07AB204B29DF006C3C6E /* OSRS-touch-bar-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OSRS-touch-bar-Bridging-Header.h"; sourceTree = "<group>"; };
 		B83A07B2204B5055006C3C6E /* runescape_chat_font.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = runescape_chat_font.ttf; sourceTree = "<group>"; };
+		B8668C842156D0E200DEBBF2 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		B8988A5B2042704200CC8D7B /* OSRS-touch-bar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OSRS-touch-bar.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8988A602042704200CC8D7B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B8988A622042704200CC8D7B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 				B8D0ACBC214ED0180098E255 /* WindowController.swift */,
 				B8988A602042704200CC8D7B /* ViewController.swift */,
 				B82C5FDC2151F11E004A8002 /* UserDefaultsExtension.swift */,
+				B8668C842156D0E200DEBBF2 /* Persistence.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -217,6 +220,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8668C852156D0E200DEBBF2 /* Persistence.swift in Sources */,
 				B8D0ACC9214EFCB50098E255 /* AppDelegate.swift in Sources */,
 				B8988A612042704200CC8D7B /* ViewController.swift in Sources */,
 				B82C5FDD2151F11E004A8002 /* UserDefaultsExtension.swift in Sources */,
