@@ -91,8 +91,7 @@
 				B829002C214EC957007C160A /* Main.storyboard */,
 				B8D0ACBC214ED0180098E255 /* WindowController.swift */,
 				B8988A602042704200CC8D7B /* ViewController.swift */,
-				B82C5FDC2151F11E004A8002 /* UserDefaultsExtension.swift */,
-				B8668C842156D0E200DEBBF2 /* Persistence.swift */,
+				B8D0ACC2214EE19D0098E255 /* CustomTouchBarItem.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -101,16 +100,25 @@
 			isa = PBXGroup;
 			children = (
 				B8AD3F262044986D00A3D40D /* KeyCodes.swift */,
-				B8D0ACC2214EE19D0098E255 /* CustomTouchBarItem.swift */,
 				B8D0ACC4214EE8E70098E255 /* TouchBarConstants.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		B8668C8921583B9F00DEBBF2 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				B82C5FDC2151F11E004A8002 /* UserDefaultsExtension.swift */,
+				B8668C842156D0E200DEBBF2 /* Persistence.swift */,
+			);
+			path = Persistence;
 			sourceTree = "<group>";
 		};
 		B8988A522042704200CC8D7B = {
 			isa = PBXGroup;
 			children = (
 				B8988A5D2042704200CC8D7B /* OSRS-touch-bar */,
+				B8AD3F592045223200A3D40D /* TouchBar.h */,
 				B8988A5C2042704200CC8D7B /* Products */,
 				B8AD3F562045220500A3D40D /* Frameworks */,
 			);
@@ -129,7 +137,7 @@
 			children = (
 				B83A07AC204B2B0D006C3C6E /* Main */,
 				B83A07AD204B2BAA006C3C6E /* Constants */,
-				B8AD3F592045223200A3D40D /* TouchBar.h */,
+				B8668C8921583B9F00DEBBF2 /* Persistence */,
 				B83A07AA204B28DB006C3C6E /* Scripting */,
 				B83A07A9204B279E006C3C6E /* Supporting Files */,
 			);
