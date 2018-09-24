@@ -18,8 +18,6 @@ class ViewController: NSViewController {
     
     var userDefaultsObserver: NSKeyValueObservation?
     
-     // TODO:  Get buttons the right size (slightly off now [see default set]). See if you can allow 13 buttons on the screen. See if you can override esc key with not-an-x. Consider allowing an easier resizing scheme: i.e. a view with a slider.
-    
     // -----------------------
     // MARK: - View life cycle
     // -----------------------
@@ -40,7 +38,6 @@ class ViewController: NSViewController {
         if Persistence.buttonsFillControlStrip {
             fitButton.image = #imageLiteral(resourceName: "Radio_On")
             fitButtonsToTouchBarScreenSize()
-
         }
 
         NSApplication.shared.isAutomaticCustomizeTouchBarMenuItemEnabled = true
