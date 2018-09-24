@@ -109,7 +109,7 @@
                                                 <action selector="controlStripButtonClicked:" target="gSf-af-Mjv" id="nRN-Xd-jcY"/>
                                             </connections>
                                         </button>
-                                        <button toolTip="Shows the OSRS Touch Bar even when other apps are running." translatesAutoresizingMaskIntoConstraints="NO" id="xJf-RF-xPg" userLabel="Customize Button">
+                                        <button toolTip="Displays the system dialog for customizing the Touch Bar. Allows you to add, remove, or rearrange the buttons. " translatesAutoresizingMaskIntoConstraints="NO" id="xJf-RF-xPg" userLabel="Customize Button">
                                             <rect key="frame" x="63" y="76" width="213" height="48"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="213" id="KI4-0G-dPv"/>
@@ -134,7 +134,7 @@
                                                 <font key="font" size="19" name="Runescape-Chat-Font"/>
                                             </buttonCell>
                                         </button>
-                                        <button toolTip="Toggles the Control Strip." imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8EZ-zB-28G" userLabel="Fit Button">
+                                        <button toolTip="Resizes the Touch Bar's buttons to fill all the available space. " imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8EZ-zB-28G" userLabel="Fit Button">
                                             <rect key="frame" x="63" y="22" width="213" height="48"/>
                                             <buttonCell key="cell" type="bevel" title="  Fit Buttons to Touch Bar" bezelStyle="regularSquare" image="Radio_Off" imagePosition="left" alignment="center" inset="2" id="LBX-mv-fk5">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>

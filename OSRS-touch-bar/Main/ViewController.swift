@@ -71,7 +71,7 @@ class ViewController: NSViewController {
     private func fitButtonsToTouchBarScreenSize() {
         /**
          For some reason, part of the Touch Bar API handles a "full" (12-button) Touch Bar's layout
-         differently than a Touch Bar with fewer items. This hack is necessary due to that. 
+         differently than a Touch Bar with fewer items. This hack is necessary due to that.
          */
         guard let identifiers = touchBar?.itemIdentifiers, identifiers.count < 12 else {
             return
