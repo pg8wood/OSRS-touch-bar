@@ -32,7 +32,7 @@
 		B83A07AB204B29DF006C3C6E /* OSRS-touch-bar-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OSRS-touch-bar-Bridging-Header.h"; sourceTree = "<group>"; };
 		B83A07B2204B5055006C3C6E /* runescape_chat_font.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = runescape_chat_font.ttf; sourceTree = "<group>"; };
 		B8668C842156D0E200DEBBF2 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
-		B8988A5B2042704200CC8D7B /* OSRS-touch-bar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OSRS-touch-bar.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B8988A5B2042704200CC8D7B /* OSRS Touch Bar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OSRS Touch Bar.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8988A602042704200CC8D7B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B8988A622042704200CC8D7B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B8988A672042704200CC8D7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -127,7 +127,7 @@
 		B8988A5C2042704200CC8D7B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B8988A5B2042704200CC8D7B /* OSRS-touch-bar.app */,
+				B8988A5B2042704200CC8D7B /* OSRS Touch Bar.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -155,9 +155,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B8988A5A2042704200CC8D7B /* OSRS-touch-bar */ = {
+		B8988A5A2042704200CC8D7B /* OSRS Touch Bar */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B8988A6B2042704200CC8D7B /* Build configuration list for PBXNativeTarget "OSRS-touch-bar" */;
+			buildConfigurationList = B8988A6B2042704200CC8D7B /* Build configuration list for PBXNativeTarget "OSRS Touch Bar" */;
 			buildPhases = (
 				B8988A572042704200CC8D7B /* Sources */,
 				B8988A582042704200CC8D7B /* Frameworks */,
@@ -167,9 +167,9 @@
 			);
 			dependencies = (
 			);
-			name = "OSRS-touch-bar";
+			name = "OSRS Touch Bar";
 			productName = "OSRS-touch-bar";
-			productReference = B8988A5B2042704200CC8D7B /* OSRS-touch-bar.app */;
+			productReference = B8988A5B2042704200CC8D7B /* OSRS Touch Bar.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -189,7 +189,7 @@
 					};
 				};
 			};
-			buildConfigurationList = B8988A562042704200CC8D7B /* Build configuration list for PBXProject "OSRS-touch-bar" */;
+			buildConfigurationList = B8988A562042704200CC8D7B /* Build configuration list for PBXProject "OSRS Touch Bar" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -202,7 +202,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B8988A5A2042704200CC8D7B /* OSRS-touch-bar */,
+				B8988A5A2042704200CC8D7B /* OSRS Touch Bar */,
 			);
 		};
 /* End PBXProject section */
@@ -399,7 +399,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B8988A562042704200CC8D7B /* Build configuration list for PBXProject "OSRS-touch-bar" */ = {
+		B8988A562042704200CC8D7B /* Build configuration list for PBXProject "OSRS Touch Bar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B8988A692042704200CC8D7B /* Debug */,
@@ -408,7 +408,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B8988A6B2042704200CC8D7B /* Build configuration list for PBXNativeTarget "OSRS-touch-bar" */ = {
+		B8988A6B2042704200CC8D7B /* Build configuration list for PBXNativeTarget "OSRS Touch Bar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B8988A6C2042704200CC8D7B /* Debug */,
