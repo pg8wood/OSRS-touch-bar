@@ -171,6 +171,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="340" id="Wuk-8y-fwH"/>
                                 </constraints>
+                                <color key="borderColor" red="0.19607843137254902" green="0.19607843137254902" blue="0.19607843137254902" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="fillColor" red="0.24185565110000001" green="0.20867905019999999" blue="0.16076445580000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </box>
                         </subviews>
