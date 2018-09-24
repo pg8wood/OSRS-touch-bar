@@ -39,9 +39,9 @@ public class TouchBarConstants {
         TouchBarIdentifier.spellbookLabelItem.rawValue: ("Spellbook", KeyCodes.F6KeyCode),
         TouchBarIdentifier.clanChatLabelItem.rawValue: ("Clan Chat", KeyCodes.F7KeyCode),
         TouchBarIdentifier.friendsListLabelItem.rawValue: ("Friends List", KeyCodes.F8KeyCode),
-        TouchBarIdentifier.ignoreListLabelItem.rawValue: ("Ignore List", KeyCodes.F8KeyCode),
-        TouchBarIdentifier.optionsLabelItem.rawValue: ("Options", KeyCodes.F9KeyCode),
-        TouchBarIdentifier.emotesLabelItem.rawValue: ("Emotes", KeyCodes.F10KeyCode),
-        TouchBarIdentifier.musicPlayerLabelItem.rawValue: ("Music", KeyCodes.F11KeyCode)
+        TouchBarIdentifier.ignoreListLabelItem.rawValue: ("Ignore List", KeyCodes.F9KeyCode),
+        TouchBarIdentifier.optionsLabelItem.rawValue: ("Options", KeyCodes.F10KeyCode),
+        TouchBarIdentifier.emotesLabelItem.rawValue: ("Emotes", KeyCodes.F11KeyCode),
+        TouchBarIdentifier.musicPlayerLabelItem.rawValue: ("Music", KeyCodes.F12KeyCode)
     ]
 }
