@@ -9,7 +9,7 @@ OSRS Touch Bar displays [Old School RuneScape](http://oldschool.runescape.com) i
 
 # Download
 
-[Download the latest release here.](https://github.com/pg8wood/OSRS-touch-bar/releases/download/1.0/OSRS-touch-bar-1.0.dmg)
+Read the latest release notes [here](https://github.com/pg8wood/OSRS-touch-bar/releases/tag/1.1) or just [download the latest release](https://github.com/pg8wood/OSRS-touch-bar/releases/download/1.1/OSRS-Touch-Bar-1.1.dmg).
 
 # Usage
 
@@ -29,7 +29,7 @@ Quitting the app will restore your original Control Strip settings.
 Note: if you have your Touch Bar configured to show only the "Expanded Control Strip" or "F1, F2, etc. Keys", OSRS Touch Bar cannot display the RuneScape UI in the Touch Bar! This can be toggled in __System Preferences &rarr; Keyboard__. 
 
 # Customization
-The Touch bar can be customized similarly to how the Control Strip is customized in System Preferences. You may add, remove, and reorder as many buttons to the Touch Bar as you wish. 
+The Touch bar can be customized similarly to how the Control Strip is customized in System Preferences. You may add, remove, and reorder as many buttons as you wish. 
 
 ![Touch bar customization UI screenshot](./docs/customization.png)
 
