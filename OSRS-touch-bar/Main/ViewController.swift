@@ -174,9 +174,9 @@ class ViewController: NSViewController {
        
         if Persistence.buttonsFillControlStrip {
             fitButtonsToTouchBarScreenSize()
+        } else {
+            presentModalTouchBar(touchBar)
         }
-        
-        presentModalTouchBar(touchBar)
     }
 }
 
