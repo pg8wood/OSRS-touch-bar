@@ -69,7 +69,11 @@ class ViewController: NSViewController {
     }
     
     private func fitButtonsToTouchBarScreenSize() {
-        guard let identifiers = touchBar?.itemIdentifiers else {
+        /**
+         For some reason, part of the Touch Bar API handles a "full" (12-button) Touch Bar's layout
+         differently than a Touch Bar with fewer items. This hack is necessary due to that. 
+         */
+        guard let identifiers = touchBar?.itemIdentifiers, identifiers.count < 12 else {
             return
         }
         
@@ -171,11 +175,10 @@ class ViewController: NSViewController {
          DFRFoundationFramework. I believe it copies a Touch Bar under the hood or something, since
          changes to the "local" touch bar aren't reflected until presentSystemModalTouchBar() is called again. */
         touchBar = makeTouchBar()
+        presentModalTouchBar(touchBar)
        
         if Persistence.buttonsFillControlStrip {
             fitButtonsToTouchBarScreenSize()
-        } else {
-            presentModalTouchBar(touchBar)
         }
     }
 }
