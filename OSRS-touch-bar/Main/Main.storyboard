@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14295.6" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="v1V-z9-Tns">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14295.6"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Application-->
+        <scene sceneID="gs8-ij-Mjv">
+            <objects>
+                <application id="tOs-3v-egS" sceneMemberID="viewController">
+                    <menu key="mainMenu" title="Main Menu" systemMenu="main" id="mt7-N4-gzS">
+                        <items>
+                            <menuItem title="OSRS Touch Bar" id="qhT-We-cer" userLabel="OSRS Touch Bar">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="OSRS Touch Bar" systemMenu="apple" id="j9U-MR-qXw">
+                                    <items>
+                                        <menuItem title="About OSRS Touch Bar" id="q3Q-nt-xhp">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="5NH-V0-fqq"/>
+                                        <menuItem title="Hide TouchBar" keyEquivalent="h" id="mze-f2-3cp"/>
+                                        <menuItem title="Hide Others" keyEquivalent="h" id="txO-1a-y5G">
+                                            <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
+                                        </menuItem>
+                                        <menuItem title="Show All" id="ssI-SS-ryw">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="3WY-su-zEb"/>
+                                        <menuItem title="Quit TouchBar" keyEquivalent="q" id="CLD-Kb-dNv"/>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                            <menuItem title="View" id="qSo-Qh-lDY">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="View" id="Syu-Tf-t4J">
+                                    <items>
+                                        <menuItem title="Customize Touch Bar…" id="YmY-Du-nqe">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                        </items>
+                    </menu>
+                    <connections>
+                        <outlet property="delegate" destination="Rce-oF-fS0" id="dRu-Gx-u1F"/>
+                    </connections>
+                </application>
+                <customObject id="bNz-Mj-BfT" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <customObject id="Rce-oF-fS0" customClass="AppDelegate" customModule="OSRS_touch_bar" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="-697" y="-71"/>
+        </scene>
+        <!--Window Controller-->
+        <scene sceneID="HDE-HK-cef">
+            <objects>
+                <windowController id="v1V-z9-Tns" customClass="WindowController" customModule="OSRS_touch_bar" customModuleProvider="target" sceneMemberID="viewController">
+                    <window key="window" title="OSRS Touch Bar" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="v59-DD-EkN">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="196" y="240" width="480" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
+                        <connections>
+                            <outlet property="delegate" destination="v1V-z9-Tns" id="m6n-ig-l0Q"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="gSf-af-Mjv" kind="relationship" relationship="window.shadowedContentViewController" id="mEb-ZV-Zad"/>
+                    </connections>
+                </windowController>
+                <customObject id="bGy-7g-gIJ" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="58" y="-268"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="x8z-OS-YmT">
+            <objects>
+                <viewController id="gSf-af-Mjv" customClass="ViewController" customModule="OSRS_touch_bar" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" wantsLayer="YES" id="534-HE-dVp">
+                        <rect key="frame" x="0.0" y="0.0" width="340" height="202"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <box boxType="custom" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="GLl-td-XVc">
+                                <rect key="frame" x="0.0" y="0.0" width="340" height="202"/>
+                                <view key="contentView" id="S8V-1t-yKu">
+                                    <rect key="frame" x="1" y="1" width="338" height="200"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <button translatesAutoresizingMaskIntoConstraints="NO" id="Mhc-C5-4l2">
+                                            <rect key="frame" x="63" y="132" width="213" height="48"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="213" id="HQu-tJ-VQ7"/>
+                                                <constraint firstAttribute="height" constant="48" id="cIY-MB-0f1"/>
+                                            </constraints>
+                                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="Button_Background" imagePosition="overlaps" alignment="center" imageScaling="axesIndependently" inset="2" id="hOc-WE-R6O">
+                                                <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" size="19" name="Runescape-Chat-Font"/>
+                                            </buttonCell>
+                                        </button>
+                                        <button toolTip="Toggles the Control Strip." imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QB8-Gl-Ce7" userLabel="Control Strip Button">
+                                            <rect key="frame" x="63" y="134" width="213" height="48"/>
+                                            <buttonCell key="cell" type="bevel" title="  Control Strip (off)" bezelStyle="regularSquare" image="Radio_Off" imagePosition="left" alignment="center" inset="2" id="k4c-eT-egR">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                                <font key="font" size="19" name="Runescape-Chat-Font"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="controlStripButtonClicked:" target="gSf-af-Mjv" id="nRN-Xd-jcY"/>
+                                            </connections>
+                                        </button>
+                                        <button toolTip="Displays the system dialog for customizing the Touch Bar. Allows you to add, remove, or rearrange the buttons. " translatesAutoresizingMaskIntoConstraints="NO" id="xJf-RF-xPg" userLabel="Customize Button">
+                                            <rect key="frame" x="63" y="76" width="213" height="48"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="213" id="KI4-0G-dPv"/>
+                                                <constraint firstAttribute="height" constant="48" id="mzY-fK-sDT"/>
+                                            </constraints>
+                                            <buttonCell key="cell" type="square" title="Customize Touch Bar..." bezelStyle="shadowlessSquare" image="Button_Background" imagePosition="overlaps" alignment="center" imageScaling="axesIndependently" inset="2" id="Ses-B5-f5u">
+                                                <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" size="19" name="Runescape-Chat-Font"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="customizeButtonClicked:" target="gSf-af-Mjv" id="9xP-uG-r2N"/>
+                                            </connections>
+                                        </button>
+                                        <button translatesAutoresizingMaskIntoConstraints="NO" id="PTh-Bj-smc">
+                                            <rect key="frame" x="63" y="20" width="213" height="48"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="213" id="The-WH-92X"/>
+                                                <constraint firstAttribute="height" constant="48" id="aBm-sa-ES8"/>
+                                            </constraints>
+                                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="Button_Background" imagePosition="overlaps" alignment="center" imageScaling="axesIndependently" inset="2" id="Adc-c2-GOD">
+                                                <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" size="19" name="Runescape-Chat-Font"/>
+                                            </buttonCell>
+                                        </button>
+                                        <button toolTip="Resizes the Touch Bar's buttons to fill all the available space. " imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8EZ-zB-28G" userLabel="Fit Button">
+                                            <rect key="frame" x="63" y="22" width="213" height="48"/>
+                                            <buttonCell key="cell" type="bevel" title="  Fit Buttons to Touch Bar" bezelStyle="regularSquare" image="Radio_Off" imagePosition="left" alignment="center" inset="2" id="LBX-mv-fk5">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                                <font key="font" size="19" name="Runescape-Chat-Font"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="fitButtonClicked:" target="gSf-af-Mjv" id="SVO-q3-lZI"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="QB8-Gl-Ce7" firstAttribute="width" secondItem="Mhc-C5-4l2" secondAttribute="width" id="35l-pf-a8K"/>
+                                        <constraint firstAttribute="bottom" secondItem="8EZ-zB-28G" secondAttribute="bottom" constant="22" id="8PT-wd-Qpa"/>
+                                        <constraint firstItem="8EZ-zB-28G" firstAttribute="height" secondItem="PTh-Bj-smc" secondAttribute="height" id="9SM-1T-rPw"/>
+                                        <constraint firstItem="8EZ-zB-28G" firstAttribute="leading" secondItem="S8V-1t-yKu" secondAttribute="leading" constant="63" id="EVo-yp-5c7"/>
+                                        <constraint firstAttribute="bottom" secondItem="PTh-Bj-smc" secondAttribute="bottom" constant="20" id="Eu4-73-oW2"/>
+                                        <constraint firstItem="xJf-RF-xPg" firstAttribute="centerX" secondItem="S8V-1t-yKu" secondAttribute="centerX" id="F4j-bR-MVR"/>
+                                        <constraint firstItem="QB8-Gl-Ce7" firstAttribute="centerX" secondItem="S8V-1t-yKu" secondAttribute="centerX" id="KT0-7G-cwz"/>
+                                        <constraint firstItem="PTh-Bj-smc" firstAttribute="leading" secondItem="S8V-1t-yKu" secondAttribute="leading" constant="63" id="Qbj-ws-E0p"/>
+                                        <constraint firstItem="QB8-Gl-Ce7" firstAttribute="height" secondItem="Mhc-C5-4l2" secondAttribute="height" id="So9-bX-myS"/>
+                                        <constraint firstItem="QB8-Gl-Ce7" firstAttribute="top" secondItem="S8V-1t-yKu" secondAttribute="top" constant="18" id="TPl-88-YIy"/>
+                                        <constraint firstItem="QB8-Gl-Ce7" firstAttribute="centerX" secondItem="S8V-1t-yKu" secondAttribute="centerX" id="e5d-AU-htW"/>
+                                        <constraint firstItem="8EZ-zB-28G" firstAttribute="width" secondItem="PTh-Bj-smc" secondAttribute="width" id="eW0-51-9GG"/>
+                                        <constraint firstItem="PTh-Bj-smc" firstAttribute="top" secondItem="xJf-RF-xPg" secondAttribute="bottom" constant="8" id="eeR-Ri-b69"/>
+                                        <constraint firstItem="Mhc-C5-4l2" firstAttribute="centerX" secondItem="S8V-1t-yKu" secondAttribute="centerX" id="pfG-jM-8MI"/>
+                                        <constraint firstItem="xJf-RF-xPg" firstAttribute="top" secondItem="QB8-Gl-Ce7" secondAttribute="bottom" constant="10" id="re5-FD-7Go"/>
+                                        <constraint firstItem="Mhc-C5-4l2" firstAttribute="top" secondItem="S8V-1t-yKu" secondAttribute="top" constant="20" id="sYb-cd-7MA"/>
+                                        <constraint firstItem="Mhc-C5-4l2" firstAttribute="centerX" secondItem="S8V-1t-yKu" secondAttribute="centerX" id="vy6-gp-RLM"/>
+                                        <constraint firstAttribute="trailing" secondItem="8EZ-zB-28G" secondAttribute="trailing" constant="62" id="yYW-D2-1XX"/>
+                                        <constraint firstItem="8EZ-zB-28G" firstAttribute="top" secondItem="xJf-RF-xPg" secondAttribute="bottom" constant="6" id="z7Q-HI-Oat"/>
+                                        <constraint firstAttribute="trailing" secondItem="PTh-Bj-smc" secondAttribute="trailing" constant="62" id="zUc-bI-CyT"/>
+                                    </constraints>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="340" id="Wuk-8y-fwH"/>
+                                </constraints>
+                                <color key="borderColor" red="0.19607843137254902" green="0.19607843137254902" blue="0.19607843137254902" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="fillColor" red="0.24185565110000001" green="0.20867905019999999" blue="0.16076445580000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </box>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="GLl-td-XVc" firstAttribute="top" secondItem="534-HE-dVp" secondAttribute="top" id="NUt-Bw-Vc3"/>
+                            <constraint firstAttribute="bottom" secondItem="GLl-td-XVc" secondAttribute="bottom" id="rYZ-rL-O8b"/>
+                            <constraint firstAttribute="trailing" secondItem="GLl-td-XVc" secondAttribute="trailing" id="rhW-lu-Vct"/>
+                            <constraint firstItem="GLl-td-XVc" firstAttribute="leading" secondItem="534-HE-dVp" secondAttribute="leading" id="zxr-nw-MMU"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="controlStripButton" destination="QB8-Gl-Ce7" id="W7g-0O-I1N"/>
+                        <outlet property="customizeButton" destination="xJf-RF-xPg" id="4pr-Ql-ZJp"/>
+                        <outlet property="fitButton" destination="8EZ-zB-28G" id="ZQY-J1-qpY"/>
+                    </connections>
+                </viewController>
+                <customObject id="gMa-oN-qNz" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="633" y="-268"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Button_Background" width="150" height="40"/>
+        <image name="Radio_Off" width="19" height="19"/>
+    </resources>
+</document>

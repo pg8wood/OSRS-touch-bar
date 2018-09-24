@@ -6,7 +6,7 @@
 //  Copyright © 2018 Patrick Gatewood. All rights reserved.
 //
 
-class KeyCodes {
+enum KeyCodes {
     // CGKeyCode in CoreGraphics is a typealias for UInt16
     static let ESCKeyCode: UInt16 = 53
     static let F1KeyCode: UInt16 = 122

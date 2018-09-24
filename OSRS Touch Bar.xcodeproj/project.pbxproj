@@ -7,41 +7,46 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B829002D214EC957007C160A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B829002C214EC957007C160A /* Main.storyboard */; };
+		B82C5FDD2151F11E004A8002 /* UserDefaultsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82C5FDC2151F11E004A8002 /* UserDefaultsExtension.swift */; };
 		B83A07A8204B231A006C3C6E /* ScriptRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83A07A7204B231A006C3C6E /* ScriptRunner.swift */; };
 		B83A07B3204B5055006C3C6E /* runescape_chat_font.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B83A07B2204B5055006C3C6E /* runescape_chat_font.ttf */; };
-		B893D676213246D9000A9FB0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B893D675213246D8000A9FB0 /* AppDelegate.m */; };
-		B8988A612042704200CC8D7B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8988A602042704200CC8D7B /* MainViewController.swift */; };
+		B8668C852156D0E200DEBBF2 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8668C842156D0E200DEBBF2 /* Persistence.swift */; };
+		B8988A612042704200CC8D7B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8988A602042704200CC8D7B /* ViewController.swift */; };
 		B8988A632042704200CC8D7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8988A622042704200CC8D7B /* Assets.xcassets */; };
-		B8988A7520427F8C00CC8D7B /* TouchBarIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8988A7420427F8C00CC8D7B /* TouchBarIdentifiers.swift */; };
 		B8AD3F272044986D00A3D40D /* KeyCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AD3F262044986D00A3D40D /* KeyCodes.swift */; };
 		B8AD3F582045220500A3D40D /* DFRFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8AD3F572045220500A3D40D /* DFRFoundation.framework */; };
-		B8AD3F61204524A500A3D40D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B8AD3F60204524A500A3D40D /* main.m */; };
-		B8AD3F63204525AD00A3D40D /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8AD3F62204525AD00A3D40D /* MainMenu.xib */; };
 		B8BE878B20578181000AB194 /* hideControlStrip.sh in Resources */ = {isa = PBXBuildFile; fileRef = B8BE878820578180000AB194 /* hideControlStrip.sh */; };
 		B8BE878C20578181000AB194 /* recordControlStripPrefs.sh in Resources */ = {isa = PBXBuildFile; fileRef = B8BE878920578180000AB194 /* recordControlStripPrefs.sh */; };
 		B8BE878D20578181000AB194 /* restoreControlStrip.py in Resources */ = {isa = PBXBuildFile; fileRef = B8BE878A20578181000AB194 /* restoreControlStrip.py */; };
+		B8D0ACBD214ED0180098E255 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D0ACBC214ED0180098E255 /* WindowController.swift */; };
+		B8D0ACC3214EE19D0098E255 /* CustomTouchBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D0ACC2214EE19D0098E255 /* CustomTouchBarItem.swift */; };
+		B8D0ACC5214EE8E70098E255 /* TouchBarConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D0ACC4214EE8E70098E255 /* TouchBarConstants.swift */; };
+		B8D0ACC9214EFCB50098E255 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D0ACC8214EFCB50098E255 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B829002C214EC957007C160A /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		B82C5FDC2151F11E004A8002 /* UserDefaultsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtension.swift; sourceTree = "<group>"; };
 		B83A07A7204B231A006C3C6E /* ScriptRunner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptRunner.swift; sourceTree = "<group>"; };
 		B83A07AB204B29DF006C3C6E /* OSRS-touch-bar-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OSRS-touch-bar-Bridging-Header.h"; sourceTree = "<group>"; };
 		B83A07B2204B5055006C3C6E /* runescape_chat_font.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = runescape_chat_font.ttf; sourceTree = "<group>"; };
-		B893D6742132144E000A9FB0 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		B893D675213246D8000A9FB0 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		B8988A5B2042704200CC8D7B /* OSRS-touch-bar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OSRS-touch-bar.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B8988A602042704200CC8D7B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		B8668C842156D0E200DEBBF2 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		B8988A5B2042704200CC8D7B /* OSRS Touch Bar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OSRS Touch Bar.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B8988A602042704200CC8D7B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B8988A622042704200CC8D7B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B8988A672042704200CC8D7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B8988A682042704200CC8D7B /* OSRS_touch_bar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OSRS_touch_bar.entitlements; sourceTree = "<group>"; };
-		B8988A7420427F8C00CC8D7B /* TouchBarIdentifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchBarIdentifiers.swift; sourceTree = "<group>"; };
 		B8AD3F262044986D00A3D40D /* KeyCodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyCodes.swift; sourceTree = "<group>"; };
 		B8AD3F572045220500A3D40D /* DFRFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DFRFoundation.framework; path = ../../../../../../../System/Library/PrivateFrameworks/DFRFoundation.framework; sourceTree = "<group>"; };
 		B8AD3F592045223200A3D40D /* TouchBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TouchBar.h; sourceTree = "<group>"; };
-		B8AD3F60204524A500A3D40D /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		B8AD3F62204525AD00A3D40D /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
 		B8BE878820578180000AB194 /* hideControlStrip.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = hideControlStrip.sh; sourceTree = "<group>"; };
 		B8BE878920578180000AB194 /* recordControlStripPrefs.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = recordControlStripPrefs.sh; sourceTree = "<group>"; };
 		B8BE878A20578181000AB194 /* restoreControlStrip.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = restoreControlStrip.py; sourceTree = "<group>"; };
+		B8D0ACBC214ED0180098E255 /* WindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
+		B8D0ACC2214EE19D0098E255 /* CustomTouchBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTouchBarItem.swift; sourceTree = "<group>"; };
+		B8D0ACC4214EE8E70098E255 /* TouchBarConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchBarConstants.swift; sourceTree = "<group>"; };
+		B8D0ACC8214EFCB50098E255 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,11 +87,11 @@
 		B83A07AC204B2B0D006C3C6E /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				B893D675213246D8000A9FB0 /* AppDelegate.m */,
-				B893D6742132144E000A9FB0 /* AppDelegate.h */,
-				B8AD3F60204524A500A3D40D /* main.m */,
-				B8AD3F62204525AD00A3D40D /* MainMenu.xib */,
-				B8988A602042704200CC8D7B /* MainViewController.swift */,
+				B8D0ACC8214EFCB50098E255 /* AppDelegate.swift */,
+				B829002C214EC957007C160A /* Main.storyboard */,
+				B8D0ACBC214ED0180098E255 /* WindowController.swift */,
+				B8988A602042704200CC8D7B /* ViewController.swift */,
+				B8D0ACC2214EE19D0098E255 /* CustomTouchBarItem.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -95,15 +100,25 @@
 			isa = PBXGroup;
 			children = (
 				B8AD3F262044986D00A3D40D /* KeyCodes.swift */,
-				B8988A7420427F8C00CC8D7B /* TouchBarIdentifiers.swift */,
+				B8D0ACC4214EE8E70098E255 /* TouchBarConstants.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		B8668C8921583B9F00DEBBF2 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				B82C5FDC2151F11E004A8002 /* UserDefaultsExtension.swift */,
+				B8668C842156D0E200DEBBF2 /* Persistence.swift */,
+			);
+			path = Persistence;
 			sourceTree = "<group>";
 		};
 		B8988A522042704200CC8D7B = {
 			isa = PBXGroup;
 			children = (
 				B8988A5D2042704200CC8D7B /* OSRS-touch-bar */,
+				B8AD3F592045223200A3D40D /* TouchBar.h */,
 				B8988A5C2042704200CC8D7B /* Products */,
 				B8AD3F562045220500A3D40D /* Frameworks */,
 			);
@@ -112,7 +127,7 @@
 		B8988A5C2042704200CC8D7B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B8988A5B2042704200CC8D7B /* OSRS-touch-bar.app */,
+				B8988A5B2042704200CC8D7B /* OSRS Touch Bar.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -122,7 +137,7 @@
 			children = (
 				B83A07AC204B2B0D006C3C6E /* Main */,
 				B83A07AD204B2BAA006C3C6E /* Constants */,
-				B8AD3F592045223200A3D40D /* TouchBar.h */,
+				B8668C8921583B9F00DEBBF2 /* Persistence */,
 				B83A07AA204B28DB006C3C6E /* Scripting */,
 				B83A07A9204B279E006C3C6E /* Supporting Files */,
 			);
@@ -140,9 +155,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B8988A5A2042704200CC8D7B /* OSRS-touch-bar */ = {
+		B8988A5A2042704200CC8D7B /* OSRS Touch Bar */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B8988A6B2042704200CC8D7B /* Build configuration list for PBXNativeTarget "OSRS-touch-bar" */;
+			buildConfigurationList = B8988A6B2042704200CC8D7B /* Build configuration list for PBXNativeTarget "OSRS Touch Bar" */;
 			buildPhases = (
 				B8988A572042704200CC8D7B /* Sources */,
 				B8988A582042704200CC8D7B /* Frameworks */,
@@ -152,9 +167,9 @@
 			);
 			dependencies = (
 			);
-			name = "OSRS-touch-bar";
+			name = "OSRS Touch Bar";
 			productName = "OSRS-touch-bar";
-			productReference = B8988A5B2042704200CC8D7B /* OSRS-touch-bar.app */;
+			productReference = B8988A5B2042704200CC8D7B /* OSRS Touch Bar.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -174,7 +189,7 @@
 					};
 				};
 			};
-			buildConfigurationList = B8988A562042704200CC8D7B /* Build configuration list for PBXProject "OSRS-touch-bar" */;
+			buildConfigurationList = B8988A562042704200CC8D7B /* Build configuration list for PBXProject "OSRS Touch Bar" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -187,7 +202,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B8988A5A2042704200CC8D7B /* OSRS-touch-bar */,
+				B8988A5A2042704200CC8D7B /* OSRS Touch Bar */,
 			);
 		};
 /* End PBXProject section */
@@ -197,12 +212,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B829002D214EC957007C160A /* Main.storyboard in Resources */,
 				B8BE878C20578181000AB194 /* recordControlStripPrefs.sh in Resources */,
 				B8988A632042704200CC8D7B /* Assets.xcassets in Resources */,
 				B8BE878B20578181000AB194 /* hideControlStrip.sh in Resources */,
 				B8BE878D20578181000AB194 /* restoreControlStrip.py in Resources */,
 				B83A07B3204B5055006C3C6E /* runescape_chat_font.ttf in Resources */,
-				B8AD3F63204525AD00A3D40D /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,12 +228,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B8988A612042704200CC8D7B /* MainViewController.swift in Sources */,
+				B8668C852156D0E200DEBBF2 /* Persistence.swift in Sources */,
+				B8D0ACC9214EFCB50098E255 /* AppDelegate.swift in Sources */,
+				B8988A612042704200CC8D7B /* ViewController.swift in Sources */,
+				B82C5FDD2151F11E004A8002 /* UserDefaultsExtension.swift in Sources */,
 				B8AD3F272044986D00A3D40D /* KeyCodes.swift in Sources */,
-				B893D676213246D9000A9FB0 /* AppDelegate.m in Sources */,
 				B83A07A8204B231A006C3C6E /* ScriptRunner.swift in Sources */,
-				B8AD3F61204524A500A3D40D /* main.m in Sources */,
-				B8988A7520427F8C00CC8D7B /* TouchBarIdentifiers.swift in Sources */,
+				B8D0ACBD214ED0180098E255 /* WindowController.swift in Sources */,
+				B8D0ACC3214EE19D0098E255 /* CustomTouchBarItem.swift in Sources */,
+				B8D0ACC5214EE8E70098E255 /* TouchBarConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,7 +399,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B8988A562042704200CC8D7B /* Build configuration list for PBXProject "OSRS-touch-bar" */ = {
+		B8988A562042704200CC8D7B /* Build configuration list for PBXProject "OSRS Touch Bar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B8988A692042704200CC8D7B /* Debug */,
@@ -390,7 +408,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B8988A6B2042704200CC8D7B /* Build configuration list for PBXNativeTarget "OSRS-touch-bar" */ = {
+		B8988A6B2042704200CC8D7B /* Build configuration list for PBXNativeTarget "OSRS Touch Bar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B8988A6C2042704200CC8D7B /* Debug */,

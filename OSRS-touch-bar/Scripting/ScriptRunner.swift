@@ -98,8 +98,15 @@ import Foundation
         }
         
         if scriptError != nil {
+            // Ignore error -128 (user cancelled). Called when ESC key is pressed
+            guard let error = scriptError,
+                let errorNumber = error["NSAppleScriptErrorNumber"] as? String,
+                errorNumber != "-128" else {
+                return
+            }
+            
             let alert = NSAlert()
-            alert.informativeText = "\(String(describing: scriptError!.allValues))"
+            alert.informativeText = "\(String(describing: scriptError))"
             alert.runModal()
         }
     }
