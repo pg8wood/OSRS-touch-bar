@@ -142,7 +142,7 @@ class ViewController: NSViewController {
      */
     @IBAction func customizeButtonClicked(_ sender: NSButton) {
         /* Note that any changes made by the user in this view are represented in UserDefaults.
-         The NSTouchBar object is NOT changed. */
+         The NSTouchBar object is NOT changed. Must use KVO to detect changes to the Touch Bar config. */
         NSApplication.shared.toggleTouchBarCustomizationPalette(touchBar)
     }
     
@@ -169,8 +169,8 @@ class ViewController: NSViewController {
      */
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         /* Need to re-present the system-wide modal touchbar due to some limitation in the undocumented
-         DFRFoundationFramework. I believe it copies a Touch Bar under the hood or something, since
-         changes to the "local" touch bar aren't reflected until presentSystemModalTouchBar() is called again. */
+         DFRFoundationFramework. I believe it copies a Touch Bar under the hood, since changes to the "local"
+         touch bar aren't reflected until presentSystemModalTouchBar() is called again. */
         touchBar = makeTouchBar()
         presentModalTouchBar(touchBar)
        
@@ -188,7 +188,7 @@ extension ViewController: NSTouchBarDelegate {
         touchBar.delegate = self
         touchBar.customizationIdentifier = NSTouchBar.CustomizationIdentifier(rawValue: TouchBarConstants.touchBarCustomizationIdentifierExtension)
         
-        touchBar.defaultItemIdentifiers = TouchBarConstants.TouchBarIdentifier.allCases.filter{
+        touchBar.defaultItemIdentifiers = TouchBarConstants.TouchBarIdentifier.allCases.filter {
             $0 != .inventoryLabelItem // most people use ESC for inventory
             }.map({
                 NSTouchBarItem.Identifier(rawValue: $0.rawValue)
@@ -197,7 +197,7 @@ extension ViewController: NSTouchBarDelegate {
         touchBar.customizationAllowedItemIdentifiers = TouchBarConstants.TouchBarIdentifier.allCases.map({
             NSTouchBarItem.Identifier(rawValue: $0.rawValue)
         })
-        touchBar.principalItemIdentifier = touchBar.defaultItemIdentifiers.first
+        
         return touchBar
     }
     
