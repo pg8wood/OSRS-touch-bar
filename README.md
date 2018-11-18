@@ -17,7 +17,7 @@ On launch, your Touch Bar will display the interface shown above until you quit 
 
 Should you need to access the Control Strip, simply enable it with the `Control Strip` toggle.
 
-If you close the Touch Bar app, you can reload it with the `Reload` button.
+The Touch Bar buttons can be resized with the `Fit Buttons to Touch Bar` button.
 
 Quitting the app will restore your original Control Strip settings.
 
