@@ -9,7 +9,7 @@ OSRS Touch Bar displays [Old School RuneScape](http://oldschool.runescape.com) i
 
 # Download
 
-Read the latest release notes [here](https://github.com/pg8wood/OSRS-touch-bar/releases/tag/1.1) or just [download the latest release](https://github.com/pg8wood/OSRS-touch-bar/releases/download/1.1/OSRS-Touch-Bar-1.1.dmg).
+[View the latest release](https://github.com/pg8wood/OSRS-touch-bar/releases/latest).
 
 # Usage
 
