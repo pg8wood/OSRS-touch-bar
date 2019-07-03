@@ -30,6 +30,8 @@
 	<string>Main</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
+	<key>NSAppleEventsUsageDescription</key>
+	<string>OSRS Touch Bar uses this to send your F-key presses to RuneScape.</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>runescape_chat_font.ttf</string>
