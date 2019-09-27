@@ -186,7 +186,7 @@ extension ViewController: NSTouchBarDelegate {
         let touchBar = NSTouchBar()
         
         touchBar.delegate = self
-        touchBar.customizationIdentifier = NSTouchBar.CustomizationIdentifier(rawValue: TouchBarConstants.touchBarCustomizationIdentifierExtension)
+        touchBar.customizationIdentifier = TouchBarConstants.touchBarCustomizationIdentifierExtension
         
         touchBar.defaultItemIdentifiers = TouchBarConstants.TouchBarIdentifier.allCases.filter {
             $0 != .inventoryLabelItem // most people use ESC for inventory

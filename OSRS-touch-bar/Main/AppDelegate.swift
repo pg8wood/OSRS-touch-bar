@@ -21,7 +21,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func applicationWillResignActive(_ notification: Notification) {
         let controlStripTBItem = NSCustomTouchBarItem(identifier: controlStripIconIdentifier) // Touch Bar, not TeleBlock
-        controlStripTBItem.view = NSButton(image: NSImage(named: NSImage.Name(rawValue: "OSRS_Logo"))!, target: self, action: #selector(present))
+        controlStripTBItem.view = NSButton(image: NSImage(named: "OSRS_Logo")!, target: self, action: #selector(present))
         
         NSTouchBarItem.addSystemTrayItem(controlStripTBItem)
     }

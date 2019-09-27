@@ -19,7 +19,7 @@ class CustomTouchBarItem: NSCustomTouchBarItem {
         
         super.init(identifier: identifier)
         
-        view = NSButton(image: NSImage(named: NSImage.Name(rawValue: name))!, target: self, action: #selector(buttonPressed(sender:)))
+        view = NSButton(image: NSImage(named: name)!, target: self, action: #selector(buttonPressed(sender:)))
         customizationLabel = name
     }
     
