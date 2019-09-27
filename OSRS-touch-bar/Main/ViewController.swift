@@ -84,7 +84,7 @@ class ViewController: NSViewController {
      */
     private func setupMenuButtons() {
         let appButtons: [NSButton] = [controlStripButton, fitButton, customizeButton]
-        let buttonFont = NSFont(name: "Runescape-Chat-Font", size: 19)
+//        let buttonFont =
         let buttonFontColor: NSColor = NSColor(red: 255.0/255.0, green: 152.0/255.0, blue: 0, alpha: 1)
         
         // Style each button
@@ -93,9 +93,13 @@ class ViewController: NSViewController {
                     continue
             }
             
-            buttonTitle.addAttribute(.foregroundColor, value: buttonFontColor, range: NSRange(location: 0, length: buttonTitle.length))
+            let attributes: [NSAttributedString.Key: Any] =  [
+                .font : NSFont(name: "Runescape-Chat-Font", size: 19)!,
+                .foregroundColor: buttonFontColor
+            ]
+            
+            buttonTitle.setAttributes(attributes, range: NSRange(location: 0, length: buttonTitle.length))
             button.attributedTitle = buttonTitle
-            button.font = buttonFont
         }
     }
     

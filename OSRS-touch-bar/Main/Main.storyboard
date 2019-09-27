@@ -96,7 +96,7 @@
                                             </constraints>
                                             <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="Button_Background" imagePosition="overlaps" alignment="center" imageScaling="axesIndependently" inset="2" id="hOc-WE-R6O">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                                <font key="font" metaFont="system" size="19"/>
+                                                <font key="font" size="13" name="Herculanum"/>
                                             </buttonCell>
                                         </button>
                                         <button toolTip="Toggles the Control Strip." imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QB8-Gl-Ce7" userLabel="Control Strip Button">
