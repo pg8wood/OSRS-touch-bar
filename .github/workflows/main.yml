@@ -8,8 +8,8 @@ jobs:
     runs-on: macOS-latest
 
     steps:
-    - name: Build
     - uses: actions/checkout@v1
+    - name: Build
       run: fastlane build
 
     - name: Compress Build Artifacts
