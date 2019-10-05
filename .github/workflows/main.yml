@@ -1,0 +1,17 @@
+name: CI
+
+# For testing this action, run the workflow when someone (yours truly) stars the repo
+on:
+  check_run:
+    types: [started]
+# on: [push]
+
+jobs:
+  build:
+
+    runs-on: macOS-latest
+    
+    steps:
+    - uses: actions/checkout@v1
+    - name: Build
+      run: fastlane build
