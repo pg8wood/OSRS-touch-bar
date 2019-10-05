@@ -12,6 +12,8 @@ jobs:
     runs-on: macOS-latest
     
     steps:
+    - name: Print
+      run: echo "someone starred the repo" 
     - uses: actions/checkout@v1
     - name: Build
       run: fastlane build
