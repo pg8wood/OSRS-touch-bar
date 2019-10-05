@@ -1,22 +1,22 @@
 name: CI
 
-# For testing this action, run the workflow when someone (yours truly) stars the repo
 on: [push]
 
 jobs:
   build:
 
     runs-on: macOS-latest
-    
+
     steps:
-    - name: Print
-      run: echo "detected a push" 
-    - uses: actions/checkout@v1
     - name: Build
+    - uses: actions/checkout@v1
       run: fastlane build
-    - uses: actions/upload-artifact@master
-    - name: Upload OSRS Touch Bar.app
+
+    - name: Compress Build Artifacts
+      run: zip -r osrs-touch-bar.zip "OSRS Touch Bar.app"
+
+    - name: Upload Build Artifacts
       uses: actions/upload-artifact@v1
       with:
-        name: OSRS Touch Bar
-        path: OSRS Touch Bar.app
+        name: osrs-touch-bar.zip
+        path: osrs-touch-bar.zip
