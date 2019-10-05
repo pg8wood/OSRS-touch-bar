@@ -19,5 +19,5 @@ jobs:
     - name: Upload Build Artifacts
       uses: actions/upload-artifact@v1
       with:
-        name: "OSRS Touch Bar.app"
-        path: "OSRS Touch Bar.app"
+        name: osrs-touch-bar.zip
+        path: osrs-touch-bar.zip
