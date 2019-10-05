@@ -14,3 +14,9 @@ jobs:
     - uses: actions/checkout@v1
     - name: Build
       run: fastlane build
+    - uses: actions/upload-artifact@master
+    - name: Upload OSRS Touch Bar.app
+      uses: actions/upload-artifact@v1
+      with:
+        name: OSRS Touch Bar
+        path: OSRS Touch Bar.app
