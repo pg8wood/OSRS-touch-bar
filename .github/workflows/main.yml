@@ -7,10 +7,10 @@ jobs:
   build:
 
     runs-on: macOS-latest
-    
+
     steps:
     - name: Print
-      run: echo "detected a push" 
+      run: echo "detected a push"
     - uses: actions/checkout@v1
     - name: Build
       run: fastlane build
@@ -18,5 +18,5 @@ jobs:
     - name: Upload OSRS Touch Bar.app
       uses: actions/upload-artifact@v1
       with:
-        name: OSRS Touch Bar
-        path: OSRS Touch Bar.app
+        name: "OSRS Touch Bar"
+        path: "OSRS Touch Bar.app"
