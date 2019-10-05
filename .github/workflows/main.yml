@@ -14,7 +14,9 @@ jobs:
     - uses: actions/checkout@v1
     - name: Build
       run: fastlane build
-    - name: Upload OSRS Touch Bar.app
+    - name: Compress Build Artifacts
+      run: zip -r osrs-touch-bar.zip "OSRS Touch Bar.app"
+    - name: Upload Build Artifacts
       uses: actions/upload-artifact@v1
       with:
         name: "OSRS Touch Bar.app"
