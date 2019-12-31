@@ -16,6 +16,22 @@
 		B8988A632042704200CC8D7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8988A622042704200CC8D7B /* Assets.xcassets */; };
 		B8AD3F272044986D00A3D40D /* KeyCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AD3F262044986D00A3D40D /* KeyCodes.swift */; };
 		B8AD3F582045220500A3D40D /* DFRFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8AD3F572045220500A3D40D /* DFRFoundation.framework */; };
+		B8B3074923BAD45100D82C13 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8668C842156D0E200DEBBF2 /* Persistence.swift */; };
+		B8B3074A23BAD45100D82C13 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D0ACC8214EFCB50098E255 /* AppDelegate.swift */; };
+		B8B3074B23BAD45100D82C13 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8988A602042704200CC8D7B /* ViewController.swift */; };
+		B8B3074C23BAD45100D82C13 /* UserDefaultsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82C5FDC2151F11E004A8002 /* UserDefaultsExtension.swift */; };
+		B8B3074D23BAD45100D82C13 /* KeyCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AD3F262044986D00A3D40D /* KeyCodes.swift */; };
+		B8B3074E23BAD45100D82C13 /* ScriptRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83A07A7204B231A006C3C6E /* ScriptRunner.swift */; };
+		B8B3074F23BAD45100D82C13 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D0ACBC214ED0180098E255 /* WindowController.swift */; };
+		B8B3075023BAD45100D82C13 /* CustomTouchBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D0ACC2214EE19D0098E255 /* CustomTouchBarItem.swift */; };
+		B8B3075123BAD45100D82C13 /* TouchBarConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D0ACC4214EE8E70098E255 /* TouchBarConstants.swift */; };
+		B8B3075323BAD45100D82C13 /* DFRFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8AD3F572045220500A3D40D /* DFRFoundation.framework */; };
+		B8B3075523BAD45100D82C13 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B829002C214EC957007C160A /* Main.storyboard */; };
+		B8B3075623BAD45100D82C13 /* recordControlStripPrefs.sh in Resources */ = {isa = PBXBuildFile; fileRef = B8BE878920578180000AB194 /* recordControlStripPrefs.sh */; };
+		B8B3075723BAD45100D82C13 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8988A622042704200CC8D7B /* Assets.xcassets */; };
+		B8B3075823BAD45100D82C13 /* hideControlStrip.sh in Resources */ = {isa = PBXBuildFile; fileRef = B8BE878820578180000AB194 /* hideControlStrip.sh */; };
+		B8B3075923BAD45100D82C13 /* restoreControlStrip.py in Resources */ = {isa = PBXBuildFile; fileRef = B8BE878A20578181000AB194 /* restoreControlStrip.py */; };
+		B8B3075A23BAD45100D82C13 /* runescape_chat_font.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B83A07B2204B5055006C3C6E /* runescape_chat_font.ttf */; };
 		B8BE878B20578181000AB194 /* hideControlStrip.sh in Resources */ = {isa = PBXBuildFile; fileRef = B8BE878820578180000AB194 /* hideControlStrip.sh */; };
 		B8BE878C20578181000AB194 /* recordControlStripPrefs.sh in Resources */ = {isa = PBXBuildFile; fileRef = B8BE878920578180000AB194 /* recordControlStripPrefs.sh */; };
 		B8BE878D20578181000AB194 /* restoreControlStrip.py in Resources */ = {isa = PBXBuildFile; fileRef = B8BE878A20578181000AB194 /* restoreControlStrip.py */; };
@@ -32,7 +48,7 @@
 		B83A07AB204B29DF006C3C6E /* OSRS-touch-bar-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OSRS-touch-bar-Bridging-Header.h"; sourceTree = "<group>"; };
 		B83A07B2204B5055006C3C6E /* runescape_chat_font.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = runescape_chat_font.ttf; sourceTree = "<group>"; };
 		B8668C842156D0E200DEBBF2 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
-		B8988A5B2042704200CC8D7B /* OSRS Touch Bar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OSRS Touch Bar.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B8988A5B2042704200CC8D7B /* OSRS Touch Bar Development.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OSRS Touch Bar Development.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8988A602042704200CC8D7B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B8988A622042704200CC8D7B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B8988A672042704200CC8D7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -40,6 +56,8 @@
 		B8AD3F262044986D00A3D40D /* KeyCodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyCodes.swift; sourceTree = "<group>"; };
 		B8AD3F572045220500A3D40D /* DFRFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DFRFoundation.framework; path = ../../../../../../../System/Library/PrivateFrameworks/DFRFoundation.framework; sourceTree = "<group>"; };
 		B8AD3F592045223200A3D40D /* TouchBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TouchBar.h; sourceTree = "<group>"; };
+		B8B3075E23BAD45100D82C13 /* OSRS Touch Bar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OSRS Touch Bar.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B8B3075F23BAD45100D82C13 /* OSRS Touch Bar copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "OSRS Touch Bar copy-Info.plist"; path = "/Users/patrickgatewood/Documents/OSRS-touch-bar/OSRS Touch Bar copy-Info.plist"; sourceTree = "<absolute>"; };
 		B8BE878820578180000AB194 /* hideControlStrip.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = hideControlStrip.sh; sourceTree = "<group>"; };
 		B8BE878920578180000AB194 /* recordControlStripPrefs.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = recordControlStripPrefs.sh; sourceTree = "<group>"; };
 		B8BE878A20578181000AB194 /* restoreControlStrip.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = restoreControlStrip.py; sourceTree = "<group>"; };
@@ -55,6 +73,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8AD3F582045220500A3D40D /* DFRFoundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B8B3075223BAD45100D82C13 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B8B3075323BAD45100D82C13 /* DFRFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,13 +147,15 @@
 				B8AD3F592045223200A3D40D /* TouchBar.h */,
 				B8988A5C2042704200CC8D7B /* Products */,
 				B8AD3F562045220500A3D40D /* Frameworks */,
+				B8B3075F23BAD45100D82C13 /* OSRS Touch Bar copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
 		B8988A5C2042704200CC8D7B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B8988A5B2042704200CC8D7B /* OSRS Touch Bar.app */,
+				B8988A5B2042704200CC8D7B /* OSRS Touch Bar Development.app */,
+				B8B3075E23BAD45100D82C13 /* OSRS Touch Bar.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -155,9 +183,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B8988A5A2042704200CC8D7B /* OSRS Touch Bar */ = {
+		B8988A5A2042704200CC8D7B /* OSRS Touch Bar Development */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B8988A6B2042704200CC8D7B /* Build configuration list for PBXNativeTarget "OSRS Touch Bar" */;
+			buildConfigurationList = B8988A6B2042704200CC8D7B /* Build configuration list for PBXNativeTarget "OSRS Touch Bar Development" */;
 			buildPhases = (
 				B8988A572042704200CC8D7B /* Sources */,
 				B8988A582042704200CC8D7B /* Frameworks */,
@@ -167,9 +195,26 @@
 			);
 			dependencies = (
 			);
-			name = "OSRS Touch Bar";
+			name = "OSRS Touch Bar Development";
 			productName = "OSRS-touch-bar";
-			productReference = B8988A5B2042704200CC8D7B /* OSRS Touch Bar.app */;
+			productReference = B8988A5B2042704200CC8D7B /* OSRS Touch Bar Development.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B8B3074723BAD45100D82C13 /* OSRS Touch Bar Release */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B8B3075B23BAD45100D82C13 /* Build configuration list for PBXNativeTarget "OSRS Touch Bar Release" */;
+			buildPhases = (
+				B8B3074823BAD45100D82C13 /* Sources */,
+				B8B3075223BAD45100D82C13 /* Frameworks */,
+				B8B3075423BAD45100D82C13 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "OSRS Touch Bar Release";
+			productName = "OSRS-touch-bar";
+			productReference = B8B3075E23BAD45100D82C13 /* OSRS Touch Bar.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -185,7 +230,10 @@
 					B8988A5A2042704200CC8D7B = {
 						CreatedOnToolsVersion = 9.2;
 						LastSwiftMigration = 1100;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
+					};
+					B8B3074723BAD45100D82C13 = {
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -202,7 +250,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B8988A5A2042704200CC8D7B /* OSRS Touch Bar */,
+				B8988A5A2042704200CC8D7B /* OSRS Touch Bar Development */,
+				B8B3074723BAD45100D82C13 /* OSRS Touch Bar Release */,
 			);
 		};
 /* End PBXProject section */
@@ -218,6 +267,19 @@
 				B8BE878B20578181000AB194 /* hideControlStrip.sh in Resources */,
 				B8BE878D20578181000AB194 /* restoreControlStrip.py in Resources */,
 				B83A07B3204B5055006C3C6E /* runescape_chat_font.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B8B3075423BAD45100D82C13 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B8B3075523BAD45100D82C13 /* Main.storyboard in Resources */,
+				B8B3075623BAD45100D82C13 /* recordControlStripPrefs.sh in Resources */,
+				B8B3075723BAD45100D82C13 /* Assets.xcassets in Resources */,
+				B8B3075823BAD45100D82C13 /* hideControlStrip.sh in Resources */,
+				B8B3075923BAD45100D82C13 /* restoreControlStrip.py in Resources */,
+				B8B3075A23BAD45100D82C13 /* runescape_chat_font.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,6 +299,22 @@
 				B8D0ACBD214ED0180098E255 /* WindowController.swift in Sources */,
 				B8D0ACC3214EE19D0098E255 /* CustomTouchBarItem.swift in Sources */,
 				B8D0ACC5214EE8E70098E255 /* TouchBarConstants.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B8B3074823BAD45100D82C13 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B8B3074923BAD45100D82C13 /* Persistence.swift in Sources */,
+				B8B3074A23BAD45100D82C13 /* AppDelegate.swift in Sources */,
+				B8B3074B23BAD45100D82C13 /* ViewController.swift in Sources */,
+				B8B3074C23BAD45100D82C13 /* UserDefaultsExtension.swift in Sources */,
+				B8B3074D23BAD45100D82C13 /* KeyCodes.swift in Sources */,
+				B8B3074E23BAD45100D82C13 /* ScriptRunner.swift in Sources */,
+				B8B3074F23BAD45100D82C13 /* WindowController.swift in Sources */,
+				B8B3075023BAD45100D82C13 /* CustomTouchBarItem.swift in Sources */,
+				B8B3075123BAD45100D82C13 /* TouchBarConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,8 +437,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "OSRS-touch-bar/Supporting Files/OSRS_touch_bar.entitlements";
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = GZZH6JZ9Q5;
@@ -387,8 +465,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "OSRS-touch-bar/Supporting Files/OSRS_touch_bar.entitlements";
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = GZZH6JZ9Q5;
@@ -408,6 +486,61 @@
 			};
 			name = Release;
 		};
+		B8B3075C23BAD45100D82C13 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "OSRS-touch-bar/Supporting Files/OSRS_touch_bar.entitlements";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = GZZH6JZ9Q5;
+				ENABLE_HARDENED_RUNTIME = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
+				);
+				INFOPLIST_FILE = "OSRS Touch Bar copy-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MARKETING_VERSION = 1.2.2;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.patrickgatewood.osrs-touch-bar";
+				PRODUCT_NAME = "OSRS Touch Bar";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "OSRS-touch-bar/Supporting Files/OSRS-touch-bar-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		B8B3075D23BAD45100D82C13 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "OSRS-touch-bar/Supporting Files/OSRS_touch_bar.entitlements";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = GZZH6JZ9Q5;
+				ENABLE_HARDENED_RUNTIME = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
+				);
+				INFOPLIST_FILE = "OSRS Touch Bar copy-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MARKETING_VERSION = 1.2.2;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.patrickgatewood.osrs-touch-bar";
+				PRODUCT_NAME = "OSRS Touch Bar";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "OSRS-touch-bar/Supporting Files/OSRS-touch-bar-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -420,11 +553,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B8988A6B2042704200CC8D7B /* Build configuration list for PBXNativeTarget "OSRS Touch Bar" */ = {
+		B8988A6B2042704200CC8D7B /* Build configuration list for PBXNativeTarget "OSRS Touch Bar Development" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B8988A6C2042704200CC8D7B /* Debug */,
 				B8988A6D2042704200CC8D7B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B8B3075B23BAD45100D82C13 /* Build configuration list for PBXNativeTarget "OSRS Touch Bar Release" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B8B3075C23BAD45100D82C13 /* Debug */,
+				B8B3075D23BAD45100D82C13 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

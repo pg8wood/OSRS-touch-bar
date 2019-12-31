@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "B8988A5A2042704200CC8D7B"
-               BuildableName = "OSRS Touch Bar.app"
-               BlueprintName = "OSRS Touch Bar"
+               BuildableName = "OSRS Touch Bar Development.app"
+               BlueprintName = "OSRS Touch Bar Development"
                ReferencedContainer = "container:OSRS Touch Bar.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,8 +45,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B8988A5A2042704200CC8D7B"
-            BuildableName = "OSRS Touch Bar.app"
-            BlueprintName = "OSRS Touch Bar"
+            BuildableName = "OSRS Touch Bar Development.app"
+            BlueprintName = "OSRS Touch Bar Development"
             ReferencedContainer = "container:OSRS Touch Bar.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -62,8 +62,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B8988A5A2042704200CC8D7B"
-            BuildableName = "OSRS Touch Bar.app"
-            BlueprintName = "OSRS Touch Bar"
+            BuildableName = "OSRS Touch Bar Development.app"
+            BlueprintName = "OSRS Touch Bar Development"
             ReferencedContainer = "container:OSRS Touch Bar.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

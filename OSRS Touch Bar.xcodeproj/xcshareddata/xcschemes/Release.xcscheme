@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B8988A5A2042704200CC8D7B"
-               BuildableName = "OSRS Touch Bar.app"
-               BlueprintName = "OSRS Touch Bar"
+               BlueprintIdentifier = "B8B3074723BAD45100D82C13"
+               BuildableName = "OSRS Touch Bar Release.app"
+               BlueprintName = "OSRS Touch Bar Release"
                ReferencedContainer = "container:OSRS Touch Bar.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -31,9 +31,9 @@
       </Testables>
    </TestAction>
    <LaunchAction
-      buildConfiguration = "Release"
-      selectedDebuggerIdentifier = ""
-      selectedLauncherIdentifier = "Xcode.IDEFoundation.Launcher.PosixSpawn"
+      buildConfiguration = "Debug"
+      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
@@ -44,9 +44,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B8988A5A2042704200CC8D7B"
-            BuildableName = "OSRS Touch Bar.app"
-            BlueprintName = "OSRS Touch Bar"
+            BlueprintIdentifier = "B8B3074723BAD45100D82C13"
+            BuildableName = "OSRS Touch Bar Release.app"
+            BlueprintName = "OSRS Touch Bar Release"
             ReferencedContainer = "container:OSRS Touch Bar.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -61,9 +61,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B8988A5A2042704200CC8D7B"
-            BuildableName = "OSRS Touch Bar.app"
-            BlueprintName = "OSRS Touch Bar"
+            BlueprintIdentifier = "B8B3074723BAD45100D82C13"
+            BuildableName = "OSRS Touch Bar Release.app"
+            BlueprintName = "OSRS Touch Bar Release"
             ReferencedContainer = "container:OSRS Touch Bar.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

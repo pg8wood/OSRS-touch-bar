@@ -1,24 +1,19 @@
-# This file contains the fastlane.tools configuration
-# You can find the documentation at https://docs.fastlane.tools
-#
-# For a list of all available actions, check out
-#
-#     https://docs.fastlane.tools/actions
-#
-# For a list of all available plugins, check out
-#
-#     https://docs.fastlane.tools/plugins/available-plugins
-#
+default_platform(:mac)
 
-# Uncomment the line if you want fastlane to automatically update itself
-# update_fastlane
+before_all do
 
-default_platform(:macos)
+  setup_ci(force: "true")
 
-platform :macos do
-  desc "Description of what the lane does"
-  lane :build do
-    build_app(scheme: "OSRS Touch Bar")
-    # add actions here: https://docs.fastlane.tools/actions
+end
+
+platform :mac do
+
+  lane :build_develop do
+    build_app(scheme: "Development")
   end
+
+  lane :build_release do
+    build_app(scheme: "Release")
+  end
+
 end

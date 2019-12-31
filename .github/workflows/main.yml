@@ -1,16 +1,19 @@
 name: CI
 
-on: [push]
+on: 
+  push:
+    branches:
+      - master
+
 
 jobs:
   build:
-
     runs-on: macOS-latest
 
     steps:
     - uses: actions/checkout@v1
-    - name: Build
-      run: fastlane build
+    - name: Build OSRS Touch Bar (Release) 
+      run: fastlane build_release
 
     - name: Compress Build Artifacts
       run: zip -r osrs-touch-bar.zip "OSRS Touch Bar.app"
