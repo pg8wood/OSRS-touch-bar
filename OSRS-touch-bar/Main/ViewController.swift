@@ -74,9 +74,10 @@ class ViewController: NSViewController {
             return
         }
         
-        identifiers.compactMap({touchBar?.item(forIdentifier: $0) as? CustomTouchBarItem}).forEach{ item in
+        let customTouchBarItems = identifiers.compactMap({touchBar?.item(forIdentifier: $0) as? CustomTouchBarItem})
+        customTouchBarItems.forEach({ item in
             item.updateButtonSize(numItems: identifiers.count)
-        }
+        })
     }
     
     /**
@@ -84,7 +85,6 @@ class ViewController: NSViewController {
      */
     private func setupMenuButtons() {
         let appButtons: [NSButton] = [controlStripButton, fitButton, customizeButton]
-//        let buttonFont =
         let buttonFontColor: NSColor = NSColor(red: 255.0/255.0, green: 152.0/255.0, blue: 0, alpha: 1)
         
         // Style each button
@@ -184,6 +184,7 @@ class ViewController: NSViewController {
     }
 }
 
+// MARK: - NSTouchBarDelegate
 extension ViewController: NSTouchBarDelegate {
     
     override func makeTouchBar() -> NSTouchBar? {

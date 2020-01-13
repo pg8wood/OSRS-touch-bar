@@ -36,7 +36,7 @@ class CustomTouchBarItem: NSCustomTouchBarItem {
      */
     @IBAction func buttonPressed(sender: NSButton) {
         /*  Sends a system-wide function key press and negates arrow keypresses to
-         prevent the camera getting stuck in a pan */
+         prevent the OSRS camera from getting stuck in a pan */
         ScriptRunner.runAppleScriptShowingErrors(sourceString: """
             tell application \"System Events\"
             key code \(keyCode!)\n\
