@@ -1,15 +1,14 @@
 # OSRS Touch Bar
+
 OSRS Touch Bar displays [Old School RuneScape](http://oldschool.runescape.com) interface icons and maps them to the corresponding function keys in-game. 
 
 ![Touch bar screenshot](./docs/touchBarScreenshot.png)
 
-
-
-
-
 # Download
-
-[View the latest release](https://github.com/pg8wood/OSRS-touch-bar/releases/latest).
+<a href="https://github.com/pg8wood/OSRS-touch-bar/releases/latest">
+  <img src="./docs/appIcon.png" width="100"/>
+  <p>View the latest release</p>
+</a>
 
 # Usage
 
