@@ -27,17 +27,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     @objc func present() {
-        let windows = NSApplication.shared.windows
-        
-        guard windows.count > 0, let viewController = windows[0].contentViewController as? ViewController else {
-            return
-        }
-        
-        if #available(macOS 10.14, *) {
-            NSTouchBar.presentSystemModalTouchBar(viewController.touchBar!, systemTrayItemIdentifier: self.controlStripIconIdentifier)
-        } else {
-            NSTouchBar.presentSystemModalFunctionBar(viewController.touchBar!, systemTrayItemIdentifier: self.controlStripIconIdentifier)
-        }
+        // TODO don't use the view controller's here. Actually do we even need this func anymore?
+//        let windows = NSApplication.shared.windows
+//
+//        guard windows.count > 0, let viewController = windows[0].contentViewController as? ViewController else {
+//            return
+//        }
+//
+//        if #available(macOS 10.14, *) {
+//            NSTouchBar.presentSystemModalTouchBar(viewController.touchBar!, systemTrayItemIdentifier: self.controlStripIconIdentifier)
+//        } else {
+//            NSTouchBar.presentSystemModalFunctionBar(viewController.touchBar!, systemTrayItemIdentifier: self.controlStripIconIdentifier)
+//        }
     }
     
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {

@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import Swifter
 
 class ViewController: NSViewController {
     
@@ -50,18 +51,58 @@ class ViewController: NSViewController {
         DFRSystemModalShowsCloseBoxWhenFrontMost(false)
         DFRElementSetControlStripPresenceForIdentifier(self.controlStripIconIdentifier, true)
 
-        presentModalTouchBar(self.touchBar)
+        presentModalTouchBar()
+        
+        // TODO: obviously move outta the vc
+        
+        let server = HttpServer()
+        server["/hello"] = { .ok(.htmlBody("You asked for \($0)"))  }
+        server["/killtouchbar"] = { request in
+            DispatchQueue.main.async { [weak self] in
+                // TODO: - add availability check to runelite plugin if possible
+                if #available(OSX 10.14, *) {
+                    NSTouchBar.dismissSystemModalTouchBar(TouchBarManager.shared.touchBar)
+                    TouchBarManager.shared.touchBar = nil
+                } else {
+                    // Fallback on earlier versions
+                }
+            }
+            return HttpResponse.ok(.htmlBody("1-tick AGS spec-ing that touch bar"))
+        }
+        server["/newtouchbar"] = { request in
+            DispatchQueue.main.async { [weak self] in
+                // TODO encapsulate this behavior. Also kill touch bar if one is presented
+                TouchBarManager.shared.touchBar = TouchBarManager.shared.makeTouchBar()
+                self?.presentModalTouchBar()
+            }
+            
+            return HttpResponse.ok(.htmlBody("new touch bar coming up!"))
+        }
+        
+        
+        do {
+            try server.start(8080, forceIPv4: false, priority: .userInteractive)
+            print("server started at \(try server.port())")
+        } catch {
+            print("error starting server: \(error)")
+        }
+    }
+    
+    override func makeTouchBar() -> NSTouchBar? {
+        print("view controller's make touch bar called")
+        return nil
     }
     
     override func viewWillDisappear() {
         Persistence.persistSettings()
     }
     
-    private func presentModalTouchBar(_ touchBar: NSTouchBar?) {
+    private func presentModalTouchBar() {
         if #available(macOS 10.14, *) {
-            NSTouchBar.presentSystemModalTouchBar(touchBar, systemTrayItemIdentifier: self.controlStripIconIdentifier)
+            // TODO don't force unwrap here
+            NSTouchBar.presentSystemModalTouchBar(TouchBarManager.shared.touchBar!, systemTrayItemIdentifier: self.controlStripIconIdentifier)
         } else {
-            NSTouchBar.presentSystemModalFunctionBar(touchBar, systemTrayItemIdentifier: self.controlStripIconIdentifier)
+            NSTouchBar.presentSystemModalFunctionBar(TouchBarManager.shared.touchBar!, systemTrayItemIdentifier: self.controlStripIconIdentifier)
         }
     }
     
@@ -156,48 +197,59 @@ class ViewController: NSViewController {
      - parameter sender: The NSButton clicked
      */
     @IBAction func fitButtonClicked(_ sender: NSButton) {
-        Persistence.buttonsFillControlStrip = !Persistence.buttonsFillControlStrip
-        
-        if Persistence.buttonsFillControlStrip {
-            fitButtonsToTouchBarScreenSize()
-            presentModalTouchBar(touchBar)
-            sender.image = #imageLiteral(resourceName: "Radio_On")
-        } else {
-            presentModalTouchBar(makeTouchBar())
-            sender.image = #imageLiteral(resourceName: "Radio_Off")
-        }
+        // TODO test all this with the touch bar manager class
+//        Persistence.buttonsFillControlStrip = !Persistence.buttonsFillControlStrip
+//
+//        if Persistence.buttonsFillControlStrip {
+//            fitButtonsToTouchBarScreenSize()
+//            presentModalTouchBar(touchBar)
+//            sender.image = #imageLiteral(resourceName: "Radio_On")
+//        } else {
+//            presentModalTouchBar(makeTouchBar())
+//            sender.image = #imageLiteral(resourceName: "Radio_Off")
+//        }
     }
     
     /**
      Called when an observed KeyPath's value is changed
      */
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        /* Need to re-present the system-wide modal touchbar due to some limitation in the undocumented
-         DFRFoundationFramework. I believe it copies a Touch Bar under the hood, since changes to the "local"
-         touch bar aren't reflected until presentSystemModalTouchBar() is called again. */
-        touchBar = makeTouchBar()
-        presentModalTouchBar(touchBar)
-       
-        if Persistence.buttonsFillControlStrip {
-            fitButtonsToTouchBarScreenSize()
-        }
+         // TODO test all this with the touch bar manager class
+//        /* Need to re-present the system-wide modal touchbar due to some limitation in the undocumented
+//         DFRFoundationFramework. I believe it copies a Touch Bar under the hood, since changes to the "local"
+//         touch bar aren't reflected until presentSystemModalTouchBar() is called again. */
+//        touchBar = makeTouchBar()
+//        presentModalTouchBar(touchBar)
+//
+//        if Persistence.buttonsFillControlStrip {
+//            fitButtonsToTouchBarScreenSize()
+//        }
     }
 }
 
-// MARK: - NSTouchBarDelegate
-extension ViewController: NSTouchBarDelegate {
+class TouchBarManager: NSObject, NSTouchBarProvider, NSTouchBarDelegate {
+    static let shared: TouchBarManager = {
+        // TODO add the make touch bar in the property observers ins tead
+        let manager = TouchBarManager()
+        manager.touchBar = manager.makeTouchBar()
+        return manager
+    }()
     
-    override func makeTouchBar() -> NSTouchBar? {
+    var touchBar: NSTouchBar?
+    
+    func makeTouchBar() -> NSTouchBar? {
         let touchBar = NSTouchBar()
         
         touchBar.delegate = self
         touchBar.customizationIdentifier = TouchBarConstants.touchBarCustomizationIdentifierExtension
         
+        // TODO: - For runeLite, need to get the user's F-key setup in-game otherwise the buttons might not match up
         touchBar.defaultItemIdentifiers = TouchBarConstants.TouchBarIdentifier.allCases.filter {
+            // TODO: - look into esc key identifier property of touch bar
             $0 != .inventoryLabelItem // most people use ESC for inventory
-            }.map({
-                NSTouchBarItem.Identifier(rawValue: $0.rawValue)
-            })
+        }.map({
+            NSTouchBarItem.Identifier(rawValue: $0.rawValue)
+        })
         
         touchBar.customizationAllowedItemIdentifiers = TouchBarConstants.TouchBarIdentifier.allCases.map({
             NSTouchBarItem.Identifier(rawValue: $0.rawValue)

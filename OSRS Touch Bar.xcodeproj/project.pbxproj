@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 48;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,6 +12,7 @@
 		B83A07A8204B231A006C3C6E /* ScriptRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83A07A7204B231A006C3C6E /* ScriptRunner.swift */; };
 		B83A07B3204B5055006C3C6E /* runescape_chat_font.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B83A07B2204B5055006C3C6E /* runescape_chat_font.ttf */; };
 		B8668C852156D0E200DEBBF2 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8668C842156D0E200DEBBF2 /* Persistence.swift */; };
+		B87F0F45247DC5BE00140894 /* Swifter in Frameworks */ = {isa = PBXBuildFile; productRef = B87F0F44247DC5BE00140894 /* Swifter */; };
 		B8988A612042704200CC8D7B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8988A602042704200CC8D7B /* ViewController.swift */; };
 		B8988A632042704200CC8D7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8988A622042704200CC8D7B /* Assets.xcassets */; };
 		B8AD3F272044986D00A3D40D /* KeyCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AD3F262044986D00A3D40D /* KeyCodes.swift */; };
@@ -55,6 +56,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8AD3F582045220500A3D40D /* DFRFoundation.framework in Frameworks */,
+				B87F0F45247DC5BE00140894 /* Swifter in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,6 +170,9 @@
 			dependencies = (
 			);
 			name = "OSRS Touch Bar";
+			packageProductDependencies = (
+				B87F0F44247DC5BE00140894 /* Swifter */,
+			);
 			productName = "OSRS-touch-bar";
 			productReference = B8988A5B2042704200CC8D7B /* OSRS Touch Bar.app */;
 			productType = "com.apple.product-type.application";
@@ -198,6 +203,9 @@
 				Base,
 			);
 			mainGroup = B8988A522042704200CC8D7B;
+			packageReferences = (
+				B87F0F43247DC5BE00140894 /* XCRemoteSwiftPackageReference "swifter" */,
+			);
 			productRefGroup = B8988A5C2042704200CC8D7B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -349,7 +357,8 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 			};
 			name = Release;
 		};
@@ -364,12 +373,16 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = GZZH6JZ9Q5;
+				ENABLE_HARDENED_RUNTIME = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
 				);
 				INFOPLIST_FILE = "OSRS-touch-bar/Supporting Files/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.patrickgatewood.OSRS-touch-bar";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "OSRS-touch-bar/Supporting Files/OSRS-touch-bar-Bridging-Header.h";
@@ -389,12 +402,16 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = GZZH6JZ9Q5;
+				ENABLE_HARDENED_RUNTIME = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
 				);
 				INFOPLIST_FILE = "OSRS-touch-bar/Supporting Files/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.patrickgatewood.OSRS-touch-bar";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "OSRS-touch-bar/Supporting Files/OSRS-touch-bar-Bridging-Header.h";
@@ -424,6 +441,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B87F0F43247DC5BE00140894 /* XCRemoteSwiftPackageReference "swifter" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/httpswift/swifter.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.4.7;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B87F0F44247DC5BE00140894 /* Swifter */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B87F0F43247DC5BE00140894 /* XCRemoteSwiftPackageReference "swifter" */;
+			productName = Swifter;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B8988A532042704200CC8D7B /* Project object */;
 }

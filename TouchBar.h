@@ -15,9 +15,11 @@ extern void DFRSystemModalShowsCloseBoxWhenFrontMost(BOOL);
 @end
 @interface NSTouchBar ()
 
-// macOS 10.14 and above
 + (void)presentSystemModalTouchBar:(NSTouchBar *)touchBar systemTrayItemIdentifier:(NSTouchBarItemIdentifier)identifier NS_AVAILABLE_MAC(10.14);
 
-// macOS 10.13 and below
++ (void)dismissSystemModalTouchBar:(NSTouchBar *)touchBar NS_AVAILABLE_MAC(10.14);
+
 + (void)presentSystemModalFunctionBar:(NSTouchBar *)touchBar systemTrayItemIdentifier:(NSTouchBarItemIdentifier)identifier NS_DEPRECATED_MAC(10.12.2, 10.14);
+
+// TODO: - Find > 10.12.2 && < 10.14 and below version of dismissSystemModalTouchBar: equivalent in the header dumps or drop support
 @end
