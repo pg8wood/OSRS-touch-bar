@@ -8,58 +8,30 @@
 
 import Swifter
 
-enum HTTPServerError: LocalizedError {
-    case serverAlreadyRunning
-    case `internal`(Error)
-    
-    var localizedDescription: String {
-        switch self {
-        case .serverAlreadyRunning:
-            return "The HTTPServer has already been started."
-        case .internal(let error):
-            return error.localizedDescription
-        }
-    }
-}
-
 enum HTTPServer {
     private static let server = HttpServer()
     
-    static func start() -> Result<Int, HTTPServerError> {
-        guard !server.operating else {
-            return .failure(.serverAlreadyRunning)
+    @discardableResult
+    static func start(port: in_port_t = 8080) -> Result<Int, Error> {
+        defer {
+            setupPaths()
         }
         
-        setupPaths()
-        
         do {
-            try server.start(8080, forceIPv4: false, priority: .userInteractive)
+            try server.start(port, forceIPv4: false, priority: .userInteractive)
             return .success(try server.port())
         } catch {
-            print("error starting server: \(error)")
-            return .failure(.internal(error))
+            if case .bindFailed = error as? SocketError {
+                print("Address already in use: trying to start on port \(port + 1)")
+                return start(port: port + 1)
+            }
+            return .failure(error)
         }
     }
     
     private static func setupPaths() {
-        server["/hello"] = { .ok(.htmlBody("You asked for \($0)"))  }
-        server["/killtouchbar"] = { request in
-            DispatchQueue.main.async {
-                // TODO: - add availability check to runelite plugin if possible
-                if #available(OSX 10.14, *) {
-                    TouchBarManager.shared.dismissModalTouchBar()
-                } else {
-                    // Fallback on earlier versions
-                }
-            }
-            return HttpResponse.ok(.htmlBody("1-tick AGS spec-ing that touch bar"))
-        }
-        server["/newtouchbar"] = { request in
-            DispatchQueue.main.async {
-                TouchBarManager.shared.presentModalTouchBar()
-            }
-            
-            return HttpResponse.ok(.htmlBody("new touch bar coming up!"))
+        ServerPath.allCases.forEach { path in
+            server[path] = path.requestHandler
         }
     }
 }

@@ -47,14 +47,17 @@ class ViewController: NSViewController {
     override func viewDidAppear() {
         DFRSystemModalShowsCloseBoxWhenFrontMost(false)
         DFRElementSetControlStripPresenceForIdentifier(TouchBarManager.shared.controlStripIconIdentifier, true)
-
-//        presentModalTouchBar()
-
-    }
-    
-    override func makeTouchBar() -> NSTouchBar? {
-        print("view controller's make touch bar called")
-        return nil
+        
+        // TODO: move this outa the VC when you remove the app's window
+        HTTPServer.start()
+        switch HTTPServer.start() {
+        case .success(let port):
+            // TODO: send the port back to the RuneLite plugin
+            break
+        case .failure(let error):
+            // TODO: Error handling
+            break
+        }
     }
     
     override func viewWillDisappear() {
