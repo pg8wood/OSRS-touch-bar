@@ -7,16 +7,13 @@
 //
 
 import Cocoa
-import Swifter
 
 class ViewController: NSViewController {
     
     @IBOutlet weak var controlStripButton: NSButton!
     @IBOutlet weak var customizeButton: NSButton!
     @IBOutlet weak var fitButton: NSButton!
-    
-    let controlStripIconIdentifier = NSTouchBarItem.Identifier(rawValue: "com.patrickgatewood.osrs-logo")
-    
+        
     var userDefaultsObserver: NSKeyValueObservation?
     
     // -----------------------
@@ -49,43 +46,10 @@ class ViewController: NSViewController {
      */
     override func viewDidAppear() {
         DFRSystemModalShowsCloseBoxWhenFrontMost(false)
-        DFRElementSetControlStripPresenceForIdentifier(self.controlStripIconIdentifier, true)
+        DFRElementSetControlStripPresenceForIdentifier(TouchBarManager.shared.controlStripIconIdentifier, true)
 
-        presentModalTouchBar()
-        
-        // TODO: obviously move outta the vc
-        
-        let server = HttpServer()
-        server["/hello"] = { .ok(.htmlBody("You asked for \($0)"))  }
-        server["/killtouchbar"] = { request in
-            DispatchQueue.main.async { [weak self] in
-                // TODO: - add availability check to runelite plugin if possible
-                if #available(OSX 10.14, *) {
-                    NSTouchBar.dismissSystemModalTouchBar(TouchBarManager.shared.touchBar)
-                    TouchBarManager.shared.touchBar = nil
-                } else {
-                    // Fallback on earlier versions
-                }
-            }
-            return HttpResponse.ok(.htmlBody("1-tick AGS spec-ing that touch bar"))
-        }
-        server["/newtouchbar"] = { request in
-            DispatchQueue.main.async { [weak self] in
-                // TODO encapsulate this behavior. Also kill touch bar if one is presented
-                TouchBarManager.shared.touchBar = TouchBarManager.shared.makeTouchBar()
-                self?.presentModalTouchBar()
-            }
-            
-            return HttpResponse.ok(.htmlBody("new touch bar coming up!"))
-        }
-        
-        
-        do {
-            try server.start(8080, forceIPv4: false, priority: .userInteractive)
-            print("server started at \(try server.port())")
-        } catch {
-            print("error starting server: \(error)")
-        }
+//        presentModalTouchBar()
+
     }
     
     override func makeTouchBar() -> NSTouchBar? {
@@ -96,16 +60,7 @@ class ViewController: NSViewController {
     override func viewWillDisappear() {
         Persistence.persistSettings()
     }
-    
-    private func presentModalTouchBar() {
-        if #available(macOS 10.14, *) {
-            // TODO don't force unwrap here
-            NSTouchBar.presentSystemModalTouchBar(TouchBarManager.shared.touchBar!, systemTrayItemIdentifier: self.controlStripIconIdentifier)
-        } else {
-            NSTouchBar.presentSystemModalFunctionBar(TouchBarManager.shared.touchBar!, systemTrayItemIdentifier: self.controlStripIconIdentifier)
-        }
-    }
-    
+        
     private func fitButtonsToTouchBarScreenSize() {
         /**
          For some reason, part of the Touch Bar API handles a "full" (12-button) Touch Bar's layout
@@ -224,45 +179,5 @@ class ViewController: NSViewController {
 //        if Persistence.buttonsFillControlStrip {
 //            fitButtonsToTouchBarScreenSize()
 //        }
-    }
-}
-
-class TouchBarManager: NSObject, NSTouchBarProvider, NSTouchBarDelegate {
-    static let shared: TouchBarManager = {
-        // TODO add the make touch bar in the property observers ins tead
-        let manager = TouchBarManager()
-        manager.touchBar = manager.makeTouchBar()
-        return manager
-    }()
-    
-    var touchBar: NSTouchBar?
-    
-    func makeTouchBar() -> NSTouchBar? {
-        let touchBar = NSTouchBar()
-        
-        touchBar.delegate = self
-        touchBar.customizationIdentifier = TouchBarConstants.touchBarCustomizationIdentifierExtension
-        
-        // TODO: - For runeLite, need to get the user's F-key setup in-game otherwise the buttons might not match up
-        touchBar.defaultItemIdentifiers = TouchBarConstants.TouchBarIdentifier.allCases.filter {
-            // TODO: - look into esc key identifier property of touch bar
-            $0 != .inventoryLabelItem // most people use ESC for inventory
-        }.map({
-            NSTouchBarItem.Identifier(rawValue: $0.rawValue)
-        })
-        
-        touchBar.customizationAllowedItemIdentifiers = TouchBarConstants.TouchBarIdentifier.allCases.map({
-            NSTouchBarItem.Identifier(rawValue: $0.rawValue)
-        })
-        
-        return touchBar
-    }
-    
-    func touchBar(_ touchBar: NSTouchBar, makeItemForIdentifier identifier: NSTouchBarItem.Identifier) -> NSTouchBarItem? {
-        guard let touchBarItemData = TouchBarConstants.touchBarItemDict[identifier.rawValue] else {
-            return nil
-        }
-        
-        return CustomTouchBarItem(identifier: identifier, name: touchBarItemData.name, keyCode: touchBarItemData.keyCode)
     }
 }

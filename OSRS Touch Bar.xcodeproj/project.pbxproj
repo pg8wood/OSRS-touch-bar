@@ -13,6 +13,8 @@
 		B83A07B3204B5055006C3C6E /* runescape_chat_font.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B83A07B2204B5055006C3C6E /* runescape_chat_font.ttf */; };
 		B8668C852156D0E200DEBBF2 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8668C842156D0E200DEBBF2 /* Persistence.swift */; };
 		B87F0F45247DC5BE00140894 /* Swifter in Frameworks */ = {isa = PBXBuildFile; productRef = B87F0F44247DC5BE00140894 /* Swifter */; };
+		B87F0F8624800D1000140894 /* HTTPServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87F0F8524800D1000140894 /* HTTPServer.swift */; };
+		B87F0F8824800F8600140894 /* TouchBarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87F0F8724800F8600140894 /* TouchBarManager.swift */; };
 		B8988A612042704200CC8D7B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8988A602042704200CC8D7B /* ViewController.swift */; };
 		B8988A632042704200CC8D7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8988A622042704200CC8D7B /* Assets.xcassets */; };
 		B8AD3F272044986D00A3D40D /* KeyCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AD3F262044986D00A3D40D /* KeyCodes.swift */; };
@@ -33,6 +35,8 @@
 		B83A07AB204B29DF006C3C6E /* OSRS-touch-bar-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OSRS-touch-bar-Bridging-Header.h"; sourceTree = "<group>"; };
 		B83A07B2204B5055006C3C6E /* runescape_chat_font.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = runescape_chat_font.ttf; sourceTree = "<group>"; };
 		B8668C842156D0E200DEBBF2 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		B87F0F8524800D1000140894 /* HTTPServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPServer.swift; sourceTree = "<group>"; };
+		B87F0F8724800F8600140894 /* TouchBarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchBarManager.swift; sourceTree = "<group>"; };
 		B8988A5B2042704200CC8D7B /* OSRS Touch Bar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OSRS Touch Bar.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8988A602042704200CC8D7B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B8988A622042704200CC8D7B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -94,6 +98,7 @@
 				B8D0ACBC214ED0180098E255 /* WindowController.swift */,
 				B8988A602042704200CC8D7B /* ViewController.swift */,
 				B8D0ACC2214EE19D0098E255 /* CustomTouchBarItem.swift */,
+				B87F0F8724800F8600140894 /* TouchBarManager.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -114,6 +119,14 @@
 				B8668C842156D0E200DEBBF2 /* Persistence.swift */,
 			);
 			path = Persistence;
+			sourceTree = "<group>";
+		};
+		B87F0F8424800CEC00140894 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				B87F0F8524800D1000140894 /* HTTPServer.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		B8988A522042704200CC8D7B = {
@@ -140,6 +153,7 @@
 				B83A07AC204B2B0D006C3C6E /* Main */,
 				B83A07AD204B2BAA006C3C6E /* Constants */,
 				B8668C8921583B9F00DEBBF2 /* Persistence */,
+				B87F0F8424800CEC00140894 /* Network */,
 				B83A07AA204B28DB006C3C6E /* Scripting */,
 				B83A07A9204B279E006C3C6E /* Supporting Files */,
 			);
@@ -238,8 +252,10 @@
 			files = (
 				B8668C852156D0E200DEBBF2 /* Persistence.swift in Sources */,
 				B8D0ACC9214EFCB50098E255 /* AppDelegate.swift in Sources */,
+				B87F0F8624800D1000140894 /* HTTPServer.swift in Sources */,
 				B8988A612042704200CC8D7B /* ViewController.swift in Sources */,
 				B82C5FDD2151F11E004A8002 /* UserDefaultsExtension.swift in Sources */,
+				B87F0F8824800F8600140894 /* TouchBarManager.swift in Sources */,
 				B8AD3F272044986D00A3D40D /* KeyCodes.swift in Sources */,
 				B83A07A8204B231A006C3C6E /* ScriptRunner.swift in Sources */,
 				B8D0ACBD214ED0180098E255 /* WindowController.swift in Sources */,
