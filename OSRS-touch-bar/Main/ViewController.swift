@@ -20,6 +20,7 @@ class ViewController: NSViewController {
     
     override func viewDidLoad() {
         setupMenuButtons()
+        self.view
         
         if Persistence.controlStripEnabled {
             controlStripButton.state = .on
@@ -143,6 +144,11 @@ class ViewController: NSViewController {
 //            presentModalTouchBar(makeTouchBar())
 //            sender.image = #imageLiteral(resourceName: "Radio_Off")
 //        }
+    }
+    
+    // Hack that should only be needed as long as this application has a view
+    override func makeTouchBar() -> NSTouchBar? {
+        return TouchBarManager.shared.touchBar ?? TouchBarManager.shared.makeFKeyTouchBar()
     }
     
     /**

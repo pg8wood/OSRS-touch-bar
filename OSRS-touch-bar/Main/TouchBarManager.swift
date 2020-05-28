@@ -10,12 +10,7 @@ import Cocoa
 
 class TouchBarManager: NSObject, NSTouchBarProvider, NSTouchBarDelegate {
 
-    static let shared: TouchBarManager = {
-        // TODO add the make touch bar in the property observers instead
-        let manager = TouchBarManager()
-        manager.touchBar = manager.makeFKeyTouchBar()
-        return manager
-    }()
+    static let shared: TouchBarManager = TouchBarManager()
     
     let controlStripIconIdentifier = NSTouchBarItem.Identifier(rawValue: "com.patrickgatewood.osrs-logo")
     
@@ -59,6 +54,7 @@ class TouchBarManager: NSObject, NSTouchBarProvider, NSTouchBarDelegate {
         }
         
         let touchBar = makeFKeyTouchBar()
+        self.touchBar = touchBar
         
         if #available(macOS 10.14, *) {
             // TODO don't force unwrap here
@@ -66,17 +62,16 @@ class TouchBarManager: NSObject, NSTouchBarProvider, NSTouchBarDelegate {
         } else {
             NSTouchBar.presentSystemModalFunctionBar(touchBar, systemTrayItemIdentifier: controlStripIconIdentifier)
         }
-        
-        self.touchBar = touchBar
     }
     
     func presentFKeyTouchBarCustomizationWindow() {
-//        if touchBar == nil {
-//            presentModalFKeyTouchBar()
-//        }
+        if touchBar == nil {
+            presentModalFKeyTouchBar()
+        }
         
         /* Note that any changes made by the user in this view are only represented in UserDefaults.
          The NSTouchBar object is NOT changed. */
+        
         NSApplication.shared.toggleTouchBarCustomizationPalette(touchBar)
     }
     
