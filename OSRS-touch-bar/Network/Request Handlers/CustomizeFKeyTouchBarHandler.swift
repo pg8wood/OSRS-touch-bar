@@ -1,5 +1,5 @@
 //
-//  PresentFKeyTouchBarHandler.swift
+//  CustomizeFKeyTouchBarHandler.swift
 //  OSRS Touch Bar
 //
 //  Created by Patrick Gatewood on 5/28/20.
@@ -8,12 +8,12 @@
 
 import Swifter
 
-struct PresentFKeyTouchBarHandler: RequestHandling {
+struct CustomizeFKeyTouchBarHandler: RequestHandling {
     func handleRequest(request: HttpRequest) -> HttpResponse {
         DispatchQueue.main.async {
-            TouchBarManager.shared.presentModalFKeyTouchBar()
+            TouchBarManager.shared.presentFKeyTouchBarCustomizationWindow()
         }
         
-        return HttpResponse.ok(.htmlBody("new touch bar coming up!"))
+        return HttpResponse.ok(.json(""))
     }
 }

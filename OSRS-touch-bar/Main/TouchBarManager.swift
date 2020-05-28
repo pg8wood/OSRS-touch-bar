@@ -13,7 +13,7 @@ class TouchBarManager: NSObject, NSTouchBarProvider, NSTouchBarDelegate {
     static let shared: TouchBarManager = {
         // TODO add the make touch bar in the property observers instead
         let manager = TouchBarManager()
-        manager.touchBar = manager.makeTouchBar()
+        manager.touchBar = manager.makeFKeyTouchBar()
         return manager
     }()
     
@@ -21,7 +21,16 @@ class TouchBarManager: NSObject, NSTouchBarProvider, NSTouchBarDelegate {
     
     var touchBar: NSTouchBar?
     
-    private override init() {}
+    private override init() {
+        super.init()
+        observeTouchBarCustomizationChanges()
+    }
+     /// Observe user customization of the F-Key Touch Bar. A hack is needed. See  [presentNewCustomizedTouchBar](x-source-tag://presentNewCustomizedTouchBar) for more info.
+    private func observeTouchBarCustomizationChanges() {
+        UserDefaults.standard.addObserver(self,
+                                          forKeyPath: TouchBarConstants.userDefaultsTouchBarIdentifier,
+                                          options: NSKeyValueObservingOptions.new, context: nil)
+    }
     
     func dismissModalTouchBar() {
         guard Thread.isMainThread else {
@@ -39,7 +48,7 @@ class TouchBarManager: NSObject, NSTouchBarProvider, NSTouchBarDelegate {
         touchBar = nil
     }
     
-    func presentModalTouchBar() {
+    func presentModalFKeyTouchBar() {
         guard Thread.isMainThread else {
             assertionFailure("Attempted to present a Touch Bar on a background thread!")
             return
@@ -49,7 +58,7 @@ class TouchBarManager: NSObject, NSTouchBarProvider, NSTouchBarDelegate {
             dismissModalTouchBar()
         }
         
-        let touchBar = makeTouchBar()
+        let touchBar = makeFKeyTouchBar()
         
         if #available(macOS 10.14, *) {
             // TODO don't force unwrap here
@@ -61,7 +70,54 @@ class TouchBarManager: NSObject, NSTouchBarProvider, NSTouchBarDelegate {
         self.touchBar = touchBar
     }
     
-    func makeTouchBar() -> NSTouchBar? {
+    func presentFKeyTouchBarCustomizationWindow() {
+//        if touchBar == nil {
+//            presentModalFKeyTouchBar()
+//        }
+        
+        /* Note that any changes made by the user in this view are only represented in UserDefaults.
+         The NSTouchBar object is NOT changed. */
+        NSApplication.shared.toggleTouchBarCustomizationPalette(touchBar)
+    }
+    
+    override func observeValue(forKeyPath keyPath: String?,
+                               of object: Any?, change: [NSKeyValueChangeKey : Any]?,
+                               context: UnsafeMutableRawPointer?) {
+        guard keyPath == TouchBarConstants.userDefaultsTouchBarIdentifier else {
+            return
+        }
+        
+        presentNewCustomizedTouchBar()
+    }
+    
+    /// - Tag: presentNewCustomizedTouchBar
+    /// Re-presents the system-wide modal touchbar due to some limitation in the undocumented
+    /// DFRFoundationFramework. I believe it copies a Touch Bar under the hood, since changes to the "local"
+    /// touch bar aren't reflected until presentSystemModalTouchBar() is called again.
+    private func presentNewCustomizedTouchBar() {
+        presentModalFKeyTouchBar()
+        
+        if Persistence.buttonsFillControlStrip {
+            fitButtonsToTouchBarScreenSize()
+        }
+    }
+    
+    func fitButtonsToTouchBarScreenSize() {
+        /**
+         For some reason, part of the Touch Bar API handles a "full" (12-button) Touch Bar's layout
+         differently than a Touch Bar with fewer items. This hack is necessary due to that.
+         */
+        guard let identifiers = touchBar?.itemIdentifiers, identifiers.count < 12 else {
+            return
+        }
+        
+        let customTouchBarItems = identifiers.compactMap({touchBar?.item(forIdentifier: $0) as? CustomTouchBarItem})
+        customTouchBarItems.forEach({ item in
+            item.updateButtonSize(numItems: identifiers.count)
+        })
+    }
+    
+    func makeFKeyTouchBar() -> NSTouchBar? {
         let touchBar = NSTouchBar()
         
         touchBar.delegate = self

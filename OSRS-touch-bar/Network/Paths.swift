@@ -10,14 +10,17 @@ import Swifter
 
 enum ServerPath: String, CaseIterable {
     case killTouchBar = "/killtouchbar"
-    case newTouchBar = "/presentfkeytouchbar"
+    case presentFKeyTouchBar = "/presentfkeytouchbar"
+    case customizeFKeyTouchBar = "/customizeFKeyTouchBar"
     
     var requestHandler: RequestHandling {
         switch self {
         case .killTouchBar:
             return KillTouchBarHandler()
-        case .newTouchBar:
+        case .presentFKeyTouchBar:
             return PresentFKeyTouchBarHandler()
+        case .customizeFKeyTouchBar:
+            return CustomizeFKeyTouchBarHandler()
         }
     }
 }

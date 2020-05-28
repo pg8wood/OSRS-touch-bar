@@ -10,6 +10,7 @@
 		B807E7A62480297F001D064F /* Paths.swift in Sources */ = {isa = PBXBuildFile; fileRef = B807E7A52480297F001D064F /* Paths.swift */; };
 		B807E7A8248029FE001D064F /* KillTouchBarHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B807E7A7248029FE001D064F /* KillTouchBarHandler.swift */; };
 		B807E7AA24802A25001D064F /* PresentFKeyTouchBarHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B807E7A924802A25001D064F /* PresentFKeyTouchBarHandler.swift */; };
+		B807E7AE24802B39001D064F /* CustomizeFKeyTouchBarHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B807E7AD24802B39001D064F /* CustomizeFKeyTouchBarHandler.swift */; };
 		B829002D214EC957007C160A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B829002C214EC957007C160A /* Main.storyboard */; };
 		B82C5FDD2151F11E004A8002 /* UserDefaultsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82C5FDC2151F11E004A8002 /* UserDefaultsExtension.swift */; };
 		B83A07A8204B231A006C3C6E /* ScriptRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83A07A7204B231A006C3C6E /* ScriptRunner.swift */; };
@@ -35,6 +36,7 @@
 		B807E7A52480297F001D064F /* Paths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paths.swift; sourceTree = "<group>"; };
 		B807E7A7248029FE001D064F /* KillTouchBarHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KillTouchBarHandler.swift; sourceTree = "<group>"; };
 		B807E7A924802A25001D064F /* PresentFKeyTouchBarHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentFKeyTouchBarHandler.swift; sourceTree = "<group>"; };
+		B807E7AD24802B39001D064F /* CustomizeFKeyTouchBarHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizeFKeyTouchBarHandler.swift; sourceTree = "<group>"; };
 		B829002C214EC957007C160A /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		B82C5FDC2151F11E004A8002 /* UserDefaultsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtension.swift; sourceTree = "<group>"; };
 		B83A07A7204B231A006C3C6E /* ScriptRunner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptRunner.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 			children = (
 				B807E7A7248029FE001D064F /* KillTouchBarHandler.swift */,
 				B807E7A924802A25001D064F /* PresentFKeyTouchBarHandler.swift */,
+				B807E7AD24802B39001D064F /* CustomizeFKeyTouchBarHandler.swift */,
 			);
 			path = "Request Handlers";
 			sourceTree = "<group>";
@@ -281,6 +284,7 @@
 				B8D0ACC5214EE8E70098E255 /* TouchBarConstants.swift in Sources */,
 				B807E7AA24802A25001D064F /* PresentFKeyTouchBarHandler.swift in Sources */,
 				B807E7A8248029FE001D064F /* KillTouchBarHandler.swift in Sources */,
+				B807E7AE24802B39001D064F /* CustomizeFKeyTouchBarHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,8 +13,6 @@ class ViewController: NSViewController {
     @IBOutlet weak var controlStripButton: NSButton!
     @IBOutlet weak var customizeButton: NSButton!
     @IBOutlet weak var fitButton: NSButton!
-        
-    var userDefaultsObserver: NSKeyValueObservation?
     
     // -----------------------
     // MARK: - View life cycle
@@ -22,8 +20,6 @@ class ViewController: NSViewController {
     
     override func viewDidLoad() {
         setupMenuButtons()
-        
-        UserDefaults.standard.addObserver(self, forKeyPath: TouchBarConstants.userDefaultsTouchBarIdentifier, options: NSKeyValueObservingOptions.new, context: nil)
         
         if Persistence.controlStripEnabled {
             controlStripButton.state = .on
@@ -35,10 +31,8 @@ class ViewController: NSViewController {
         
         if Persistence.buttonsFillControlStrip {
             fitButton.image = #imageLiteral(resourceName: "Radio_On")
-            fitButtonsToTouchBarScreenSize()
+            TouchBarManager.shared.fitButtonsToTouchBarScreenSize()
         }
-
-        NSApplication.shared.isAutomaticCustomizeTouchBarMenuItemEnabled = true
     }
     
     /**
@@ -62,21 +56,6 @@ class ViewController: NSViewController {
     
     override func viewWillDisappear() {
         Persistence.persistSettings()
-    }
-        
-    private func fitButtonsToTouchBarScreenSize() {
-        /**
-         For some reason, part of the Touch Bar API handles a "full" (12-button) Touch Bar's layout
-         differently than a Touch Bar with fewer items. This hack is necessary due to that.
-         */
-        guard let identifiers = touchBar?.itemIdentifiers, identifiers.count < 12 else {
-            return
-        }
-        
-        let customTouchBarItems = identifiers.compactMap({touchBar?.item(forIdentifier: $0) as? CustomTouchBarItem})
-        customTouchBarItems.forEach({ item in
-            item.updateButtonSize(numItems: identifiers.count)
-        })
     }
     
     /**
@@ -144,9 +123,7 @@ class ViewController: NSViewController {
      - parameter sender: The NSButton clicked
      */
     @IBAction func customizeButtonClicked(_ sender: NSButton) {
-        /* Note that any changes made by the user in this view are represented in UserDefaults.
-         The NSTouchBar object is NOT changed. Must use KVO to detect changes to the Touch Bar config. */
-        NSApplication.shared.toggleTouchBarCustomizationPalette(touchBar)
+        TouchBarManager.shared.presentFKeyTouchBarCustomizationWindow()
     }
     
     /**
