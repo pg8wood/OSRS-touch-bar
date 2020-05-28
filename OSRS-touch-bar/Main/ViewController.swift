@@ -20,7 +20,6 @@ class ViewController: NSViewController {
     
     override func viewDidLoad() {
         setupMenuButtons()
-        self.view
         
         if Persistence.controlStripEnabled {
             controlStripButton.state = .on
@@ -133,37 +132,12 @@ class ViewController: NSViewController {
      - parameter sender: The NSButton clicked
      */
     @IBAction func fitButtonClicked(_ sender: NSButton) {
-        // TODO test all this with the touch bar manager class
-//        Persistence.buttonsFillControlStrip = !Persistence.buttonsFillControlStrip
-//
-//        if Persistence.buttonsFillControlStrip {
-//            fitButtonsToTouchBarScreenSize()
-//            presentModalTouchBar(touchBar)
-//            sender.image = #imageLiteral(resourceName: "Radio_On")
-//        } else {
-//            presentModalTouchBar(makeTouchBar())
-//            sender.image = #imageLiteral(resourceName: "Radio_Off")
-//        }
+        TouchBarManager.shared.fitButtonsToTouchBarScreenSize()
     }
     
     // Hack that should only be needed as long as this application has a view
     override func makeTouchBar() -> NSTouchBar? {
         return TouchBarManager.shared.touchBar ?? TouchBarManager.shared.makeFKeyTouchBar()
     }
-    
-    /**
-     Called when an observed KeyPath's value is changed
-     */
-    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-         // TODO test all this with the touch bar manager class
-//        /* Need to re-present the system-wide modal touchbar due to some limitation in the undocumented
-//         DFRFoundationFramework. I believe it copies a Touch Bar under the hood, since changes to the "local"
-//         touch bar aren't reflected until presentSystemModalTouchBar() is called again. */
-//        touchBar = makeTouchBar()
-//        presentModalTouchBar(touchBar)
-//
-//        if Persistence.buttonsFillControlStrip {
-//            fitButtonsToTouchBarScreenSize()
-//        }
-    }
+
 }

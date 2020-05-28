@@ -82,14 +82,14 @@ class TouchBarManager: NSObject, NSTouchBarProvider, NSTouchBarDelegate {
             return
         }
         
-        presentNewCustomizedTouchBar()
+        presentNewCustomizedFKeyTouchBar()
     }
     
     /// - Tag: presentNewCustomizedTouchBar
-    /// Re-presents the system-wide modal touchbar due to some limitation in the undocumented
-    /// DFRFoundationFramework. I believe it copies a Touch Bar under the hood, since changes to the "local"
-    /// touch bar aren't reflected until presentSystemModalTouchBar() is called again.
-    private func presentNewCustomizedTouchBar() {
+    /// Re-presents the system-wide modal Touch Bar due to some limitation in the undocumented
+    /// DFRFoundationFramework, since changes to the presented Touch Bar aren't reflected until
+    /// presentModalFKeyTouchBar() is called again.
+    private func presentNewCustomizedFKeyTouchBar() {
         presentModalFKeyTouchBar()
         
         if Persistence.buttonsFillControlStrip {

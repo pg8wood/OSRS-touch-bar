@@ -8,10 +8,12 @@
 
 import Swifter
 
+/// All the available paths exposed via the HTTP server.
 enum ServerPath: String, CaseIterable {
     case killTouchBar = "/killtouchbar"
     case presentFKeyTouchBar = "/presentfkeytouchbar"
     case customizeFKeyTouchBar = "/customizeFKeyTouchBar"
+    case toggleControlStrip = "/toggleControlStrip"
     
     var requestHandler: RequestHandling {
         switch self {
@@ -21,6 +23,8 @@ enum ServerPath: String, CaseIterable {
             return PresentFKeyTouchBarHandler()
         case .customizeFKeyTouchBar:
             return CustomizeFKeyTouchBarHandler()
+        case .toggleControlStrip:
+            return ToggleControlStripHandler()
         }
     }
 }
@@ -33,7 +37,6 @@ extension HttpServer {
     subscript(path: ServerPath) -> RequestHandling? {
         set {
             self[path.rawValue] = newValue?.handleRequest
-        }
-        get { return nil }
+        } get { return nil }
     }
 }
