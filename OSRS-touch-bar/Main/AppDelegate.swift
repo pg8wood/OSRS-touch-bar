@@ -34,7 +34,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     @objc func present() {
-        // TODO don't use the view controller's here. Actually do we even need this func anymore?
+        // TODO don't use the view controller's touch bar here. Actually do we even need this func anymore?
 //        let windows = NSApplication.shared.windows
 //
 //        guard windows.count > 0, let viewController = windows[0].contentViewController as? ViewController else {

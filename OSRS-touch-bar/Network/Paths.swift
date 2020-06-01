@@ -14,6 +14,7 @@ enum ServerPath: String, CaseIterable {
     case presentFKeyTouchBar = "/presentfkeytouchbar"
     case customizeFKeyTouchBar = "/customizeFKeyTouchBar"
     case toggleControlStrip = "/toggleControlStrip"
+    case terminate = "/terminate"
     
     var requestHandler: RequestHandling {
         switch self {
@@ -25,6 +26,8 @@ enum ServerPath: String, CaseIterable {
             return CustomizeFKeyTouchBarHandler()
         case .toggleControlStrip:
             return ToggleControlStripHandler()
+        case .terminate:
+            return TerminateHandler()
         }
     }
 }
