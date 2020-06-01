@@ -11,41 +11,12 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
     
-    let controlStripIconIdentifier = NSTouchBarItem.Identifier(rawValue: "com.patrickgatewood.osrs-logo")
-    
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         if #available(OSX 10.12.1, *) {
             NSApplication.shared.isAutomaticCustomizeTouchBarMenuItemEnabled = true
         }
-    }
-    
-    private func showControlStripIcon() {
-        let controlStripTBItem = NSCustomTouchBarItem(identifier: controlStripIconIdentifier) // Touch Bar, not TeleBlock
-        controlStripTBItem.view = NSButton(image: NSImage(named: "OSRS_Logo")!, target: self, action: #selector(present))
         
-        NSTouchBarItem.addSystemTrayItem(controlStripTBItem)
-    }
-    
-    func applicationWillResignActive(_ notification: Notification) {
-        let controlStripTBItem = NSCustomTouchBarItem(identifier: controlStripIconIdentifier) // Touch Bar, not TeleBlock
-        controlStripTBItem.view = NSButton(image: NSImage(named: "OSRS_Logo")!, target: self, action: #selector(present))
-        
-        NSTouchBarItem.addSystemTrayItem(controlStripTBItem)
-    }
-    
-    @objc func present() {
-        // TODO don't use the view controller's touch bar here. Actually do we even need this func anymore?
-//        let windows = NSApplication.shared.windows
-//
-//        guard windows.count > 0, let viewController = windows[0].contentViewController as? ViewController else {
-//            return
-//        }
-//
-//        if #available(macOS 10.14, *) {
-//            NSTouchBar.presentSystemModalTouchBar(viewController.touchBar!, systemTrayItemIdentifier: self.controlStripIconIdentifier)
-//        } else {
-//            NSTouchBar.presentSystemModalFunctionBar(viewController.touchBar!, systemTrayItemIdentifier: self.controlStripIconIdentifier)
-//        }
+        TouchBarManager.shared.showControlStripIcon()
     }
     
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
@@ -53,6 +24,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func applicationWillTerminate(_ notification: Notification) {
-        ScriptRunner.restoreControlStrip()
+        TouchBarManager.shared.restoreControlStrip()
     }
 }

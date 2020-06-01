@@ -97,7 +97,7 @@ class ViewController: NSViewController {
             sender.image = #imageLiteral(resourceName: "Radio_On")
             setNSButtonTitle(button: sender, to: "  Control Strip (on)")
 
-            ScriptRunner.restoreControlStrip()
+            TouchBarManager.shared.restoreControlStrip()
         } else {
             Persistence.controlStripEnabled = false
             sender.image = #imageLiteral(resourceName: "Radio_Off")

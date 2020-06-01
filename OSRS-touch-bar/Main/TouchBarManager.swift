@@ -43,6 +43,7 @@ class TouchBarManager: NSObject, NSTouchBarProvider, NSTouchBarDelegate {
         touchBar = nil
     }
     
+    @objc
     func presentModalFKeyTouchBar() {
         guard Thread.isMainThread else {
             assertionFailure("Attempted to present a Touch Bar on a background thread!")
@@ -141,5 +142,20 @@ class TouchBarManager: NSObject, NSTouchBarProvider, NSTouchBarDelegate {
         }
         
         return CustomTouchBarItem(identifier: identifier, name: touchBarItemData.name, keyCode: touchBarItemData.keyCode)
+    }
+    
+    // MARK: - Control Strip
+    
+    func showControlStripIcon() {
+        let controlStripTBItem = NSCustomTouchBarItem(identifier: controlStripIconIdentifier) // Touch Bar, not TeleBlock
+        controlStripTBItem.view = NSButton(image: NSImage(named: "OSRS_Logo")!, target: TouchBarManager.shared, action: #selector(TouchBarManager.shared.presentModalFKeyTouchBar))
+        
+        NSTouchBarItem.addSystemTrayItem(controlStripTBItem)
+        DFRElementSetControlStripPresenceForIdentifier(controlStripIconIdentifier, true)
+    }
+    
+    func restoreControlStrip() {
+        ScriptRunner.restoreControlStrip()
+        showControlStripIcon()
     }
 }
