@@ -39,7 +39,6 @@ class TouchBarManager: NSObject, NSTouchBarProvider, NSTouchBarDelegate {
             // TODO: -  Fallback on earlier versions
         }
         
-        
         touchBar = nil
     }
     
@@ -56,12 +55,14 @@ class TouchBarManager: NSObject, NSTouchBarProvider, NSTouchBarDelegate {
         
         let touchBar = makeFKeyTouchBar()
         self.touchBar = touchBar
-        
+                
         if #available(macOS 10.14, *) {
-            // TODO don't force unwrap here
-            NSTouchBar.presentSystemModalTouchBar(touchBar, systemTrayItemIdentifier: controlStripIconIdentifier)
+            // TODO don't force unwrap here, also roll this into a call that always defaults to 1 and
+            // explain that 1 is the "top" placement without the close button, and 0 is the placement
+            // that shows the modal close button
+            NSTouchBar.presentSystemModalTouchBar(touchBar, placement: 1, systemTrayItemIdentifier: controlStripIconIdentifier)
         } else {
-            NSTouchBar.presentSystemModalFunctionBar(touchBar, systemTrayItemIdentifier: controlStripIconIdentifier)
+            NSTouchBar.presentSystemModalFunctionBar(touchBar, placement: 1, systemTrayItemIdentifier: controlStripIconIdentifier)
         }
     }
     
